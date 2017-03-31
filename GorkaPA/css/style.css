@@ -1,0 +1,24 @@
+/*    
+    path: css/style.css
+    version: 1.0
+    date: 2017-03-31
+    auto: Gorka Perez Aguado
+*/
+
+h1 {
+    color: aqua;
+    background-color: beige;
+    font-size: 2em;
+}
+
+p {
+    
+}
+
+.rojo {
+    color:darkred;
+}
+
+.verde {
+    color: darkgreen;
+}
