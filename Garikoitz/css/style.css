@@ -1,0 +1,22 @@
+/* 
+    path: css/style.css
+    version: 1.0
+    date: 2017-03-31
+    version: 0.1
+    auto: Garikoitz Esteban Dieguez 
+
+*/
+
+
+h1 {
+    color: aqua;
+    font-size: 25px;
+}
+
+.verde {
+    color: darkgreen
+}
+
+.rojo {
+    color: red;
+}
