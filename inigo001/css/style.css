@@ -1,0 +1,27 @@
+/*
+
+    path: css/style.css
+    date: 2017-03-31
+    version: 0.1
+    author: inigo001
+
+*/
+
+
+h1 {
+    color: aqua;
+    font-size: 25px;
+}
+
+.verde {
+    color: darkgreen;
+}
+
+.rojo {
+    color: red;
+}
+
+
+#pepe {
+    
+}
