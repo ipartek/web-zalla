@@ -1,0 +1,81 @@
+html {
+    background-color: grey;
+    font-family: "lucida sans unicode";
+}
+
+body,
+html {
+    margin: 0;
+}
+
+.container {
+    background-color: #342e29;
+    width: 70%;
+    margin: 0px auto;
+    text-align: center;
+    padding: 15px;
+}
+
+h1 {
+    font-size: 44px;
+    font-family: Georgia, serif;
+    text-transform: uppercase;
+    color: #9cc4e5;
+    text-align: center;
+}
+
+h2 {
+    font-size: 24px;
+    color: #9cc4e5;
+    text-align: left;
+}
+
+em {
+    color: #9cc4e5;
+}
+
+p {
+    font-size: 18px;
+    color: #e0dfda;
+    text-align: justify;
+}
+
+#ultimo-parrafo {
+    border-top: 2px solid white;
+    padding-top: 8px;
+    margin-top: 100px;
+    text-align: center;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.vinculo-especial {
+    text-transform: uppercase;
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid white;
+}
+
+.caja-vinculos-especiales {
+    padding: 30px 0px;
+    border-bottom: 2px solid white;
+    border-top: 2px solid white;
+}
+
+
+}
+#img-cara-king-kong {
+    margin: 30px;
+    padding: 5px;
+    border: 2px solid white;
+}
+.menu-pelis {
+    display: inline-block;
+    margin-left: 15px;
+}
