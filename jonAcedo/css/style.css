@@ -1,15 +1,43 @@
-/* 
-   path: css/style.css
-   version: 1.0
-   date: 2017-03-31
-   auto: Ander Uraga Real
+a {
+    color: #fff;
+}
 
-*/
+html {
+    font-family: 'Muli', sans-serif;
+    font-size: 1em;
+}
 
 h1 {
-    color: aqua;
-    font-size: 25px;
+    color: #102C05;
+    font-size: 45px;
+    padding: 25px 15px;
+    font-family: 'Alfa Slab One', cursive;
+    text-align: center;
 }
+
+ul {
+    background-color: #243F14;
+}
+
+ul li {
+    display: inline-block;
+    padding: 13px 15px;
+    background-color: #243F14;
+}
+
+ul li:hover {
+    background-color: #451010;
+}
+
+ul li:last-child {
+    float: right;
+    background-color: #1D1919;
+}
+
+ul li:last-child:hover {
+    background-color: #451010;
+}
+
 .verde {
     color: darkgreen;
 }
@@ -18,6 +46,8 @@ h1 {
     color: red;
 }
 
-#pepe {
-    
+.wrapper {
+    width: 1040px;
+    margin-left: auto;
+    margin-right: auto;
 }
