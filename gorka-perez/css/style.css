@@ -161,10 +161,6 @@ body {
 }
 
 
-/* Reset
-************************************************************* */
-
-
 /* Clases comunes
 ************************************************************* */
 
@@ -175,15 +171,24 @@ body {
 #content {
     width: 800px;
     margin: 0 auto;
+    background-color: bisque;
+    padding: 20px;
+    border: 2px bold;
+    text-align: center;
 }
 
 header h1 {
     font-size: 130%;
     text-transform: uppercase;
+    border: 1px;
+    margin: 20px;
+    display: inline-block;
+    padding: 20px;
 }
 
 main section header h2 {
     font-size: 110%;
+    text-transform: capitalize;
 }
 
 
