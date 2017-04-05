@@ -1,27 +1,248 @@
 /*
 
     path: css/style.css
-    date: 2017-03-31
-    version: 0.1
+    date: 2017-04-05
+    version: 0.2
     author: inigo001
 
 */
 
 
-h1 {
-    color: aqua;
-    font-size: 25px;
+/* RESET
+************************~~~~~~~~~~~~~~~~~~~~******************** */
+
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 
-.verde {
-    color: darkgreen;
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
 }
 
-.rojo {
-    color: red;
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 
-#pepe {
-    
+/* ANIMACIONES - KeyFrames
+************************~~~~~~~~~~~~~~~~~~~~********************* */
+
+
+/* ETIQUETAS - (h1, li, ul ...s)
+************************~~~~~~~~~~~~~~~~~~~~********************* */
+
+html{
+	background-color: #424242;
+}
+
+body {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+    font-size: 3em;
+    margin-bottom: 36px;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+
+/* CLASES COMUNES - (clases que voy a reutilizar)
+************************~~~~~~~~~~~~~~~~~~~~********************* */
+
+
+/* LAYOUTS - (estructura de la web)
+************************~~~~~~~~~~~~~~~~~~~~********************* */
+
+main {
+    width: 800px;
+    margin: 0 auto;
+    background-color: #E2E2E2;
+    padding: 30px;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+
+/* ESTILOS PROPIOS POR PÁGINAS
+************************~~~~~~~~~~~~~~~~~~~~********************* */
+
+header .inigo-icon {
+    height: 128px;
+    margin: 0 auto;
+    display: block;
+}
+
+header p {
+    font-size: 2em;
+    text-align: center;
+}
+
+header p>a {
+    text-decoration: none;
+    color: #000000;
+}
+
+
+/* - */
+
+#listado-de-proyectos {
+    margin-left: 24px;
+}
+
+#listado-de-proyectos li {
+    margin-bottom: 1em;
+}
+
+#listado-de-proyectos li>a {
+    color:#50638F;
+    text-decoration: none;
+}
+
+#listado-de-proyectos li>a:hover {
+    background-color: #FFF449;
+}
+
+/* - */
+
+footer
+{
+	margin-top:180px;
+	padding-top: 35px;
+	border-top: 1px dashed #414040;
+}
+
+footer p
+{
+	text-align: center;
 }
