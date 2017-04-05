@@ -60,17 +60,19 @@ td {
 h3,
 h2 {
     text-align: center;
-    margin: 20px;
+    margin: 10px;
 }
 
 h2 {
     border-top: 2px solid black;
     color: grey;
     padding: 10px;
+    margin-bottom: 10px;
 }
 
 h3 {
     color: red;
+    margin-top: -10px;
 }
 
 img {
@@ -79,4 +81,11 @@ img {
 
 thead th {
     background-color: #751aff;
+}
+
+.img1 {
+    width: 30%;
+    height: 30%;
+    margin: 1px 280px;
+    text-align: center;
 }
