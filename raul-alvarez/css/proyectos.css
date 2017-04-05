@@ -191,17 +191,8 @@ main a:hover {
     border: solid 2px;
     padding: 3px;
     border-color: #999900;
+    color: #006600;
 }
-
-
-/*.volverindice {
-    color: #cca300;
-    text-decoration: none;
-    text-align: right;
-    display: block;
-    padding: 15px;
-    font-size: 30px;
-}*/
 
 header h1 {
     text-transform: uppercase;
@@ -209,7 +200,7 @@ header h1 {
     color: #cca300;
 }
 
-footer .volverindice {
+footer a {
     color: #cca300;
     text-decoration: none;
     text-align: right;
@@ -218,7 +209,7 @@ footer .volverindice {
     font-size: 30px;
 }
 
-footer .volverindice:hover {
+footer a:hover {
     color: #ff3300;
 }
 
