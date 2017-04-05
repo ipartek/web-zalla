@@ -1,0 +1,21 @@
+#galeria {
+    padding: 0px
+}
+
+#galeria li {
+    display: inline-block;
+    margin-bottom: 25px;
+    margin-right: 20px;
+}
+
+#galeria li a {
+    display: block;
+}
+
+#galeria img {
+    border: 4px solid white;
+}
+
+#galeria img:hover {
+    border: 4px solid yellow;
+}
