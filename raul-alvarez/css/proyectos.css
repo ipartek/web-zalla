@@ -150,6 +150,10 @@
         padding: 10px;
         text-align: center;
     }
+    
+    img {
+        margin-right: 25px;
+    }
     /*clases comunes para utilizar*/
     /*layouts*/
     
@@ -159,6 +163,7 @@
         border: solid 1px;
         padding: 35px;
         background: #e0e0d1;
+        font-size: 25px;
     }
     
     .proyectosmios a {
