@@ -65,18 +65,21 @@ body{
 }
 h1{
 	border-bottom: 2px solid black;
-	padding: 10px;
+	padding: 5%;
 	text-align: center;
-    font-size: 2em;
-    text-align: center;
+    font-size: 200%;
+}
+img{
+	width: 10%;
+	height: 10%;
 }
 h2{
-	margin-top: 20px;
+	margin-top: 5%;
 	font-size: 2em;
 }
 li{
 	display: inline-block;
-	margin: 40px;
+	margin: 5%;
 }
 a{
 	font-size: 150%;
@@ -102,6 +105,6 @@ a:hover{
 .contenedor{
 	background-color: #AA3939;
 	text-align: center;
-	width: 800px;
+	width: 60%;
 	margin: 0 auto;
 }

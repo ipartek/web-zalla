@@ -201,7 +201,12 @@ table {
 .tablaPrincipal td {
     border: 1px solid black;
     text-align: center;
-    width: 100px;
+    width: 150px;
+    padding: 5px;
+}
+
+.tablaPrincipal td:hover {
+    outline: 3px solid green;
 }
 
 .foot {
