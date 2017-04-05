@@ -4,29 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <title>Web Zalla</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css " rel="stylesheet " integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN " crossorigin="anonymous ">
+    <!-- custom -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
 
 <body onload="init()">
 
-    <h1>Proyectos</h1>
-    <p id="pepe" class="rojo"> </p>
+    <div id="content">
 
-    <ul id="listado">
-        <li class="verde">
-            <a href="proyectos/Fotografo/index.html">Fotografo</a>
-        </li>
-        <li class="verde">
-            <a href="proyectos/King-kong/index.html">King-Kong</a>
-        </li>
-        <li class="verde">
-            <a href="proyectos/Pruebas/mi-web-personal.html">Pruebas</a>
-        </li>
+        <h1><i class="fa fa-briefcase" aria-hidden="true"></i>Proyectos</h1>
 
-    </ul>
 
+
+
+        <table class="tablaPrincipal">
+            <caption>Portafolio de proyectos</caption>
+            <tbody>
+                <tr>
+                    <td><a href="proyectos/fotografo/index.html">Fotografo</a></td>
+                    <td><a href="proyectos/king-kong/index.html">King-Kong</a></td>
+                    <td><a href="proyectos/pruebas/mi-web-personal.html">Web Personal</a></td>
+                    <td></td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <a href="proyectos/Pruebas/tabla.html">Tabla</a>
+                    </td>
+                    <td>
+                        <a href="proyectos/Pruebas/receta-de-paella.html">Receta Paella</a>
+                    </td>
+                    <td>
+                        <a href="proyectos/Pruebas/citroen.html">Citroën</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <script src="js/main.js"></script>
 
 </body>
