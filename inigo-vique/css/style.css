@@ -226,38 +226,34 @@ header {
 /* - */
 
 #listado-de-proyectos,
-#links-de-interes {
+.links-de-interes {
     margin-left: 24px;
 }
 
 #listado-de-proyectos li,
-#links-de-interes dt, 
+.links-de-interes dt, 
 #apuntes li{
     margin-bottom: 0.5em;
 }
 
 #listado-de-proyectos li>a,
-#links-de-interes dt>a,
+.links-de-interes dt>a,
 #apuntes li>a {
     color: #50638F;
     text-decoration: none;
 }
 
 #listado-de-proyectos li>a:hover,
-#links-de-interes dt>a:hover,
+.links-de-interes dt>a:hover,
 #apuntes li>a:hover {
     background-color: #FFF449;
 }
 
-#links-de-interes dt+dd {
+.links-de-interes dt+dd {
     margin-left: 50px;
     margin-bottom: 30px;
 }
 
-#fourth-section p
-{
-    margin-bottom: 20px;    
-}
 
 
 /* - */
