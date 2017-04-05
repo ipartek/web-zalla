@@ -14,7 +14,7 @@
 -para las etiquetas pre y code hacen falta aplicaciones de escapado de codigo.
 www.prefformatter.com
 
-Atajos del emmet
+Atajos del emmet "emmet abreviation sintax"
 
 si usamos la # ponemos una id automaticamente.
 ej p#yeah daria <p id=""yeah">
@@ -23,3 +23,10 @@ lo mismo con el punto.
 El signo de mayor > sirve para anidar etiquetas
 
 el asterisco sirve para multiplicar etiquetas. ej li*5 escribiria 5 veces li
+
+
+plugins chrome 
+
+what font
+
+measure it

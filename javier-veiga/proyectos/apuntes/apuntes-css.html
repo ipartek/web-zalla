@@ -52,6 +52,42 @@
     <p>elementos tipo bloque</p>
     <p>le damos un margin left y un margin right con valor auto y una anchura para que o ocupe todo el ancho disponible</p>
     <p>para centrar elementos de tipo linea utilizamos la propiedad text-align que se la aplicamos al contenedor del texto.</p>
+    <h3>Pseudoclases</h3>
+    <p>sirven para representar estados de elementos. Y son mas especificos que el mismo selector sin pseudoclase</p>
+    <p><strong>link</strong> Se usa muy poco y aplica el estado de reposo a un vinculo.</p>
+    <p><strong>visited</strong>Se utiliza cuando el destino del vinculo ha sido visitado.</p>
+    <p><strong>hover</strong>Se aplica al estado de pasar el cursor del raton por encima de un elemento no tiene porke solo ser un vinculo.</p>
+    <p><strong>active</strong>Se aplica al estilo durante el tiempo que el usuario mantiene pulsado el boton del raton. Se usa muy poco.</p>
+    <p><strong>focus</strong> Se puede aplicar a etiquetas y/o a controles o campos de formulario. El estilo visual del foco es normalmente un rectangulo alrrededor del elemento, eso se crea con la propiedad outline. Esta propiedad toma los mismos valores que la propiedad border, pero solo se puede definir el mismo estilo para todos sus lados. Tampoco aumenta el tamaño de la caja. Para anularlo se puede poner none o 0 pero deberiamos resaltar el foco de alguna manera.</p>
+    <h3>Selectores compuestos, pseudoclases y descendientes</h3>
+    <p><strong>selectores descendientes : </strong></p>
+    <p>Se usan para dar estilos a elementos que estan a cualkier nivel dentro de otro elemento referenciando por id o clase el elemento padre. Se utlizan 2 o mas selectores.</p>
+    <p>ej. #menu p {color:blue;} Daria color azul a todos los vinculos dentro de #menu</p>
+    <p><strong>selector hijo :</strong></p>
+    <p> Se utiliza el simbolo de mayor > y hace referencia a aquellos elementos que estan justo un nivel por debajo.</p>
+    <p><strong>selector hermano:</strong></p>
+    <p>se utiliza el simbolo ~ (alt+126) y hace referencia a todos los elementos que esten despues y al mismo nivel</p>
+    <p>ej. img~p{} hace referencia a todos los parrafos que esten despues de una imagen</p>
+    <p><strong>selector hermano adyacente:</strong></p>
+    <p>Se utiliza el simbolo + y sirve para referenciar a un elemento justo despues en el codigo de otro.</p>
+    <p>ej. h1+p{} hace referencia a un parrafo justo despues del elemento h1 en el codigo</p>
+    <p><strong>selectores pseudoclases</strong></p>
+    <p><strong>first-child</strong> Selecciona al primer hijo. Si ponemos una etiqueta delante selecciona al primer hijo que sea del tipo de esa etiqueta</p>
+    <p><strong>last-child</strong> lo mismo que el first-child pero para el ultimo</p>
+    <p><strong>nth-child</strong> tambien le `podemos poner una etiqueta delante y le podemos pasar 3 tipos de parametros entre parentesis:</p>
+    <p><strong>Un valor numerico</strong>seleccionara dentro de los hijos aquel que cumpla con la posicion dada.</p>
+    <p><strong>odd o even</strong>Seleccionara todos los pares o impares</p>
+    <p><strong>una formula del tipo an+b</strong>a es el numero de pasos a dar en la lista de elementos, n es un valor que el navegador va cambiando secuencialmente desde 0 en adelante y b es la posicion de partida dentro de la lista de elementos </p>
+    <p><strong>first-of-type</strong>Selecciona el primer elemento del tipo de una etiqueta que se le especifique delante. Le da igual el nivel de herencia</p>
+    <p><strong>last-of-type</strong>Lo mismo que el anterior pero para el ultimo</p>
+    <p><strong>nth-of-type</strong> lo mismo que el nth-child, pero no esta limitado a los niveles de herencia</p>
+    <h3>css para tablas</h3>
+    <p>border-collapse</p>
+    <p>Sirve para combinar los bordes derecho e izquierdo de 2 celdas. el mas grueso prevalece</p>
+    <p>border-spacing</p>
+    <p>Define la distancia entre celdas y se aplica a la tabla entera. A las celdas no se les puede dar un margen. Esta propiedad es la unica manera de dar espacio entre celdas</p>
+    <p>empty-cells</p>
+    <p>Puede tomar 2 valores: show y hide y gestiona las celdas vacias.</p>
 </body>
 
 </html>
