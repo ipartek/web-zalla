@@ -1,0 +1,10 @@
+#lista-pelis{
+	list-style-type: decimal;
+}
+li{
+	text-decoration-style: overline; 
+}
+a{
+	color: blue;
+	background-color: white
+}
