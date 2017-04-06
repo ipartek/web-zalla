@@ -147,22 +147,24 @@
 **************************************************************************/
     
     h1 {
-        font-size: 30px;
+        text-align: center;
+        font-size: 300%;
         margin: 10px;
     }
     
     h2 {
-        font-size: 25px;
+        font-size: 200%;
         margin: 10px;
     }
     
-    .container article:first-child {
-        width: 40%;
+    main section:first-child {
+        width: 50%;
         margin: 0 auto;
         text-align: justify;
     }
     
     footer h2 {
+        text-align: right;
         font-size: 14px;
     }
     
@@ -181,12 +183,14 @@
     /* CLASES COMUNES
 **************************************************************************/
     
+    h1 {}
+    
     .container {
         font-family: fantasy;
         background-color: darkgrey;
-        color: black;
-        text-align: center;
-        width: 80%;
+        font-size: 16px color: black;
+        text-align: left;
+        width: 800px;
         margin: 0 auto;
         padding: 30px;
     }
