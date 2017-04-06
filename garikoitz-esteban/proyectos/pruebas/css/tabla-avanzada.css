@@ -182,7 +182,7 @@ table th {
     font-weight: bold;
 }
 
-theader tr :fist-child {
+thead tr :fist-child {
     padding-top: 6px;
 }
 

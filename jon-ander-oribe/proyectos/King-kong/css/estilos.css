@@ -16,13 +16,13 @@ body {
     padding: 20px 50px 20px;
 }
 
+.decor {
+    border: 2px dashed white;
+}
+
 .menu {
     display: block;
     text-align: center;
-}
-
-.menu li {
-    border: 1px solid red;
 }
 
 h1 {
