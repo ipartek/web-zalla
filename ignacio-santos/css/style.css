@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*   path: css/style.css
     version:1.0
     date:2017-03
@@ -5,16 +6,186 @@
     autor: Ignacio Santos
 */
 
+html {
+    font-family: arial;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    max-width: 750px;
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    background: #ccc;
+}
+
+header {
+    padding: 30px;
+    border-bottom: 3px dashed grey;
+    margin-bottom: 30px;
+}
+
 h1 {
-    color:red;
-    font-size:25px;
+    color: white;
+    font-size: 40px;
 }
 
-
-.rojo {
-    color:red;
+h2 {
+    color: #444;
+    font-size: 30px;
+    font-weight: normal;
 }
 
-.padding20 {
-    padding:20px;
+p {
+    color: #444;
+    font-size: 20px;
 }
+
+li {
+    display: inline-block;
+    border: 1px solid #666666;
+}
+
+#pruebas {
+    display: inline-block;
+    border: none;
+    margin: 20px 0 20px 0;
+}
+
+a {
+    text-decoration: none;
+    color: #666666;
+    padding: 15px;
+}
+
+.proyectos {
+    border: none;
+    margin: 30px 15px;
+}
+
+.proyectos a {
+    color: white;
+    font-weight: normal;
+    padding: 15px;
+    background: orange;
+}
+
+.pruebas {
+    border: none;
+    margin: 30px 15px;
+}
+
+.pruebas a {
+    color: white;
+    font-weight: normal;
+    padding: 15px;
+    background: green;
+}
+
+footer {
+    border-top: 3px dashed grey;
+    padding: 30px 0;
+    color: white;
+    margin-top: 30px;
+}
+=======
+/*   path: css/style.css
+    version:1.0
+    date:2017-03
+    version:0.1
+    autor: Ignacio Santos
+*/
+
+html {
+    font-family: arial;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    max-width: 750px;
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    background: #ccc;
+}
+
+header {
+    padding: 30px;
+    border-bottom: 3px dashed grey;
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: white;
+    font-size: 40px;
+}
+
+h2 {
+    color: #444;
+    font-size: 30px;
+    font-weight: normal;
+}
+
+p {
+    color: #444;
+    font-size: 20px;
+}
+
+li {
+    display: inline-block;
+    border: 1px solid #666666;
+}
+
+#pruebas {
+    display: inline-block;
+    border: none;
+    margin: 20px 0 20px 0;
+}
+
+a {
+    text-decoration: none;
+    color: #666666;
+    padding: 15px;
+}
+
+.proyectos {
+    border: none;
+    margin: 30px 15px;
+}
+
+.proyectos a {
+    color: white;
+    font-weight: normal;
+    padding: 15px;
+    background: orange;
+}
+
+.pruebas {
+    border: none;
+    margin: 30px 15px;
+}
+
+.pruebas a {
+    color: white;
+    font-weight: normal;
+    padding: 15px;
+    background: green;
+}
+
+footer {
+    border-top: 3px dashed grey;
+    padding: 30px 0;
+    color: white;
+    margin-top: 30px;
+}
+>>>>>>> fd47c77bcc7caf08540eeb8f13d26d91d013e7ef

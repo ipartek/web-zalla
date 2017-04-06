@@ -2,7 +2,7 @@
 
     path: css/style.css
     date: 2017-04-05
-    version: 0.2
+    version: 0.3
     author: inigo001
 
 */
@@ -158,8 +158,8 @@ table {
 /* ETIQUETAS - (h1, li, ul ...s)
 ************************~~~~~~~~~~~~~~~~~~~~********************* */
 
-html{
-	background-color: #424242;
+html {
+    background-image: url(../img/pattern.png);
 }
 
 body {
@@ -167,11 +167,33 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+h1 {
+    font-size: 4em;
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 10px;
+    border: 3px dashed #4B4B4B;
+}
+
 h2 {
     font-size: 3em;
     margin-bottom: 36px;
     text-decoration: underline;
     font-weight: bold;
+    margin-top: 30px;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+a {
+    color: #50638F;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: #FFF449;
 }
 
 
@@ -182,14 +204,14 @@ h2 {
 /* LAYOUTS - (estructura de la web)
 ************************~~~~~~~~~~~~~~~~~~~~********************* */
 
-main {
+#container {
     width: 800px;
     margin: 0 auto;
     background-color: #E2E2E2;
     padding: 30px;
 }
 
-header {
+#top-header {
     margin-bottom: 30px;
 }
 
@@ -197,52 +219,62 @@ header {
 /* ESTILOS PROPIOS POR PÁGINAS
 ************************~~~~~~~~~~~~~~~~~~~~********************* */
 
-header .inigo-icon {
+/* - Top Header - */
+
+#top-header span
+{
+    display: inline-block;
+    width:80%;
+    padding:10px;
+    border: 3px dashed #000000;
+}
+
+
+/* - Parte ini-github - */
+
+#ini-github .inigo-icon {
     height: 128px;
     margin: 0 auto;
     display: block;
 }
 
-header p {
+#ini-github p {
     font-size: 2em;
     text-align: center;
 }
 
-header p>a {
+#ini-github p>a {
     text-decoration: none;
+    background-color: inherit;
     color: #000000;
 }
 
 
-/* - */
+/* - Listas con sus margenes y demas - */
 
-#listado-de-proyectos {
+.lista-estilo {
     margin-left: 24px;
 }
 
-#listado-de-proyectos li {
-    margin-bottom: 1em;
+.lista-estilo li,
+.lista-estilo dt {
+    margin-bottom: 0.5em;
 }
 
-#listado-de-proyectos li>a {
-    color:#50638F;
-    text-decoration: none;
+.lista-estilo dt+dd {
+    margin-left: 50px;
+    margin-bottom: 30px;
 }
 
-#listado-de-proyectos li>a:hover {
-    background-color: #FFF449;
-}
 
 /* - */
 
-footer
-{
-	margin-top:180px;
-	padding-top: 35px;
-	border-top: 1px dashed #414040;
+footer {
+    margin-top: 60px;
+    padding-top: 35px;
+    border-top: 1px dashed #414040;
 }
 
-footer p
-{
-	text-align: center;
+footer p {
+    text-align: center;
 }

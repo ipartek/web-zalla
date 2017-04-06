@@ -1,0 +1,10 @@
+.divmonofoto {
+    text-align: center;
+    margin: 20px;
+}
+
+#monofoto {
+    text-align: center;
+    padding: 2px;
+    border: 1px solid white;
+}
