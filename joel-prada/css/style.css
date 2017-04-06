@@ -55,7 +55,7 @@ table {
 
 html{background:#153f84; border:0px;}
 
-body{font-size: 16px; font-family: arial; border:0px;}
+body{font-size: 16px; font-family: arial; border:0px; margin: 0px;}
 
 h1{font-size: 3em;margin: 20px; }
 
@@ -75,7 +75,7 @@ background:white; text-align: left; }
 
 li{margin: 10px 20px; padding: 10px; }
 
-li:hover{background: yellow;}
+li:hover{background: yellow; }
 
 
 
@@ -84,14 +84,15 @@ li:hover{background: yellow;}
 
 .der{text-align: right; margin: 10px 20px 0px;padding: 10px; color:darkslategray;}
 
+.imgdere{display:inline-block; margin: 10px 20px 0px;padding: 10px; text-align: auto; }
 
-
+.imgizq{ text-align: auto; display:inline-block; margin: 10px 20px 0px;padding: 10px; }
 
 
 /*               LAYOUTS                               
 ***********************************************************/
 
-.content{width: 800px; margin: 10px auto;padding: 10px 10px; background: #9cbef4; text-align: center;}
+.content{width: 800px; margin: 10px auto;padding: 10px 10px; background: #9cbef4; text-align: center; display:inline-block;}
 
 
 
