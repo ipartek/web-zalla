@@ -159,7 +159,7 @@ table {
 ************************~~~~~~~~~~~~~~~~~~~~********************* */
 
 html {
-    background-color: #424242;
+    background-image: url(../img/pattern.png);
 }
 
 body {
@@ -183,6 +183,19 @@ h2 {
     margin-top: 30px;
 }
 
+p {
+    margin-bottom: 1em;
+}
+
+a {
+    color: #50638F;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: #FFF449;
+}
+
 
 /* CLASES COMUNES - (clases que voy a reutilizar)
 ************************~~~~~~~~~~~~~~~~~~~~********************* */
@@ -198,7 +211,7 @@ h2 {
     padding: 30px;
 }
 
-header {
+#top-header {
     margin-bottom: 30px;
 }
 
@@ -206,54 +219,52 @@ header {
 /* ESTILOS PROPIOS POR PÁGINAS
 ************************~~~~~~~~~~~~~~~~~~~~********************* */
 
-#first-section .inigo-icon {
+/* - Top Header - */
+
+#top-header span
+{
+    display: inline-block;
+    width:80%;
+    padding:10px;
+    border: 3px dashed #000000;
+}
+
+
+/* - Parte ini-github - */
+
+#ini-github .inigo-icon {
     height: 128px;
     margin: 0 auto;
     display: block;
 }
 
-#first-section p {
+#ini-github p {
     font-size: 2em;
     text-align: center;
 }
 
-#first-section p>a {
+#ini-github p>a {
     text-decoration: none;
+    background-color: inherit;
     color: #000000;
 }
 
 
-/* - */
+/* - Listas con sus margenes y demas - */
 
-#listado-de-proyectos,
-.links-de-interes {
+.lista-estilo {
     margin-left: 24px;
 }
 
-#listado-de-proyectos li,
-.links-de-interes dt, 
-#apuntes li{
+.lista-estilo li,
+.lista-estilo dt {
     margin-bottom: 0.5em;
 }
 
-#listado-de-proyectos li>a,
-.links-de-interes dt>a,
-#apuntes li>a {
-    color: #50638F;
-    text-decoration: none;
-}
-
-#listado-de-proyectos li>a:hover,
-.links-de-interes dt>a:hover,
-#apuntes li>a:hover {
-    background-color: #FFF449;
-}
-
-.links-de-interes dt+dd {
+.lista-estilo dt+dd {
     margin-left: 50px;
     margin-bottom: 30px;
 }
-
 
 
 /* - */

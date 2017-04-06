@@ -47,4 +47,5 @@ Difusión
 Dispersión de la luz tras su incidencia sobre una superficie irregular o su transmisión a través de un medio traslúcido.
 Dioptría
 Unidad de medida de la potencia de una lente. Es equivalente a la inversa de su longitud focal, y se le antepone el signo "+" o "-" según sea una lente convergente o divergente.
+
 Subir arriba

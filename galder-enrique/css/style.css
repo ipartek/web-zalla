@@ -151,14 +151,16 @@ table {
 body {
     font-size: 16px;
     font-family: arial;
-    background-color: grey;
+    background-image: url(../img/magic-forest.jpg);
 }
 
 h1 {
     text-align: center;
     margin: 2em;
     color: white;
-    font-size: 2em;
+    font-size: 1.5em;
+    text-decoration: underline;
+    font-weight: bold;
 }
 
 
@@ -181,9 +183,20 @@ th {
     border-left: 1px dashed red;
 }
 
+th a:link {
+    color: #cc66ff;
+}
+
+th a:visited {
+    color: #008000;
+}
+
+th:hover {
+    background-color: red;
+}
+
 th a:hover {
     color: white;
-    background-color: red;
 }
 
 th a {
@@ -193,6 +206,17 @@ th a {
 td {
     padding: 10px;
     background-color: darkseagreen;
+    color: white;
+}
+
+footer p {
+    float: right;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: white;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
 }
 
 
