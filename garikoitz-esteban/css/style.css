@@ -158,9 +158,12 @@ table {
 /* Etiquetas
 ******************************************************************************************* */
 
-body {
-    background-image: image("97.jpg");
-    background-color: black;
+html {
+    background: url(img/background.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 h1 {
@@ -171,19 +174,22 @@ h1 {
     font-size: 80px
 }
 
+h2 {
+    font-size: 60px;
+    padding-bottom: 30px;
+}
+
 
 /* Clases Comunes para reutilizar
 ******************************************************************************************* */
 
 .container {
     text-align: center;
-    width: 1000px;
+    width: 800px;
     margin: 0px auto;
 }
 
-#listado {
-    width: 100%;
-    float: left;
+.verde {
     display: inline-block;
     color: #E0DFDA;
     font-size: 24px;
@@ -193,10 +199,6 @@ h1 {
     padding: 4px;
     text-decoration: none;
     text-transform: uppercase;
-}
-
-#listado li {
-    float: left;
 }
 
 
