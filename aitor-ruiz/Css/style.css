@@ -227,6 +227,9 @@ ol{ padding-top: 10px;
     text-align: center;
   
 }
+#menu-top a{
+    color:aquamarine;
+}
 
 
 /* Clases comunes para reutilizar
