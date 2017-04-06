@@ -162,7 +162,7 @@ html {
     padding-right: 20px;
     padding-bottom: 20px;
     padding-left: 20px;
-    text-align: justify;
+    text-align: center;
     font-family: 'Great Vibes', cursive;
     font-size: 20px;
 }
@@ -185,9 +185,9 @@ h2 {
     font-size: 2em;
     text-align: center;
     color: blue;
-    padding-top: 10px;
-    border-bottom: solid 5px white;
-    padding-bottom: 10px;
+    padding-top: 15px;
+    border-bottom: solid 5px blue;
+    padding-bottom: 15px;
 }
 
 ol{ padding-top: 10px;
@@ -196,6 +196,7 @@ ol{ padding-top: 10px;
 }
 
 #lista-proyectos {
+    
     margin-left: 0px auto;
     margin-right: 0px auto;
     /*padding-top: 20px;*/
@@ -212,16 +213,18 @@ ol{ padding-top: 10px;
     text-decoration: none;
     color:grey;
     font-family: 'Great Vibes', cursive;
+  
 }
 
 #lista-proyectos a:hover{
     background-color: aquamarine;
+    text-align: left;
 }
 
 
 #menu-top {
-    padding-top: 20px;
-    padding-bottom: 5px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     border: 5px solid white;
     font-size: 40px;
     text-align: center;
@@ -229,8 +232,15 @@ ol{ padding-top: 10px;
 }
 #menu-top a{
     color:aquamarine;
+    border: solid 3px aquamarine;
+    text-decoration: none;
+    text-align: center;
+    padding-left: 15px;
+    
 }
-
+.iz {
+    text-align: left;
+}
 
 /* Clases comunes para reutilizar
 
@@ -249,12 +259,13 @@ ol{ padding-top: 10px;
 /*Estilos propios por páginas
 **********************************************************   */
 
-#imagen-aitor {
+.imagen-aitor {
     margin-left: 0 auto;
     margin-right: 0 auto;
     padding-top: 10px;
-    padding-left: 400px;
-    padding-bottom: 20px;
+    display: inline-block;
+ 
+
 }
 
 footer {
