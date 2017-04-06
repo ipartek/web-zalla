@@ -30,3 +30,5 @@ plugins chrome
 what font
 
 measure it
+
+pagina can i use para saber que navegadores soportan una propiedad o valor como por ejemplo el dato de fecha.
