@@ -45,15 +45,26 @@ h2{
 
 /* Layouts
 ******************************************************* */
-#content{
+body{
     width: 100%;
     margin: 0 auto;
 	padding: 8px;
     box-sizing: border-box;
 }
-
-
-
+header, main,nav{
+    margin-bottom: 10px;
+}
+img{
+    width: 48px;
+}
+#content{
+    width: 1024px;
+    margin: 0 auto;
+}
+table#listadoalumnos {
+    border-collapse: separate;
+    border-spacing:  5px;
+}
 /* Estilos propios por paginas
 ******************************************************* */
 
