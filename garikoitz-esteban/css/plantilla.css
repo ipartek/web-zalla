@@ -158,72 +158,9 @@ table {
 /* Etiquetas
 ******************************************************************************************* */
 
-table {
-    border: 1px solid black;
-    width: 8 1000px;
-    margin: 10px;
-    font-family: "times new roman";
-}
-
-table caption {
-    margin-bottom: 20px;
-    font-weight: bold;
-}
-
-table tr {
-    border: 2px solid black;
-    padding: 2px;
-}
-
-table th {
-    border: 2px solid black;
-    padding: 2px;
-    width: 300px;
-    font-weight: bold;
-}
-
-theader tr :fist-child {
-    padding-top: 6px;
-}
-
-table td {
-    border: 2px solid black;
-    padding: 2px;
-    width: 200px;
-}
-
-tbody td {
-    background-color: white;
-}
-
-tfoot {
-    font-weight: bold;
-}
-
 
 /* Clases Comunes para reutilizar
 ******************************************************************************************* */
-
-.container {
-    margin: 0px auto;
-    width: 1000px;
-}
-
-.red {
-    background-color: #FBD2B2;
-}
-
-.blue {
-    background-color: #E9E9E9;
-}
-
-.green {
-    background-color: #D7E3BB
-}
-
-.pink {
-    background-color: #FBD2B2
-}
 
 
 /* Layouts
