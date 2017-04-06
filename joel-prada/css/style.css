@@ -63,16 +63,19 @@ h2{font-size: 2em;margin: 10px 20px 0px 20px; text-align: left;  }
 
 img{}
 
+ul li {list-style-type: none;}
 a{text-decoration: none; color: black;}
 
 p{}
 
 ul{margin: 0px 20px 0px 20px;padding: 10px; border: 2px solid black;
-background:white; text-align: left; display: block;}
+background:white; text-align: left; }
 
 
 
 li{margin: 10px 20px; padding: 10px; }
+
+li:hover{background: yellow;}
 
 
 
