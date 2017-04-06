@@ -44,22 +44,22 @@
             <form method="post" action="mailto:miemail@gmail.com">
                 <div>
                     <label for="nombre">Nombre:</label>
-                    <input type="text" name="nombre" id="nombre">
+                    <input type="text" name="nombre" id="nombre" maxlength="15" required>
                     <span class="errors"></span>
                 </div>
                 <div>
                     <label for="apellidos">Apellidos:</label>
-                    <input type="text" name="apellidos" id="apellidos">
+                    <input type="text" name="apellidos" maxlength="15" id="apellidos" required>
                     <span class="errors"></span>
                 </div>
                 <div>
                     <label for="dni">DNI:</label>
-                    <input pattern="[0-9]{8}[A-Z||a-z]}" type="text" name="dni" id="dni">
+                    <input pattern="[0-9]{8}[A-Z||a-z]" type="text" name="dni" id="dni" maxlength="9">
                     <span class="errors"></span>
                 </div>
                 <div>
                     <label for="dni">Teléfono:</label>
-                    <input pattern="[0-9]{9}" type="text" name="telefono" id="telefono">
+                    <input pattern="[0-9]{9}" type="text" name="telefono" id="telefono" maxlength="9">
                     <span class="errors"></span>
                 </div>
                 <input class="boton" type="submit" value="Enviar">
