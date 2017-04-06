@@ -151,6 +151,7 @@ html {
     background-color: grey;
     font-family: "Times New Roman", Times, serif;
     color: white;
+    font-size: 20px;
 }
 
 .container {
@@ -163,7 +164,7 @@ html {
     padding-left: 20px;
     text-align: justify;
     font-family: fantasy;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 
@@ -190,14 +191,21 @@ h1 {
 #lista-proyectos {
     margin-left: 0px auto;
     margin-right: 0px auto;
-    padding-top: 20px;
+    /*padding-top: 20px;*/
     padding-left: 20px;
     text-decoration: none;
     background-color: white;
+    font-size: 25px;
 }
 
 #lista-proyectos a {
     text-decoration: none;
+}
+
+#lista-proyectos a:hover {
+    background: #e6e600;
+    padding: 2px;
+    border-color: #999900;
 }
 
 #inicio {
@@ -234,5 +242,9 @@ h1 {
     padding-bottom: 20px;
 }
 
-
+footer {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    font-size: 20px;
 }

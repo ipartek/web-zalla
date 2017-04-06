@@ -1,0 +1,81 @@
+/* --- RESET --- */
+
+* {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/* --- GLOBAL --- */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* --- MAIN --- */
+
+main {
+    width: 780px;
+    margin: 0 auto;
+    background-color: #F2F2F2;
+    padding: 35px 50px;
+}
+
+main h2
+{
+	color:#ED4D55;
+	font-size: 16px;
+	text-align: center;
+	font-weight: normal;
+	text-transform: uppercase;
+	padding-bottom: 10px;
+	border-bottom: solid 1px #CCCCCC;
+	margin-bottom: 50px;
+}
+
+#versiones-table {
+    border-spacing: 5px;
+    border-collapse: separate;
+    empty-cells: hide;
+    width: 100%;
+    font-size: 13px;
+}
+
+#versiones-table caption
+{
+	text-align: center;
+	font-size: 20px;
+	color:#777777;
+	margin-bottom:50px;
+	text-transform: uppercase;
+
+}
+
+#versiones-table thead th {
+    background-color: #777777;
+    text-align: center;
+    color: #FFFFFF;
+    font-weight: bold;
+    padding: 4px;
+}
+
+#versiones-table tbody th {
+    background-color: #CCCCCC;
+    font-weight: normal;
+    text-align: center;
+    padding: 10px;
+}
+
+#versiones-table tbody td {
+    border: solid 1px #999999;
+    color: #777777;
+    width: 18%;
+    text-align: center;
+}
