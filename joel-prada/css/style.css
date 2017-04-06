@@ -22,7 +22,7 @@ menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
 	padding: 0;
-	border: 0;
+	border: 0px;
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
@@ -32,9 +32,7 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
-body {
-	line-height: 1;
-}
+
 
 blockquote, q {
 	quotes: none;
@@ -55,22 +53,42 @@ table {
 /*            ETIQUETAS GENERALES                     
 ***********************************************************/
 
-body{font-size: 16px;}
+html{background:#153f84; border:0px;}
 
-h1{font-size: 2em;}
+body{font-size: 16px; font-family: arial; border:0px;}
+
+h1{font-size: 3em;margin: 20px; }
+
+h2{font-size: 2em;margin: 10px 20px 0px 20px; text-align: left;  }
+
+img{}
+
+a{text-decoration: none; color: black;}
+
+p{}
+
+ul{margin: 0px 20px 0px 20px;padding: 10px; border: 2px solid black;
+background:white; text-align: left;}
+
+
+
+li{margin: 10px 20px; padding: 10px;}
+
+
 
 /*            CLASES COMUNES                          
 ***********************************************************/
-ul{margin: 10px;padding: 10px; border: 0px;
-background: white; text-align: left;}
 
-li{margin: 10px 10px;}
+.der{text-align: right; margin: 10px 20px 0px;padding: 10px; color:darkslategray;}
+
+
+
 
 
 /*               LAYOUTS                               
 ***********************************************************/
 
-.content{width: 800px; margin: 10px 10px;padding: 10px 10px; background: #9cbef4; text-align: center;}
+.content{width: 800px; margin: 10px auto;padding: 10px 10px; background: #9cbef4; text-align: center;}
 
 
 
@@ -78,4 +96,6 @@ li{margin: 10px 10px;}
 
 /*               ESTILOS PROPIOS DE LA PAGINA        
 ***********************************************************/
+
+
 
