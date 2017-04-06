@@ -1,3 +1,4 @@
+<<<<<<< HEAD
     html {
         background: grey;
         font-family: verdana;
@@ -78,3 +79,85 @@
     .strongrojo {
         color: red;
     }
+=======
+    html {
+        background: grey;
+        font-family: verdana;
+    }
+    
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    
+    .container {
+        margin: 10px auto;
+        width: 600px;
+        background: white;
+        border: 1px solid black;
+    }
+    
+    h1 {
+        text-align: center;
+        color: blue;
+        padding: 30px;
+        font-weight: normal;
+    }
+    
+    .title {
+        display: block;
+    }
+    
+    h2 {
+        font-size: 14px;
+        color: white;
+        font-weight: normal;
+        padding-left: 50px;
+        background: grey;
+        line-height: 40px;
+    }
+    
+    ul {
+        margin-left: 30px;
+        padding: 20px;
+    }
+    
+    li {
+        line-height: 20px;
+        font-size: 14px;
+    }
+    
+    p {
+        font-size: 14px;
+        padding: 20px 20px 0px 20px;
+        text-indent: 25px;
+        text-align: justify;
+    }
+    
+    img {
+        width: 45%;
+        display: block;
+        margin: 20px auto;
+    }
+    
+    #oms {
+        display: block;
+        text-align: right;
+    }
+    
+    abbr {
+        border-bottom: 1px dotted grey;
+    }
+    
+    .strongazul {
+        color: blue;
+    }
+    
+    .strongverde {
+        color: green;
+    }
+    
+    .strongrojo {
+        color: red;
+    }
+>>>>>>> fd47c77bcc7caf08540eeb8f13d26d91d013e7ef

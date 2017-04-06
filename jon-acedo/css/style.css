@@ -1,0 +1,72 @@
+/*-----------------------------------------Reset------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+table {
+    border: none;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/*-----------------------------------------Animaciones------------*/
+
+
+/*-----------------------------------------Etiquetas--------------*/
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
+
+a {
+    color: #fff;
+}
+
+li {
+    width: 200px;
+    background-color: #107615;
+    padding: 5px 15px;
+    margin-bottom: 6px;
+    color: #C3C3C3;
+}
+
+ul li {
+    last
+}
+
+h1 {
+    margin: 25px 0;
+}
+
+
+/*-----------------------------------------Clases más comunes------*/
+
+.sub-option {
+    background-color: #fff;
+}
+
+.sub-option li {
+    padding-left: 30px;
+    width: 170px;
+}
+
+
+/*-----------------------------------------Layout-------------------*/
+
+.container {
+    width: 1040px;
+    margin-left: auto;
+    margin-right: auto;
+}
