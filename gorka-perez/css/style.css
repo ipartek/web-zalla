@@ -171,7 +171,7 @@ body {
 #content {
     width: 800px;
     margin: 0 auto;
-    background-color: #342e29;
+    background-color: black;
     padding: 20px;
     border: 2px bold;
     text-align: center;
@@ -182,10 +182,10 @@ header h1 {
     border: 2px white bold;
     border-color: azure;
     margin: 20px;
-    display: inline-block;
     padding: 20px;
     color: aliceblue;
     font-size: 400%;
+    background-color: #474343;
 }
 
 main section header h2 {
