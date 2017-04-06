@@ -1,12 +1,15 @@
-/*
-file:css/style.css
-autor:toni-garcia
-version:1.0
-date:05/04/2017
+/* 
+    path: css/style.css
+    version: 1.0
+    date: 2017-03-31
+    version: 0.1
+    auto: Garikoitz Esteban Dieguez 
+
 */
 
 
-/* reset */
+/* reset
+******************************************************************************************* */
 
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -148,51 +151,21 @@ table {
 }
 
 
-/* animaciones-keyframes */
+/* Animaciones - KeyFrames
+******************************************************************************************* */
 
 
-/* etiquetas */
-
-body {
-    font-size: 16px;
-}
-
-h1 {
-    font-size: 2em;
-}
+/* Etiquetas
+******************************************************************************************* */
 
 
-/* clases comunes */
+/* Clases Comunes para reutilizar
+******************************************************************************************* */
 
 
-/* layout */
+/* Layouts
+******************************************************************************************* */
 
-#content {
-    width: 800px;
-    margin: 0 auto;
-}
-# content header h1{
-    font-size: 160%;
-    text-transform: uppercase
-}
-main section header h2{
-    font-size:120%;
-    text-transform: capitalize;
-    
-}
-.g{ background-color: fuchsia;
-    color: blue;
-    padding: 20px;
-    margin:0 auto;
-    display: block;
-    text-align: center;
-    width: 100px;
-}
-.dchas{
-    text-align: center;
-    margin: auto;
-    width:1000 px;
-    display:block;
-}
 
-/* estilos propios por paginas */
+/* Estilos propios por paginas
+******************************************************************************************* */
