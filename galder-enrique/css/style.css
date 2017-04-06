@@ -151,30 +151,30 @@ table {
 body {
     font-size: 16px;
     font-family: arial;
+    background-color: grey;
 }
 
 h1 {
-    font-size: 2em;
-}
-
-caption {
-    font-size: 2em;
+    text-align: center;
     margin: 2em;
+    color: white;
+    font-size: 2em;
 }
 
 
 /*layout-estructura
 ****************************************************/
 
-#content table {
-    width: 1000px;
+main table {
+    width: 800px;
     margin: 0 auto;
     text-align: center;
+    background-color: white;
 }
 
 th {
-    padding: 1em;
-    margin: 1em;
+    padding: 2.5em;
+    margin: 2.5em;
     text-transform: uppercase;
     border-bottom: 1px dashed black;
     border-right: 1px dashed red;
