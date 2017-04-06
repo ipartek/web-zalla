@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Formulario</title>
+    <script lenguage="javaScript" src="js/prueba.js"></script>
 </head>
 
 <body>
-
-    <head></head>
+    <header></header>
     <main>
         <section>
             <header>
@@ -16,27 +16,27 @@
             <form method="post" action="mailto:minombre@ipartek.com">
                 <div>
                     <label for="nombre">Nombre:</label>
-                    <input type="text" nombre="nombre" id="nombre">
+                    <input type="text" name="nombre" id="nombre">
                     <span class="errors"></span>
                 </div>
                 <div>
                     <label for="apellidos">Apellidos:</label>
-                    <input type="text" nombre="apellidos" id="apellidos">
+                    <input type="text" name="apellidos" id="apellidos">
                     <span class="errors"></span>
                 </div>
                 <div>
                     <label for="dni">Dni:</label>
-                    <input requiered pattern="(\d{8})([-]?)([A-Z]{1})" type="text" nombre="dni" id="dni">
+                    <input pattern="(\d{8})([-]?)([A-Z]{1})" type="text" name="dni" id="dni" required>
                     <span class="errors"></span>
                 </div>
                 <div>
                     <label for="telefono">Teléfono:</label>
-                    <input requiered pattern="[0-9] {9}" type="number" nombre="telefono" id="telefono">
+                    <input pattern="[0-9] {9}" type="tel" name="telefono" id="telefono" required>
                     <span class="errors"></span>
                 </div>
                 <div>
                     <label for="email">Email:</label>
-                    <input type="email" nombre="email" id="email">
+                    <input type="email" name="email" id="email">
                     <span class="errors"></span>
                 </div>
                 <div>
@@ -46,7 +46,7 @@
                     <label for="femenino">Femenino</label>
                 </div>
                 <div>
-                    <input type="submit" value="Enviar">
+                    <input type="submit" value="Enviar" onclick="return function()">
                 </div>
             </form>
         </section>
