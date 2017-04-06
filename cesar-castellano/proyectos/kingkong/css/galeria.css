@@ -1,0 +1,7 @@
+#galeria li {
+    display: inline-block;
+}
+
+#galeria a {
+    border: 3px white solid;
+}
