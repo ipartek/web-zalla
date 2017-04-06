@@ -57,10 +57,14 @@ table {
 
 /* ETIQUETAS
 ------------------------------------------------------------------------------------- */
-body{
-	margin: 0;
-	padding: 0;
+html{
 	background-color: #8A8173;
+}
+body{
+	width: 60%;
+	margin: 0 auto;
+	padding: 0;
+	background-color: #AA3939;
     font-size:16px;
 }
 h1{
@@ -69,10 +73,6 @@ h1{
 	text-align: center;
     font-size: 200%;
 }
-img{
-	width: 10%;
-	height: 10%;
-}
 h2{
 	margin-top: 5%;
 	font-size: 2em;
@@ -80,6 +80,7 @@ h2{
 li{
 	display: inline-block;
 	margin: 5%;
+	padding: 0 10%;
 }
 a{
 	font-size: 150%;
@@ -88,10 +89,31 @@ a{
 a:visited{
 	color:blue;
 }
-a:hover{
+ul li>a:hover{
 	border: 1px solid black;
 	color: red;
 }
+p{
+	display: inline-block;
+	margin: 3%;
+	width: 40%;
+	height: 100%;
+}
+i{
+	margin: 5%;
+}
+footer{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+img:hover{
+	border: none;
+}
+p>a:visited{
+	color: black;
+}
+
 
 
 /* CLASES COMUNES
@@ -103,8 +125,16 @@ a:hover{
 /* ESTILOS PERSONALES
 ------------------------------------------------------------------------------------- */
 .contenedor{
-	background-color: #AA3939;
 	text-align: center;
-	width: 60%;
 	margin: 0 auto;
+}
+.github{
+	font-size: 75%;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+.desplegable{
+	float: right;
+	bottom:0px;
 }
