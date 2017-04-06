@@ -15,23 +15,23 @@
 
 <body onload="init()">
     <div id="container">
-        <header>
-            <h1>inigo001</h1>
+        <header id="top-header">
+            <h1><span>inigo001</span></h1>
         </header>
         <main>
-            <section id="first-section">
+            <section id="ini-github">
                 <header>
                     <h2>GitHup</h2>
                 </header>
                 <img class="inigo-icon" src="img/inigo001.jpg" alt="Icono de inigo001">
                 <p><a href="https://github.com/inigo001"><i class="fa fa-github"></i> Link a GitHup <i class="fa fa-github"></i></a></p>
             </section>
-            <section id="second-section">
+            <section id="ini-projects">
                 <header>
                     <h2>Listado de proyectos</h2>
                 </header>
                 <nav>
-                    <ul id="listado-de-proyectos">
+                    <ul class="lista-estilo">
                         <li><a href="proyectos/king-kong/index.html">King Kong</a></li>
                         <li><a href="proyectos/pruebas/index.html">Pruebas</a></li>
                         <li><a href="proyectos/mi-web-personal/index.html">Mi web personal</a></li>
@@ -39,11 +39,11 @@
                     </ul>
                 </nav>
             </section>
-            <section id="third-section">
+            <section id="ini-links">
                 <header>
                     <h2>Links de interés</h2>
                 </header>
-                <dl class="links-de-interes">
+                <dl class="lista-estilo">
                     <dt><a href="http://fontawesome.io/">Fontawesome</a></dt>
                     <dd>Página con una fuente especial para iconos. Trae el listado de iconos, referencias y cómo linkarlos.</dd>
                     <dt><a href="https://www.w3schools.com/">W3Schools</a></dt>
@@ -56,20 +56,20 @@
                     <dd>Página para emitir pantalla. Es gratis hasta cierto número de espectadores</dd>
                 </dl>
             </section>
-            <section id="fourth-section">
+            <section id="ini-apuntes">
                 <header>
                     <h2>Apuntes</h2>
                 </header>
                 <p>Aquí van apuntes, un poco cutres</p>
-                <ul id="apuntes">
+                <ul class="lista-estilo">
                     <li><a href="apuntes/etiquetas-html.html">Etiquetas HTML</a></li>
                 </ul>
             </section>
-            <section id="fifth-section">
+            <section id="ini-plugins">
                 <header>
                     <h2>Plug-ins para Sublime</h2>
                 </header>
-                <dl class="links-de-interes">
+                <dl class="lista-estilo">
                     <dt>All Autocomplete</dt>
                     <dd>Ni idea</dd>
                     <dt>AutoFileName</dt>
@@ -77,9 +77,11 @@
                     <dt>Color Picker</dt>
                     <dd>Ctrl+Shift+C, aparece un colorpicker y permite elegir un color. Lo añade a las CSS como #123456 directamente</dd>
                     <dt>Emmet</dt>
-                    <dd>La maravilla al usar el tab</dd>
+                    <dd>La maravilla al usar el Tab. Ayuda a escribir código HTML y CSS más rápido</dd>
                     <dt>HTML CSS JS Prettify</dt>
                     <dd>Permite hacer que el código se tabule correctamente para que sea más legible. Botón derecho -> HTML... -> Prettify Code. Mejor que no lo haga al guardar, que es lioso</dd>
+                    <dt>Sublime Server</dt>
+                    <dd>Crea un servidor HTML desde Sublime para no tener que usar las rutas file://.  Para ponerlo en marcha sólo hay que pulsar Ctrl+Shift+P y escribir "Start Sublime Server"</dd>
                 </dl>
             </section>
         </main>
