@@ -161,8 +161,9 @@ main section h2 {
 }
 
 footer {
-    text-align: bottom;
-    position: fixed;
+    text-align: center;
+    border-top: 2px solid black;
+    padding-top: 10px;
 }
 
 
