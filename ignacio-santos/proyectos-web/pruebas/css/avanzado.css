@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 html {}
 
 * {
@@ -18,24 +17,3 @@ table {
     margin: 40px 15% 40px 15%;
     text-align: center;
 }
-=======
-html {}
-
-* {
-    padding: 0;
-    margin: 0;
-}
-
-caption {
-    font-weight: bold;
-    margin: 20px;
-    text-align: center;
-}
-
-table {
-    display: inline-block;
-    width: 100%;
-    margin: 40px 15% 40px 15%;
-    text-align: center;
-}
->>>>>>> fd47c77bcc7caf08540eeb8f13d26d91d013e7ef
