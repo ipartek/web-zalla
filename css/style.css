@@ -82,7 +82,11 @@ h1{
 
 #content{
     width: 800px;
-    margin: 0 auto;
+    margin: 0 auto ;
+}
+#content header h1 {
+    font-size: 130%;
+    text-transform: uppercase;
 }
 
 
