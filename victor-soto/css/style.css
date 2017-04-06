@@ -157,13 +157,39 @@ body {
 main section h2 {
     font-weight: bold;
     padding-left: 20px;
-    margin: 10px 0;
+    margin: 15px 0;
+    text-align: center;
 }
 
 footer {
     text-align: center;
     border-top: 2px solid black;
     padding-top: 10px;
+    font-variant: small-caps;
+}
+
+nav {
+    width: 300px;
+    height: 250px;
+    text-align: left;
+    background-color: #008B8B;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    padding-top: 10px;
+}
+
+.volver {
+    color: blue;
+    text-decoration: none;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.volver:hover {
+    text-decoration: underline;
+    color: blue;
 }
 
 
@@ -184,12 +210,11 @@ footer {
     margin-right: auto;
     margin-left: auto;
     background-color: #D3D3D3;
-    height: 400px;
+    height: 460px;
 }
 
 .listado {
     padding-left: 60px;
-    padding-bottom: 30px;
 }
 
 .verde a {

@@ -215,6 +215,12 @@ tfoot {
 
 .blue {
     background-color: #E9E9E9;
+    text-align: left;
+}
+
+.blue :first-child {
+    text-align: center;
+    padding-top 5px;
 }
 
 .green {

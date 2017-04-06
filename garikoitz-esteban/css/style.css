@@ -158,9 +158,20 @@ table {
 /* Etiquetas
 ******************************************************************************************* */
 
+h1 {
+    color: aqua;
+    font-size: 25px;
+}
+
 
 /* Clases Comunes para reutilizar
 ******************************************************************************************* */
+
+.container {
+    text-align: center;
+    width: 1000px;
+    margin: 0px auto;
+}
 
 
 /* Layouts
@@ -169,11 +180,6 @@ table {
 
 /* Estilos propios por paginas
 ******************************************************************************************* */
-
-h1 {
-    color: aqua;
-    font-size: 25px;
-}
 
 .verde {
     color: darkgreen
