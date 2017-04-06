@@ -81,6 +81,12 @@
         background: orange;
     }
     
+    .proyectos a:hover {
+        color: #555;
+        font-weight: normal;
+        background: rgba(255, 165, 0, 0.64);
+    }
+    
     .pruebas {
         border: none;
         margin: 30px 15px;
@@ -91,6 +97,49 @@
         font-weight: normal;
         padding: 15px;
         background: green;
+    }
+    
+    .pruebas a:hover {
+        color: #555;
+        font-weight: normal;
+        padding: 15px;
+        background: rgba(0, 128, 0, 0.62);
+    }
+    
+    .formulario {
+        display: inline-block;
+        margin: 30px auto;
+        text-align: center;
+        padding: 10px 100px;
+        border: 2px solid white;
+    }
+    
+    form {
+        color: white;
+        max-width: 250px;
+    }
+    
+    input {
+        background: transparent;
+        color: white;
+        margin: 15px;
+        padding: 10px;
+        font-size: 18px;
+        border: 2px solid white;
+        width: 200px;
+    }
+    
+    form .boton {
+        background: transparent;
+        color: white;
+        margin: 15px;
+        padding: 10px;
+        font-size: 18px;
+        border: 2px solid white;
+    }
+    
+    form .boton:hover {
+        background: rgba(255, 165, 0, 0.64);
     }
     
     footer {
