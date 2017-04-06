@@ -166,6 +166,7 @@ body {
 
 h1 {
     font-size: 2em;
+    font-family: sans-serif;
 }
 
 
@@ -176,7 +177,7 @@ h1 {
 /* Layout
 *********************************************/
 
-#content {
+main {
     margin: 20px auto;
     width: 800px;
     text-align: center;
@@ -203,12 +204,13 @@ table {
     text-align: center;
     width: 150px;
     padding: 5px;
+    font-family: fantasy;
 }
 
 .tablaPrincipal td:hover {
     outline: 3px solid green;
 }
 
-.foot {
+.footer {
     text-align: center;
 }
