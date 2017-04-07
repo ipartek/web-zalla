@@ -1,11 +1,8 @@
 body {
     font-family: 'Teko', sans-serif;
     font-size: 30px;
-    
-    /*background-image: url(../img/body-bg.png) no-repeat;
-    background-position: 278px 0;
-    background-attachment: fixed;*/
-    background: url(../img/body-bg.png) no-repeat 278px 0 fixed;
+    /*background: url(../img/body-bg.png) no-repeat 278px 0 fixed;
+    */
     background-color: #90a4ae;
 }
 
