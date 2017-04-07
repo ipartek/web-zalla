@@ -46,6 +46,11 @@ header a:hover {
     display: inline-block;
 }
 
+
+/*------------------------------------------------------menu movil---------------*/
+
 #menu-movil {
     display: none;
+    height: 25px;
+    background-color: #EAEAEA;
 }
