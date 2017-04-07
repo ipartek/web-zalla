@@ -17,6 +17,22 @@
       h1{color:#fff;
       font-size:3em;}
       
+      /* The animation code */
+@keyframes example {
+    from {background-color: red;
+    border-radius: 0px;}
+    to {background-color: yellow;
+    border-radius: 50%;}
+}
+
+/* The element to apply the animation to */
+div {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 4s;
+}
       
   </style>
    <h1>animaciones</h1>
