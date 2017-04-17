@@ -1,22 +1,24 @@
-var counter = 1;
+$(document).ready(main);
+
+var contador = 1;
 
 function main() {
-    $('.menu_bar').click(function() {
-        if (counter == 1) {
+    $('#menu-movil').click(function() {
+        if (contador == 1) {
             $('nav').animate({
                 left: '0'
             });
-            counter = 0;
+            contador = 0;
         } else {
-            counter = 1;
+            contador = 1;
             $('nav').animate({
                 left: '-100%'
             });
         }
     });
 
-
-    $('.submenu').click(function() {
-        $(this).children('.children').slideToggle();
+    // Mostramos y ocultamos submenus
+    $('#submenu').click(function() {
+        $(this).children('#children').slideToggle();
     });
 }

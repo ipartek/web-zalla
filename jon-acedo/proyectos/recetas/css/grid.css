@@ -69,6 +69,16 @@ img {
     margin: 0
 }
 
+[class^="col-"] {
+    box-sizing: border-box;
+}
+
+.container:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 @media only screen and (max-width: 768px) {
     [class^="col-"] {
         width: 100%;
