@@ -145,7 +145,9 @@
 **************************************************************************/
     /* ETIQUETAS GENERALES
 **************************************************************************/
-    
+    header div {
+        text-align: center;
+    }
     h1 {
         text-align: center;
         font-size: 300%;
@@ -168,22 +170,22 @@
         font-size: 14px;
     }
     
-    header div {
-        text-align: center;
-    }
+    
     
     a {
         text-decoration: none;
         font-size: 20px;
     }
+a:hover{
+    font-size: 40px;
+    color:#000;
+}
     
     li {
         margin: 10px;
     }
     /* CLASES COMUNES
 **************************************************************************/
-    
-    h1 {}
     
     .container {
         font-family: fantasy;
