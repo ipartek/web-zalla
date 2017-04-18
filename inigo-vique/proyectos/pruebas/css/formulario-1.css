@@ -1,0 +1,11 @@
+body
+{
+	color: purple;
+	background-color: lightgray;
+	font-family: sans-serif;
+}
+
+label {
+    width: 6em;
+    display: inline-block;
+}

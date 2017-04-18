@@ -1,0 +1,10 @@
+body{
+	color:blue;
+	background-color: red;
+	font-family: serif;
+}
+
+label {
+    width: 6em;
+    display: inline-block;
+}
