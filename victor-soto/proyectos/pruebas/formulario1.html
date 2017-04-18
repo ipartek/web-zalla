@@ -3,7 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Ejemplo formulario</title>
+    <link rel="stylesheet" href="css/index.css">
+    <!-- media refleja para que se utiliza la hoja de estilos-->
+    <link rel="stylesheet" href="css/print.css" media="print">
 </head>
 
 <body>
@@ -14,7 +17,8 @@
                 <h2>Formulario de registro</h2></header>
             <!-- action="" llama a la propia pagina -->
             <!-- method="post" no se envian los datos que se envían en los campos en la url-->
-            <form action="#" method="post">
+            <!-- method="get" util para ver como trabajan los campos y si se esta realizando bien la función-->
+            <form action="#" method="get">
                 <p>
                     <!-- for="usuario" al clicar en la etiqueta te lleva al input que tiene el id indicado-->
                     <label for="usuario">Usuario</label>
@@ -26,7 +30,31 @@
                     <input type="password" name="password" id="password">
                 </p>
                 <p>
-                    <input type="submit" value="Login">
+                    <!-- Si no se le indica el type por defecto es text.
+                     Si no entiende el type por defecto es text-->
+                    <label for="dni">DNI</label>
+                    <!-- placeholder indica un texto en el campo para mostrar por defecto como se tiene que rellenar -->
+                    <input type="text" name="dni" id="dni" pattern="\d{8}[A-Z]" required="true" placeholder="12345678A">
+                </p>
+                <p>
+                    <label for="sexo">Sexo</label>
+                    <select name="sexo" id="sexo">
+                        <option value="H">Hombre</option>
+                        <option value="M" selected="selected">Mujer</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="suscripcion">Suscribirse</label>
+                    <input type="checkbox" id="suscripcion" name="suscripcion">
+                </p>
+                <p>
+                    <label for="tipopremium">Premium</label>
+                    <input type="radio" id="tipopremium" name="tiposuscriptor" value="premium">
+                    <label for="tipogratuito">Gratuito</label>
+                    <input type="radio" id="tipogratuito" name="tiposuscriptor" value="gratuito" checked="checked">
+                </p>
+                <p>
+                    <input type="submit" value="Apuntarse">
                 </p>
             </form>
         </section>
