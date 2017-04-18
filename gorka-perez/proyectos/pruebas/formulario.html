@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Título de la pestaña-->
+    <title>Formulario</title>
+    <!-- Este es el link al archivo de CSS principal-->
+    <link rel="stylesheet" href="css/style.css?v=20170405">
+    <!-- ?v=numero-version es importante tener siempre esto puesto para que se recachee la web cuando hay cambios-->
+    <!-- este es el icono que sale arriba en la pestaña-->
+    <link rel="shortcut icon" href="favicon.ico?v2" type="image/x-icon">
+    <link rel="icon" href="favicon.ico?v2" type="image/x-icon">
+</head>
+
+<body onload="init()">
+    <div id="content">
+        <form action="#" method="post">
+            <p>
+                Usuario:
+                <input type="text" name="usuario" id="usuario" />
+            </p>
+            <p>
+                Password:
+                <input type="password" name="password" id="password" />
+            </p>
+            <p>
+                <input type="submit" value="Login" />
+            </p>
+        </form>
+        <!-- link para javascript siempre se carga lo último para que no retrase la carga -->
+        <script src="js/main.js"></script>
+
+        <footer>
+
+        </footer>
+    </div>
+</body>
+
+</html>
