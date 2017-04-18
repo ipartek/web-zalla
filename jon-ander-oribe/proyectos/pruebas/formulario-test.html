@@ -9,17 +9,38 @@
 </head>
 
 <body>
-    <form action="#" method="post">
+    <form action="#" method="get">
         <p>
             <label for="usuario">Usuario:</label>
             <input type="text" name="usuario" id="usuario" />
         </p>
         <p>
             <label for="contraseña">Password:</label>
-            <input type="password" name="contraseña" id="contraseña" />
+            <input type="password" name="contraseña" id="contraseña" minlength="10" placeholder="Mínimo 10 carácteres" required="required" />
         </p>
         <p>
-            <input type="submit" value="Login" />
+            <label for="dni">DNI:</label>
+            <input type="text" name="dni" id="dni" pattern="\d{9}[A-Z]" placeholder="Formato DNI">
+        </p>
+        <p>
+            <label for="sexo">Sexo:</label>
+            <select name="sexo" id="sexo">
+                <option value="hombre">Hombre</option>
+                <option value="mujer">Mujer</option>
+            </select>
+        </p>
+        <p>
+            <label for="suscripcion">Suscribirse</label>
+            <input type="checkbox" name="suscripcion" id="suscripcion">
+        </p>
+        <p>
+            <label for="tipopremium">Premium</label>
+            <input type="radio" id="tipopremium" name="tiposuscriptor" value="premium" />
+            <label for="tipogratuito">Gratuito</label>
+            <input type="radio" id="tipogratuito" name="tiposuscriptor" value="gratuito" />
+        </p>
+        <p>
+            <input type="submit" value="Darse de alta" />
         </p>
     </form>
 </body>
