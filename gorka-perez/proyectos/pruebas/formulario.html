@@ -6,23 +6,49 @@
     <!-- Título de la pestaña-->
     <title>Formulario</title>
     <!-- Este es el link al archivo de CSS principal-->
-    <link rel="stylesheet" href="css/style.css?v=20170405">
+    <link rel="stylesheet" href="css/formulario.css?v=20170418">
     <!-- ?v=numero-version es importante tener siempre esto puesto para que se recachee la web cuando hay cambios-->
     <!-- este es el icono que sale arriba en la pestaña-->
     <link rel="shortcut icon" href="favicon.ico?v2" type="image/x-icon">
     <link rel="icon" href="favicon.ico?v2" type="image/x-icon">
+    <!-- estilo para impresora -->
+    <link href="css/print.css" rel="stylesheet" media="print" />
 </head>
 
 <body onload="init()">
     <div id="content">
-        <form action="#" method="post">
+        <form action="#" method="get">
             <p>
-                Usuario:
+
+                <label for="usuario">Usuario:</label>
                 <input type="text" name="usuario" id="usuario" />
+
             </p>
             <p>
-                Password:
-                <input type="password" name="password" id="password" />
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" min="10" />
+            </p>
+            <p>
+                <label for="dni">DNI:</label>
+                <input type="text" name="dni" id="dni" pattern="\d{9}[A-Z]" placeholder="Formato:123456789A" />
+            </p>
+            <p>
+                <label for="sexo">Sexo:</label>
+                <select name="sexo" id="sexo">
+                   <!--value es lo que se envía selected es el predeterminado se pone el valor "selected" por no dejarlo sin valor-->
+                    <option selected="selected" value="hombre">Hombre</option>
+                    <option value="mujer">Mujer</option>
+                </select>
+            </p>
+            <p>
+                <label for="suscripcion">Suscribirse</label>
+                <input type="checkbox" id="suscripcion" name="suscripcion" />
+            </p>
+            <p>
+                <label for="tipo-premium">Premium</label>
+                <input type="radio" id="tipo-premium" name="tipo-suscriptor" value="premium" checked="checked">
+                <label for="tipo-gratuito">Gratuito</label>
+                <input type="radio" id="tipo-gratuito" name="tipo-gratuito" value="gratuito" checked="checked">
             </p>
             <p>
                 <input type="submit" value="Login" />
