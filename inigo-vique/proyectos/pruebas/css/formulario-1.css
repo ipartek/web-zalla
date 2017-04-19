@@ -9,3 +9,8 @@ label {
     width: 6em;
     display: inline-block;
 }
+
+textarea
+{
+	font-family: sans-serif;
+}

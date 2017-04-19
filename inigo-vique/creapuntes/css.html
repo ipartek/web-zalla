@@ -1,0 +1,41 @@
+Vincular letras desde Google Fonts
+
+Google Fonts es un repositorio de tipos de letra para usar en la web.
+
+https://fonts.google.com/
+
+A la hora de elegir tipos de letra, hay que fijarse en las tildes, las ñ y compañía.  Elegir siempre "Latin Extended".
+
+Nos dan un cacho de código, un link css:
+
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+
+También se puede hacer un @import, para añadirlo dentro de la hoja de estilo
+
+<style>
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+</style>
+
+De esta manera lo sirve Google. Lo sirve bastante rápido pero lo tenemos online, no podemos usarlas sin web.
+
+	-Si Google casca nos quedamos sin tipos
+	+El usuario puede cachearlas para que todas las web que visita no tengan que cargarla cada vez que llegue hasta ella.
+
+PRIMERO EL RESET, LUEGO NUESTRA HOJA DE ESTILOS.
+
+---
+
+A la hora de declarar tamaños de letra, está guay hacerlo con porcentajes.  Así, el tamaño de letra es relativo al tamaño estándar inicial que trae el navegador.
+
+Está bien delcarar un tipo de font-size inicial en el body, y que el resto se adapten a éste.
+
+__
+
+0 es 0 en cualquier medida, no hay que escribir si son px, em o lo que sea.
+
+Para agregar una imagen como background-image:
+
+	url(../img/tururu.jpg)
+	normalmente porque la imagen no está dentro de la ruta de las css, así que tenemos que subir un nivel para llegar a ella.
+
+

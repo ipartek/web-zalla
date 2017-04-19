@@ -1,4 +1,7 @@
 Un formulario tiene que tener la siguiente estructura
+
+Página 106 del libro.
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -106,6 +109,12 @@ Un formulario tiene que tener la siguiente estructura
 	            <option selected value="otro">Otro</option>
 	        </select>
 
+	        Los select pueden tener la opción "multiple". Lo convierte en un cuadro de vista y permite elegir más de una opción pulsando la tecla Control.
+
+	        	La opción "size='2'" hace que en los select solo se muestren unas opciones al principio.
+
+	        Dentro de los select también se pueden añadir optgroups, para agrupar el contenido en bloques.
+
        	<input type="checkbox">
 			Cuadro de selección con tick
 
@@ -119,6 +128,51 @@ Un formulario tiene que tener la siguiente estructura
             <input type="radio" id="tipopremium" name="tiposuscriptor" value="premium">
             <label for="tipogratuito">Gratuíto</label>
             <input type="radio" id="tipogratuito" name="tiposuscriptor" value="gratuito" checked>
+
+        <input type="reset">
+        	Es un botón para limpiar los campos. La funcionalidad existe pero no es habitual su uso.
+
+    	<input type="button">
+    		Es un botón, pero sin ningún tipo de utilidad en principio, porque el de envío es el "submit".
+
+		<input type="file">
+			Selecciona un archivo para enviarlo.  Al seleccionarlo no lo envía, simplemente lo relaciona con el navegador.
+			Los ficheros hay que enviarlos por tipo POST.
+			También para enviarlo hay que añadirle un enctype al tipo de formulario, si no lo enviaría como texto, y no iría bien.
+			El enctype tiene que ser de tipo "multipart/form-data".
+
+			<form action="#" method="post" enctype="multipart/form-data"></form>
+
+		<textarea name="" id="" cols="30" rows="10"></textarea>
+			Es un área de texto más grande de lo habitual. En algunos navegadores permite ampliarla sin problemas. Es la única etiqueta que tiene apertura y cierre.
+
+			Normalmente suele poner un tipo de letra monospace por defecto.  Podemos cambiar el tipo de letra mediante CSS.
+
+			Permite usar placeholder para las pistas.
+
+		<input type="hidden" name="ocultos" value="x">
+			El dato si que se envía pero el usuario no tiene manera de modificarlo.
+			Son datos que se introducen automáticamente o se pueden modificar mediante Javascript.
+
+		<fieldset></fieldset>
+			Encuadra los datos en un bloque. Sólo visual.
+			Dentro se le añade la etiqueta <legend></legend> Para ponerle nombre a ese grupo de datos.
+
+		<input type="submit" value="Enviar">
+			Envía el formulario. Si queremos cambiar de página una vez enviada es el servidor quien se encarga de ello.
+
+
+		Existen nuvos input type's en HTML5.
+			week, url, time, month, email, ...
+
+			Es mejor usarlos. Los navegadores que no tienen capacidad para mostrarlo les muestra un cuadro de texto y lo pueden añadir sin problema. Así es más semántico.
+
+			Es bueno para los navegadores móviles, porque crean teclados especiales para cada tipo de input (si el navegador es bueno).
+
+			<a href="http://html5doctor.com/html5-forms-input-types/">Aquí se muestran</a>
+
+			EMAIL
+			Hace la validación el propio campo en vez de tener que añadir un Regex propio.
 
 </body>
 
