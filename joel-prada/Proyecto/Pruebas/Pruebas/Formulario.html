@@ -8,10 +8,13 @@
     </head>
     <body>
       <form action="#" method="get">
-          <p>
+          <fieldset id="basicos"><legend>Datos basicos</legend><p> 
+            
              <label for="usuario">Usuarios:</label> 
               <input type="text" name="usuario" id="usuario" />
+              
           </p>
+        
           <p>
               <label for="password">Contraseña:</label>
               <input type="password" name="password" id="password"  min="10" />
@@ -28,6 +31,7 @@
                   <option value="indeterminado">Sexo indeterminado</option>
               </select>
           </p>
+            </fieldset>
           <p>
               <label for="suscripcion">Suscribirse</label>
               <input type="checkbox" id="suscripcion" name="suscripcion" checked>
@@ -38,6 +42,10 @@
             <label for="tipogratuito">Gratuito</label>
              <input type="radio" id="tipogratuito" name="tiposuscriptor" value="gratuito"> 
           </p>
+          <p>
+              <label for="comentarios">Comentario:</label>
+              <textarea name="comentarios" id="comentarios" cols="30" rows="10">Escriba aqui</textarea>
+          </p>
      
           <p>
               <input type="submit" value="Login" />
@@ -47,6 +55,6 @@
           
       </form>
    
-    
+    <a href="/joel-prada/index.html"> <p class="der">Pagina principal</p></a>
     </body>
 </html>
