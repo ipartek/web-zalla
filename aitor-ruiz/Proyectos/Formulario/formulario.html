@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="css/index.css">
+     <link rel="stylesheet" href="css/print.css" media="print">
+</head>
+<body>
+   <h2>Formulario</h2>
+    <form action="#" method="post" enctype="" >
+        <p>
+            
+            <label for="usuario" >Usuario :</label>
+            <input type="text" name="usuario" id="usuario"/>
+        </p>
+        <p>
+           <label for="contraseña" >Contraseña:</label>
+            
+            <input type="password" name="password" id="password" minlenght="16" />
+        </p>
+        <p>
+            
+                <label for="sexo">Sexo :</label>
+            <select id="sexo" name="sexo">
+               <option value="mujer">Mujer</option>
+               <option selected value="hombre">Hombre</option>
+            </select> 
+        </p>
+        <p>
+            <label for="suscripcion"> "Suscribirse"</label>
+            <input type="checkbox" id="suscripcion"/>
+        </p>
+        <p>
+           <label for="tipopremium"> Premium</label>
+           <input type="radio"id="tipopremium" name="tiposuscripcion" value="premium"/>
+           <label for="tipogratuito"> Gratuito</label>
+           <input type="radio"id="tipogratuito" name="tiposuscripcion" value="gratuito" checked="checked"/>
+        </p>
+         <p>
+            <label for="dni"> "DNI"</label>
+            <input type="text" name="dni" id="dni"
+            pattern="\d{9}[A-Z]" placeholder="Formato: 123456789z"/>
+        </p>
+        <p>
+           <input type="submit" value ="Login"/>
+           <input type="reset" value ="Limpiar cambios"/>
+           <input type="button" value="Boton"/>
+           <input type="file" name="Adjunto" value ="Adjuntar"/>
+        </p>
+        
+    </form>
+</body>
+</html>
