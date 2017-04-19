@@ -238,6 +238,18 @@ ol{ padding-top: 10px;
     padding-left: 15px;
     
 }
+ #galeria li {
+                    display: inline-block;
+                    margin: 20px 10px;
+}
+ #galeria img {
+                    border: 3px solid white;
+                }
+                
+                #galeria img:hover {
+                    border: 3px solid blue;
+                }
+                  
 .iz {
     text-align: left;
 }

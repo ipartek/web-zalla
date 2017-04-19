@@ -1,4 +1,5 @@
 
+
 /*                  RESET                             
 ***********************************************************/
 
@@ -60,20 +61,21 @@ html{
   -o-background-size: cover;
   background-size: cover;
        
-}}
+}
 
 body{font-size: 16px; font-family: arial; border:0px; margin: 0px;}
 
 h1{font-size: 3em;margin: 20px; }
 
 h2{font-size: 2em;margin: 10px 20px 0px 20px; text-align: left;  }
+a{font-size: 20px; color: darkblue;}
 
 img{}
 
 ul li {list-style-type: none;}
-a{text-decoration: none; color: black;}
+a{text-decoration: none; color: black; font-stretch: normal;}
 
-p{ text-align: center;}
+p{ text-align: left; padding-left: 20px;}
 
 ul{margin: 0px 20px 0px 20px;padding: 10px; border: 2px solid black;
 background:white; text-align: left; }
@@ -95,6 +97,8 @@ li:hover{background: yellow; }
 
 .imgizq{ text-align: auto; display:inline-block; margin: 10px 20px 0px;padding: 10px; }
 
+.cen{text-align: center;}
+
 
 /*               LAYOUTS                               
 ***********************************************************/
@@ -107,6 +111,5 @@ li:hover{background: yellow; }
 
 /*               ESTILOS PROPIOS DE LA PAGINA        
 ***********************************************************/
-
 
 
