@@ -13,31 +13,31 @@
     </div>
     <main>
         <h1>Crea tu cuenta en google</h1>
-        <form action="#" method="get">
+        <form action="https://www.google.es/" method="get">
             <p>
                 <label for="nombre">Nombre: </label>
             </p>
             <p>
-                <input type="text" name="nombre" id="nombre" placeholder="Nombre">
-                <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos">
+                <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+                <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos" required>
             </p>
             <p>
                 <label for="nombreUsuario">Nombre de Usuario:</label>
             </p>
             <p>
-                <input type="email" name="nombreUsuario" id="nombreUsuario" size="45.5" placeholder="@gmail" class="email">
+                <input type="email" name="nombreUsuario" id="nombreUsuario" size="45.5" placeholder="@gmail" class="email" required>
             </p>
             <p>
                 <label for="contraseña">Contraseña:</label>
             </p>
             <p>
-                <input type="password" name="contraseña" id="contraseña" size="45.5">
+                <input type="password" name="contraseña" id="contraseña" size="45.5" required>
             </p>
             <p>
                 <label for="contraseña2">Confirma tu contraseña:</label>
             </p>
             <p>
-                <input type="password" name="contraseña2" id="contraseña2" size="45.5">
+                <input type="password" name="contraseña2" id="contraseña2" size="45.5" required>
             </p>
             <p>
                 <label for="fechaNacimiento">Fecha de nacimiento</label>
@@ -59,7 +59,7 @@
                     <option value="diciembre">Diciembre</option>
                     <option value="mes" selected>Mes</option>
                 </select>
-                <input type="year" name="año" id="año" placeholder="Año" size="4">
+                <input type="number" name="año" id="año" placeholder="Año" size="4" min="1900" max="2017" required>
             </p>
             <p>
                 <label for="sexo">Sexo</label>
@@ -99,7 +99,7 @@
             <p>
                 <input type="checkbox" name="paginaPrincipal" id="paginaPrincipal">Hacer de esta tu página principal</p>
             <p>
-                <button type="button" class="bAzul">Siguiente paso</button>
+                <input class="bAzul" type="submit" value="Siguiente paso">
             </p>
         </form>
     </main>
