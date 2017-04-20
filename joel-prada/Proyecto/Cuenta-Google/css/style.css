@@ -1,0 +1,145 @@
+
+/*                  RESET                             
+***********************************************************/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*                  ANIMACIONES-KeyFrames             
+***********************************************************/
+
+/*            ETIQUETAS GENERALES                     
+***********************************************************/
+body{
+    padding: 2em;
+    color: lightslategrey;
+}
+h1, h2,h3,h4{
+    font-family: monospace;
+}
+
+h1{
+    font-size: 3em;
+    text-align: center;
+    color: black;
+}
+h2{
+    font-size: 2em;
+}
+p{
+    padding: 1em auto; 
+    margin: 1em auto;
+}
+
+label {
+    font-size: 1.5em;
+    font-weight: bold; 
+    margin: 1em auto;
+    color: black;
+}
+input{
+    width: 100%;
+    padding: 1.1em;
+}
+
+select{
+    width: 100%;
+    font-weight: bold;
+    padding: 1.1em;
+}
+
+placeholder{
+    text-align: right;
+    
+}
+
+
+/*            CLASES COMUNES                          
+***********************************************************/
+#formulario{
+    width: 40%;
+    float: right;
+    margin-top: 4em;
+    display: block;
+    margin-right: 2em;
+}
+
+#nombre, #apellidos{
+    width: 40%;
+   
+
+}
+
+#correo{
+    text-align: left;
+}
+
+#prueba{
+    
+    background-repeat: no-repeat;
+    background-image: url(https://ssl.gstatic.com/accounts/ui/wlogostrip_325x24_1x.png);
+    background-size: 352px 24px;
+    width: 352px;
+    height: 24px;
+}
+
+.izq{
+    width: 40%;
+    float: left;
+    text-align: center;
+    margin-top: 4em;
+    margin-left: 2em;
+    
+    
+}
+/*               LAYOUTS                               
+***********************************************************/
+
+/*               ESTILOS PROPIOS DE LA PAGINA        
+***********************************************************/
