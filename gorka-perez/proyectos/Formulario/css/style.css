@@ -5,29 +5,41 @@
 /* Etiquetas
 ************************************************************* */
 
-body {
-    font-size: 16px;
-}
+body {}
 
-main section {
+#formulario {
+    font-family: sans-serif;
     background-color: #F1F1F1;
     padding: 1em;
-    width: 12em;
+    width: 14em;
+    float: right;
+    margin: 3em;
+    font-weight: bold;
+    font-size: em
 }
 
-main section p input {
+#formulario p input {
     margin-bottom: 1em;
     margin-top: 0;
 }
 
-main section p select {
+#formulario p select {
     margin-bottom: 1em;
     margin-top: 0;
 }
 
-main section label {
+#formulario label {
     margin-bottom: 0;
     margin-top: 0;
+}
+
+#nombre-usuario {
+    width: 9em;
+}
+
+#gmail {
+    display: inline-block;
+    width: 6em;
 }
 
 
