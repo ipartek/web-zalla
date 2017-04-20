@@ -162,7 +162,7 @@ a {
 
 .container {
     margin: 8em 30em;
-    background-color: aliceblue;
+    background-color: aquamarine;
     font-family: 'Roboto Condensed', sans-serif;
 }
 
@@ -197,13 +197,18 @@ option {
     width: 5em;
 }
 
+#email {
+    width: 80%;
+}
+
 #next {
     position: relative;
     float: right;
     right: 1em;
+    bottom: 1em;
     font-family: 'Roboto Condensed', sans-serif;
     padding: 1em;
-    font-size: 80%;
+    font-size: 90%;
     border-radius: 0.8em;
     background-color: coral;
 }
