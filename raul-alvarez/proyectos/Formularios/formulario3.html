@@ -43,29 +43,30 @@
         <p>
             <label for="dia">Fecha de nacimiento:</label>
             <br>
-            <input type="text" name="dia" id="dia" size="3" maxlength="2" placeholder="Dia">
+            <input type="number" name="dia" id="dia" size="3" min="1" max="31" placeholder="Dia">
             <select name="mes" id="mes" size="1">
-                <option value="enero">Enero</option>
-                <option value="febrero">Febrero</option>
-                <option value="marzo">Marzo</option>
-                <option value="abril">Febrero</option>
-                <option value="marzo">Marzo</option>
-                <option value="abril">Abril</option>
-                <option value="mayo">Mayo</option>
-                <option value="junio">Junio</option>
-                <option value="julio">Julio</option>
-                <option value="agosto">Agosto</option>
+                <option value="0">Mes</option>
+                <option value="1">Enero</option>
+                <option value="2">Febrero</option>
+                <option value="3">Marzo</option>
+                <option value="4">Abril</option>
+                <option value="5">Mayo</option>
+                <option value="6">Junio</option>
+                <option value="7">Julio</option>
+                <option value="8">Agosto</option>
+                <option value="9">Septiembre</option>
+                <option value="10">Octubre</option>
             </select>
-            <input type="text" name="ano" id="ano" placeholder="Año" size="9" maxlength="4">
+            <input type="number" name="ano" id="ano" placeholder="Año" min="1900" max="2000">
         </p>
         <p>
             <label for="sexo">Sexo:</label>
             <br>
             <select name="sexo" id="sexo" size="1">
-                <option value="hombre">Hombre</option>
-                <option value="mujer">Mujer</option>
-                <option value="no">Prefiero no decirlo</option>
-                <option value="otro">Otro</option>
+                <option value="h">Hombre</option>
+                <option value="m">Mujer</option>
+                <option value="n">Prefiero no decirlo</option>
+                <option value="o">Otro</option>
             </select>
         </p>
         <p>
