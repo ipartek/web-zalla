@@ -44,27 +44,16 @@ body > footer {
     box-sizing: border-box;
 }
 
-<<<<<<< HEAD
 #formulario label, #formulario legend {
     display: block;
 }
 
 #formulario input, #formulario select {
-=======
-label,
-legend {
-    display: block;
-}
-
-input,
-select {
->>>>>>> origin/master
     width: 100%;
     height: 2em;
     box-sizing: border-box;
 }
 
-<<<<<<< HEAD
 #formulario #nombre, #formulario #apellidos {
     float: left;
     width: 50%;
@@ -76,16 +65,12 @@ select {
 }
 
 #usuario::placeholder  {
-=======
-#usuario::placeholder {
->>>>>>> origin/master
     text-align: right;
 }
 
 #usuario:-ms-input-placeholder {
     text-align: right;
 }
-
 
 /* IE10+ */
 
@@ -104,16 +89,7 @@ select {
     /* visibility: hidden; */
 }
 
-<<<<<<< HEAD
 @media (max-width: 640px) { 
-=======
-#nombre,
-#apellidos {
-    width: 49%;
-}
-
-@media (max-width: 640px) {
->>>>>>> origin/master
     /*
     body > section {
         width: 100% !important;
