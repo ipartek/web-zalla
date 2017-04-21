@@ -8736,6 +8736,11 @@ a {
     color: black;
 }
 
+#cuadro-educacion,
+#cuadro-exp-laboral {
+    display: none;
+}
+
 
 /* clases bootstrap*/
 
