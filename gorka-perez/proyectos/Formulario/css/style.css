@@ -50,20 +50,22 @@ h1 {
     display: none;
 }
 
-input {
+#formulario input {
     margin-bottom: 1em;
     margin-top: 0;
     font-size: 1em;
     width: 100%;
+    box-sizing: border-box;
 }
 
-select {
+#formulario select {
     margin-bottom: 1em;
     margin-top: 0;
     font-size: 1em;
+    box-sizing: border-box;
 }
 
-label {
+#formulario label {
     margin-bottom: 0;
     margin-top: 0;
     font-size: 0.8em;
@@ -75,10 +77,12 @@ label {
 
 #nombre-usuario {
     float: left;
+    width: 70%;
 }
 
 #gmail {
     float: right;
+    width: 30%;
 }
 
 

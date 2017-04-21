@@ -43,75 +43,61 @@
                 </header>
                 <!-- Formulario tipo google -->
                 <form method="get" action="index.html">
-                    <p>
+                    <fieldset id="nombre-completo">
                         <label for="nombre">Nombre</label>
-                    </p>
-                    <p>
                         <input type="text" name="nombre" id="nombre" placeholder="Nombre" />
                         <input type="text" name="apellido" id="apellido" placeholder="Apellido" />
-                    </p>
-                    <p>
+
+                    </fieldset>
+                    <fieldset id="nuevo-email">
                         <label for="nombre-usuario">Nombre de usuario</label>
-                    </p>
-                    <p>
                         <input type="text" name="nombre-usuario" id="nombre-usuario" />
                         <input type="text" name="gmail" id="gmail" placeholder="@gmail.com" />
-                    </p>
-                    <p>
+                    </fieldset>
+                    <fieldset>
                         <label for="password">Contraseña</label>
-                    </p>
-                    <p>
                         <input type="password" name="password" id="password" />
-                    </p>
-                    <p>
                         <label for="conf-password">Confirma tu contraseña</label>
-                    </p>
-                    <p>
                         <input type="password" name="conf-password" id="conf-password" />
-                    </p>
-                    <p>
+                    </fieldset>
+                    <fieldset>
                         <label for="date">Fecha de nacimiento</label>
-                    </p>
-                    <p>
                         <input type="date" name="date" id="date" />
-                    </p>
-                    <p>
                         <label for="sexo">Sexo</label>
-                    </p>
-                    <p>
+                    </fieldset>
+                    <fieldset>
                         <select name="sexo" id="sexo">
                         <!--value es lo que se envía selected es el predeterminado se pone el valor "selected" por no dejarlo sin valor-->
                         <option value="1" selected="selected">Hombre</option>
                         <option value="2">Mujer</option>
-                    </select>
-                    </p>
-                    <p>
+                        </select>
+                    </fieldset>
+                    <fieldset>
                         <label for="telefono">Teléfono móvil</label>
-                    </p>
-                    <p>
+                    </fieldset>
+                    <fieldset>
                         <input type="tel" name="telefono" id="telefono" pattern="[0-9]{9}" />
-                    </p>
-                    <p>
+                    </fieldset>
+                    <fieldset>
                         <label for="correo-act">Correo electrónico actual:</label>
-                    </p>
-                    <p>
+                    </fieldset>
+                    <fieldset>
                         <input type="text" name="correo-act" id="correo-act" />
-                    </p>
-                    <p>
+                    </fieldset>
+                    <fieldset>
                         <label for="ubicacion">Ubicación</label>
-                    </p>
-                    <p>
+                    </fieldset>
+                    <fieldset>
                         <select name="ubicacion" id="ubicacion">
                         <!--value es lo que se envía selected es el predeterminado se pone el valor "selected" por no dejarlo sin valor-->
                         <option value="1" selected="selected">España</option>
                         <option value="2">Astrabudua</option>
                         <option value="3">Bilbao</option>
                     </select>
-                    </p>
-                    <p>
+                    </fieldset>
+                    <fieldset>
                         <input type="submit" value="Siguiente paso" />
-                    </p>
-
+                    </fieldset>
                 </form>
             </section>
 
