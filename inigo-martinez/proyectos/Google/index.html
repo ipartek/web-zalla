@@ -3,15 +3,17 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de registro</title>
     <link rel="stylesheet" href="CSS/style.css">
     <link href="https://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet">
+
 </head>
 
 <body>
     <nav>
         <img class="logo logo-w" src="img/googlelogo_color_112x36dp.png" alt="Google" class="logo">
-        <button onclick="CLICK HECHO" class="boton">Iniciar sesión</button>
+        <button onclick="CLICK HECHO" class="boton" type="button">Iniciar sesión</button>
     </nav>
     <div class="titulo">
         <h1>Crear Cuenta Google</h1>
@@ -48,8 +50,8 @@
             Nombre:
         </p>
         <p class="alienado">
-            <input type="text" name="nombre" placeholder="Nombre" size="15" required="required" class="celdas">
-            <input type="text" name="Apellidos" placeholder="Apellidos" size="15" required="required" class="celdas">
+            <input type="text" name="nombre" placeholder="Nombre" size="15" required="required" class="celdas" id="name">
+            <input type="text" name="Apellidos" placeholder="Apellidos" size="15" required="required" class="celdas" id="lastname">
         </p>
         <p>
             Nombre de usuario:
@@ -76,8 +78,8 @@
             Fecha Nacimiento:
         </p>
         <p class="alienado">
-            <input type="day" name="dia" placeholder="Día" maxlength="2" min="1" max="31" class="celdas">
-            <select name="mes" id="mes" class="celdas">
+            <input type="day" name="dia" placeholder="Día" size="2" min="1" max="31" class="celdas" id="day">
+            <select name="mes" id="mes" class="celdas" id="moth">
                 <option value="Enero">Enero</option>
                 <option value="Febrero">Febrero</option>
                 <option value="Marzo">Marzo</option>
@@ -91,7 +93,7 @@
                 <option value="Noviembre">Noviembre</option>
                 <option value="Diciembre">Diciembre</option>
             </select>
-            <input type="year" name="anno" placeholder="Año" maxlength="4" size="4" class="celdas">
+            <input type="year" name="anno" placeholder="Año" maxlength="4" size="4"  min="1910" max="2018" class="celdas" id="year">
         </p>
         <p>
             Sexo:
@@ -126,7 +128,7 @@
             </select>
         </p>
         <p>
-            <input type="submit" name="next" value="Siguiente paso" class="boton" class="boton">
+            <input type="submit" name="next" value="Siguiente paso" class="boton">
         </p>
     </form>
 </body>
