@@ -135,10 +135,11 @@ h2 a:hover {
 
 #menu-movil {
     display: none;
-    padding: 25px 10px;
+    padding: 15px 10px;
     background-color: #1a1a1a;
     z-index: 10;
     color: #161616;
+    font-family: 'Cabin', sans-serif;
 }
 
 #children {
@@ -170,18 +171,24 @@ h2 a:hover {
 
 #menu-movil a {
     color: #fff;
+    font-family: 'Cabin', sans-serif;
+    font-size: 1.5em;
 }
 
 #children a:hover {
     border-bottom: 1px solid #ddd;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 748px) {
+    aside {
+        display: none;
+    }
     #menu-movil {
         display: block;
         width: 100%;
         position: fixed;
         top: 0;
+        font-family: 'Cabin', sans-serif;
     }
     header nav {
         width: 100%;
@@ -197,6 +204,9 @@ h2 a:hover {
     }
     .submenu-link {
         margin-bottom: 7px;
+    }
+    body {
+        padding-top: 25px;
     }
     #menu-top li {
         display: block;
@@ -266,6 +276,16 @@ h2 a:hover {
         height: 100%;
         background-color: #202D6C;
     }
+    #popular .col-4 {
+        width: 31%;
+        margin: 1%;
+    }
+    .content img {
+        width: 75%;
+    }
+    .container {
+        padding: 0 2%;
+    }
 }
 
 
@@ -320,12 +340,12 @@ span.text-popular {
     color: #727272;
 }
 
-#derecha {
+.derecha {
     text-align: right;
     width: 68%
 }
 
-#derecha p {
+.derecha p {
     vertical-align: middle;
 }
 
@@ -612,7 +632,6 @@ aside section:last-child {
 
 .footer-cat img {
     border-radius: 10px;
-    margin-bottom: 5px;
 }
 
 #main li {
@@ -633,6 +652,14 @@ aside section:last-child {
 
 footer-cat a {
     display: block;
+}
+
+.footer-cat li {
+    display: none;
+    width: 33%;
+    padding: 1%;
+    display: inline-block;
+    float: left;
 }
 
 span.text-cat {

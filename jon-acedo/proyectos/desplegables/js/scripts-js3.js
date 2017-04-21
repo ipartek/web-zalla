@@ -14,24 +14,24 @@ window.onload = function() {
     $('h1').after('<ul><li id="mostrar">Mostrar Todo</li><li id="ocultar">Ocultar todo</li></ul>');
     $('.hora-concierto').hide();
     $('.hora-titulo').hide();
-    
-    $('.dia-header').on('click',function(){
-        $(this).parent().find('.hora-concierto').fadeOut();
-		$(this).parent().find('.hora-titulo').fadeToggle();
-	});
-    
-    $('.hora-titulo').on('click',function(){
-		$(this).parent().find('.hora-concierto').fadeToggle();
-	});
-    
-    $('#mostrar').on('click',function(){
-		$('.hora-concierto').fadeIn();
-        $('.hora-titulo').fadeIn();
-	});
-    
-    $('#ocultar').on('click',function(){
-		$('.hora-concierto').fadeOut();
-        $('.hora-titulo').fadeOut();
-	});
 
-}	
+    $('.dia-header').on('click', function() {
+        $(this).parent().find('.hora-concierto').fadeOut();
+        $(this).parent().find('.hora-titulo').fadeToggle();
+    });
+
+    $('.hora-titulo').on('click', function() {
+        $(this).parent().find('.hora-concierto').fadeToggle();
+    });
+
+    $('#mostrar').on('click', function() {
+        $('.hora-concierto').fadeIn();
+        $('.hora-titulo').fadeIn();
+    });
+
+    $('#ocultar').on('click', function() {
+        $('.hora-concierto').fadeOut();
+        $('.hora-titulo').fadeOut();
+    });
+
+}
