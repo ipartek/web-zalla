@@ -1,5 +1,4 @@
 html {
-    background-color: grey;
     background: url(../img/Pizza.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -12,16 +11,17 @@ body {
     margin: 0 auto;
     background-color: red;
     text-align: center;
-    animation-name: example;
+	animation-name: example;
     animation-duration: 4s;
     animation-iteration-count: infinite;
+    
 }
-
 @keyframes example {
+	100%{
+    	border-radius: 0%;
+    }
     0% {
         border-radius: 100%;
     }
-    100% {
-        border-radius: 0%;
-    }
+    
 }
