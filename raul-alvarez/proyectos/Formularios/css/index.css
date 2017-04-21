@@ -20,7 +20,16 @@ body {
     width: 33%;
 }
 
-body > footer {
+#pais {
+    width: 90%;
+    float: right;
+}
+
+#movil {
+    width: 8%;
+}
+
+# body > footer {
     clear: both;
 }
 
@@ -70,6 +79,14 @@ select {
 #nombre,
 #apellidos {
     width: 49%;
+}
+
+#apellidos {
+    float: right;
+}
+
+footer {
+    padding: 1.5em;
 }
 
 @media (max-width: 640px) {

@@ -1,19 +1,19 @@
 body {
     display: block;
     text-align: center;
-    padding: 15px
+    padding: 25px
 }
 
 #caja1 {
     float: left;
-    width: 20%;
+    width: 25%;
     padding: 15px;
     margin-left: 200px;
 }
 
 form {
     padding: 15px;
-    width: 45%;
+    width: 25%;
     text-align: center;
     float: right;
     background: #cce6ff;
