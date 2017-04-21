@@ -5,29 +5,80 @@
 /* Etiquetas
 ************************************************************* */
 
-body {
-    font-size: 16px;
+body>section {
+    width: 50%;
 }
 
-main section {
+#cab-google h1 {
+    display: none;
+}
+
+#cab-google {
+    border-bottom: 1px solid blue;
+    padding: 1em;
+}
+
+#cab-google a {
+    float: right;
+}
+
+h1 {
+    font-size: 3em;
+    margin: 0.5em;
+    text-align: center;
+}
+
+#marketing {
+    float: left;
+    width: 67%;
+}
+
+#formulario {
+    font-family: sans-serif;
     background-color: #F1F1F1;
     padding: 1em;
-    width: 12em;
+    width: 14em;
+    float: right;
+    width: 33%;
+    /*margin: 2em;*/
+    font-weight: bold;
+    font-size: 0.9em;
+    box-sizing: border-box;
 }
 
-main section p input {
+#formulario h1 {
+    display: none;
+}
+
+input {
     margin-bottom: 1em;
     margin-top: 0;
+    font-size: 1em;
+    width: 100%;
 }
 
-main section p select {
+select {
     margin-bottom: 1em;
     margin-top: 0;
+    font-size: 1em;
 }
 
-main section label {
+label {
     margin-bottom: 0;
     margin-top: 0;
+    font-size: 0.8em;
+}
+
+#nombre {
+    margin-bottom: 0;
+}
+
+#nombre-usuario {
+    float: left;
+}
+
+#gmail {
+    float: right;
 }
 
 

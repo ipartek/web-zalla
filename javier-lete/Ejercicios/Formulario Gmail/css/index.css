@@ -44,16 +44,27 @@ body > footer {
     box-sizing: border-box;
 }
 
+<<<<<<< HEAD
 #formulario label, #formulario legend {
     display: block;
 }
 
 #formulario input, #formulario select {
+=======
+label,
+legend {
+    display: block;
+}
+
+input,
+select {
+>>>>>>> origin/master
     width: 100%;
     height: 2em;
     box-sizing: border-box;
 }
 
+<<<<<<< HEAD
 #formulario #nombre, #formulario #apellidos {
     float: left;
     width: 50%;
@@ -65,33 +76,52 @@ body > footer {
 }
 
 #usuario::placeholder  {
+=======
+#usuario::placeholder {
+>>>>>>> origin/master
     text-align: right;
 }
 
 #usuario:-ms-input-placeholder {
     text-align: right;
-} /* IE10+ */
+}
+
+
+/* IE10+ */
 
 #usuario::-ms-input-placeholder {
     text-align: right;
-} /* Edge */
+}
 
-#fnombre label, #flogin legend, #ffecha label, #fmovil label {
+
+/* Edge */
+
+#fnombre label,
+#flogin legend,
+#ffecha label,
+#fmovil label {
     display: none;
     /* visibility: hidden; */
 }
 
+<<<<<<< HEAD
 @media (max-width: 640px) { 
+=======
+#nombre,
+#apellidos {
+    width: 49%;
+}
+
+@media (max-width: 640px) {
+>>>>>>> origin/master
     /*
     body > section {
         width: 100% !important;
     }
     */
-    
     #formulario {
         width: 100%;
     }
-    
     #marketing {
         display: none;
     }

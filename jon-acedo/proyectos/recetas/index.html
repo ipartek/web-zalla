@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Recetísimo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/grid.css">
     <link rel="stylesheet" href="css/style.css">
@@ -17,11 +18,11 @@
 </head>
 
 <body>
+    <div class="col-12" id="menu-movil">
+        <a href="#"><i class="fa fa-bars" aria-hidden="true"> Menu</i></a>
+    </div>
     <header id="header-top">
         <div class="container">
-            <div class="col-12" id="menu-movil">
-                <a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
-            </div>
             <div class="col-12" id="mostrar">
                 <nav>
                     <ul id="menu-top">
@@ -104,7 +105,7 @@
                             <li>
                                 <h3><a href="">Arroces</a></h3>
                             </li>
-                            <li id="derecha">
+                            <li class="derecha">
                                 <p><a href="#">17 de octubre, 2016</a><span class="separador"></span><i class="fa fa-comments" aria-hidden="true"></i> 16</p>
                             </li>
                         </ul>
@@ -122,7 +123,7 @@
                             <li>
                                 <h3><a href="">Pescados</a></h3>
                             </li>
-                            <li id="derecha">
+                            <li class="derecha">
                                 <p><a href="#">17 de octubre, 2016</a><span class="separador"></span><i class="fa fa-comments" aria-hidden="true"></i> 16</p>
                             </li>
                         </ul>
@@ -142,7 +143,7 @@
                             <li>
                                 <h3><a href="">Ensaladas</a></h3>
                             </li>
-                            <li id="derecha">
+                            <li class="derecha">
                                 <p><a href="#">17 de octubre, 2016</a><span class="separador"></span><i class="fa fa-comments" aria-hidden="true"></i> 16</p>
                             </li>
                         </ul>
@@ -160,7 +161,7 @@
                             <li>
                                 <h3><a href="">Entrantes</a></h3>
                             </li>
-                            <li id="derecha">
+                            <li class="derecha">
                                 <p><a href="#">17 de octubre, 2016</a><span class="separador"></span><i class="fa fa-comments" aria-hidden="true"></i> 16</p>
                             </li>
                         </ul>
@@ -318,54 +319,44 @@
                 </section>
                 <section class="col-4">
                     <h2>Categorías</h2>
-                    <div class="col-4">
-                        <ul class="footer-cat">
-                            <li>
-                                <a href=""><img src="img/insta-1.png" alt=""><span class="text-cat"><span>Carnes</span></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href=""><img src="img/insta-4.png" alt=""><span class="text-cat"><span>Pescados</span></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href=""><img src="img/insta-7.png" alt=""><span class="text-cat"><span>Ensaladas</span></span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-4">
-                        <ul class="footer-cat">
-                            <li>
-                                <a href=""><img src="img/insta-2.png" alt=""><span class="text-cat"><span>Pasta</span></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href=""><img src="img/insta-5.png" alt=""><span class="text-cat"><span>Arroces</span></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href=""><img src="img/insta-8.png" alt=""><span class="text-cat"><span>Veganas</span></span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-4">
-                        <ul class="footer-cat">
-                            <li>
-                                <a href=""><img src="img/insta-3.png" alt=""><span class="text-cat"><span>Entantes</span></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href=""><img src="img/insta-6.png" alt=""><span class="text-cat"><span>Postres</span></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href=""><img src="img/insta-9.png" alt=""><span class="text-cat"><span>Otras</span></span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                    <ul class="footer-cat">
+                        <li>
+                            <a href=""><img src="img/insta-1.png" alt=""><span class="text-cat"><span>Carnes</span></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href=""><img src="img/insta-4.png" alt=""><span class="text-cat"><span>Pescados</span></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href=""><img src="img/insta-7.png" alt=""><span class="text-cat"><span>Ensaladas</span></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href=""><img src="img/insta-2.png" alt=""><span class="text-cat"><span>Pasta</span></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href=""><img src="img/insta-5.png" alt=""><span class="text-cat"><span>Arroces</span></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href=""><img src="img/insta-8.png" alt=""><span class="text-cat"><span>Veganas</span></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href=""><img src="img/insta-3.png" alt=""><span class="text-cat"><span>Entantes</span></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href=""><img src="img/insta-6.png" alt=""><span class="text-cat"><span>Postres</span></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href=""><img src="img/insta-9.png" alt=""><span class="text-cat"><span>Otras</span></span>
+                            </a>
+                        </li>
+                    </ul>
                 </section>
                 <section class="col-4">
                     <h2>Archivos</h2>

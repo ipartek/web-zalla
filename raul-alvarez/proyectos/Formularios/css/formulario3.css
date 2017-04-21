@@ -6,14 +6,14 @@ body {
 
 #caja1 {
     float: left;
-    width: 400px;
+    width: 25%;
     padding: 15px;
     margin-left: 200px;
 }
 
 form {
     padding: 15px;
-    width: 400px;
+    width: 25%;
     text-align: center;
     float: right;
     background: #cce6ff;
