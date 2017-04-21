@@ -2,6 +2,20 @@ body {
     font-size: 1em
 }
 
+#franjasuperior {
+    float: left;
+    width: 100%;
+    background-color: lightgray;
+}
+
+#logo {
+    float: left;
+}
+
+#iniciosesion {
+    float: right;
+}
+
 #tituloprincipal {
     text-align: center;
 }
@@ -24,19 +38,30 @@ body > footer {
     clear: both;
 }
 
-form {
+#formulario form {
     width: 100%;
     padding: 1.5em;
     box-sizing: border-box;
 }
 
-label, legend {
+#formulario label, #formulario legend {
     display: block;
 }
 
-input, select {
+#formulario input, #formulario select {
     width: 100%;
+    height: 2em;
     box-sizing: border-box;
+}
+
+#formulario #nombre, #formulario #apellidos {
+    float: left;
+    width: 50%;
+}
+
+#formulario #dia, #formulario #mes, #formulario #ano {
+    float: left;
+    width: 33.33%;
 }
 
 #usuario::placeholder  {
@@ -55,8 +80,6 @@ input, select {
     display: none;
     /* visibility: hidden; */
 }
-
-
 
 @media (max-width: 640px) { 
     /*
