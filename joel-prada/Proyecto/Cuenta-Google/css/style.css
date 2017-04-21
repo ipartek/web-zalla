@@ -88,6 +88,9 @@ label {
     color: black;
     
 }
+legend{
+    display: none;
+}
 input{
     padding-left: 1em;
     width: 80%;
@@ -125,8 +128,8 @@ placeholder{
 
 }
 
-#correo{
-    text-align: left;
+#correo::placeholder{
+    text-align: right;
 }
 
 .prueba{
