@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Web-Zalla</title>
+    <link rel="stylesheet" href="css/reset.css?v=20170420">
+    <link rel="stylesheet" href="css/style.css?v=20170420">
+    <!-- ?v=numero-version es importante tener siempre esto puesto para que se recachee la web cuando hay cambios-->
+    <link rel="shortcut icon" href="favicon.ico?v2" type="image/x-icon">
+    <link rel="icon" href="favicon.ico?v2" type="image/x-icon">
+</head>
+
+<body onload="init()">
+    <div id="content">
+        <header>
+
+        </header>
+
+        <nav></nav>
+
+        <main>
+
+            <section>
+                <header>
+                </header>
+                <!-- Formulario tipo google -->
+                <p>
+                    <label for="nombre">Nombre:</label>
+                </p>
+                <p>
+                    <input type="text" name="nombre" id="nombre" placeholder="Nombre" />
+                    <input type="text" name="apellido" id="apellido" placeholder="Apellido" />
+                </p>
+                <p>
+                    <label for="nombre-usuario">Nombre de usuario:</label>
+                </p>
+                <p>
+                    <input type="text" name="nombre-usuario" id="nombre-usuario" placeholder="@gmail.com" />
+                </p>
+                <p>
+                    <label for="password">Contraseña:</label>
+                </p>
+                <p>
+                    <input type="password" name="password" id="password" />
+                </p>
+                <p>
+                    <label for="conf-password">Confirma tu contraseña:</label>
+                </p>
+                <p>
+                    <input type="password" name="conf-password" id="conf-password" />
+                </p>
+                <p>
+                    <label for="date">Fecha de nacimiento:</label>
+                </p>
+                <p>
+                    <input type="date" name="date" id="date" />
+                </p>
+                <p>
+                    <label for="sexo">Sexo:</label>
+                </p>
+                <p>
+                    <select name="sexo" id="sexo">
+                        <!--value es lo que se envía selected es el predeterminado se pone el valor "selected" por no dejarlo sin valor-->
+                        <option selected="selected" value="hombre">Hombre</option>
+                        <option value="mujer">Mujer</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="telefono">Teléfono móvil:</label>
+                </p>
+                <p>
+                    <input type="text" name="telefono" id="telefono" />
+                </p>
+                <p>
+                    <label for="correo-act">Correo electrónico actual:</label>
+                </p>
+                <p>
+                    <input type="text" name="correo-act" id="correo-act" />
+                </p>
+                <p>
+                    <label for="ubicacion">Ubicación:</label>
+                </p>
+                <p>
+                    <select name="ubicacion" id="ubicacion">
+                        <!--value es lo que se envía selected es el predeterminado se pone el valor "selected" por no dejarlo sin valor-->
+                        <option selected="selected" value="españa">España</option>
+                        <option value="astrabudua">Astrabudua</option>
+                        <option value="bilbao">Bilbao</option>
+                    </select>
+                </p>
+                <p>
+                    <input type="submit" value="Siguiente paso" />
+                </p>
+            </section>
+            <!-- link para javascript siempre se carga lo último para que no retrase la carga -->
+            <script src="js/main.js"></script>
+        </main>
+        <footer>
+
+        </footer>
+    </div>
+</body>
+
+</html>

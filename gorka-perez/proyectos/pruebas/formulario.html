@@ -18,28 +18,29 @@
 <body onload="init()">
     <div id="content">
         <form action="#" method="get">
-            <p>
-
-                <label for="usuario">Usuario:</label>
-                <input type="text" name="usuario" id="usuario" />
-
-            </p>
-            <p>
-                <label for="password">Password:</label>
-                <input type="password" name="password" id="password" min="10" />
-            </p>
-            <p>
-                <label for="dni">DNI:</label>
-                <input type="text" name="dni" id="dni" pattern="\d{9}[A-Z]" placeholder="Formato:123456789A" />
-            </p>
-            <p>
-                <label for="sexo">Sexo:</label>
-                <select name="sexo" id="sexo">
-                   <!--value es lo que se envía selected es el predeterminado se pone el valor "selected" por no dejarlo sin valor-->
-                    <option selected="selected" value="hombre">Hombre</option>
-                    <option value="mujer">Mujer</option>
-                </select>
-            </p>
+            <fieldset id="datos-personales">
+                <legend>Datos Personales</legend>
+                <p>
+                    <label for="usuario">Usuario:</label>
+                    <input type="text" name="usuario" id="usuario" />
+                </p>
+                <p>
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="password" minlength="10" />
+                </p>
+                <p>
+                    <label for="dni">DNI:</label>
+                    <input type="text" name="dni" id="dni" pattern="\d{9}[A-Z]" placeholder="Formato:123456789A" />
+                </p>
+                <p>
+                    <label for="sexo">Sexo:</label>
+                    <select name="sexo" id="sexo">
+                        <!--value es lo que se envía selected es el predeterminado se pone el valor "selected" por no dejarlo sin valor-->
+                        <option selected="selected" value="hombre">Hombre</option>
+                        <option value="mujer">Mujer</option>
+                    </select>
+                </p>
+            </fieldset>
             <p>
                 <label for="suscripcion">Suscribirse</label>
                 <input type="checkbox" id="suscripcion" name="suscripcion" />
@@ -52,13 +53,14 @@
             </p>
             <p>
                 <input type="submit" value="Login" />
+                <input type="reset" value="Reset" />
+                <input type="button" value="Botón" />
+                <input type="file" name="adjunto" id="adjunto" />
             </p>
         </form>
         <!-- link para javascript siempre se carga lo último para que no retrase la carga -->
         <script src="js/main.js"></script>
-
         <footer>
-
         </footer>
     </div>
 </body>

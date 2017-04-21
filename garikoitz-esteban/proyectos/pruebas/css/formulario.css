@@ -1,0 +1,10 @@
+label {
+    width: 6em;
+    display: inline-block;
+}
+
+body {
+    color: white;
+    background-color: black;
+    font-family: sans-serif;
+}

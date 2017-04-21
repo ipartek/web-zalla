@@ -1,0 +1,70 @@
+/* RESET CSS */
+
+@import url('./reset.css');
+
+/*- TIPOS -*/
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
+
+/* GENERALES */
+
+html {
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+}
+
+
+/* HEADER */
+
+header {
+    background-color: #F1F1F1;
+}
+
+
+/*- MAIN -*/
+
+main h1 {
+    text-align: center;
+    font-size: 2.5em;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-weight: 300;
+}
+
+
+/* FORMULARIO */
+
+#form-section h2 {
+    display: none;
+}
+
+#form-section form {
+    padding: 1.5em;
+    background-color: #F1F1F1;
+}
+
+#form-section legend,
+#form-section label {
+    display: block;
+    margin-bottom: 0.25em;
+}
+
+#form-section fieldset {
+    margin-bottom: 0.75em;
+}
+
+#fset-name label,
+#fset-username legend,
+#fset-password legend,
+#fset-password-check legend,
+#fset-birthday label,
+#fset-gender legend,
+#fset-telephone label,
+#fset-current-mail legend,
+#fset-country legend,
+#fset-submit legend {
+    display: none;
+}
+
+#fset-username input::placeholder {
+    text-align: right;
+}

@@ -1,0 +1,50 @@
+/* Animaciones- Keyframes
+************************************************************* */
+
+
+/* Etiquetas
+************************************************************* */
+
+body {
+    font-size: 16px;
+}
+
+main section {
+    background-color: #F1F1F1;
+    padding: 1em;
+    width: 12em;
+}
+
+main section p input {
+    margin-bottom: 1em;
+    margin-top: 0;
+}
+
+main section p select {
+    margin-bottom: 1em;
+    margin-top: 0;
+}
+
+main section label {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+
+/* Clases comunes
+************************************************************* */
+
+
+/* Layouts
+************************************************************* */
+
+
+/*********Menu****************/
+
+
+}
+
+/***************************/
+
+/* Estilos propios por páginas
+************************************************************* */
