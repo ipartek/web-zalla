@@ -145,6 +145,44 @@ FIN DEL RESET
 
 */
 
+
+/*
+
+Comienzo web kit
+
+*/
+
+#nombreUsuario:placeholder {
+    text-align: right;
+}
+
+#nombreUsuario:-ms-input-placeholder {
+    text-align: right;
+}
+
+
+/*IE10*/
+
+#nombreUsuario::-ms-input-placeholder {
+    text-align: right;
+}
+
+
+/*EDGE*/
+
+
+/*
+
+Fin web kit
+
+*/
+
+@media (max-width: 1000px) {
+    #formulario {
+        background-color: darkred;
+    }
+}
+
 main {
     margin: auto;
     width: 1200px;
