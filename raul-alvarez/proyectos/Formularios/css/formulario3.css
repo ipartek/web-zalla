@@ -109,15 +109,23 @@ p label {
     width: 314px;
 }
 
-#telefono {
+option#es {
     background-position: left center;
-    background-image: url(../img/índice.jpg);
+    background-image: url(../img/índice.jpg) !important;
     background-repeat: no-repeat;
     width: 276px;
     padding-left: 28px;
 }
 
-#nombre,
+option#fr {
+    background-position: left center;
+    background-image: url(../img/francia.png) !important;
+    background-repeat: no-repeat;
+    width: 276px;
+    padding-left: 28px;
+}
+
+*/ #nombre,
 #apellido {
     width: 140px;
 }

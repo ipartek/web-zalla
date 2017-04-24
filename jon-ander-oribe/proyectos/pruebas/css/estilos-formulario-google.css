@@ -177,12 +177,6 @@ Fin web kit
 
 */
 
-@media (max-width: 1000px) {
-    #formulario {
-        background-color: darkred;
-    }
-}
-
 main {
     margin: auto;
     width: 1200px;
@@ -275,3 +269,24 @@ footer>a {
 .email:focus {
     text-align: left;
 }
+
+
+/*
+@media (max-width: 1000px) {
+    #formulario,
+    #section,
+    #cabecera,
+    #piePagina,
+    h1,
+    .bAzul {
+        text-align: center;
+        width: 100%;
+        background-color: darkred;
+        clear: both;
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+
+    }
+}
+*/

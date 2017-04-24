@@ -18,17 +18,75 @@ html {
 
 header {
     background-color: #F1F1F1;
+    margin-bottom: 2em;
+    padding: 1em 3em 0.5em;
+    height: 4.5em;
+    border-bottom: #F2F2F2;
+}
+
+header a
+{
+	text-decoration:none;
+}
+
+header .google-logo-link
+{
+    display: block;
+    width: 224px;
+    height: 72px;
+    float: left;
+}
+
+header>span{
+    display:block;
+    text-align: right;
+}
+
+header .login-btn {
+    display: inline-block;
+    background-color: #478AF8;
+    padding: 0.6em;
+    border-radius: 3px;
+    border: #2F5BB7 solid 1px;
+    color:#FFFFFF;
+    margin-top:1em;
+}
+
+header .login-btn:hover{
+	background-color:#377AE8;
 }
 
 
 /*- MAIN -*/
+
+main
+{
+	width: 95%;
+	margin: 0 auto;
+}
 
 main h1 {
     text-align: center;
     font-size: 2.5em;
     font-family: 'Open Sans', Arial, sans-serif;
     font-weight: 300;
+    margin-bottom: 1em;
 }
+
+
+/* esto no me gusta :( */
+
+main #form-section {
+    float: right;
+    width: 40%;
+}
+
+main #info-section {
+    float: left;
+    width: 60%;
+}
+
+/* bórralo :( */
 
 
 /* FORMULARIO */
@@ -38,6 +96,7 @@ main h1 {
 }
 
 #form-section form {
+	box-sizing: border-box;
     padding: 1.5em;
     background-color: #F1F1F1;
 }
@@ -65,6 +124,144 @@ main h1 {
     display: none;
 }
 
+#form-section input, #form-section select{
+	width: 100%;
+    box-sizing: border-box;
+    height: 2em;
+}
+
+#fset-name input{
+    float: left;
+    width: 50%;
+}
+
+#fset-birthday input ,
+#fset-birthday select{
+    float: left;
+    width: 33%;
+}
+
+#fset-telephone select{
+    float: left;
+    width: 15%;
+}
+
+#fset-telephone input{
+    width:85%;
+}
+
 #fset-username input::placeholder {
     text-align: right;
+}
+
+
+
+/*- INFO -*/
+
+#info-section {
+    text-align: center;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    color: #737373;
+}
+
+#info-section section{
+    margin-bottom: 4em;
+}
+
+#info-section h2 {
+    display: none;
+}
+
+#info-section h3{
+    font-size: 1.25em;
+    margin-bottom: 1em;
+}
+
+#info-section p{
+    font-size: 0.9em;
+    margin-bottom: 3em;
+}
+
+.google-icons {
+    display: inline-block;
+    width: 325px;
+    height: 24px;
+    background-image: url('../img/google-icons.png');
+}
+
+.google-devices {
+    display: inline-block;
+    width: 300px;
+    height: 172px;
+    background-image: url('../img/google-devices.png');
+}
+
+
+/*- FOOTER -*/
+
+body>footer
+{
+	clear: both;
+    padding:0.3em 2em;
+}
+
+body>footer ul{
+    float: left;
+}
+
+body>footer ul li{
+    display: inline-block;
+}
+
+body>footer form{
+    text-align: right;
+}
+
+body>footer form label:first-child{
+    display: none;
+}
+
+body>footer .lang-img
+{
+    background: url('../img/idiomica.png');
+    width:21px;
+    height:21px;
+    display: inline-block;
+}
+
+body>footer input{
+    display:none;
+}
+
+
+
+
+@media (max-width: 760px) {
+    main #form-section {
+        width: 100%;
+    }
+    main #info-section {
+        display: none;
+    }
+}
+
+@media (max-width: 500px)
+{
+
+    header{
+        height: inherit;
+    }
+
+    header .google-logo-link
+    {
+        float:none;
+        margin: 0 auto;
+    }
+
+    header>span{
+    display:block;
+    text-align: center;
+}
+
+    
 }
