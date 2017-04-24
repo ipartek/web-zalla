@@ -2,6 +2,10 @@
 
 @import url('./reset.css');
 
+/* BANDERAS */
+
+@import url('./flags.min.css');
+
 /*- TIPOS -*/
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
@@ -21,7 +25,7 @@ header {
     margin-bottom: 2em;
     padding: 1em 3em 0.5em;
     height: 4.5em;
-    border-bottom: #F2F2F2;
+    border-bottom: #D0D0D0 solid 1px;
 }
 
 header a
@@ -104,11 +108,20 @@ main #info-section {
 #form-section legend,
 #form-section label {
     display: block;
-    margin-bottom: 0.25em;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    font-size: 0.9em;
+    /* para que el texto no se pueda seleccionar */
+    user-select: none; 
 }
 
 #form-section fieldset {
     margin-bottom: 0.75em;
+}
+
+#form-section ::placeholder
+{
+    padding: 0 0.5em;
 }
 
 #fset-name label,
@@ -120,7 +133,8 @@ main #info-section {
 #fset-telephone label,
 #fset-current-mail legend,
 #fset-country legend,
-#fset-submit legend {
+#fset-submit legend ,
+#fset-main-page legend{
     display: none;
 }
 
@@ -128,17 +142,38 @@ main #info-section {
 	width: 100%;
     box-sizing: border-box;
     height: 2em;
+    /*appearance:none;
+    -moz-appearance: none;
+    -webkit-appearance: none;*/
+    border:  1px solid lightgray;
 }
 
 #fset-name input{
     float: left;
-    width: 50%;
+    width: 48%;
+}
+
+#fset-name input:first-of-type{
+    margin-right: 4%;
 }
 
 #fset-birthday input ,
 #fset-birthday select{
     float: left;
-    width: 33%;
+}
+
+#fset-birthday input:first-of-type{
+    width:18%;
+    margin-right: 3%;
+}
+
+#fset-birthday select{
+    width:46%;
+    margin-right: 3%;
+}
+
+#fset-birthday input:last-of-type{
+    width:30%;
 }
 
 #fset-telephone select{
@@ -150,11 +185,52 @@ main #info-section {
     width:85%;
 }
 
+#fset-main-page input
+{
+    width: 1.5em;
+    float: left;
+}
+
+#fset-main-page label
+{
+    padding-top:9px;
+    padding-left: 2.5em;
+    margin-bottom: 1em;
+    font-weight: normal;
+}
+
+#fset-main-page p small
+{
+    clear: both;
+    font-size: 0.7em;
+}
+
 #fset-username input::placeholder {
     text-align: right;
 }
 
+#form-section footer p
+{
+    padding: 1em 2em;    
+}
 
+#form-section input[type=submit], #form-section input[type=button]
+{
+    border: 1px solid #3E82F0;
+    /*background: #4B8DFA;*/
+    color: #fff;
+    padding: 8px;
+    height: auto;
+    border-radius: 2px;
+    font-size: 0.8em;
+    text-shadow: 0 1px #888;
+    background: linear-gradient(#4B8DFA, #1E62E0)
+}
+
+#form-section input[type=submit]:hover, #form-section input[type=button]:hover
+{
+    background: -webkit-linear-gradient(#1E62E0, #4B8DFA);
+}
 
 /*- INFO -*/
 
@@ -202,19 +278,32 @@ main #info-section {
 body>footer
 {
 	clear: both;
-    padding:0.3em 2em;
+    padding:1em 3em 1em;
+    border-top: 1px #EBEBEB solid;
+    font-size: 0.8em;
 }
 
 body>footer ul{
-    float: left;
+    display:block;
 }
 
 body>footer ul li{
     display: inline-block;
+    margin-right: 2em;
+}
+
+body>footer ul li:first-child{
+    color:#999999;
+}
+
+body>footer ul a{
+    text-decoration: none;
+    color: #000;
 }
 
 body>footer form{
-    text-align: right;
+    float: right;
+    margin-top: -20px;
 }
 
 body>footer form label:first-child{
@@ -229,7 +318,7 @@ body>footer .lang-img
     display: inline-block;
 }
 
-body>footer input{
+body>footer input[type=submit]{
     display:none;
 }
 
@@ -243,6 +332,14 @@ body>footer input{
     main #info-section {
         display: none;
     }
+
+    main h1
+    {
+        background-color: #F1F1F1;
+        margin-bottom: 0;
+        font-size: 2em;
+        padding: 1em 0.85em 0em;
+    }
 }
 
 @media (max-width: 500px)
@@ -250,6 +347,7 @@ body>footer input{
 
     header{
         height: inherit;
+        padding: 1em 1em 0.5em; 
     }
 
     header .google-logo-link
@@ -259,9 +357,29 @@ body>footer input{
     }
 
     header>span{
-    display:block;
-    text-align: center;
-}
+        display:block;
+        text-align: center;
+    }
+
+    body>footer
+    {
+        padding:1em 2em 1em;
+    }
+
+    body>footer form
+    {
+        display: none;
+    }
+
+    body>footer ul
+    {
+        text-align: center;
+    }
+
+    body>footer ul li
+    {
+        margin: 0 0.5em;
+    }
 
     
 }
