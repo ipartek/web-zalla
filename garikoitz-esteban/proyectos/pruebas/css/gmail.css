@@ -228,7 +228,7 @@ body>section {
 #franjasuperior {
     float: left;
     width: 100%;
-    background-color: lightgray;
+    background-color: #F5F5F5;
 }
 
 #iniciosesion {
@@ -270,28 +270,26 @@ body>section {
     width: 250px;
 }
 
-#sexo {
-    width: 250px;
-}
-
-#telefono {
-    width: 202px;
-}
-
-#femail {
-    width: 250px;
-}
-
 input[type=submit],
 input [type=botton],
 .boton {
     border: 3px solid #06f !important;
     background-color: #59f !important;
+    background: linear-gradient( #59f, #06f);
     color: white;
     padding: 10px !important;
     height: auto !important;
     font-size: 0.7em;
     border-radius: 2px;
+    text-shadow: 0 1px #000000;
+}
+
+input[type=submit],
+input [type=botton],
+.boton;
+hover {
+    text-decoration: none;
+    background: linear-gradient(#06f, #59f)
 }
 
 #siguientepaso {
