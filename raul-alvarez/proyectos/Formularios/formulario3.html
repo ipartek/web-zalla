@@ -59,22 +59,27 @@
                 <option value="9">Septiembre</option>
                 <option value="10">Octubre</option>
             </select>
-            <input type="number" name="ano" id="ano" placeholder="Año" min="1900" max="2000">
+            <input type="text" name="ano" id="ano" placeholder="Año" size="9" maxlength="4">
         </p>
         <p>
             <label for="sexo">Sexo:</label>
             <br>
             <select name="sexo" id="sexo" size="1">
-                <option value="h">Hombre</option>
-                <option value="m">Mujer</option>
-                <option value="n">Prefiero no decirlo</option>
-                <option value="o">Otro</option>
+                <option value="hombre">Hombre</option>
+                <option value="mujer">Mujer</option>
+                <option value="no">Prefiero no decirlo</option>
+                <option value="otro">Otro</option>
             </select>
         </p>
         <p>
-            <label for="telefono">Telefono movil:</label>
+            <label for="movil">Telefono movil</label>
+            <select name="movil" id="movil">
+                <option id="es" value="+34">España</option>
+                <option id="fr" value="+33">Francia</option>
+            </select>
+            <!-- <label for="telefono">Telefono movil:</label>
             <br>
-            <input type="tel" name="telefono" id="telefono" value="+34">
+            <input type="tel" name="telefono" id="telefono" value="+34"> -->
         </p>
         <p>
             <label for="email">Tu direccion de correo actual</label>

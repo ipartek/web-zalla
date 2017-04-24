@@ -185,6 +185,12 @@ input::placeholder {
     font-family: 'Roboto Condensed', sans-serif;
 }
 
+legend {
+    display: none;
+}
+
+
+
 option {
     font-family: 'Roboto Condensed', sans-serif;
 }
