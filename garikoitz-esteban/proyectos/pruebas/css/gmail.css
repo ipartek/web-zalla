@@ -170,10 +170,37 @@ table {
 /* Estilos propios por paginas
 ******************************************************************************************* */
 
-form {
-    background-color: #F1F1F1;
+#formulario form {
+    width: 100%;
     float: right;
     padding: 1.5em;
+    box-sizing: border-box;
+}
+
+#formulario h2 {
+    font-weight: bold;
+    text-align: center;
+    font-size: 25px;
+}
+
+#formulario #dia,
+#formulario #mes,
+#formulario ano {
+    float: left;
+    margin-right: 4px;
+    ;
+}
+
+#formulario #dia {
+    width: 20%;
+}
+
+#formulario #mes {
+    width: 45%;
+}
+
+#formulario #anual {
+    width: 31%;
 }
 
 label,
@@ -191,6 +218,7 @@ select {
 
 body {
     font-size: 1em;
+    width: 100%;
 }
 
 body>section {
@@ -211,26 +239,15 @@ body>section {
     float: left;
 }
 
-h1 {
+#tituloprincipal h1 {
     margin-bottom: 20px;
     margin-top: 20px;
+    font-size: 2em;
 }
 
-h2 {
+#tituloprincipal h2 {
     margin-bottom: 20px;
     margin-top: 20px;
-}
-
-#dia {
-    width: 40px;
-}
-
-#anual {
-    width: 80px;
-}
-
-#mes {
-    width: 120px
 }
 
 #siguientepaso {
@@ -238,19 +255,11 @@ h2 {
 }
 
 #usuario {
-    width: 250px;
+    width: 295px;
 }
 
 #usuario::placeholder {
     text-align: right;
-}
-
-#nombre {
-    width: 120px;
-}
-
-#apellidos {
-    width: 120px;
 }
 
 #password {
@@ -269,51 +278,114 @@ h2 {
     width: 202px;
 }
 
-#correo {
+#femail {
     width: 250px;
 }
 
+input[type=submit],
+input [type=botton],
+.boton {
+    border: 3px solid #06f !important;
+    background-color: #59f !important;
+    color: white;
+    padding: 10px !important;
+    height: auto !important;
+    font-size: 0.7em;
+    border-radius: 2px;
+}
+
+#siguientepaso {
+    margin-top: 2em;
+}
+
+
+}
+#ubicacion {
+    margin-bottom: 2em;
+}
 #fnombre label,
 #flogin legend,
 #ffecha label,
-#contacto label {
+#contacto label,
+femail {
     display: none;
 }
-
 #pais {
     width: 3em;
     display: inline-block;
 }
-
-#tituloprincipal {
-    text-align: center;
-}
-
 #tituloprincipal {
     font-size: 2em;
+    font-family: sans-serif;
+    text-align: center;
 }
-
 #marketing {
     float: left;
 }
-
 #formulario {
     float: right;
     width: 33%;
+    background-color: lightgray;
+    font-family: sans-serif;
 }
-
+#formulario #nombre,
+#formulario apellidos {
+    float: left;
+}
+#contacto select,
+#contacto input {
+    float: left;
+}
+#contacto select {
+    width: 15%;
+}
+#contacto input {
+    width: 85%
+}
 body>footer {
     clear: both;
 }
-
-@media (max-width: 640px) {
-    /* body > section { width: 100% !important;} */
-}
-
-
-}
-#formulario input,
-#formulario select {
+#formulario select,
+#formulario input {
     width: 100%;
     box-sizing: border-box;
+    border: 1px solid ligthgray;
+    height: 2.2em;
+    background-color: #f5f5f5;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+#formulario label,
+#formulario legend {
+    font-weight: bold;
+}
+footer input [type=submit] {
+    display: none;
+}
+@media (max-width: 800px) {
+    #formulario {
+        width: 50%;
+    }
+    
+    #marketing {
+        display: none;
+    }
+}
+@media (max-width: 640px) {
+    #tituloprincipal {
+        background-color: #f5f5f5;
+        color: darkgray;
+        font-size: 0.7em;
+        padding: 1em;
+        padding-top: 3em;
+    }
+    
+    #formulario {
+        width: 100%;
+    }
+    
+    #marketing {
+        display: none;
+    }
 }

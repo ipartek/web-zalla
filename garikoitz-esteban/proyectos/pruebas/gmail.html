@@ -76,8 +76,16 @@
                 <select name="select" id="pais"></select>
                 <label for="telefono">Teléfono móvil</label> <input type="number" name="telefono" id="telefono">
             </fieldset>
-            <p><label for="correo">Tu dirección de correo electrónico actual</label> <br> <input type="text" name="correoactual" id="correo">
-            </p>
+            <fieldset id="femail">
+                <p><label for="correo">Tu dirección de correo electrónico actual</label> <br> <input type="text" name="correoactual" id="correo">
+                </p>
+            </fieldset>
+            <fieldset id="fpagina">
+                <legend>Página principal predeterminada</legend>
+                <label for="google-predeterminado">Establecer Google como página principal predeterminada</label>
+                <input type="checkbox" id="google-predeterminado" name="google-predeterminado" />
+                <p>La página principal predeterminada es la primera página que aparece al iniciar el navegador.</p>
+            </fieldset>
             <p><label for="ubicacion">Ubicación</label>
                 <br> <select name="select" id="ubicacion"><option value="alemania">Alemania</option>
             <option value="españa" selected="selected">España</option>
