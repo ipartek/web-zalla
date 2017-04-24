@@ -40,7 +40,6 @@ h1 {
     width: 14em;
     float: right;
     width: 33%;
-    /*margin: 2em;*/
     font-weight: bold;
     font-size: 0.9em;
     box-sizing: border-box;
@@ -68,19 +67,19 @@ h1 {
 #formulario label {
     margin-bottom: 0;
     margin-top: 0;
-    font-size: 0.8em;
+    font-size: 1em;
 }
 
 #formulario #nombre {
     margin-bottom: 0;
 }
 
-#nombre-usuario {
+#formulario #nombre-usuario {
     float: left;
     width: 70%;
 }
 
-#gmail {
+#formulario #gmail {
     float: right;
     width: 30%;
 }
