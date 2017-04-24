@@ -1,9 +1,21 @@
 body {
-    font-size: 1em
+    font-size: 1em;
+    font-family: serif;
+}
+
+footer {
+    padding: 1.5em;
+    box-sizing: border-box;
+}
+
+::placeholder {
+    padding-left: 0.5em;
 }
 
 #tituloprincipal {
     text-align: center;
+    margin: 2em;
+    padding-top: 2em;
 }
 
 #tituloprincipal h1 {
@@ -18,18 +30,20 @@ body {
 #formulario {
     float: right;
     width: 33%;
+    font-family: sans-serif;
+    background-color: #f5f5f5;
 }
 
-#pais {
+#formulario #pais {
     width: 90%;
     float: right;
 }
 
-#movil {
+#formulario #movil {
     width: 8%;
 }
 
-# body > footer {
+#body > footer {
     clear: both;
 }
 
@@ -44,10 +58,12 @@ legend {
     display: block;
 }
 
-input,
-select {
+#formulario input,
+#formulario select {
     width: 100%;
+    height: 2em;
     box-sizing: border-box;
+    border: 1px solid lightgray;
 }
 
 #usuario::placeholder {
@@ -76,17 +92,13 @@ select {
     /* visibility: hidden; */
 }
 
-#nombre,
-#apellidos {
+#formulario #nombre,
+#formulario #apellidos {
     width: 49%;
 }
 
 #apellidos {
     float: right;
-}
-
-footer {
-    padding: 1.5em;
 }
 
 @media (max-width: 640px) {
@@ -100,5 +112,12 @@ footer {
     }
     #marketing {
         display: none;
+    }
+    #tituloprincipal {
+        background-color: #f5f5f5;
+        color: darkgray;
+        padding: 1em;
+        padding-top: 3em;
+        font-size: .7em;
     }
 }
