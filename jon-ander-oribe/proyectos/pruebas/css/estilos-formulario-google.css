@@ -270,23 +270,34 @@ footer>a {
     text-align: left;
 }
 
-
-/*
-@media (max-width: 1000px) {
+@media (max-width: 800px) {
     #formulario,
-    #section,
-    #cabecera,
-    #piePagina,
-    h1,
+    #cabecera {
+        float: left;
+        text-align: left;
+    }
+    h1 {
+        text-align: left;
+        text-transform: full-width;
+    }
+    #formulario {
+        margin-bottom: 20px;
+    }
+    .imgP {
+        margin-top: 4vw;
+        width: 6vw;
+    }
     .bAzul {
+        width: 30vw;
+    }
+    .bSuperior {
+        font-size: 8px;
+    }
+    .img2 {
+        margin-top: 4vw;
+        width: 40vw;
+    }
+    .piePagina {
         text-align: center;
-        width: 100%;
-        background-color: darkred;
-        clear: both;
-        box-sizing: border-box;
-        padding: 0;
-        margin: 0;
-
     }
 }
-*/
