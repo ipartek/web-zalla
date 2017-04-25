@@ -1,0 +1,116 @@
+body {
+    font-size: 1em;
+}
+
+
+#franjasuperior {
+    float: left;
+    width: 100%;
+    background-color: lightgray;  
+}
+
+#logo { 
+    float: left;
+}
+
+#iniciosesion {
+    float: right;
+}
+
+#tituloprincipal {
+    text-align: center;
+}
+
+#tituloprincipal h1 {
+    font-size: 2em;
+}
+
+#marketing {
+    float: left;
+    width: 67%;
+}
+
+#formulario {
+    float: right;
+    width: 33%;
+}
+
+body > footer {
+    clear: both;
+}
+
+#formulario form {
+    width: 100%;
+    padding: 1.5em;
+    box-sizing: border-box;
+}
+
+#formulario label, #formulario legend {
+    display: block;
+}
+
+#formulario input, #formulario select {
+    width: 100%;
+    height: 2em;
+    box-sizing: border-box;
+}
+
+#formulario #nombre, #formulario #apellidos {
+    float: left;
+    width: 50%;
+}
+
+#formulario #dia, #formulario #mes, #formulario #ano {
+    float: left;
+    width: 33.33%;
+}
+
+#usuario::placeholder  {
+    text-align: right;
+}
+
+#usuario:-ms-input-placeholder {
+    text-align: right;
+}
+
+/* IE10+ */
+
+#usuario::-ms-input-placeholder {
+    text-align: right;
+}
+
+
+/* Edge */
+
+#fnombre label,
+#flogin legend,
+#ffecha label,
+#fmovil label 
+footer input[type= submit]{
+    display: none;
+    /* visibility: hidden; */
+}
+
+@media (max-width: 640px) { 
+    /*
+    body > section {
+        width: 100% !important;
+    }
+    */
+    #formulario {
+        float: right;
+        width: 33%;
+        background-color: lightgray;
+        font-family: sans-serif;
+    }
+    #formulario label , #formulario legend{
+        font-weight: bold;
+    }
+    fielset{
+        margin-bottom: 1em;
+    }
+    #marketing {
+        width: 67%
+        display: none;
+    }
+}
