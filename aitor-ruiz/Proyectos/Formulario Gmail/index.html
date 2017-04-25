@@ -15,7 +15,7 @@
             <img src="#" alt="Google" />
         </div>
         <div id="iniciosesion">
-            <a href="#">Iniciar sesión</a>
+            <a class="boton" href="#">Iniciar sesión</a>
         </div>
     </div>
     <header id="tituloprincipal">
@@ -67,6 +67,7 @@
             <fieldset id="fsexo">
                 <label for="sexo">Sexo</label>
                 <select id="sexo" name="sexo">
+                <option value="0">Selecciona tu género</option>
                 <option value="m">Mujer</option>
                 <option value="h">Hombre</option>
                 <option value="p">Prefiero no decirlo</option>
@@ -89,7 +90,7 @@
             <fieldset id="fpagina">
                 <legend>Página principal predeterminada</legend>
                 <label for="google-predeterminado">Establecer Google como página principal predeterminada</label>
-                <input type="checkbox" id="google-predeterminado" name="google-predeterminado" />
+                <input type="checkbox" id="google-predeterminado" name="google-predeterminado" checked="checked"/>
                 <p>La página principal predeterminada es la primera página que aparece al iniciar el navegador.</p>
             </fieldset>
             <fieldset id="fubicacion">
