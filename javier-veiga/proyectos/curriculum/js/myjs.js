@@ -41,12 +41,16 @@ $(document).ready(function () {
     /*------fin transicion entre formularios   ---------*/
     /*--------------------------------------------------*/
 
+    /*--------------------------------------------------*/
+    /*------Boton de añadir es necesario validar el textarea para que tenga espacios, sino no formatea el texto   ---------*/
+    /*--------------------------------------------------*/
+
+
     $(".anadir").on("click", function (event) {
         var desde = $("#desde-edu").val();
         var hasta = $("#hasta-edu").val();
         var edutextarea = $("#educacion").val();
         $("#lista-edu").append("<li>Desde " + desde + " Hasta " + hasta + " : " + edutextarea + "</li>");
-        $("li").css("width", "80%");
         $(".datos-edu").show();
     });
 });
