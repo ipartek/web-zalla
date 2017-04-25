@@ -29,7 +29,7 @@ $(document).ready(function () {
 
     });
     //mostramos el cuadro de experiencia laboral
-    $(".mostrar-exp").on("click", function (event) {
+    $(".mostrar-exp").on("submit", function (event) {
 
         $("#cuadro-exp-laboral").show();
         $("#cuadro-datos-personales").hide();
@@ -40,6 +40,21 @@ $(document).ready(function () {
     /*--------------------------------------------------*/
     /*------fin transicion entre formularios   ---------*/
     /*--------------------------------------------------*/
+
+    /*--------------------------------------------------*/
+    /*------ Validacion de formularios   ---------------*/
+    /*--------------------------------------------------*/
+
+    var patternnombre = "^[a-z A-Z]{2,30}$";
+    var patternemail = "^[@]$";
+    var patterntel = "^\d{9}$";
+    var patterntextarea = "^{5,}$";
+
+    function validarinput(idinput, pattern) {
+        return $(idInput).val().match(pattern) ? true : false;
+
+    };
+
 
     /*--------------------------------------------------*/
     /*------Boton de añadir es necesario validar el textarea para que tenga espacios, sino no formatea el texto   ---------*/

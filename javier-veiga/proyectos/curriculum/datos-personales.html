@@ -26,9 +26,9 @@
 
     <div class="container-fluid">
 
-        <!--------------------------------------------------------------------------------------------------------------------------->
+        <!------------------------- Formulario para insertar los datos personales -------------------------------------------------------------------------------------------------->
 
-        <div id="cuadro-datos-personales">
+        <section id="cuadro-datos-personales">
 
             <header class="bajoborde row centrado">
                 <h1>
@@ -39,23 +39,23 @@
 
             <main class="bajoborde row">
 
-                <form class="form-horizontal" action="#" method="" enctype="multipart/form-data" autocomplete="on">
+                <form class="form-horizontal" id="form-datos-personales" action="#" method="" enctype="multipart/form-data" autocomplete="on">
                     <article class="form-group">
                         <label class="control-label col-sm-2" for="nombre">Nombre*:</label>
                         <section class="col-sm-8">
-                            <input type="text" class="form-control" id="nombre" placeholder="Introduce nombre">
+                            <input type="text" class="form-control" id="nombre" placeholder="Solo letras y al menos 2 caracteres" required>
                         </section>
                     </article>
                     <article class="form-group">
                         <label class="control-label col-sm-2" for="apellidos">Apellidos*:</label>
                         <section class="col-sm-8">
-                            <input type="text" class="form-control" id="apellidos" placeholder="Introduce apellidos">
+                            <input type="text" class="form-control" id="apellidos" placeholder="Solo letras y al menos 2 caracteres" required>
                         </section>
                     </article>
                     <article class="form-group">
                         <label class="control-label col-sm-2" for="nacimiento">Fecha de nacimiento*:</label>
                         <section class="col-sm-3">
-                            <input type="date" class="form-control" id="nacimiento">
+                            <input type="date" class="form-control" id="nacimiento" required>
                         </section>
                     </article>
                     <article class="form-group form-inline">
@@ -147,7 +147,7 @@
                     <article class="form-group">
                         <label class="control-label col-sm-2" for="tlf-1">Tlf. contacto 1*:</label>
                         <section class="col-sm-8">
-                            <input type="tel" maxlength="9" class="form-control" id="tlf-1" placeholder="Introduce telefono de contacto">
+                            <input type="tel" maxlength="9" class="form-control" id="tlf-1" placeholder="Solo admite 9 numeros" required>
                         </section>
                     </article>
                     <article class="form-group">
@@ -159,7 +159,7 @@
                     <article class="form-group">
                         <label class="control-label col-sm-2" for="email">Email*:</label>
                         <section class="col-sm-8">
-                            <input type="email" class="form-control" id="email" placeholder="Introduce email">
+                            <input type="email" class="form-control" id="email" placeholder="Debe llevar una arroba incluida" required>
                         </section>
                     </article>
                     <article class="form-group">
@@ -171,20 +171,20 @@
                     <article class="form-group">
                         <section class="col-sm-5"></section>
                         <section class="col-sm-2">
-                            <button type="button" class="btn btn-success btn-lg mostrar-educacion">Paso 2 </button>
+                            <button type="button" class="btn btn-success btn-lg mostrar-educacion" disabled>Paso 2 </button>
                         </section>
                     </article>
 
 
                 </form>
             </main>
-        </div>
+        </section>
         <!-- fin cuadro datos personales -->
 
         <!--------------------------------------------------------------------------------------------------------------------------->
 
 
-        <div id="cuadro-educacion">
+        <section id="cuadro-educacion">
             <header class="bajoborde row centrado">
                 <h1>
                     Paso 2 : Educación
@@ -236,13 +236,13 @@
                 </form>
 
             </main>
-        </div>
+        </section>
         <!-- fin cuadro educacion -->
 
         <!--------------------------------------------------------------------------------------------------------------------------->
 
 
-        <div id="cuadro-exp-laboral">
+        <section id="cuadro-exp-laboral">
             <header class="bajoborde row centrado">
                 <h1>
                     Paso 3 : Experiencia laboral
@@ -287,7 +287,7 @@
                 </form>
 
             </main>
-        </div>
+        </section>
         <!-- fin cuadro exp laboral -->
 
         <!--------------------------------------------------------------------------------------------------------------------------->
