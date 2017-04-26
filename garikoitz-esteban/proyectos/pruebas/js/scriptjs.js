@@ -14,4 +14,11 @@ function alcargar() {
     //document.getElementByID('btnsaludar').onclick=saludo;
 }
 
+var n, N;
+n = 2;
+var nombre = 'Gari';
+var nombreIntroducido = prompt('Dime tu nombre');
+alert('Hola\n' + nombreIntroducido);
+alert(n + 5);
+alert(boton.innerHTML);
 window.onload = alcargar;
