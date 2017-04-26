@@ -229,6 +229,20 @@ a:hover {
     border: 3px dashed #000000;
 }
 
+/* - MAIN - */
+
+main
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+section
+{
+    flex-grow: 1;
+    min-width: 400px;
+}
+
 
 /* - Parte ini-github - */
 

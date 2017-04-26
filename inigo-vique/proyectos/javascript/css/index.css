@@ -63,15 +63,18 @@ main
     background-color: #90afc5;
     padding-top: 1.5em;
     color:#333333;
+    flex-wrap: wrap;
 }
 
 main section
 {
-    flex-basis: 50%;
     margin:0 1em 0;
     padding: 1em ;
     border:solid 3px #dddddd;
     border-radius: 4px;
+    flex-grow: 1;
+    width:280px;
+    margin-bottom:2em;
 }
 
 main section h2
