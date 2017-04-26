@@ -1,10 +1,22 @@
- function saludo() { alert("Hola mundo!"); }
+'use strict'; //ECMAScript 5
 
- function alCargar() {
-     saludo();
+function saludo() { alert("Hola mundo!"); }
 
-     var boton = document.getElementById("btnSaludar");
-     boton.onclick = saludo;
- }
+function alCargar() {
+    saludo();
 
- window.onload = alCargar;
+    var boton = document.getElementById("btnSaludar");
+    boton.onclick = saludo;
+}
+
+window.onload = alCargar;
+
+//Ejemplos:
+
+var x = 0;
+x += 1;
+x -= 1;
+x *= 1;
+
+var arreglado = true;
+var texto = arreglado ? "Arreglado" : "Estropeado";
