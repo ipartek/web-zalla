@@ -10,6 +10,8 @@ function activateButtons()
     document.getElementById('btn-6').onclick = f_btn6;
     document.getElementById('btn-7').onclick = f_btn7;
     document.getElementById('btn-8').onclick = f_btn8;
+    document.getElementById('btn-9').onclick = f_btn9;
+    document.getElementById('btn-10').onclick = f_btn10;
 }
 
 function f_btn1()
@@ -160,6 +162,43 @@ function f_btn8()
 
     // UML - Diagramas de flujo
     console.log(dias);
+}
+
+function f_btn9()
+{
+    console.info("WHILE");
+
+    let n = 1;
+
+    while (n <= 10)
+    {
+        // CUIDADO CON LOS BUCLES INFINITOS;
+        console.log(n++);
+    }
+}
+
+function f_btn10()
+{
+    console.info("DO WHILE");
+
+    // LA FUNCIÓN SIEMPRE SE HACE AL MENOS UNA VEZ.
+
+    do {
+        var edad = parseFloat(prompt('introduce una edad'));
+
+        if (edad >= 18 && edad <= 110)
+            console.log('Eres mayor de edad');
+        else if (edad < 18 && edad >= 0)
+            console.log('Eres menor de edad');
+        else if (isNaN(edad))
+        {
+            console.log("Esto no es un numero");
+        }
+        else
+            console.log('Edad falsa');
+
+    }
+    while (isNaN(edad) || edad < 0 || edad > 110);
 }
 
 window.onload = activateButtons;
