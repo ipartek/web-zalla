@@ -206,7 +206,64 @@ function ejemplosSentenciasControl() {
         
     } while(isNaN(edad) || edad < 0 || edad > 200);
     
+    var m = 1;
+    while(m <= 10) {
+        console.log("While: " + m);
+        m++;
+    }
     
+    for(var n = 1; n <= 10; n++){
+        console.log("For: " + n);
+        
+        if(n % 5 == 0) {
+            console.log("ENCONTRADO");
+            break;
+        }
+    }
+    
+    var encontrado = false;
+    
+    for(var n = 1; n <= 10 && !encontrado; n++){
+        console.log("For: " + n);
+        
+        if(n % 5 == 0) {
+            console.log("ENCONTRADO");
+            encontrado = true;
+        }
+    }
+    
+    for(var x = 5, y = 7; x * y <= 100; x *= 2, y += 3){
+        console.log(x, y);
+    }
+    
+    for(var n = 1; n <= 10; n++){
+        
+        if(n % 5 == 0) {
+            console.log("ENCONTRADO");
+            continue;
+        }
+
+        console.log("For: " + n);
+    }
+    
+    for(var n = 1; n <= 10; n++){
+        
+        if(n % 5 == 0) {
+            console.log("ENCONTRADO");
+        } else {
+            console.log("For: " + n);
+        }
+    }
+
+    
+//    while(true){
+//        
+//    }
+//    
+//    for(;;){
+//        
+//    }
+        
 }
 
 function alCargar() {
