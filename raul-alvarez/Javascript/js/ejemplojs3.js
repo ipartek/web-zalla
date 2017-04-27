@@ -36,8 +36,11 @@ function ejemplosSentenciaControl() {
 
 var n = 1;
 while (n < 10) {
-console.log(n=n+1);
-    
+    console.log(n = n + 1);
+
+}
+do{
+    edad=prompt("eres mayor de edad")
 }
 
 

@@ -103,7 +103,7 @@ function f_btn6()
     }
 
 }
-
+pars
 function f_btn7()
 {
 
