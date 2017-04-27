@@ -27,15 +27,12 @@ h1 {
 
 .modal {
     /* display: none;*/
-    
     /*con .5 segundos de retardo
     visibility: hidden;
     opacity: 0;*/
-    
     /*para que se deslice desde aarriba*/
     position: absolute;
     top: -100%;
-    
 }
 
 .modal:target {
@@ -68,7 +65,7 @@ h1 {
 }
 
 .imagen a:nth-child(2) {
-    margin: o;
+    margin: 0;
     height: 100%;
     flex-shrink: 2
 }
