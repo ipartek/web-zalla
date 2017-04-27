@@ -118,10 +118,49 @@ function sentenciasControl() {
 
     //if(edad>=18); Sentencia vacia. Si edad >= 18 no hagas nada
 
-    do {
-        edad = promt("Dime tu edad");
+    var mes = 6,
+        dia = prompt("Elige el mes");
+
+    switch (mes) {
+        case 2:
+            dia = 28;
+            break;
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            dia = 30;
+            break;
+        default:
+            dia = 31;
     }
-    while (edad >= 18)
+
+    console.log(dia);
+
+    //while (edad <= 18) {
+    //    edad = prompt("Dime tu edad");
+    //}
+
+    //do {
+    //   edad = prompt("Dime tu edad");
+    //} while (edad <= 18);
+
+    do {
+        edad = parseFloat(prompt("Dime tu edad"));
+        if (edad >= 18 && edad <= 200) {
+            //toFixed(Numero de decimales) Es recomendable realizar esta acción para visualización y guardar todos los decimales que se obtengan
+            //replace('elemento', 'elemento') + " €" A los TEXTOS se les puede concantenar situaciones. Cambio de un elemento por otro y añadirles texto
+            console.log("Eres mayor de edad y tienes " + edad.toFixed(2) + " años");
+        } else if (edad < 18 && edad >= 0) {
+            console.log("Eres menor de edad");
+        } else if (isNaN(edad)) {
+            console.log("Introduce un número");
+        } else {
+            console.log("No me creo tu edad");
+        }
+    } while (isNaN(edad) || edad < 0 || edad > 200); //isNaN comprueba si es un número
+
+
     /*
     function prueba() {
         document.getElementById("antes").style.color = "#CCCCCC";
