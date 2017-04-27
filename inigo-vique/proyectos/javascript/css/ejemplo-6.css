@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+}
+
+main {
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+#botones {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border: 3px #ed2020 solid;
+    border-radius: 3px;
+    padding: 5%;
+}
+
+#botones>button {
+    width: 8em;
+    height: 4em;
+    margin-bottom: 2em;
+}
