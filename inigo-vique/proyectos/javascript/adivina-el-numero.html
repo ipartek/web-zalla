@@ -6,38 +6,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="js/adivina-el-numero.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Gochi+Hand" rel="stylesheet">
     <link rel="stylesheet" href="css/adivina-el-numero.css">
     <title>Document</title>
 </head>
 
 <body>
 
-    <section>
 
-        <h1>Adivina el numero</h1>
+    <header>
+        <h1>Adivina el número</h1>
+        <h2>¡El maravillos juego de adivinación!</h2>
+    </header>
 
-        <button id="btn-initialGame">Jugar</button>
-        <button id="btn-secondGame">Jugar</button>
-        <button id="btn-thirdGame">Jugar</button>
+    <main>
 
-    </section>
+        <section id="simple-game">
 
-    <section>
+            <h2>Adivina el número</h2>
 
-        <label for="inf-limit">LimiteInferior</label>
-        <input type="number" id="inf-limit">
-        <label for="sup-limit">LimiteSuperior</label>
-        <input type="number" id="sup-limit">
+            <button id="btn-initialGame">Jugar</button>
+            <button id="btn-secondGame">Jugar</button>
+            <button id="btn-thirdGame">Jugar</button>
 
-        <button id="btn-startGame">Jugar al Juego</button>
+        </section>
 
-        <input type="number" id="player-answer" disabled>
+        <section id="main-game">
 
-        <button id="btn-playGame" disabled>Responder</button>
+            <h2>Adivina el número</h2>
 
-        <p id="game-answer">Respuesta</p>
+            <div class="limit-inputs">
 
-    </section>
+                <div class="input-group">
+
+                    <label for="inf-limit">LimiteInferior</label>
+                    <input type="number" id="inf-limit">
+
+                </div>
+
+                <div class="input-group">
+
+                    <label for="sup-limit">LimiteSuperior</label>
+                    <input type="number" id="sup-limit">
+
+                </div>
+
+            </div>
+
+            <button id="btn-startGame">Jugar al Juego</button>
+
+            <div class="play-inputs">
+
+                <input type="number" id="player-answer" disabled>
+
+                <button id="btn-playGame" disabled>Responder</button>
+
+            </div>
+
+            <div id="main-game-answers">
+
+                <p id="game-answer"></p>
+                <p id="player-answers"></p>
+
+            </div>
+
+        </section>
+
+    </main>
 
 </body>
 

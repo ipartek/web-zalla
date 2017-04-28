@@ -160,10 +160,13 @@ function f_thirdGame()
 
 }
 
-var gameSupLimit = undefined,
-    gameInfLimit = undefined,
-    tries = undefined,
-    gameNumber = undefined;
+
+/* -- MAIN GAME -- */
+
+var gameSupLimit,
+    gameInfLimit,
+    tries,
+    gameNumber;
 
 function startGame()
 {
@@ -174,11 +177,11 @@ function startGame()
 
     if (gameInfLimit >= gameSupLimit)
     {
-        alert('El numero inferior es mayor o igual que el superior');
+        alert('El número inferior es mayor o igual que el superior');
     }
     else if (isNaN(gameInfLimit) || isNaN(gameSupLimit))
     {
-        alert('Alguno de los numeros no es tal');
+        alert('Alguno de los números introducidos no son correctos');
     }
     else
     {
@@ -192,6 +195,9 @@ function startGame()
 
         console.log(gameNumber);
 
+        document.getElementById('player-answers').innerText = '';
+        document.getElementById('game-answer').innerText = '';
+
         tries = 0;
     }
 }
@@ -204,17 +210,27 @@ function playGame()
 
     if (!isNaN(playerInNumber))
     {
-        if (playerInNumber > gameNumber)
+
+        if (playerInNumber > gameSupLimit || playerInNumber < gameInfLimit)
+        {
+            document.getElementById('game-answer').innerText = 'Estás fuera de rango';
+            document.getElementById('player-answers').innerText = document.getElementById('player-answers').innerText + ' ' + playerInNumber;
+        }
+        else if (playerInNumber > gameNumber)
         {
             document.getElementById('game-answer').innerText = 'Te pasaste de largo';
+            document.getElementById('player-answers').innerText = document.getElementById('player-answers').innerText + ' ' + playerInNumber;
         }
         else if (playerInNumber < gameNumber)
         {
             document.getElementById('game-answer').innerText = 'Te quedate corto';
+            document.getElementById('player-answers').innerText = document.getElementById('player-answers').innerText + ' ' + playerInNumber;
         }
         else
         {
-            document.getElementById('game-answer').innerText = 'Eres genial. En ' + tries + ' intentos';
+            document.getElementById('game-answer').innerText = 'Eres genial. En ' + tries + ' intento(s)';
+            document.getElementById('player-answers').innerHTML = '<span class="victory">' + gameNumber + '<span>';
+
 
             document.getElementById('sup-limit').disabled = false;
             document.getElementById('inf-limit').disabled = false;
