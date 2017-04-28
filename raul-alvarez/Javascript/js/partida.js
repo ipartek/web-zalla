@@ -34,6 +34,8 @@ function partida() {
 
             } else {
                 console.log('Solo numeros del 1 al 100')
+                 numeroTecleado = parseInt(prompt('Solo numeros del 1 al 100' ));
+                numeroIntentos++;
             }
 
         }
