@@ -165,25 +165,3 @@ function alCargar() {
 
 
 
-function AdivinarNum{
-    
-    var min = parseInt(prompt('Dame un número mímino'));
-    var max = parseInt(prompt('Dame un número máximo'));
-    var numerorandom = getRandomInt0(min,max);
-    var intentos=0;
-    do{
-       var numerousuario = parseInt(prompt('Intenta adivinar el número')); 
-        intentos++;
-            
-        
-        if  (numerousuario > numerorandom)
-            {
-                alert("El número introducido es mayor")
-            }
-            
-        else {
-            alert("El número introducido es menor")
-        }
-        while (numerousuario =! numerorandom)
-    }
-}
