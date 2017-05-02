@@ -7,18 +7,18 @@ window.onload= alCargar;
 function alCargar(){
 
 	console.log("Inserta el máximo del intervalo para jugar.");
-	intervMax=prompt("Inserta el Máximo del intervalo para jugar.");
+	intervMax=parseInt(prompt("Inserta el Máximo del intervalo para jugar."));
 	console.log("Inserta el mínimo del intervalo para jugar.");
-	intervMin=prompt("Inserta el mínimo del intervalo para jugar.");
+	intervMin=parseInt(prompt("Inserta el mínimo del intervalo para jugar."));
 	alert(intervMin+" , "+intervMax);
-	num = parseInt((Math.random()*intervMax)+intervMin);
+	num = parseInt((Math.random()*(intervMax-intervMin))+intervMin);
 	console.log("Empezamos...");
 	intentar();
 }
 function intentar(){
 
 	while(!acertar){
-		alert("Introduce el número que crees que es"+num);
+		alert("Introduce el número que crees que es" + num);
 		intento=prompt("Introduce el número que crees que es.");
 		if(intento==num){
 			alert("ACERTASTE");
