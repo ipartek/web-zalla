@@ -12,7 +12,7 @@ alert("Bienvenido al juego");
 
 prompt('¡Hey hola!, ¿Cual es tu nombre de juego?');
 
-alert('Este juego consiste en adivinar el número\n Tendrás que adivinarlo desde el 0 al 100\n ¡SUERTE!');
+alert('Este juego consiste en adivinar el número\n Tendrás que adivinarlo desde el minimo y el maximo asignado por ti.\n ¡SUERTE!');
 var maximo = parseInt(prompt('Dime el maximo'));
 var minimo = parseInt(prompt('Dime el minimo'));
 numeroRandom = parseInt((Math.random() * (maximo - minimo)) + minimo, 10);
@@ -46,5 +46,5 @@ do {
     }
 }
 while (numero !== numeroRandom && seguirJugando);
-alert('¡CORRECTO!, ¡HAS ACERTADO!\n HAS SUPERADO EL JUEGO');
+
 intentos++;
