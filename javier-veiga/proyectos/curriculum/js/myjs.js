@@ -47,17 +47,8 @@ $(document).ready(function () { //cargaremos las rutinas de jquery cuando el doc
     /*------ Validacion de formularios   ---------------*/
     /*--------------------------------------------------*/
 
-    //declaracion de los patrones para los diferentes inputs
-    var patternnombre = "^[a-z A-Z]{2,30}$";
-    var patternemail = "^[@]$";
-    var patterntel = "^\d{9}$";
-    var patterntextarea = "^{5,}$";
 
-    //funcion que comprueba con el metodo match si el valor del input se adecua al patron determinado
-    function validarinput(idinput, pattern) {
-        return $(idInput).val().match(pattern) ? true : false;
 
-    };
     /*--------------------------------------------------*/
     /*------Boton de añadir es necesario validar el textarea para que tenga espacios, sino no formatea el texto   ---------*/
     /*--------------------------------------------------*/
