@@ -1,0 +1,15 @@
+#conjunto {
+    display: none;
+}
+
+@media (max-width: 640px) {
+    .vinculos {
+        display: none;
+    }
+    #conjunto {
+        display: inline;
+    }
+}
+
+
+}
