@@ -181,33 +181,32 @@ function pruebaEjercicio1() {
 
         var usuario = prompt("introduce numero");
 
-        intentos++;
+
 
         if (usuario == null) {
             alert("Hasta otra");
             seguirJugando = false;
 
-        } else if(usuario > maximo || usuario < minimo){
-            alert(" Te has salido del rango "+minimo+" o "+maximo+" intentalo de nuevo");
-        }
-        else {
+        } else if (usuario > maximo || usuario < minimo) {
+            alert(" Te has salido del rango " + minimo + " o " + maximo + " intentalo de nuevo");
+        } else {
             usuario = parseInt(usuario);
 
             if (usuario < aleatorio) {
+                intentos++;
                 alert("El numero es mayor al suyo " + usuario);
 
             } else if (usuario > aleatorio) {
+                intentos++;
                 alert("El numero es menor al suyo " + usuario);
             } else if (isNaN(usuario)) {
+                intentos++;
                 alert("Pon un numero no una palabra");
             }
         }
 
     } while (usuario != aleatorio && seguirJugando);
     alert("El numero es el mismo " + usuario + " a tardado " + intentos + " intentos");
-
-
-
 }
 
 
