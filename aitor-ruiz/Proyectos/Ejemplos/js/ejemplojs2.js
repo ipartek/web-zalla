@@ -123,27 +123,147 @@ function ejemplosHastaOperadores() {
     console.log(min <= x && x <= max);
 }
 
-function ejemplosSentenciasControl() 
-{
+function ejemplosSentenciasControl() {
     var edad = parseInt(prompt('Dime tu edad'));
 
-    if(edad >= 0 && edad <= 99)
-    {
-        if (edad >= 18)
-        {
+    if (edad >= 0 && edad <= 99) {
+        if (edad >= 18) {
             console.log("PASA");
             console.log("Bienvenido a la discoteca");
-        } 
-        else 
-        {
+        } else {
             console.log("ENANO... LO LLEVAS CRUDO");
         }
-    }
-    else    
-    {
+    } else {
         console.log("LA PROXIMA VEZ INTRODUCE UNA EDAD REAL EN NÚMERO, PEAZO ...");
     }
+
+    var nivel = 6;
+
+    switch (nivel) {
+        case 1:
+            console.log("Nivel 1");
+            break;
+        case 2:
+            console.log("Nivel 2");
+            break;
+        case 3:
+            console.log("Nivel 3");
+            break;
+        default:
+            console.log("Nivel desconocido");
+    }
+
+    var mes = 4,
+        dias;
+
+    if (mes >= 1 && mes <= 12) {
+        switch (mes) {
+            case 2:
+                dias = 28;
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                dias = 30;
+                break;
+            default:
+                dias = 31;
+        }
+    } else {
+        console.log("MES NO VÁLIDO");
+    }
+
+    if (mes < 1 || mes > 12) {
+        console.log("MES NO VÁLIDO");
+    } else if (mes == 2) {
+        dias = 28;
+    } else if (mes == 4 || mes == 6 || mes == 9 || mes == 11) {
+        dias = 30;
+    } else {
+        dias = 31;
+    }
     
+    var n = 0;
+    
+    while(n < 2) {
+        //console.log(n = n + 1);
+        console.log(++n);
+        //alert(n);
+    }
+    
+    do {
+        edad = parseFloat(prompt("Dime tu edad"));
+        
+        if(edad >= 18 && edad <= 200){
+            console.log("Eres mayor de edad y tienes " + edad + " años");
+        } else if(edad < 18 && edad >= 0) {
+            console.log("Eres menor de edad con " + edad + " años");
+        } else if(isNaN(edad)) {
+            console.log("La próxima vez intenta con un número listillo");
+        } else
+            console.log("No me creo tu edad");
+        
+    } while(isNaN(edad) || edad < 0 || edad > 200);
+    
+    var m = 1;
+    while(m <= 10) {
+        console.log("While: " + m);
+        m++;
+    }
+    
+    for(var n = 1; n <= 10; n++){
+        console.log("For: " + n);
+        
+        if(n % 5 == 0) {
+            console.log("ENCONTRADO");
+            break;
+        }
+    }
+    
+    var encontrado = false;
+    
+    for(var n = 1; n <= 10 && !encontrado; n++){
+        console.log("For: " + n);
+        
+        if(n % 5 == 0) {
+            console.log("ENCONTRADO");
+            encontrado = true;
+        }
+    }
+    
+    for(var x = 5, y = 7; x * y <= 100; x *= 2, y += 3){
+        console.log(x, y);
+    }
+    
+    for(var n = 1; n <= 10; n++){
+        
+        if(n % 5 == 0) {
+            console.log("ENCONTRADO");
+            continue;
+        }
+
+        console.log("For: " + n);
+    }
+    
+    for(var n = 1; n <= 10; n++){
+        
+        if(n % 5 == 0) {
+            console.log("ENCONTRADO");
+        } else {
+            console.log("For: " + n);
+        }
+    }
+
+    
+//    while(true){
+//        
+//    }
+//    
+//    for(;;){
+//        
+//    }
+        
 }
 
 function alCargar() {
@@ -159,9 +279,3 @@ function alCargar() {
     //ejemplosHastaOperadores();
     ejemplosSentenciasControl();
 }
-
-/*for (var =1 ; n<=10; n++)
-    console.log("For :" +n);*/
-
-
-

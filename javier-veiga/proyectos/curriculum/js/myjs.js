@@ -1,6 +1,6 @@
-"use strict";
+"use strict"; //obligamos a javascript a ser un poco mas estricto en la sintaxis
 
-$(document).ready(function () {
+$(document).ready(function () { //cargaremos las rutinas de jquery cuando el documento este totalmente cargado.
 
     /*--------------------------------------------------*/
     /*--------  transicion entre formularios   ---------*/
@@ -27,7 +27,7 @@ $(document).ready(function () {
         $("#cuadro-educacion").show();
         $("#cuadro-datos-personales").hide();
         $("#cuadro-exp-laboral").hide();
-        $(".datos-edu").hide();
+        $(".mostrar-datos").hide();
 
     });
     //mostramos el cuadro de experiencia laboral
@@ -47,29 +47,23 @@ $(document).ready(function () {
     /*------ Validacion de formularios   ---------------*/
     /*--------------------------------------------------*/
 
-    //declaracion de los patrones para los diferentes inputs
-    var patternnombre = "^[a-z A-Z]{2,30}$";
-    var patternemail = "^[@]$";
-    var patterntel = "^\d{9}$";
-    var patterntextarea = "^{5,}$";
 
-    //funcion que comprueba con el metodo match si el valor del input se adecua al patron determinado
-    function validarinput(idinput, pattern) {
-        return $(idInput).val().match(pattern) ? true : false;
 
-    };
     /*--------------------------------------------------*/
     /*------Boton de añadir es necesario validar el textarea para que tenga espacios, sino no formatea el texto   ---------*/
     /*--------------------------------------------------*/
 
+    //Esta funcion sirve para recoger los datos de educacion o exp laboral y guardarlos en una lista ademas de mostrarlos dinamicamente. Si no hay ningun valor no deja continuar al usuario.
 
     $(".anadir").on("click", function (event) {
-        var desde = $("#desde-edu").val(); //recogemos el valor del campo fecha desde
-        var hasta = $("#hasta-edu").val(); //recogemos el valor del campo fecha hasta
-        var edutextarea = $("#educacion").val(); //recogemos el valor del campo texarea descripcion
+        var formularioPadre = $(this).parents("form"); //obtenemos el formulario donde esta el boton de añadir
+        var desde = formularioPadre.find(".desde").val(); //recogemos el valor del campo fecha desde
+        var hasta = formularioPadre.find(".hasta").val(); //recogemos el valor del campo fecha hasta
+        var textareaDescripcion = formularioPadre.find(".textarea-descripcion").val(); //recogemos el valor del campo texarea descripcion
 
         //añadimos una linea a la lista de descripciones
-        $("#lista-edu").append("<li>Desde " + desde + " Hasta " + hasta + " : " + edutextarea + "</li>");
-        $(".datos-edu").show();
+        formularioPadre.find(".lista-datos").append("<li>Desde " + desde + " Hasta " + hasta + " : " + textareaDescripcion + "</li>");
+        //Por ultimo mostramos los datos recogidos de los 3 campos anteriores en forma de lista mas el boton de continuar
+        formularioPadre.find(".mostrar-datos").show();
     });
 });
