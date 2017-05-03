@@ -1,3 +1,5 @@
+/* globals moment */
+
 function objWindow()
 {
     console.info('window.closed');
@@ -156,13 +158,92 @@ function objDate()
     // etc...
     console.log(fecha01.getDay());
 
+    console.info('toLocaleDateString()');
+    // Nos lo devuelve en el modelo de fecha local para nosotros
+    // Locale es lo que se refiere al estilo culturarl de nuestro equipo.
+    console.log(fecha01.toLocaleDateString());
 
 
     // CUIDADO CON EL MES, empieza por 0
     let fecha02 = new Date(2016, 11, 4, 12, 54, 21);
     console.log(fecha02);
 
+}
 
+function createDate()
+{
+    console.log(new Date(parseInt(prompt('introduce milisegundos para poner una horica'))));
+}
+
+function objString()
+{
+    let texto = prompt('introduce un texto. Recuerda que busca la palabra "otro"').toString();
+
+    console.debug(texto);
+
+    console.info('Longitud del texto');
+    console.log(texto.length);
+
+    console.info('IndexOf');
+    // Marca dónde empieza la palabra en el texto
+    // Si no encuentra nada te da una posición negativa 
+    // Empieza a contar desde 0
+    console.log(texto.indexOf('otro'));
+
+
+    console.info('SubString');
+    // Nos muestra un cachito de texto
+    console.log(texto.substring(6, 12));
+
+
+    console.info('ToUpperCase');
+    // Lo pone en mayúsculas
+    console.log(texto.toUpperCase());
+
+
+    console.info('toLowerCase');
+    // Lo pone en minúsculas
+    console.log(texto.toLowerCase());
+
+
+    console.info('charAt');
+    // Dame la letra a esa posición
+    console.log(texto.charAt(12));
+
+
+    console.info('replace');
+    // Modifica el texto que encuentre por el que le digamos
+    // Podemos sustituir todas las vocales de un texto, por ejemplo :)
+    console.log(texto.replace('otro','gatito'));
+    // Le podemos añadir un REGEX para que modifique unos bloques específicos
+    console.log(texto.replace(/[aeiou]/g,'o'));
+
+}
+
+function momentTest()
+{
+    let a = moment(new Date());
+    let b = moment([1989, 10, 24]);
+
+    console.log('Días desde día guay son ' + a.diff(b, 'days'));
+    console.log('Segundos desde día guay son ' + a.diff(b, 'seconds'));
+}
+
+function momentSecond()
+{
+
+    // ESTE ESTÁ DEPRECATED
+    let fechaActual = moment().lang('es').format('[Hoy es] D [de] MMMM [del año] YYYY [y son las] HH:mm:ss ');
+
+    console.log(fechaActual);
+    alert(fechaActual);
+
+}
+
+function momentThird()
+{
+    moment.locale('es');
+    console.log(moment().format('[Hoy es] D [de] MMMM [del año] YYYY [y son las] hh:mm:ss '));
 }
 
 // CARACTERÍSTICAS DE DEPURACIÓN DEL MÓVIL EN CHROME
@@ -173,7 +254,6 @@ function objDate()
 
 window.onload = function()
 {
-
     // Window
     document.getElementById('btn-window-01').onclick = objWindow;
     document.getElementById('btn-window-02').onclick = windowHistoryBack;
@@ -189,6 +269,12 @@ window.onload = function()
     document.getElementById('btn-others-03').onclick = objScreen;
     document.getElementById('btn-others-04').onclick = objNavigator;
     document.getElementById('btn-others-05').onclick = objDate;
+    document.getElementById('btn-others-06').onclick = createDate;
+    document.getElementById('btn-others-07').onclick = objString;
 
+    // MomentJS
+    document.getElementById('btn-moment-01').onclick = momentTest;
+    document.getElementById('btn-moment-02').onclick = momentSecond;
+    document.getElementById('btn-moment-03').onclick = momentThird;
 
 };

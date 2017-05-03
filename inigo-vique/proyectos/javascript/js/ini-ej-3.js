@@ -1,3 +1,6 @@
+// Para que Jquery no de por culo
+/* globals $ */
+
 var header = document.getElementsByTagName('HEADER'),
     footer = document.getElementsByTagName('FOOTER'),
     main = document.getElementsByTagName('MAIN');
