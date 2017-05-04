@@ -2,6 +2,7 @@
 
 $(document).ready(function () { //cargaremos las rutinas de jquery cuando el documento este totalmente cargado.
 
+
     /*--------------------------------------------------*/
     /*--------  transicion entre formularios   ---------*/
     /*--------------------------------------------------*/
@@ -16,9 +17,12 @@ $(document).ready(function () { //cargaremos las rutinas de jquery cuando el doc
     //mostramos el cuadro de datos personales
     $(".mostrar-datos").on("click", function (event) {
 
+
         $("#cuadro-datos-personales").show();
         $("#cuadro-educacion").hide();
         $("#cuadro-exp-laboral").hide();
+
+
 
     });
     //mostramos el cuadro de educacion
@@ -47,6 +51,64 @@ $(document).ready(function () { //cargaremos las rutinas de jquery cuando el doc
     /*------ Validacion de formularios   ---------------*/
     /*--------------------------------------------------*/
 
+    $("input.required").on("blur", function (event) {
+
+        var patron = $(this).attr("pattern");
+        var valor = $(this).val();
+        var articulo = $(this).parents("article");
+        var formulario = $(this).parents("form");
+        var btnSiguiente = formulario.find(".btn-siguiente");
+
+        console.clear();
+        console.log(patron);
+        console.log(valor);
+        console.log(valor.match(patron));
+
+
+
+        if (valor.length === 0 || valor.match(patron) === null) {
+            articulo.removeClass("has-success");
+            articulo.addClass("has-error");
+
+        } else {
+            articulo.removeClass("has-error");
+            articulo.addClass("has-success");
+
+        }
+
+
+        var deshabilitarBoton = validarForm(formulario);
+
+        if (deshabilitarBoton) {
+            btnSiguiente.show();
+        } else {
+            btnSiguiente.hide();
+        }
+
+        console.log(articulo.attr("class"));
+
+
+    });
+
+    function validarForm(idForm) {
+
+        var deshabilitarBoton = true;
+
+
+        idForm.find("article.form-group").each(function () {
+            if ($(this).attr("class").match("has-error")) {
+                deshabilitarBoton = false;
+            }
+            console.log("articulo : " + $(this).attr("class"));
+            console.log("deshabilitarboton " + deshabilitarBoton);
+        });
+
+        console.log(deshabilitarBoton);
+
+        return deshabilitarBoton;
+
+
+    }
 
 
     /*--------------------------------------------------*/
