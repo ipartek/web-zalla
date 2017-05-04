@@ -17,7 +17,7 @@ window.onload = function () {
     var b = prompt('B');
     console.log(b);
 
-    var suma = a + b; //56
+    var suma = a + b; //56  
     console.log(suma);
 
     var x = parseInt(prompt("X"), 10); // 5
