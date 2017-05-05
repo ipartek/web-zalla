@@ -87,6 +87,8 @@ for(var i = 0; i < nombresMeses.length; i++){
     console.log(nombresMeses[i]);
 }
 
+//FIN Suficiente
+
 for(var i in nombresMeses) {
     console.log(nombresMeses[i]);
 }
@@ -94,3 +96,50 @@ for(var i in nombresMeses) {
 for(var nombreMes of nombresMeses) {
     console.log(nombreMes);
 }
+
+function cadaMes(nombreMes, indice, arr) {
+    console.log("cadaMes", nombreMes, indice, arr);
+}
+
+nombresMeses.forEach(cadaMes);
+
+nombresMeses.forEach(function(nombreMes, indice, arr) {
+    console.log("cadaMes", nombreMes, indice, arr);
+});
+
+nombresMeses.forEach(
+    (nombreMes, indice, arr) => {
+        console.log("cadaMes", nombreMes, indice, arr);
+        console.log("OTRO");
+    }
+);
+
+Array.prototype.miForEach = function(funcion){
+    for(var i = 0; i < this.length; i++){
+        funcion(this[i], i, this);
+    }
+};
+
+nombresMeses.miForEach(cadaMes);
+
+
+function escribirEnLog(texto) {
+    console.log(texto);
+}
+
+function escribirEnAlerta(texto) {
+    alert(texto);
+}
+
+//escribirEnLog("alkdjfalsk");
+//escribirEnAlerta("alsdkjflkads");
+
+var escribir;
+
+escribir = escribirEnLog;
+
+escribir("En LOG");
+
+escribir = escribirEnAlerta;
+
+escribir("En ALERTA");
