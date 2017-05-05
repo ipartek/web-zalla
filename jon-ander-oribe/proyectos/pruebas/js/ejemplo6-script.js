@@ -14,7 +14,7 @@ for (int i = 0; i < 8; i++) {
 }
 console.log(tablero);
 
-var orden = [4, 2, 67, 5, 4].sort((a, b) => a - b);
+var orden = [4, 2, 67, 5, 4].sort((a, b) => a - b); //Expresión lambda
 
 console.log(orden);
 
@@ -23,3 +23,11 @@ var orden2 = [4, 2, 67, 5, 4].sort(function(a, b) {
 });
 
 console.log(orden2);
+
+for each(var nombreMes in nombreMeses) { //No soportado por Chrome
+    console.log(nombreMes);
+}
+
+for (var i in nombreMeses) {
+    console.log(nombreMes[i]);
+}

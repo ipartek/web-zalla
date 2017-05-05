@@ -169,10 +169,10 @@ td {
     border: black solid 3px;
 }
 
-td:nth-child(odd) {
+.claro {
     background-color: #e2dcdc;
 }
 
-td:nth-child(even) {
+.oscuro {
     background-color: #1f7a27;
 }
