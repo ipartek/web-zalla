@@ -79,10 +79,17 @@ function comparaNumeros(a, b) {
 
 
 //for each funcion creada para mpstrar un elemento concreto de un array
-for (var 1 = 0; i < nombreMeses.length; i++) {
-    console.log(nombreMeses[i]);
+for (var i = 0; i < nombresMeses.length; i++) {
+    console.log(nombresMeses[i]);
 }
 
 for each(var nombreMes of nombresMeses) {
     console.log(nombreMes);
 }
+
+//AddactionListener. Cuando hagas esto llama a la función
+function cadaMes(nombfeMes, indice, arr) {
+    console.log("cadaElemento", nombreMes, indice, arr);
+}
+
+nombresMeses.forEach(cadaMes);
