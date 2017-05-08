@@ -1,6 +1,6 @@
 'use strict'; //ECMAScript 5
 
-function saludo() { alert("Hola mundo!"); }
+/*function saludo() { alert("Hola mundo!"); }
 
 function alCargar() {
     saludo();
@@ -10,7 +10,7 @@ function alCargar() {
 }
 
 window.onload = alCargar;
-
+*/
 //Ejemplos:
 
 var x = 0;
@@ -20,3 +20,17 @@ x *= 1;
 
 var arreglado = true;
 var texto = arreglado ? "Arreglado" : "Estropeado";
+
+var txtMensajes = document.getElementById('txtMensajes');
+var form = document.forms[0];
+form.onsubmit = function() {
+    var txtDni = form['txtDni'];
+    var dni = txtDni.value;
+
+    if (validarDni(dni)) {
+        txtMensajes.value = "DNI correcto";
+    } else {
+        txtMensajes.value = "DNI incorrecto";
+        return false;
+    }
+}
