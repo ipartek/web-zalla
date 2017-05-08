@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bloque bailarín</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .bloque-central {
+            width: 40vw;
+            height: 40vh;
+            background-color: #ed709a;
+            position: absolute;
+            top: 30vh;
+            right: 30vw;
+            border-radius: 25px;
+            transition: width 1s, right 1s;
+            transition-timing-function: cubic-bezier(0.175, 0.885, 0.62, 1.275);
+        }
+        
+        .bloque-central:hover {
+            width: 60vw;
+            right: 20vw;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bloque-central">
+
+    </div>
+
+</body>
+
+</html>

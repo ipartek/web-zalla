@@ -21,13 +21,14 @@
     <link rel="stylesheet" href="css/mystyle.css">
 
 
-    <!--vinculacion a jquery mas el validador de formularios-->
+    <!--vinculacion a jquery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.js"></script>
 
     <!--vinculo al javascript de bootstrap-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!--vinculo a la libreria de validacion jqbootstrapvalidation-->
+    <script src="js/jqBootstrapValidation.js"></script>
 
     <!--vinculo al propio javascript-->
     <script src="js/myjs.js"></script>
@@ -53,23 +54,23 @@
 
             <main class="bajoborde row">
 
-                <form class="form-horizontal" id="form-datos-personales" action="#" method="" enctype="multipart/form-data" autocomplete="on">
+                <form id="form-datos-personales" class="form-horizontal" id="form-datos-personales" action="#" method="get" enctype="multipart/form-data" autocomplete="on">
                     <article class="form-group">
                         <label class="control-label col-sm-2" for="nombre">Nombre*:</label>
                         <section class="col-sm-8">
-                            <input type="text" class="form-control" id="nombre" placeholder="Solo letras y al menos 2 caracteres" required>
+                            <input type="text" class="form-control required" id="nombre" placeholder="Solo letras y al menos 2 caracteres" pattern="[a-z A-Z]{2,30}">
                         </section>
                     </article>
                     <article class="form-group">
                         <label class="control-label col-sm-2" for="apellidos">Apellidos*:</label>
                         <section class="col-sm-8">
-                            <input type="text" class="form-control" id="apellidos" placeholder="Solo letras y al menos 2 caracteres" required>
+                            <input type="text" class="form-control required" id="apellidos" placeholder="Solo letras y al menos 2 caracteres" pattern="[a-z A-Z]{2,30}">
                         </section>
                     </article>
                     <article class="form-group">
                         <label class="control-label col-sm-2" for="nacimiento">Fecha de nacimiento*:</label>
                         <section class="col-sm-3">
-                            <input type="date" class="form-control" id="nacimiento" required>
+                            <input type="date" class="form-control" id="nacimiento">
                         </section>
                     </article>
                     <article class="form-group form-inline">
@@ -161,7 +162,7 @@
                     <article class="form-group">
                         <label class="control-label col-sm-2" for="tlf-1">Tlf. contacto 1*:</label>
                         <section class="col-sm-8">
-                            <input type="tel" maxlength="9" class="form-control" id="tlf-1" placeholder="Solo admite 9 numeros" required>
+                            <input type="tel" maxlength="9" class="form-control" id="tlf-1" placeholder="Solo admite 9 numeros" pattern="[0-9]{9}">
                         </section>
                     </article>
                     <article class="form-group">
@@ -173,7 +174,7 @@
                     <article class="form-group">
                         <label class="control-label col-sm-2" for="email">Email*:</label>
                         <section class="col-sm-8">
-                            <input type="email" class="form-control" id="email" placeholder="Debe llevar una arroba incluida" required>
+                            <input type="email" class="form-control" id="email" placeholder="Debe llevar una arroba incluida" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}">
                         </section>
                     </article>
                     <article class="form-group">
@@ -182,7 +183,7 @@
                             <input type="file" class="form-control" id="foto">
                         </section>
                     </article>
-                    <article class="form-group">
+                    <article class="form-group btn-siguiente">
                         <section class="col-sm-5"></section>
                         <section class="col-sm-2">
                             <button type="button" class="btn btn-success btn-lg mostrar-educacion">Paso 2 </button>
@@ -208,7 +209,7 @@
 
             <main class="bajoborde row">
 
-                <form class="form-horizontal" action="#" method="" enctype="multipart/form-data" autocomplete="on">
+                <form id="form-educacion" class="form-horizontal" action="#" method="" enctype="multipart/form-data" autocomplete="on">
                     <article class="form-group">
                         <div class="col-sm-2"></div>
                         <p class="cursiva">Por favor elija un rango de fechas y rellene la descripción para generar una relación de estudios.</p>
@@ -216,16 +217,16 @@
                     <article class="form-group form-inline">
                         <label class="control-label col-sm-2" for="desde-edu">Desde:</label>
                         <section class="col-sm-3">
-                            <input type="date" class="form-control" id="desde-edu">
+                            <input type="date" class="form-control desde" id="desde-edu">
                         </section>
                         <label class="control-label col-sm-2" for="hasta-edu">Hasta:</label>
                         <section class="col-sm-3">
-                            <input type="date" class="form-control" id="hasta-edu">
+                            <input type="date" class="form-control hasta" id="hasta-edu">
                         </section>
                     </article>
                     <article class="form-group form-inline">
                         <label class="control-label col-sm-4" for="educacion">Introduce una descripcion:</label>
-                        <textarea name="educacion" id="educacion" rows="8" class="col-sm-6" wrap="hard"></textarea>
+                        <textarea name="educacion" id="educacion" rows="8" class="col-sm-6 textarea-descripcion" wrap="hard"></textarea>
                     </article>
                     <article class="form-group">
                         <section class="col-sm-2"></section>
@@ -237,10 +238,10 @@
                             <button type="button" class="btn btn-success btn-lg anadir">Añadir</button>
                         </section>
                     </article>
-                    <article class="datos-edu">
+                    <article class="mostrar-datos btn-siguiente">
                         <section class="row">
                             <div class="col-sm-2"></div>
-                            <ul class="col-sm-8" id="lista-edu"></ul>
+                            <ul class="col-sm-8 lista-datos" id="lista-edu"></ul>
                         </section>
                         <section class="row">
                             <div class="col-sm-5"></div>
@@ -266,7 +267,7 @@
 
             <main class="bajoborde row">
 
-                <form class="form-horizontal" action="#" method="" enctype="multipart/form-data">
+                <form id="form-exp-laboral" class="form-horizontal" action="#" method="" enctype="multipart/form-data">
                     <article class="form-group">
                         <div class="col-sm-4"></div>
                         <button id="introducir-educacion" class="btn btn-lg col-sm-4" disabled>Introducir experiencia laboral</button>
@@ -274,16 +275,16 @@
                     <article class="form-group form-inline">
                         <label class="control-label col-sm-2" for="desde-exp">Desde:</label>
                         <section class="col-sm-3">
-                            <input type="date" class="form-control" id="desde-exp">
+                            <input type="date" class="form-control desde" id="desde-exp">
                         </section>
                         <label class="control-label col-sm-2" for="hasta-exp">Hasta:</label>
                         <section class="col-sm-3">
-                            <input type="date" class="form-control" id="hasta-exp">
+                            <input type="date" class="form-control hasta" id="hasta-exp">
                         </section>
                     </article>
                     <article class="form-group form-inline">
                         <label class="control-label col-sm-4" for="educacion">Introduce una descripcion:</label>
-                        <textarea name="educacion" id="educacion" rows="8" class="col-sm-6"></textarea>
+                        <textarea name="educacion" id="educacion" rows="8" class="col-sm-6 textarea-descripcion"></textarea>
                     </article>
 
                     <article class="form-group">

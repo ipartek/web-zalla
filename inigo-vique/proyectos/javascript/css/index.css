@@ -1,33 +1,32 @@
 /* - RESET - */
-*
-{
-    margin:0;
+
+* {
+    margin: 0;
     padding: 0;
 }
 
+
 /* - GLOBALES - */
-html
-{
+
+html {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.2em;
     color: #dddddd;
 }
 
-body
-{
+body {
     background-color: #a66a66;
 }
 
-header hgroup , main
-{
+header hgroup,
+main {
     max-width: 1040px;
-    margin:0 auto;
-    padding:2em;
+    margin: 0 auto;
+    padding: 2em;
     box-sizing: border-box;
 }
 
-a
-{
+a {
     text-decoration: none;
     color: #dddddd;
 }
@@ -35,21 +34,18 @@ a
 
 /* - HEADER - */
 
-header
-{
+header {
     background-color: #336b87;
 }
 
-header h1
-{
+header h1 {
     font-family: 'Pacifico', cursive;
     text-align: center;
     font-size: 550%;
     margin-bottom: 0.2em;
 }
 
-header h2
-{
+header h2 {
     text-align: center;
     font-size: 100%;
 }
@@ -57,41 +53,50 @@ header h2
 
 /* - MAIN - */
 
-main
-{
+main {
     display: flex;
     background-color: #90afc5;
     padding-top: 1.5em;
-    color:#333333;
+    color: #333333;
     flex-wrap: wrap;
 }
 
-main section
-{
-    margin:0 1em 0;
-    padding: 1em ;
-    border:solid 3px #dddddd;
+main section {
+    margin: 0 1em 0;
+    padding: 1em;
+    border: solid 3px #dddddd;
     border-radius: 4px;
     flex-grow: 1;
-    width:280px;
-    margin-bottom:2em;
+    width: 260px;
+    margin-bottom: 2em;
 }
 
-main section h2
-{
+main section h2 {
     margin-bottom: 1em;
 }
 
-main section li
-{
+main section li {
     margin-bottom: 0.5em;
     list-style-type: none;
 }
 
+
 /* - FOOTER - */
 
-footer
-{
+footer {
     text-align: center;
     margin: 2em 0 2em;
+}
+
+@media screen and (max-width: 600px) {
+    header h1 {
+        font-size: 300%;
+    }
+    header hgroup,
+    main {
+        padding: 1em 0.5em 1em;
+    }
+    header h2 {
+        font-size: 80%;
+    }
 }
