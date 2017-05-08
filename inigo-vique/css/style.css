@@ -196,6 +196,10 @@ a:hover {
     background-color: #FFF449;
 }
 
+code{
+    font-family: Courier New, Courier, monospace;
+}
+
 
 /* CLASES COMUNES - (clases que voy a reutilizar)
 ************************~~~~~~~~~~~~~~~~~~~~********************* */

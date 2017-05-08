@@ -196,11 +196,11 @@ function moreArray()
 function forEach_()
 {
 
-    console.group('foreach');
+    console.group('- foreach');
 
     let arr3 = new Array(5, 8, 12, 84, 6, 2, 1, 11, 79, 42, 68);
 
-    console.info('foreach no funciona :(');
+    console.info('- foreach no funciona :(');
 
     // ESTE FOREACH TODAVÍA NO FUNCIONA :_(
     /*
@@ -211,7 +211,7 @@ function forEach_()
     */
 
     // Con for of si que funciona
-    console.info('for of si que funciona :)');
+    console.info('- for of si que funciona :)');
 
     for (var item_ of arr3)
     {
@@ -227,8 +227,40 @@ function forEach_()
         console.log(arr3[item__]);
     }
 
+
+
+    console.info('- array.forEach');
+    // foreach, función propia del array.
+    // es equivalente al método for( x of y ).
+    // Le tenemos que introducir una función. Tiene hasta 3 argumentos :S
+    arr3.forEach(function(elemento_, indice_, array_)
+    {
+        console.log('elementos: ', elemento_, indice_, array_);
+    });
+
+    console.info('- funciones LAMBDA');
+    // Me encantan
+    arr3.forEach((elemento_, indice_, array_) =>
+    {
+        console.log('elementos: ', elemento_, indice_, array_);
+    });
+
     console.groupEnd();
-    
+
+}
+
+function fillArray()
+{
+    console.group('- fill');
+
+    // pop
+    // push
+    // fill
+    // MIRAR EN MDN :)
+
+    console.error('AQUI NO HAY COSAS, LO SIENTO');
+
+    console.groupEnd();
 }
 
 window.onload = function()
@@ -244,4 +276,5 @@ window.onload = function()
     document.getElementById('btn-array-03').onclick = createTablero;
     document.getElementById('btn-array-04').onclick = moreArray;
     document.getElementById('btn-array-05').onclick = forEach_;
+    document.getElementById('btn-array-06').onclick = fillArray;
 };

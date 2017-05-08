@@ -4,14 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Ejemplo JavaScript</title>
+    <script src="js/funciones.js"></script>
     <script src="js/script-test.js">
     </script>
 </head>
 
 <body>
-    <h1>Antes</h1>
+    <!--<h1>Antes</h1>
     <button id="btnSaludar">Saludo</button>
-    <h1>Después</h1>
+    <h1>Después</h1>-->
+    <form action="#" method="get">
+        <p>
+            <input type="text" id="txtUsuario" name="txtUsuario" placeholder="Usuario" value="ANONIMO">
+        </p>
+        <p>
+            <input type="text" id="txtDni" name="txtDni" placeholder="12345678A">
+        </p>
+        <p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Reset">
+        </p>
+    </form>
 </body>
 
 </html>
