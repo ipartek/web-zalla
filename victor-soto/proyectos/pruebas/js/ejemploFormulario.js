@@ -61,7 +61,17 @@ window.onload = function() {
     function ocultarBloque(idBloque) {
         var bloque = document.getElementById(idBloque);
 
-        bloque.style.display = "none";
+        if (bloque != null) {
+            bloque.style.display = "none";
+        } else {
+            //Orden de prioridad de los mensajes que aparecen por consola
+            //Error > Warning o Info > Log > Debug
+            console.error("CAGADA");
+            console.warn("No he existe el bloque seleccionado");
+            console.log("LOG");
+            console.info("Informacion");
+            console.debug("DEBUG"); //Error concreto
+        }
     }
 
     function mostrarBloque(idBloque) {
