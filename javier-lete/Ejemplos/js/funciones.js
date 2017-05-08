@@ -2,17 +2,19 @@ var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', '
 
 function validarDni(dniConLetra)
 {
-    return dniConLetra == calcularDniConLetra(dniConLetra);
+    var esValido = dniConLetra == calcularDniConLetra(dniConLetra);
+    return esValido;
 }
 
 function calcularDniConLetra(dni)
 {
-    return parseInt(dni, 10) + calcularLetraDni(dni);
+    var dniConLetra = parseInt(dni, 10) + calcularLetraDni(dni);
+    return dniConLetra;
 }
 
 function calcularLetraDni(dni)
 {
     var resto = parseInt(dni, 10) % 23;
-    
-    return letras[resto];
+    var letraDni = letras[resto];
+    return letraDni;
 }
