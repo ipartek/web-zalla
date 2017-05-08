@@ -8,7 +8,8 @@ console.log("Bienvenido a adivina el número");
 numRandom = Math.floor(Math.random() * (10)) + 1;
 
 do {
-    num = parseInt(prompt('Escribe un número de 1 a 10'), 10);
+    num =  (prompt('Escribe un número de 1 a 10'), 10);
+    
     if (num < 0 || num > 10) {
 
         console.log("Número erróneo");
