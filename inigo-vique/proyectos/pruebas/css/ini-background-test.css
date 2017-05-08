@@ -5,6 +5,7 @@
 
 body {
     height: 100vh;
+    transition: background 1s , background-size 0s, background-position 0s;
 }
 
 html {
