@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="js/basic.js"></script>
+</head>
+
+<body>
+    <form action="Formulario">
+        <fieldset id="personal">
+            <legend>Parte Personal</legend>
+            <p>Nombre:</p>
+            <input type="text" name="Nombre" min="3" max="10" id="Nombre">
+            <p>Apellidos:</p>
+            <input type="text" name="Apellidos" min="6" max="20" id="Apellidos">
+            <p>Genero:</p>
+            <select name="Genero" id="Genero">
+                <option value="0">Elige Genero</option>
+                <option value="1">Hombre</option>
+                <option value="2">Mujer</option>
+            </select>
+        </fieldset>
+        <fieldset id="laboral">
+            <legend>Parte Profesional</legend>
+            <input type="checkbox" name="Idiomas" value="0" id="castellano"><label for="castellano">castellano</label>
+            <input type="checkbox" name="Idiomas" value="1" id="ingles"><label for="ingles">ingles</label>
+            <input type="checkbox" name="Idiomas" value="2" id="euskera"><label for="euskera">euskera</label>
+            <p>Comentarios:</p>
+            <textarea name="Comentario" id="TAComentario" cols="30" rows="10"></textarea>
+        </fieldset>
+        <input type="button" name="Muestra" id="mostrar">
+        <input type="submit" value="Submit" id="Finalizar">
+    </form>
+</body>
+
+</html>

@@ -1,14 +1,14 @@
 var rehacer = true;
-var inserciones=0;
+var inserciones = 0;
 'use strict';
 window.onload = alCargar;
 
 function alCargar() {
     var a, b;
     while (rehacer) {
-    	inserciones+=1;
+        inserciones += 1;
         a = introInt(inserciones);
-        inserciones+=1;
+        inserciones += 1;
         b = introInt(inserciones);
         if (!comprovación(a, b)) {
             alert("La suma entre " + a + " y " + b + " es: " + sumar(a, b));
@@ -17,18 +17,18 @@ function alCargar() {
 }
 
 function introInt(pos) {
-    return parseInt(prompt("Introduce el "+posicionNum(pos)+" valor:"));
+    return parseInt(prompt("Introduce el " + posicionNum(pos) + " valor:"));
 }
 
-function posicionNum(posicion){
-	switch(posicion){
-		case 1:
-			return "primer";
-		case 2:
-			return "segundo";
-		default:
-			return "siguiente";
-	}
+function posicionNum(posicion) {
+    switch (posicion) {
+        case 1:
+            return "primer";
+        case 2:
+            return "segundo";
+        default:
+            return "siguiente";
+    }
 }
 
 function sumar(x, y) {
