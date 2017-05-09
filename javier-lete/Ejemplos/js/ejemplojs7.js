@@ -27,6 +27,21 @@ window.onload = function() {
     txtDni.onblur = function() {
         validacionDni();
     };
+    
+    var chkMensajes = form.chkMensajes;
+    chkMensajes.onchange = function() {
+        if(chkMensajes.checked) //if(chkMensajes.checked == true)
+            mostrarBloque("bloqueMensajes");
+        else
+            ocultarBloque("bloqueMensajes");
+    };
+    
+    var rGenero = form.rGenero;
+    for(var i = 0; i < rGenero.length; i++) {
+        rGenero[i].onclick = function() {
+            txtMensajes.value = this.value;
+        };
+    }
 };
 
 function validacionDni() {
@@ -61,6 +76,10 @@ function pruebas() {
     console.error("ERROR");
     
     document.forms[0].txtDni.focus();
+    
+    var opcion = new Option("PRESELECCIONADA NUEVA", "YEPA", true, true);
+    
+    form.sBloque.add(opcion);
 }
 
 function seleccionBloque() {
@@ -81,7 +100,8 @@ function ocultarBloques() {
 function ocultarBloque(idBloque) {
     var bloque = document.getElementById(idBloque);
     
-    if(bloque != null) {
+    if(bloque != null && bloque.style.display != "none") {
+        bloque.displayAnterior = bloque.style.display;
         bloque.style.display = "none";
     }
 }
@@ -90,7 +110,7 @@ function mostrarBloque(idBloque) {
     var bloque = document.getElementById(idBloque);
     
     if(bloque != null) {
-        bloque.style.display = "block";
+        bloque.style.display = bloque.displayAnterior; //"block";
     } else {
         console.warn("No existe el bloque " + idBloque);
     }
