@@ -51,3 +51,21 @@ function rellenarCerosDni(numero_, tamano_ = 8)
 {
     return ('00000000' + numero_).substr(-tamano_);
 }
+
+
+/* FUNCIONES NOMBRE */
+
+function validarNombre(nombre_)
+{
+    // Comprobamos si el nombre introducido es válido:
+    // http://aprende-web.net/javascript/js13_3.php  
+    // 
+    // - tiene exclusivamente letras (nada de número ni símbolos raros)
+    // - la priemera letra tiene que estar en mayúscula
+    // - permite nombres compuestos, pero la primera letra de cada uno ha de estar en mayúscula (no me gusta :( )
+
+    if (!nombre_.match(/^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/))
+        return false;
+    else
+        return true;
+}
