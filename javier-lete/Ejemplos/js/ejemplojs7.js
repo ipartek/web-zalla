@@ -2,21 +2,23 @@
 
 var txtMensajes, form, bloque1, bloque2;
 
-var ID_BLOQUE1 = "bloque1", ID_BLOQUE2 = "bloque2";
+var ID_BLOQUE1 = "bloque1",
+    ID_BLOQUE2 = "bloque2";
 
-window.onload = function() {
+window.onload = function () {
     ocultarBloques();
-    
+
     txtMensajes = document.getElementById('txtMensajes');
     form = document.forms[0]; //document.getElementById("");
-    
-    form.onsubmit = validacionDni;
-    
-    var sBloque = form.sBloque; //form['sBloque']
+
+    form.onsubmit = envioFormulario;
+
+    var sBloque = form['sBloque'];
     sBloque.onchange = seleccionBloque;
-    
+
     var btnPruebas = document.getElementById('btnPruebas');
     btnPruebas.onclick = pruebas;
+<<<<<<< HEAD
     
     var txtDni = form.txtDni;
     txtDni.onfocus = function() {
@@ -42,15 +44,17 @@ window.onload = function() {
             txtMensajes.value = this.value;
         };
     }
+=======
+>>>>>>> 9d90b5e28fe48b49d84cb68615751da195b6ef54
 };
 
-function validacionDni() {
+function envioFormulario() {
     //var txtDni = document.getElementById('txtDni');
-    var txtDni = form.txtDni; //form['txtDni']; // form['name']
+    var txtDni = form['txtDni']; // form['name']
 
     var dni = txtDni.value;
 
-    if(validarDni(dni)) {
+    if (validarDni(dni)) {
         txtMensajes.value = "DNI Correcto";
     } else {
         txtMensajes.value = "DNI INCORRECTO";
@@ -68,6 +72,7 @@ function pruebas() {
     txtMensajes.placeHolder = "Modificado al menos una vez";
 
     //document.getElementById('txtMensajes').value = "Hola " + //document.getElementById('txtUsuario').value;
+<<<<<<< HEAD
     
     console.debug("DEBUG");
     console.info("INFO");
@@ -80,13 +85,17 @@ function pruebas() {
     var opcion = new Option("PRESELECCIONADA NUEVA", "YEPA", true, true);
     
     form.sBloque.add(opcion);
+=======
+>>>>>>> 9d90b5e28fe48b49d84cb68615751da195b6ef54
 }
+
+
 
 function seleccionBloque() {
     var sBloque = document.getElementById("sBloque");
-    
+
     ocultarBloques();
-    
+
     var bloque = "bloque" + sBloque.value;
     console.log(bloque)
     mostrarBloque(bloque);
@@ -99,15 +108,21 @@ function ocultarBloques() {
 
 function ocultarBloque(idBloque) {
     var bloque = document.getElementById(idBloque);
+<<<<<<< HEAD
     
     if(bloque != null && bloque.style.display != "none") {
         bloque.displayAnterior = bloque.style.display;
         bloque.style.display = "none";
     }
+=======
+
+    bloque.style.display = "none";
+>>>>>>> 9d90b5e28fe48b49d84cb68615751da195b6ef54
 }
 
 function mostrarBloque(idBloque) {
     var bloque = document.getElementById(idBloque);
+<<<<<<< HEAD
     
     if(bloque != null) {
         bloque.style.display = bloque.displayAnterior; //"block";
@@ -115,3 +130,8 @@ function mostrarBloque(idBloque) {
         console.warn("No existe el bloque " + idBloque);
     }
 }
+=======
+
+    bloque.style.display = "block";
+}
+>>>>>>> 9d90b5e28fe48b49d84cb68615751da195b6ef54
