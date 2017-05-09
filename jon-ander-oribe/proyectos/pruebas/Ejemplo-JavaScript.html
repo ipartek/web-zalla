@@ -21,9 +21,23 @@
             <input type="text" id="txtDni" name="txtDni" placeholder="12345678A">
         </p>
         <p>
+            <select id="sBloque" name="sBloque">
+                <option value="0">Selecciona el bloque</option>
+                <option value="1">Bloque 1</option>
+                <option value="2">Bloque 2</option>
+            </select>
+        </p>
+        <p>
             <input type="submit" value="Enviar">
             <input type="reset" value="Reset">
+            <button name="ocultacion" id="ocultacion" onclick="ocultar(bloque)">Ocultar</button>
         </p>
+        <fieldset id="bloque1">
+            <legend>BLOQUE-1</legend>
+            <h2>Bloque 1</h2></fieldset>
+        <fieldset id="bloque2">
+            <legend>BLOQUE-2</legend>
+            <h2>Bloque 2</h2></fieldset>
     </form>
 </body>
 

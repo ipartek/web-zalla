@@ -34,3 +34,18 @@ form.onsubmit = function() {
         return false;
     }
 }
+
+var sBloque = form['sBloque'];
+sBloque.onchange = seleccionBloque();
+
+/*FUNCIONES OCULTAR*/
+
+function seleccionBloque() {
+    return document.getElementById();
+
+}
+
+function ocultar(idBloque) {
+    var bloque = document.getElementById("idBloque1");
+    bloque.style.display = "none";
+}
