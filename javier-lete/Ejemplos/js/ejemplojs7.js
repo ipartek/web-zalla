@@ -2,19 +2,20 @@
 
 var txtMensajes, form, bloque1, bloque2;
 
-var ID_BLOQUE1 = "bloque1", ID_BLOQUE2 = "bloque2";
+var ID_BLOQUE1 = "bloque1",
+    ID_BLOQUE2 = "bloque2";
 
-window.onload = function() {
+window.onload = function () {
     ocultarBloques();
-    
+
     txtMensajes = document.getElementById('txtMensajes');
     form = document.forms[0]; //document.getElementById("");
-    
+
     form.onsubmit = envioFormulario;
-    
+
     var sBloque = form['sBloque'];
     sBloque.onchange = seleccionBloque;
-    
+
     var btnPruebas = document.getElementById('btnPruebas');
     btnPruebas.onclick = pruebas;
 };
@@ -25,7 +26,7 @@ function envioFormulario() {
 
     var dni = txtDni.value;
 
-    if(validarDni(dni)) {
+    if (validarDni(dni)) {
         txtMensajes.value = "DNI Correcto";
     } else {
         txtMensajes.value = "DNI INCORRECTO";
@@ -49,10 +50,10 @@ function pruebas() {
 
 function seleccionBloque() {
     var sBloque = document.getElementById("sBloque");
-    
+
     ocultarBloques();
-    
-    var bloque = "bloque"+sBloque.value;
+
+    var bloque = "bloque" + sBloque.value;
     console.log(bloque)
     mostrarBloque(bloque);
 }
@@ -64,12 +65,12 @@ function ocultarBloques() {
 
 function ocultarBloque(idBloque) {
     var bloque = document.getElementById(idBloque);
-    
-    bloque.style.display = "none";    
+
+    bloque.style.display = "none";
 }
 
 function mostrarBloque(idBloque) {
     var bloque = document.getElementById(idBloque);
-    
+
     bloque.style.display = "block";
 }
