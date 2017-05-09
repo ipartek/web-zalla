@@ -18,8 +18,7 @@ window.onload = function () {
 
     var btnPruebas = document.getElementById('btnPruebas');
     btnPruebas.onclick = pruebas;
-<<<<<<< HEAD
-    
+
     var txtDni = form.txtDni;
     txtDni.onfocus = function() {
         txtDni.value = "";
@@ -44,8 +43,6 @@ window.onload = function () {
             txtMensajes.value = this.value;
         };
     }
-=======
->>>>>>> 9d90b5e28fe48b49d84cb68615751da195b6ef54
 };
 
 function envioFormulario() {
@@ -72,7 +69,6 @@ function pruebas() {
     txtMensajes.placeHolder = "Modificado al menos una vez";
 
     //document.getElementById('txtMensajes').value = "Hola " + //document.getElementById('txtUsuario').value;
-<<<<<<< HEAD
     
     console.debug("DEBUG");
     console.info("INFO");
@@ -85,8 +81,6 @@ function pruebas() {
     var opcion = new Option("PRESELECCIONADA NUEVA", "YEPA", true, true);
     
     form.sBloque.add(opcion);
-=======
->>>>>>> 9d90b5e28fe48b49d84cb68615751da195b6ef54
 }
 
 
@@ -108,21 +102,16 @@ function ocultarBloques() {
 
 function ocultarBloque(idBloque) {
     var bloque = document.getElementById(idBloque);
-<<<<<<< HEAD
     
     if(bloque != null && bloque.style.display != "none") {
         bloque.displayAnterior = bloque.style.display;
         bloque.style.display = "none";
     }
-=======
 
-    bloque.style.display = "none";
->>>>>>> 9d90b5e28fe48b49d84cb68615751da195b6ef54
 }
 
 function mostrarBloque(idBloque) {
     var bloque = document.getElementById(idBloque);
-<<<<<<< HEAD
     
     if(bloque != null) {
         bloque.style.display = bloque.displayAnterior; //"block";
@@ -130,8 +119,3 @@ function mostrarBloque(idBloque) {
         console.warn("No existe el bloque " + idBloque);
     }
 }
-=======
-
-    bloque.style.display = "block";
-}
->>>>>>> 9d90b5e28fe48b49d84cb68615751da195b6ef54
