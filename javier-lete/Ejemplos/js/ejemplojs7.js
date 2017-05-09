@@ -26,7 +26,12 @@ window.onload = function () {
     };
     
     txtDni.onblur = function() {
-        validacionDni();
+        if (validarDni(txtDni.value)) {
+            txtMensajes.value = "DNI Correcto";
+        } else {
+            txtMensajes.value = "DNI INCORRECTO";
+            return false;
+        }
     };
     
     var chkMensajes = form.chkMensajes;
