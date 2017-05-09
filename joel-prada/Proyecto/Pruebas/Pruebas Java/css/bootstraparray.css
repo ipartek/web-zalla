@@ -1203,6 +1203,7 @@ text-align: center;
 .titulo{
     margin-bottom: 57px;
     background-color: coral;
+    padding-bottom: 57px;
 }
 
 h1 small,
@@ -1633,6 +1634,7 @@ pre code {
     
     background-color: crimson;
   position: relative;
+    
   min-height: 1px;
   padding-top: 15px;
   padding-right: 15px;

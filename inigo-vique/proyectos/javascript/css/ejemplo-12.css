@@ -79,6 +79,10 @@ input[type=button]:active {
     color: #84ae88;
 }
 
+label, legend {
+    display: none;
+}
+
 
 /* general */
 
@@ -105,12 +109,15 @@ form p {
 }
 
 form input[type=text],
-form input[type=password] {
+form input[type=password],
+select, fieldset {
     padding: 1em;
     font-size: 150%;
     width: 100%;
     box-sizing: border-box;
+    border: 0;
 }
+
 
 
 /* main */
@@ -138,13 +145,15 @@ main section {
 
 /* - CUBITO - */
 
-/* caca */
 #cubito {
     display: block;
-    height: 50px;
-    width: 50px;
+    height: 100px;
+    width: 100px;
     box-sizing: border-box;
     position: relative;
+    transition: left 3s, background 3s, transform 3s;
+    transition-timing-function: ease;
+    cursor: pointer;
 }
 
 #cubito.cb1 {
@@ -153,7 +162,7 @@ main section {
 }
 
 #cubito.cb2 {
-    transition: left 1s, background 1s;
     background: #311b92;
-    left: 90%;
+    left: calc(100% - 100px);
+    transform: rotate(2turn);
 }

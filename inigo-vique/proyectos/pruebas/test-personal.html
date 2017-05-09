@@ -22,16 +22,62 @@
             border-radius: 25px;
             transition: width 1s, right 1s;
             transition-timing-function: cubic-bezier(0.175, 0.885, 0.62, 1.275);
+            z-index: -1;
         }
         
         .bloque-central:hover {
             width: 60vw;
             right: 20vw;
         }
+        
+        #test-courtain {
+            background-color: #ffd740;
+            height: 100vh;
+            position: absolute;
+            width: 100vw;
+            transition: top 2s;
+        }
+        
+        #test-courtain #linea-inferior {
+            background-color: #ff1744;
+            height: 10vh;
+            width: 100%;
+            display: block;
+            position: absolute;
+            bottom: 0;
+            cursor: pointer;
+        }
+        
+        .up {
+            top: -90vh;
+        }
+        
+        .down {
+            top: 0vh;
+        }
     </style>
+
+    <script>
+        window.onload = () => {
+            document.getElementById('linea-inferior').onclick = () => {
+                let courtain = document.getElementById('test-courtain');
+
+                console.log(courtain.className);
+
+                if (courtain.className == 'up')
+                    courtain.className = 'down';
+                else if (courtain.className == 'down')
+                    courtain.className = 'up';
+            }
+        };
+    </script>
 </head>
 
 <body>
+
+    <div id="test-courtain" class="down">
+        <span id="linea-inferior"></span>
+    </div>
 
     <div class="bloque-central">
 

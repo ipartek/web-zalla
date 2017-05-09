@@ -33,11 +33,16 @@ function pruebaArrayMuestra() {
     console.log(arrPrerrellenado);
 
 
+    function cadaMes (nombreMes, indice, arr) {
+        console.log("cadaMes", nombreMes, indice, arr);
+    }
+
+    nombresMeses.forEach(cadaMes);
 
 
 
 
-    
+
 
 
 }
@@ -60,35 +65,40 @@ function pruebaTablero() {
         ["P", "P", "P", "P", "P", "P", "P", "P"],
         ["T", "C", "A", "r", "R", "A", "C", "T"],
         ];
-    
-    tablero [1][4] = " ";
-    tablero [3][4] = "P";
-    
+
+    tablero[1][4] = " ";
+    tablero[3][4] = "P";
+
     console.log(tablero);
-    
+
     var contenidoFila = " ";
-    
-    for(var fila = 0; fila < tablero.length; fila++){
+
+    for (var fila = 0; fila < tablero.length; fila++) {
         contenidoFila = " ";
-        for (var columna = 0; columna < tablero [fila].length;columna++){
-            contenidoFila +=tablero[fila][columna]+ " ";
+        for (var columna = 0; columna < tablero[fila].length; columna++) {
+            contenidoFila += tablero[fila][columna] + " ";
             //contenidoFila = contenidoFila + tablero[fila][columna]
         }
         console.log(contenidoFila);
     }
 
+
 }
+
+var frutas = ['Manzana', 'Plátano'];
+
+console.log(frutas.length); 
 
 
 function alCargar() {
-    
-    var botonArrayTablero= document.getElementById("btnTableroArray");
-    
+
+    var botonArrayTablero = document.getElementById("btnTableroArray");
+
     botonArrayTablero.onclick = pruebaTablero;
 
     var botonArrayMuestra = document.getElementById("btnArrayMuestra");
 
     botonArrayMuestra.onclick = pruebaArrayMuestra;
-    
-    
+
+
 }

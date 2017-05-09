@@ -3,7 +3,6 @@ var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', '
 
 function validarDni(dniConLetra)
 {
-    //if(dniConLetra.match(/\d{8}[a-zA-Z]/))
     var esValido = dniConLetra == calcularDniConLetra(dniConLetra);
     return esValido;
 }
