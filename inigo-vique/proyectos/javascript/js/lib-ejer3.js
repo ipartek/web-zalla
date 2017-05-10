@@ -16,7 +16,14 @@ window.onload = function()
     formulario.onsubmit = comprobarFormulario;
 
     formulario['btn-no-required'].onclick = limpiarCampos;
-    formulario['btn-build-dates'].onclick = rellenarFechas;
+    formulario['btn-build-dates'].onclick = () =>
+    {
+        if (confirm('Esto añadirá las fechas numéricas a los selects. ¿Estás seguro?'))
+        {
+            rellenarFechas();
+            formulario['btn-build-dates'].parentNode.removeChild(formulario['btn-build-dates']);
+        }
+    };
     formulario['btn-activate-wrong'].onclick = activarInputs;
 };
 
@@ -39,6 +46,8 @@ function limpiarCampos()
 
             input_.removeAttribute('maxlength');
         }
+
+        this.parentNode.removeChild(this);
     }
 }
 
@@ -48,7 +57,7 @@ function rellenarFechas()
 
     let dias = 31;
     let meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
-    let anos = [1970, fechaActual.getFullYear()];
+    let anos = [1910, fechaActual.getFullYear()];
 
     // Anadimos días
     let formDia = formulario['dia'];
@@ -65,6 +74,7 @@ function rellenarFechas()
     // Anadimos meses
     let formMes = formulario['mes'];
     limpiarSelect(formMes);
+    formMes.style.width = '130px';
 
     for (let i = 0; i < meses.length; i++)
     {
@@ -97,15 +107,21 @@ function limpiarSelect(selectGroup_)
 
 function activarInputs()
 {
-    errors = new Array();
 
-    formulario['nombre'].onchange = comprobarNombre;
-    formulario['apellidos'].onchange = comprobarApellidos;
-    formulario['dni'].onchange = comprobarDNI;
-    formulario['edad'].onchange = comprobarEdad;
-    formulario['dia'].onchange = comprobarFecha;
-    formulario['mes'].onchange = comprobarFecha;
-    formulario['anio'].onchange = comprobarFecha;
+    if (confirm('Esto activará la corrección automática de los bloques. También hará que el Array de errores se llene de mierda hasta que hagas un submit. ¿Estás seguro de hacerlo?'))
+    {
+        errors = new Array();
+
+        formulario['nombre'].onchange = comprobarNombre;
+        formulario['apellidos'].onchange = comprobarApellidos;
+        formulario['dni'].onchange = comprobarDNI;
+        formulario['edad'].onchange = comprobarEdad;
+        formulario['dia'].onchange = comprobarFecha;
+        formulario['mes'].onchange = comprobarFecha;
+        formulario['anio'].onchange = comprobarFecha;
+
+        this.parentNode.removeChild(this);
+    }
 }
 
 function comprobarFormulario()
