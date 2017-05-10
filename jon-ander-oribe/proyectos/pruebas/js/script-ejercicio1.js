@@ -33,3 +33,10 @@ function mostrarDatos() {
     alert(msgFinal);
 
 }
+
+var bloque1 = document.getElementById("datosBasicos");
+var bloque2 = document.getElementById("datosFormacion");
+/*
+window.onload = function() {
+    document.getElementById("fDatosBasicos").style.display = "none";
+}*/
