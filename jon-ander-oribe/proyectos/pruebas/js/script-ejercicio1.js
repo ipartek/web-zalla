@@ -1,8 +1,9 @@
 function mostrarDatos() {
 
+
     var nombreYApellidos = "NOMBRE: " + document.getElementById("nombre").value + "\n";
     nombreYApellidos += "APELLIDOS: " + datosPersonales.apellidos.value;
-
+    var sexo = "SEXO: " + datosPersonales.sexo.options[datosPersonales.sexo.selectedIndex].text;
     var estadoCivil = "ESTADO CIVIL: " + datosPersonales.estadoCivil.options[datosPersonales.estadoCivil.selectedIndex].text;
     var idioma = "IDIOMAS: ";
 
@@ -29,14 +30,22 @@ function mostrarDatos() {
     var texto = "TEXTO: " + document.getElementById("comentarios").value;
 
 
-    var msgFinal = nombreYApellidos + "\n" + estadoCivil + "\n" + idioma + "\n" + profesion + "\n" + texto;
+    var msgFinal = nombreYApellidos + "\n" + sexo + "\n" + estadoCivil + "\n" + idioma + "\n" + profesion + "\n" + texto;
     alert(msgFinal);
 
 }
 
-var bloque1 = document.getElementById("datosBasicos");
-var bloque2 = document.getElementById("datosFormacion");
-/*
+
 window.onload = function() {
-    document.getElementById("fDatosBasicos").style.display = "none";
-}*/
+    //document.getElementById("fDatosBasicos").style.display = "none";
+    document.forms[0].nombre.focus();
+}
+
+function esFemenino() {
+    if (document.forms[0].sexo.options.selectedIndex == 2) {
+        document.getElementById("EstadoCivil").disabled = false;
+    } else {
+        document.getElementById("EstadoCivil").disabled = true;
+        document.getElementById("EstadoCivil").value = 0;
+    }
+}
