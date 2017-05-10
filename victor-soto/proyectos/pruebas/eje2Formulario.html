@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Ejercicio 1</title>
-    <script src="js/eje1Formulario.js"></script>
+    <title>Ejercicio 2</title>
+    <script src="js/eje2Formulario.js"></script>
 </head>
 <body>
-    <header><h1>Ejercicio 1</h1></header>
+    <header><h1>Ejercicio 2</h1></header>
     <nav></nav>
     <main>
         <section>
@@ -15,10 +15,16 @@
                 <input type="text" id="nombre" name="nombre" value="" placeholder="Luis Ángel" autofocus><br>
                 <label for="apellidos">APELLIDOS:</label>
                 <input type="text" id="apellidos" name="apellidos" value="" placeholder="Ruiz Sanchez"><br>
+                <label for="sexo">SEXO:</label>
+                <select name="sexo" id="sexo">
+                    <option value="0" selected="selected">...</option>
+                    <option value="1">Masculino</option>
+                    <option value="2">Femenino</option>
+                </select>
+                <br>
+                <label for="estadoCivil">ESTADO CIVIL:</label>
                 
-                <label for="apellidos">ESTADO CIVIL:</label>
-                
-                <select name="estadoCivil" id="estadoCivil">
+                <select name="estadoCivil" id="estadoCivil" disabled="disabled">
                     <option value="0" selected="selected">...</option>
                     <option value="1">Soltero</option>
                     <option value="2">Casado</option>
@@ -47,9 +53,8 @@
                 <input type="radio" name="profesion" id="profesion4" value="jubilado">Jubilado
                 <br>
                 
-                <label for="comentarios">COMENTARIOS:</label>
-                <br>
-                <textarea name="comentarios" id="comentarios" cols="50" rows="15" disabled></textarea>
+                <label for="tasas">TASAS:</label>
+                <input type="text" id="tasas" name="tasas" value="">
                 <br>
                 
                 <input type="submit" id="enviar_datos" 
