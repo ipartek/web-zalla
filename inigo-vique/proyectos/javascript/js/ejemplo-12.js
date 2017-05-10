@@ -3,8 +3,8 @@
 
 var txtMensajes, form;
 
-const ID_BLOQUE1 = 'bloque1',
-    ID_BLOQUE2 = 'bloque2';
+const   ID_BLOQUE1 = 'bloque1',
+        ID_BLOQUE2 = 'bloque2';
 
 
 function seleccionBloque()
@@ -109,6 +109,18 @@ function pruebasForm()
 
 }
 
+// Añadimos elementos al select
+function pruebasForm2()
+{
+    let number = parseInt(Math.random() * 100);
+
+    let name = 'Opción ' + (number).toString();
+
+    let opcion = new Option(name , number, true, true);
+
+    form['s-bloque'].options.add(opcion);   
+}
+
 function cubitoMove()
 {
     let cubito = document.getElementById('cubito');
@@ -143,6 +155,9 @@ window.onload = function()
     let btnPruebas = document.getElementById('btn-pruebas');
     btnPruebas.onclick = pruebasForm;
 
+    let btnPruebas2 = document.getElementById('btn-pruebas2');
+    btnPruebas2.onclick = pruebasForm2;
+
 
 
     /*--- VAMOS A ATACAR AL FORMULARIO ---*/
@@ -171,9 +186,10 @@ window.onload = function()
         console.log('desenfoco');
     };
 
-    form['txt-dni'].onblur = function(){
-        
-        if ( validarDni(form['txt-dni'].value))
+    form['txt-dni'].onblur = function()
+    {
+
+        if (validarDni(form['txt-dni'].value))
         {
             txtMensajes.value = 'DNI CORRECTO';
         }
@@ -181,13 +197,29 @@ window.onload = function()
         {
             txtMensajes.value = 'DNI INCORRECTO';
         }
+    };
+
+
+    let checkMensajes = form['check-mensajes'];
+    checkMensajes.onchange = function(){
+        if (checkMensajes.checked)
+            mostrarBloque('bloque-mensajes');
+        else
+            ocultarBloque('bloque-mensajes');
+    };
+
+    let rbSexo = form['sexo'];
+
+    for ( let input_ of rbSexo )
+    {
+        input_.onchange = function (){
+            // this es el contexto del propio objeto
+            txtMensajes.value = this.id;
+        };
     }
 
 
-
     cubitoMove();
-
-
 
 };
 
@@ -195,5 +227,5 @@ window.onload = function()
 window.onunload = function()
 {
     // no permite alertas en el unload porque es muy peligroso.
-    alert('no me cierres');
+    //alert('no me cierres');
 };

@@ -118,6 +118,17 @@ select, fieldset {
     border: 0;
 }
 
+form input[type=checkbox]{
+    height: 3em;
+    width: 3em;
+}
+
+#radio-buttons label{
+    display: inline-block;
+    margin-left: 2em;
+    margin-right: 0.2em;
+}
+
 
 
 /* main */

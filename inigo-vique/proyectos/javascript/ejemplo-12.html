@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>	&#x1f490; Ejemplo 12 &#x1f490; </title>
+    <title> &#x1f490; Ejemplo 12 &#x1f490; </title>
     <script src="js/utils.js"></script>
     <script src="js/ejemplo-12.js"></script>
     <link rel="stylesheet" href="css/ejemplo-12.css">
@@ -48,7 +48,7 @@
                     <label for="txt-dni">DNI</label>
                     <input type="text" id="txt-dni" name="txt-dni" pattern="\d{8}[a-zA-Z]" placeholder="DNI con letra" value="02345678T">
                 </p>
-                <p>
+                <p id="bloque-mensajes">
                     <input type="text" id="texto" name="texto" disabled>
                 </p>
 
@@ -60,6 +60,9 @@
                     </select>
                 </p>
                 <p>
+                    <input type="checkbox" id="check-mensajes" name="check-mensajes" checked> Mostrar mensajes en el bloque de mensajes.
+                </p>
+                <p>
                     <fieldset id="bloque1">
                         <legend>Bloque1</legend>
                         <p>Soy el contenido del primer bloque. Al seleccionarlo aparezco</p>
@@ -69,8 +72,16 @@
                         <p>El poder del segundo bloque. Al seleccionarlo aparezco</p>
                     </fieldset>
                 </p>
+                <p id="radio-buttons">
+                    <label for="mujer">Mujer</label>
+                    <input type="radio" id="Mujer👩" name="sexo">
+                    <label for="hombre">Hombre</label>
+                    <input type="radio" id="Hombre👨" name="sexo">
+                    <label for="otro-sexo">Otro</label>
+                    <input type="radio" id="Otro😺" name="sexo"></p>
                 <p>
                     <input type="button" id="btn-pruebas" value="PRUEBAS">
+                    <input type="button" id="btn-pruebas2" value="PRUEBAS2">
                     <input type="submit" value="Enviar">
                 </p>
 
