@@ -69,3 +69,52 @@ function validarNombre(nombre_)
     else
         return true;
 }
+
+/* FUNCIONES FECHAS */
+
+// Funciona con el sistema de fechas de Javascript
+// 0 es enero y 11 es diciembre
+function validarFecha(dia_, mes_, ano_)
+{
+
+    let isValid = true;
+
+    dia_ = parseInt(dia_, 10);
+    mes_ = parseInt(mes_, 10);
+    ano_ = parseInt(ano_, 10);
+
+    if (isNaN(dia_) || isNaN(mes_) || isNaN(ano_))
+    {
+        return false;
+    }
+
+    if (dia_ > 31 || dia_ < 0)
+    {
+        return false;
+    }
+
+    if (mes_ > 11 || mes_ < 0)
+    {
+        return false;
+    }
+
+    switch (dia_)
+    {
+        case 29:
+        case 30:
+            //console.log('29 o 30');
+            isValid = !(mes_ == 1 && (ano_ % 4 != 0));
+            break;
+        case 31:
+            //console.log('31');
+            isValid = (mes_ == 0 || mes_ == 2 || mes_ == 4 || mes_ == 6 || mes_ == 7 || mes_ == 9 || mes_ == 11);
+            break;
+        default:
+            //console.log('otros dias');
+            isValid = true;
+            break;
+    }
+
+    return isValid;
+
+}
