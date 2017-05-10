@@ -17,14 +17,15 @@ window.onload = function () {
         if (datosPersonales.idioma3.checked)
             idiomas += datosPersonales.idioma3.value;
 
-        var profesion = "PROFESIÓN: ";
+        var profesion;
         var encontrado = false;
         for (var i = 0; i < datosPersonales.profesion.length && !encontrado; i++) {
             if (datosPersonales.profesion[i].checked) {
-                profesion += datosPersonales.profesion[i].value;
+                profesion = "PROFESIÓN: " + datosPersonales.profesion[i].value;
                 encontrado = true;
             }
         }
+         
         var comentarios = "COMENTARIOS :" + datosPersonales.comentarios.value;
         var mensajeFinal = nombreyApellidos + "\n" + estadoCivil + "\n" + idiomas + "\n" + profesion + "\n" + comentarios;
 
