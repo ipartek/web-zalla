@@ -11,14 +11,15 @@
 <body>
     <h1>Ejercicio 1</h1>
     <form name="datosPersonales" method="post" id="datosPersonales" action="">
-        <!--<fieldset id="datosBasicos">
-            <legend>Datos Básicos</legend>-->
+
         <label for="nombre">NOMBRE:</label>
-        <input type="text" id="nombre" name="nombre" value="">
+        <input type="text" id="nombre" name="nombre" value="" required>
         <br/>
         <label for="apellidos">APELLIDOS:</label>
-        <input type="text" id="apellidos" name="apellidos" value="">
+        <input type="text" id="apellidos" name="apellidos" value="" required>
         <br/>
+        <label for="lEdad">EDAD:</label>
+        <input type="text" id="edad" name="edad" value="" onchange="validarEdad()">
         <label for="sexo">SEXO</label>
         <select name="sexo" id="sexo" onchange="esFemenino()">
             <option value="0">......</option>
@@ -27,7 +28,7 @@
         </select>
         <br>
         <label for="estadoCivil">ESTADO CIVIL:</label>
-        <!--ESTO NO ES COMO EN EL LIBRO-->
+
         <select name="estadoCivil" id="EstadoCivil" disabled="disabled">
             <option value="0" selected="selected">...</option>
             <option value="1">Soltero</option>
@@ -36,13 +37,9 @@
             <option value="4">Viudo</option>
         </select>
         <br>
-        <!--</fieldset>
-    </form>
-    <form name="fDatosBasicos" method="post" id="fDatosBasicos" action="">
-        <fieldset id="datosFormacion">
-            <legend>Datos Formación</legend>-->
+
         <label for="idiomas">IDIOMAS:</label>
-        <!--DISTINTO AL LIBRO-->
+
         <br>
         <input type="checkbox" name="idioma1" id="idioma1" value="Castellano">Castellano
         <br>
@@ -71,8 +68,7 @@
         <br>
         <input type="submit" id="enviar_datos" name="enviar_datos" value=Enviar>
         <input type="button" id="mostrar_datos" name="mostrar_datos" value="Mostrar" onclick="mostrarDatos()">
-        <!-- </fieldset>
-    </form>-->
+
 </body>
 
 </html>

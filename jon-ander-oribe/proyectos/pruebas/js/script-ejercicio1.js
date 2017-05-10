@@ -6,6 +6,7 @@ function mostrarDatos() {
     var sexo = "SEXO: " + datosPersonales.sexo.options[datosPersonales.sexo.selectedIndex].text;
     var estadoCivil = "ESTADO CIVIL: " + datosPersonales.estadoCivil.options[datosPersonales.estadoCivil.selectedIndex].text;
     var idioma = "IDIOMAS: ";
+    var edad = "EDAD: " + document.getElementById("edad").value;
 
     if (idioma1.checked) {
         idioma += document.getElementById("idioma1").value;
@@ -57,7 +58,7 @@ function mostrarDatos() {
     var texto = "TEXTO: " + document.getElementById("comentarios").value;
 
 
-    var msgFinal = nombreYApellidos + "\n" + sexo + "\n" + estadoCivil + "\n" + idioma + "\n" + profesion + "\n" + tasas + "\n" + texto;
+    var msgFinal = nombreYApellidos + "\n" + edad + "\n" + sexo + "\n" + estadoCivil + "\n" + idioma + "\n" + profesion + "\n" + tasas + "\n" + texto;
     alert(msgFinal);
 
 }
@@ -73,5 +74,12 @@ function esFemenino() {
     } else {
         document.getElementById("EstadoCivil").disabled = true;
         document.getElementById("EstadoCivil").value = 0;
+    }
+}
+
+function validarEdad() {
+    while (document.getElementById("edad").value < 1 || (isNaN(document.getElementById("edad").value))) {
+        alert("Error");
+        document.getElementById("edad").value = "Intentelo de nuevo";
     }
 }
