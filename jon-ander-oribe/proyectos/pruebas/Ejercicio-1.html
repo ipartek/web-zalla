@@ -28,7 +28,7 @@
         <br>
         <label for="estadoCivil">ESTADO CIVIL:</label>
         <!--ESTO NO ES COMO EN EL LIBRO-->
-        <select name="estadoCivil" id="EstadoCivil" onchange="expandirFormulario() " disabled="disabled">
+        <select name="estadoCivil" id="EstadoCivil" disabled="disabled">
             <option value="0" selected="selected">...</option>
             <option value="1">Soltero</option>
             <option value="2">Casado</option>
@@ -52,13 +52,18 @@
         <br>
         <label for="profesion">PROFESION:</label>
         <br>
-        <input type="radio" name="profesion" id="profesion1" value="Autonomo">Autónomo
+        <input type="radio" name="profesion" id="profesion1" value="Autónomo">Autónomo
         <br>
         <input type="radio" name="profesion" id="profesion2" value="Trabajador por cuenta ajena">Trabajador por cuenta ajena
         <br>
         <input type="radio" name="profesion" id="profesion3" value="Desempleado">Desempleado
         <br>
         <input type="radio" name="profesion" id="profesion4" value="Jubilado">Jubilado
+        <br>
+        <p>
+            <label for="Ltasas">TASAS:</label>
+            <input type="text" id="tasas" name="tasas">
+        </p>
         <br>
         <label for="comentariosEtiqueta">COMENTARIOS:</label>
         <br>
