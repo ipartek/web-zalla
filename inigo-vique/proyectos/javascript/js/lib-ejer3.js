@@ -25,6 +25,7 @@ window.onload = function()
         }
     };
     formulario['btn-activate-wrong'].onclick = activarInputs;
+    formulario['btn-activate-macarrada'].onclick = activarMacarrada;
 };
 
 function limpiarCampos()
@@ -187,12 +188,25 @@ function comprobarEdad()
 
 function comprobarFecha()
 {
-    let dia = formulario['dia'].value,
-        mes = formulario['mes'].value,
-        ano = formulario['anio'].value;
+    let dia = parseInt(formulario['dia'].value, 10),
+        mes = parseInt(formulario['mes'].value, 10),
+        ano = parseInt(formulario['anio'].value, 10);
 
-    let condition = (!validarFecha(dia, parseInt(mes) - 1, ano));
+    // Si la condición se cumple manda el error. :S no es muy inteligente la verdad :(
+    let condition = true;
+
+    let isValid = (validarFecha(dia, mes - 1, ano));
     let bloque = document.getElementById('grupo_fechas');
+
+    if (isValid)
+    {
+        let fechaSeleccionada = new Date(ano, mes - 1, dia);
+
+        if (fechaSeleccionada.getTime() < Date.now())
+        {
+            condition = false;
+        }
+    }
 
     doError(condition, bloque, 'La fecha introducida no es válida');
 }
@@ -225,4 +239,24 @@ function doError(condition_, block_, msg_ = 'Ha habido un error desconocido')
     {
         block_.className = 'right';
     }
+}
+
+
+function activarMacarrada()
+{
+    let contenedor = document.getElementById('contenedor');
+
+    contenedor.className = 'rotation';
+
+    contenedor.addEventListener("animationend", limpiarGiro, false);
+
+}
+
+function limpiarGiro()
+{
+    console.log('control de Listeners');
+    this.className = '';
+    this.removeEventListener("animationend", limpiarGiro);
+
+
 }

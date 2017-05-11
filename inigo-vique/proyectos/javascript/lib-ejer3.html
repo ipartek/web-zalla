@@ -15,6 +15,21 @@
         .right {
             background-color: #aed581;
         }
+        
+        .rotation {
+            animation-name: turnAround;
+            animation-duration: 2s;
+            animation-timing-function: cubic-bezier(.78, .74, .5, 1.38);
+        }
+        
+        @keyframes turnAround {
+            from {
+                transform: rotateX(0deg);
+            }
+            to {
+                transform: rotateX(720deg);
+            }
+        }
     </style>
 </head>
 
@@ -96,6 +111,7 @@
                 <input type="button" value="No Required" id="btn-no-required" name="btn-no-required" />
                 <input type="button" value="Crear fechas" id="btn-build-dates" name="btn-build-dates" />
                 <input type="button" value="Activar Inputs" id="btn-activate-wrong" name="btn-activate-wrong" />
+                <input type="button" value="Activar Macarrada" id="btn-activate-macarrada" name="btn-activate-macarrada" />
             </div>
 
         </form>
