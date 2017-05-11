@@ -25,11 +25,11 @@ window.onload = function () {
 
     form.onsubmit = function () {
 
-        if (!evaluarNombre(nombre)) {
+        if (!evaluarNombre()) {
             nombre.focus();
             return false;
         }
-        if (!evaluarApellidos(apellidos)) {
+        if (!evaluarApellidos()) {
             apellidos.focus();
             return false;
         }
@@ -50,9 +50,12 @@ window.onload = function () {
             return false;
         }
     };
+    
+    var btnMostrar = form.mostrar_datos;
+    btnMostrar.onclick = mostrarDatos;
 }
 
-function evaluarNombre(nombre) {
+function evaluarNombre() {
     var nombreValor = nombre.value;
     validarPatron = patron.test(nombreValor);
     if (!validarPatron) { // || !correcto(compNombre)) {
@@ -63,7 +66,7 @@ function evaluarNombre(nombre) {
     }
 }
 
-function evaluarApellidos(apellidos) {
+function evaluarApellidos() {
     var apellidosValor = apellidos.value;
     validarPatron = patron.test(apellidosValor);
     if (!validarPatron) { // || !correcto(compNombre)) {
