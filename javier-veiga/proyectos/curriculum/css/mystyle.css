@@ -57,3 +57,19 @@ a {
     padding-bottom: 1%;
     margin-bottom: 1%;
 }
+
+.glyphicon {
+    position: relative;
+    float: left;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.glyphicon-remove {
+    color: #A94442;
+    display: block;
+}
+
+.glyphicon-ok {
+    color: #3C763D;
+    display: none;
+}
