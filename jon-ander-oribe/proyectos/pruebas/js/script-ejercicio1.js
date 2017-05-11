@@ -104,14 +104,15 @@
     function autoRellenar() {
 
         document.getElementById("nombre").value = "Tipo";
-        document.getElementById("apellidos").value = " de Incognito";
+        document.getElementById("apellidos").value = "De Incognito";
         datosPersonales.sexo.selectedIndex = 1;
         document.getElementById("edad").value = 23;
-        document.getElementById("dni").value = "23654748D";
+        document.getElementById("dni").value = "73654748D";
         document.getElementById("comentarios").value = "Texto de relleno";
         document.getElementById("idioma2").checked = true;
+        document.getElementById("idioma3").checked = true;
         document.getElementById("profesion2").checked = true;
-        document.getElementById("dia").selectedIndex = 1;
+        document.getElementById("dia").selectedIndex = 2;
         document.getElementById("mes").selectedIndex = 2;
         document.getElementById("ano").selectedIndex = 1;
 
