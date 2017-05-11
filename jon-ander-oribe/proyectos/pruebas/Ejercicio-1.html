@@ -11,87 +11,95 @@
 <body>
     <h1>Ejercicio 1</h1>
     <form name="datosPersonales" method="post" id="datosPersonales" action="">
-
-        <label for="nombre">NOMBRE:</label>
-        <input type="text" id="nombre" name="nombre" value="" required>
-        <br/>
-        <label for="apellidos">APELLIDOS:</label>
-        <input type="text" id="apellidos" name="apellidos" value="" required>
-        <br/>
-        <label for="lEdad">EDAD:</label>
-        <input type="text" id="edad" name="edad" value="" onchange="validarEdad()">
-        <label for="sexo">SEXO</label>
-        <select name="sexo" id="sexo" onchange="esFemenino()">
-            <option value="0">......</option>
-            <option value="1">Masculino</option>
-            <option value="2">Femenino</option>
-        </select>
-        <br>
-        <label for="estadoCivil">ESTADO CIVIL:</label>
-
-        <select name="estadoCivil" id="EstadoCivil" disabled="disabled">
-            <option value="0" selected="selected">...</option>
-            <option value="1">Soltero</option>
-            <option value="2">Casado</option>
-            <option value="3">Divorciado</option>
-            <option value="4">Viudo</option>
-        </select>
-        <br>
-
-        <label for="Ldia">DÍA:
-            <select name="dia" id="dia">
-                <option value="...">...</option>
-                <option value="Lunes">Lunes</option>
-                <option value="Martes">Martes</option>
+        <fieldset>
+            <legend>Datos principales</legend>
+            <label for="nombre">NOMBRE:</label>
+            <input type="text" id="nombre" name="nombre" value="" required>
+            <button type="button" onclick="autoRellenar()">Auto-Rellenar</button>
+            <br/>
+            <label for="apellidos">APELLIDOS:</label>
+            <input type="text" id="apellidos" name="apellidos" value="" required>
+            <br/>
+            <label for="lEdad">EDAD:</label>
+            <input type="text" id="edad" name="edad" value="" onchange="validarEdad()">
+            <label for="sexo">SEXO</label>
+            <select name="sexo" id="sexo" onchange="esFemenino()">
+                <option value="0">......</option>
+                <option value="1">Masculino</option>
+                <option value="2">Femenino</option>
             </select>
-        </label>
-        <label for="Lmes">MES:
-            <select name="mes" id="mes">
-                <option value="...">...</option>
-                <option value="Enero">Enero</option>
-                <option value="Febrero">Febrero</option>
+            <br>
+            <label for="estadoCivil">ESTADO CIVIL:</label>
+
+            <select name="estadoCivil" id="EstadoCivil" disabled="disabled">
+                <option value="0" selected="selected">...</option>
+                <option value="1">Soltero</option>
+                <option value="2">Casado</option>
+                <option value="3">Divorciado</option>
+                <option value="4">Viudo</option>
             </select>
-        </label>
-        <label for="Lano">AÑO:
-            <select name="ano" id="ano">
-                <option value="...">...</option>
-                <option value="2016">2016</option>
-                <option value="2017">2017</option>
-            </select>
-        </label>
-        <br>
+            <br>
 
-        <label for="idiomas">IDIOMAS:</label>
+            <label for="Ldia">DÍA:
+                <select name="dia" id="dia">
+                    <option value="...">...</option>
+                    <option value="Lunes">Lunes</option>
+                    <option value="Martes">Martes</option>
+                </select>
+            </label>
+            <label for="Lmes">MES:
+                <select name="mes" id="mes">
+                    <option value="...">...</option>
+                    <option value="Enero">Enero</option>
+                    <option value="Febrero">Febrero</option>
+                </select>
+            </label>
+            <label for="Lano">AÑO:
+                <select name="ano" id="ano">
+                    <option value="...">...</option>
+                    <option value="2016">2016</option>
+                    <option value="2017">2017</option>
+                </select>
+            </label>
+            <br>
+            <label for="dni">DNI:</label>
+            <input type="text" id="dni" name="dni" pattern="\d{8}[a-zA-Z]">
+            <br>
+            <label for="idiomas">IDIOMAS:</label>
 
-        <br>
-        <input type="checkbox" name="idioma1" id="idioma1" value="Castellano">Castellano
-        <br>
-        <input type="checkbox" name="idioma2" id="idioma2" value="Inglés">Inglés
-        <br>
-        <input type="checkbox" name="idioma3" id="idioma3" value="Frances">Francés
-        <br>
-        <label for="profesion">PROFESION:</label>
-        <br>
-        <input type="radio" name="profesion" id="profesion1" value="Autónomo">Autónomo
-        <br>
-        <input type="radio" name="profesion" id="profesion2" value="Trabajador por cuenta ajena">Trabajador por cuenta ajena
-        <br>
-        <input type="radio" name="profesion" id="profesion3" value="Desempleado">Desempleado
-        <br>
-        <input type="radio" name="profesion" id="profesion4" value="Jubilado">Jubilado
-        <br>
-        <p>
-            <label for="Ltasas">TASAS:</label>
-            <input type="text" id="tasas" name="tasas">
-        </p>
-        <br>
-        <label for="comentariosEtiqueta">COMENTARIOS:</label>
-        <br>
-        <textarea name="comentarios" id="comentarios" cols="50" rows="14"></textarea>
-        <br>
-        <input type="submit" id="enviar_datos" name="enviar_datos" value="Enviar" onclick="validarIdiomas(); validarFecha();">
-        <input type="button" id="mostrar_datos" name="mostrar_datos" value="Mostrar" onclick="mostrarDatos()">
-
+            <br>
+            <input type="checkbox" name="idioma1" id="idioma1" value="Castellano">Castellano
+            <br>
+            <input type="checkbox" name="idioma2" id="idioma2" value="Inglés">Inglés
+            <br>
+            <input type="checkbox" name="idioma3" id="idioma3" value="Frances">Francés
+            <br>
+            <label for="profesion">PROFESION:</label>
+            <br>
+            <input type="radio" name="profesion" id="profesion1" value="Autónomo">Autónomo
+            <br>
+            <input type="radio" name="profesion" id="profesion2" value="Trabajador por cuenta ajena">Trabajador por cuenta ajena
+            <br>
+            <input type="radio" name="profesion" id="profesion3" value="Desempleado">Desempleado
+            <br>
+            <input type="radio" name="profesion" id="profesion4" value="Jubilado">Jubilado
+            <br>
+            <p>
+                <label for="Ltasas">TASAS:</label>
+                <input type="text" id="tasas" name="tasas">
+            </p>
+            <br>
+        </fieldset>
+        <fieldset>
+            <legend>Datos secundarios</legend>
+            <label for="comentariosEtiqueta">COMENTARIOS:</label>
+            <br>
+            <textarea name="comentarios" id="comentarios" cols="50" rows="14"></textarea>
+            <br>
+            <input type="submit" id="enviar_datos" name="enviar_datos" value="Enviar" onclick="validarIdiomas(); validarFecha();">
+            <!--  onclick="validarIdiomas(); validarFecha();"-->
+            <input type="button" id="mostrar_datos" name="mostrar_datos" value="Mostrar" onclick="mostrarDatos()">
+        </fieldset>
 </body>
 
 </html>
