@@ -107,6 +107,14 @@
         document.getElementById("apellidos").value = " de Incognito";
         datosPersonales.sexo.selectedIndex = 1;
         document.getElementById("edad").value = 23;
+        document.getElementById("dni").value = "23654748D";
+        document.getElementById("comentarios").value = "Texto de relleno";
+        document.getElementById("idioma2").checked = true;
+        document.getElementById("profesion2").checked = true;
+        document.getElementById("dia").selectedIndex = 1;
+        document.getElementById("mes").selectedIndex = 2;
+        document.getElementById("ano").selectedIndex = 1;
+
 
 
 
