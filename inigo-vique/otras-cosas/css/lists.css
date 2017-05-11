@@ -22,6 +22,24 @@ h1 {
     font-size: 300%;
 }
 
+h2 {
+    font-family: 'Antic', serif;
+    font-size: 175%;
+    margin-bottom: 1em;
+}
+
+dl {
+    margin-bottom: 2em;
+}
+
+code{
+    font-size: 125%;
+}
+
+dd{
+    line-height: 1.5em;
+}
+
 
 /* MAIN */
 
@@ -83,6 +101,36 @@ main dt a:hover {
 #plugins-sublime dt,
 #plugins-sublime a {
     color: #1565c0;
+}
+
+#apuntes {
+    background: linear-gradient(-45deg, #a5d6a7, #a5d6a7 5%, transparent 5%, transparent 45%, #a5d6a7 45%, #a5d6a7 55%, transparent 55%, transparent 95%, #a5d6a7 95%), #e8f5e9;
+    background-size: 2em 2em;
+}
+
+#apuntes header,
+#apuntes main {
+    background-color: #66bb6a;
+}
+
+#apuntes dt,
+#apuntes a {
+    color: #7b1fa2;
+}
+
+#extras {
+    background: linear-gradient(-45deg, #ffe57f, #ffe57f 5%, transparent 5%, transparent 45%, #ffe57f 45%, #ffe57f 55%, transparent 55%, transparent 95%, #ffe57f 95%), #fff8e1;
+    background-size: 2em 2em;
+}
+
+#extras header,
+#extras main {
+    background-color: #ffc400;
+}
+
+#extras dt,
+#extras a {
+    color: #7b1fa2;
 }
 
 

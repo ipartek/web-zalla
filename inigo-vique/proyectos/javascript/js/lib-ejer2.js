@@ -29,6 +29,7 @@ function activarEstadoCivil()
         {
             // Desactivamos el estado civil al no ser Mujer
             formulario['estadoCivil'].disabled = true;
+            formulario['estadoCivil'].selectedIndex = 0;
         }
 
     };
@@ -67,8 +68,15 @@ function mostrarDatos()
         nombre = formulario['nombre'].value;
         apellidos = formulario['apellidos'].value;
 
-        mensaje += nombre + ' ' + apellidos + '\nTasa: ' + tasa;
-        
+        if (tasa == undefined)
+        {
+            mensaje = 'Tasa no seleccionada';
+        }
+        else
+        {
+            mensaje += nombre + ' ' + apellidos + '\nTasa: ' + tasa + ' €';
+        }
+
         alert(mensaje);
 
     };
