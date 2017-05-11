@@ -78,8 +78,10 @@ function esFemenino() {
 }
 
 function validarEdad() {
-    while (document.getElementById("edad").value < 1 || (isNaN(document.getElementById("edad").value))) {
-        alert("Error");
+    if (document.getElementById("edad").value < 1 || (isNaN(document.getElementById("edad").value))) {
         document.getElementById("edad").value = "Intentelo de nuevo";
+        alert("Error");
+        document.getElementById("edad").focus();
+
     }
 }
