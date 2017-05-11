@@ -38,6 +38,29 @@
         </select>
         <br>
 
+        <label for="Ldia">DÍA:
+            <select name="dia" id="dia">
+                <option value="...">...</option>
+                <option value="Lunes">Lunes</option>
+                <option value="Martes">Martes</option>
+            </select>
+        </label>
+        <label for="Lmes">MES:
+            <select name="mes" id="mes">
+                <option value="...">...</option>
+                <option value="Enero">Enero</option>
+                <option value="Febrero">Febrero</option>
+            </select>
+        </label>
+        <label for="Lano">AÑO:
+            <select name="ano" id="ano">
+                <option value="...">...</option>
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+            </select>
+        </label>
+        <br>
+
         <label for="idiomas">IDIOMAS:</label>
 
         <br>
@@ -66,7 +89,7 @@
         <br>
         <textarea name="comentarios" id="comentarios" cols="50" rows="14"></textarea>
         <br>
-        <input type="submit" id="enviar_datos" name="enviar_datos" value=Enviar>
+        <input type="submit" id="enviar_datos" name="enviar_datos" value="Enviar" onclick="validarIdiomas(); validarFecha();">
         <input type="button" id="mostrar_datos" name="mostrar_datos" value="Mostrar" onclick="mostrarDatos()">
 
 </body>

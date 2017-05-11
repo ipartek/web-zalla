@@ -85,3 +85,15 @@ function validarEdad() {
 
     }
 }
+
+function validarIdiomas() {
+    if (document.forms[0].idioma1.checked == false && document.forms[0].idioma2.checked == false && document.forms[0].idioma3.checked == false) {
+        alert("Rellena idiomas");
+    }
+}
+
+function validarFecha() {
+    if (document.getElementById("dia").value == "..." || document.getElementById("mes").value == "..." || document.getElementById("ano").value == "...") {
+        alert("Falta una fecha valida");
+    }
+}
