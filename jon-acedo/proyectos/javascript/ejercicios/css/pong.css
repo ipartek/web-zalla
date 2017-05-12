@@ -1,0 +1,14 @@
+body {
+    background-color: #000;
+}
+
+#output {
+    color: #fff;
+}
+
+#pong {
+    margin: 50px auto;
+    border: 15px solid #fff;
+    display: block;
+    color: #fff;
+}
