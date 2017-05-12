@@ -22,3 +22,21 @@ function mostrarDatos(){
         alert(msgFinal);
     
 }
+
+
+function activarEstadoCivil(){
+  var valorSexo=datosPersonales.sexo.options[datosPersonales.sexo.selectedIndex].value;
+    if (valorSexo==2)
+        document.getElementById("estadoCivil").disabled=true;
+    
+}
+
+funtion calcularTasas(){
+    
+    var 
+}
+
+funtion mostrarMensaje(){
+    
+    
+}
