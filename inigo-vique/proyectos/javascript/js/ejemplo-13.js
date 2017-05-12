@@ -140,7 +140,7 @@ function crearModal()
 
     boton.onclick = () =>{
         divFondo.parentNode.removeChild(divFondo);
-    }
+    };
 
     divFondo.appendChild(divMensajes);
     

@@ -14,6 +14,7 @@ window.onload = function()
     fechaActual = new Date();
 
     formulario.onsubmit = comprobarFormulario;
+    formulario['btn-enviar'].onclick = createPopUp;
 
     formulario['btn-no-required'].onclick = limpiarCampos;
     formulario['btn-build-dates'].onclick = () =>
@@ -157,36 +158,74 @@ function comprobarFormulario()
 
 }
 
-function comprobarNombre()
+function comprobarNombre(event_ = 'doError')
 {
     let nombre = formulario['nombre'].value;
-    doError(nombre == '', formulario['nombre'], 'El nombre introducido no es correcto');
+
+    let errMsg = 'El nombre introducido no es correcto';
+    let condition = nombre == '';
+
+    if (event_ == 'doError')
+    {
+        doError(condition, formulario['nombre'], errMsg);
+    }
+    else if (event_ == 'activateSide')
+    {
+        return (condition) ? errMsg : false;
+    }
 }
 
-function comprobarApellidos()
+function comprobarApellidos(event_ = 'doError')
 {
     let apellidos = formulario['apellidos'].value;
-    doError(apellidos == '', formulario['apellidos'], 'Los apellidos introducidos no son correctos');
+
+    let errMsg = 'Los apellidos introducidos no son correctos';
+    let condition = apellidos == '';
+
+    if (event_ == 'doError')
+    {
+        doError(condition, formulario['apellidos'], errMsg);
+    }
+    else if (event_ == 'activateSide')
+    {
+        return (condition) ? errMsg : false;
+    }
 }
 
-function comprobarDNI()
+function comprobarDNI(event_ = 'doError')
 {
     let dni = formulario['dni'].value;
-    doError((dni == '' || !validarDni(dni)), formulario['dni'], 'El dni introducido no es correcto');
+
+    let errMsg = 'El dni introducido no es correcto';
+    let condition = (dni == '' || !validarDni(dni));
+
+    if (event_ == 'doError')
+    {
+        doError(condition, formulario['dni'], errMsg);
+    }
+    else if (event_ == 'activateSide')
+    {
+        return (condition) ? errMsg : false;
+    }
 }
 
-function comprobarEdad()
+function comprobarEdad(event_ = 'doError')
 {
     const EDAD_MINIMA = 1;
     const EDAD_MAXIMA = 120;
 
     let edad = parseInt(formulario['edad'].value, 10);
+
+    let errMsg = 'La edad introducida no es válida';
     let condition = (isNaN(edad) || edad < EDAD_MINIMA || edad > EDAD_MAXIMA);
 
-    doError(condition, formulario['edad'], 'La edad introducida no es válida');
+    if (event_ == 'doError')
+    {
+        doError(condition, formulario['edad'], errMsg);
+    }
 }
 
-function comprobarFecha()
+function comprobarFecha(event_ = 'doError')
 {
     let dia = parseInt(formulario['dia'].value, 10),
         mes = parseInt(formulario['mes'].value, 10),
@@ -194,6 +233,7 @@ function comprobarFecha()
 
     // Si la condición se cumple manda el error. :S no es muy inteligente la verdad :(
     let condition = true;
+    let errMsg = 'La fecha introducida no es válida';
 
     let isValid = (validarFecha(dia, mes - 1, ano));
     let bloque = document.getElementById('grupo_fechas');
@@ -208,10 +248,17 @@ function comprobarFecha()
         }
     }
 
-    doError(condition, bloque, 'La fecha introducida no es válida');
+    if (event_ == 'doError')
+    {
+        doError(condition, bloque, errMsg);
+    }
+    else if (event_ == 'activateSide')
+    {
+        return (condition) ? errMsg : false;
+    }
 }
 
-function comprobarIdioma()
+function comprobarIdioma(event_ = 'doError')
 {
     let isLanguage = false;
     for (let i = 1; i <= 3; i++)
@@ -224,7 +271,18 @@ function comprobarIdioma()
 
     let bloque = document.getElementById('grupo-idiomas');
 
-    doError(!isLanguage, bloque, 'Selecciona al menos un idioma');
+    let errMsg = 'Selecciona al menos un idioma';
+    let condition = !isLanguage;
+
+
+    if (event_ == 'doError')
+    {
+        doError(!isLanguage, bloque, 'Selecciona al menos un idioma');
+    }
+    else if (event_ == 'activateSide')
+    {
+        return (condition) ? errMsg : false;
+    }
 }
 
 
@@ -238,6 +296,68 @@ function doError(condition_, block_, msg_ = 'Ha habido un error desconocido')
     else
     {
         block_.className = 'right';
+    }
+}
+
+function createPopUp()
+{
+    errors = new Array();
+
+    comprobarNombre();
+    comprobarApellidos();
+    comprobarDNI();
+    comprobarEdad();
+    comprobarFecha();
+    comprobarIdioma();
+
+    let divFondo = document.createElement('div');
+
+    divFondo.className = 'modal';
+    document.body.appendChild(divFondo);
+
+    let divMensaje = document.createElement('div');
+
+    divMensaje.className = 'internal';
+    divFondo.appendChild(divMensaje);
+
+    let finalBtn = document.createElement('button');
+
+    if (errors.length == 0)
+    {
+        divMensaje.className = divMensaje.className + ' right';
+
+        divMensaje.innerHTML = '<h1>Todo Correcto</h1>';
+
+        finalBtn.innerText = 'Continuar';
+        divMensaje.appendChild(finalBtn);
+
+        finalBtn.onclick = () =>
+        {
+            formulario.submit();
+        };
+    }
+    else
+    {
+        divMensaje.className = divMensaje.className + ' wrong';
+
+        let errorMSG = '<h1>¡ERROR!¡ERROR!¡ERROR!¡ERROR!</h1><p>Tienes ' + errors.length + ' errores.</p><ul>';
+
+        for (let error_ of errors)
+        {
+            errorMSG += '<li>' + error_ + '</li>';
+        }
+
+        errorMSG += '</ul>';
+
+        divMensaje.innerHTML = errorMSG;
+
+        finalBtn.innerText = 'Cerrar';
+        divMensaje.appendChild(finalBtn);
+
+        finalBtn.onclick = () =>
+        {
+            divFondo.parentNode.removeChild(divFondo);
+        };
     }
 }
 
@@ -257,6 +377,4 @@ function limpiarGiro()
     console.log('control de Listeners');
     this.className = '';
     this.removeEventListener("animationend", limpiarGiro);
-
-
 }
