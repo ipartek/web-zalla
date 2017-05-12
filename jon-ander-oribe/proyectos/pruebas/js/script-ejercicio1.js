@@ -7,6 +7,7 @@
        nombreYApellidos += "APELLIDOS: " + datosPersonales.apellidos.value;
        var sexo = "SEXO: " + datosPersonales.sexo.options[datosPersonales.sexo.selectedIndex].text;
        var estadoCivil = "ESTADO CIVIL: " + datosPersonales.estadoCivil.options[datosPersonales.estadoCivil.selectedIndex].text;
+       var dni = "DNI: " + document.getElementById("dni").value;
        var idioma = "IDIOMAS: ";
        var edad = "EDAD: " + document.getElementById("edad").value;
 
@@ -36,19 +37,19 @@
                switch (recorrido) {
                    case 0:
                        document.forms[0].tasas.value = "Autonomo: 15 euros";
-                       tasas = "Autonomo: 15 euros";
+                       tasas = "TASAS: 15 euros";
                        break;
                    case 1:
                        document.forms[0].tasas.value = "Cuenta ajena: 20 euros";
-                       tasas = "Trabajador por cuenta ajena: 20 euros";
+                       tasas = "TASAS: 20 euros";
                        break;
                    case 2:
                        document.forms[0].tasas.value = "Desempleado: 2 euros";
-                       tasas = "Desempleado: 2 euros"
+                       tasas = "TASAS: 2 euros"
                        break;
                    case 3:
                        document.forms[0].tasas.value = "Jubilado: 5 euros";
-                       tasas = "Jubilado: 5 euros";
+                       tasas = "TASAS: 5 euros";
                        break;
                }
                salida = true;
@@ -61,7 +62,7 @@
        var texto = "TEXTO: " + document.getElementById("comentarios").value;
 
 
-       var msgFinal = nombreYApellidos + "\n" + edad + "\n" + sexo + "\n" + estadoCivil + "\n" + idioma + "\n" + profesion + "\n" + tasas + "\n" + texto;
+       var msgFinal = nombreYApellidos + "\n" + edad + "\n" + sexo + "\n" + estadoCivil + "\n" + dni + "\n" + idioma + "\n" + profesion + "\n" + tasas + "\n" + texto;
        alert(msgFinal);
 
    }
@@ -121,10 +122,6 @@
 
    }
 
-   function validarTodo() {
-
-   }
-
    /**********FUNCIONA DE AQUI PARA ARRIBA********/
 
 
@@ -171,7 +168,7 @@
 
        divFondo.appendChild(divMensaje);
 
-       divMensaje.innerHTML = "<h1>Alerta!!</h1>";
+       divMensaje.innerHTML = "<h1>Alerta!!</h1>" + "\nTu DNI es: " + document.getElementById("dni").value + "<br>";
        var boton = document.createElement("button");
        divMensaje.appendChild(boton);
        boton.innerHTML = "Salir!";
