@@ -6,7 +6,7 @@ window.onload = function () {
         var apellidos = "APELLIDOS: " + datosPersonales.apellidos.value;
         var tasas = "TASA: " + datosPersonales.tasas.value;
 
-        var nombreFocus = document.datosPersonales.nombre.focus();
+        document.datosPersonales.nombre.focus();
 
         document.datosPersonales.estadoCivil.disabled = true;
 
@@ -26,7 +26,7 @@ window.onload = function () {
         for (var pos = 0; pos < datosPersonales.profesion.length; pos++)
             datosPersonales.profesion[pos].onclick = valorTasas;
 
-
+        alert(nombre + "\n" + apellidos + "\n" + tasas);
     }
 
 }
@@ -60,7 +60,3 @@ function valorTasas() {
     }
 
 }
-
-
-
-alert(nombre + "\n" + apellidos + "\n" + tasas);
