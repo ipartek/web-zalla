@@ -44,8 +44,11 @@
 
     <div class="container-fluid">
 
-        <!------------------------- Formulario para insertar los datos personales -------------------------------------------------------------------------------------------------->
+        <!------------------------- Formulario subdividido en 4 partes. Datos personales, educacion, experiencia laboral y otros (carnet de conducir, idiomas, etc) -------------------------------------------------------------------------------------------------->
         <form id="form-principal" class="form-horizontal" id="form-principal" action="#" method="get" enctype="multipart/form-data" autocomplete="on">
+
+            <!-- Inicio del cuadro de datos personales-->
+
             <section id="cuadro-datos-personales" class="seccion-campos">
 
                 <header class="bajoborde row centrado">
@@ -57,25 +60,44 @@
 
                 <main class="bajoborde row">
 
+                    <!-- Input text del nombre -->
 
                     <article class="form-group">
                         <label class="control-label col-sm-2" for="nombre">Nombre *:</label>
                         <section class="col-sm-8">
-                            <input type="text" class="form-control required" id="nombre" placeholder="Solo letras y al menos 2 caracteres" pattern="[a-z A-Z]{2,30}" value="Javi"><i class="glyphicon glyphicon-ok">Debe contener solo letras y 2 caracteres minimo</i>
+                            <input type="text" class="form-control required" id="nombre" placeholder="Solo letras y al menos 2 caracteres" pattern="[a-z A-Z]{2,30}" value="Javi">
+                            <div class="error-msg" hidden>
+                                <i class="glyphicon glyphicon-remove"></i><span> Debe contener solo letras y/o espacios y 2 caracteres minimo</span>
+                            </div>
                         </section>
                     </article>
+
+                    <!-- Input text del apellido -->
+
                     <article class="form-group">
                         <label class="control-label col-sm-2" for="apellidos">Apellidos *:</label>
                         <section class="col-sm-8">
-                            <input type="text" class="form-control required" id="apellidos" placeholder="Solo letras y al menos 2 caracteres" pattern="[a-z A-Z]{2,30}" value="Veiga"><i class="glyphicon glyphicon-ok">Debe contener solo letras y 2 caracteres minimo</i>
+                            <input type="text" class="form-control required" id="apellidos" placeholder="Solo letras y al menos 2 caracteres" pattern="[a-z A-Z]{2,30}" value="Veiga">
+                            <div class="error-msg" hidden>
+                                <i class="glyphicon glyphicon-remove"></i><span> Debe contener solo letras y/o espacios y 2 caracteres minimo</span>
+                            </div>
                         </section>
                     </article>
+
+                    <!-- Input text de la fecha de nacimiento -->
+
                     <article class="form-group">
                         <label class="control-label col-sm-2" for="nacimiento">Fecha de nacimiento *:</label>
                         <section class="col-sm-3">
-                            <input type="date" class="form-control required" id="nacimiento" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"><i class="glyphicon glyphicon-ok">Debes rellenar todos los campor de la fecha</i>
+                            <input type="date" class="form-control required" id="nacimiento" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
+                            <div class="error-msg" hidden>
+                                <i class="glyphicon glyphicon-remove"></i><span> Debes rellenar todos los campos de la fecha</span>
+                            </div>
                         </section>
                     </article>
+
+                    <!-- radio buttons del sexo -->
+
                     <article class="form-group form-inline">
                         <label class="control-label col-sm-2">Sexo *:</label>
                         <section class="col-sm-2">
@@ -88,12 +110,19 @@
                         </section>
                     </article>
 
+                    <!-- Input text de la direccion -->
+
                     <article class="form-group">
                         <label class="control-label col-sm-2" for="direccion">Direccion *:</label>
                         <section class="col-sm-8">
-                            <input type="text" class="form-control required" id="direccion" placeholder="minimo 5 caracteres y maximo 50" pattern="[a-zA-Z0-9 /.,º]{5,50}" value="unayotra"><i class="glyphicon glyphicon-ok">Debe tener al menos 5 caracteres de longitud.</i>
+                            <input type="text" class="form-control required" id="direccion" placeholder="minimo 5 caracteres y maximo 50" pattern="[a-zA-Z0-9 /.,º]{5,50}" value="unayotra">
+                            <div class="error-msg" hidden>
+                                <i class="glyphicon glyphicon-remove"></i><span> Debe tener 5 caracteres de longitud minima y 50 maxima</span>
+                            </div>
                         </section>
                     </article>
+
+                    <!-- Input text de la provincia -->
 
                     <article class="form-group">
                         <label class="control-label col-sm-2" for="provincia">Provincia:</label>
@@ -154,38 +183,63 @@
                         </select>
                         </section>
                     </article>
+
+                    <!-- Input text del municipio -->
+
                     <article class="form-group">
                         <label class="control-label col-sm-2" for="municipio">Municipio:</label>
                         <section class="col-sm-8">
-                            <input type="select" class="form-control required" id="municipio" placeholder="Introduce ciudad" pattern="[a-zA-Z ]{2,30}" value="unoyotro"><i class="glyphicon glyphicon-ok">Debe contener solo letras y/o espacios y  2 caracteres minimo</i>
+                            <input type="select" class="form-control required" id="municipio" placeholder="Introduce ciudad" pattern="[a-zA-Z ]{2,30}" value="unoyotro">
+                            <div class="error-msg" hidden>
+                                <i class="glyphicon glyphicon-remove"></i><span> Debe contener solo letras y/o espacios y 2 caracteres minimo</span>
+                            </div>
                         </section>
                     </article>
 
+                    <!-- Input text del numero de telefono principal -->
 
                     <article class="form-group">
                         <label class="control-label col-sm-2" for="tlf-1">Tlf. contacto 1*:</label>
                         <section class="col-sm-8">
-                            <input type="tel" maxlength="9" class="form-control required" id="tlf-1" placeholder="9 numeros. Ej. 666555444" pattern="[0-9]{9}" value="123456789"><i class="glyphicon glyphicon-ok">Debe contener exactamente 9 numeros</i>
+                            <input type="tel" maxlength="9" class="form-control required" id="tlf-1" placeholder="9 numeros. Ej. 666555444" pattern="[0-9]{9}" value="123456789">
+                            <div class="error-msg" hidden>
+                                <i class="glyphicon glyphicon-remove"></i><span> Debe tener exactamente 9 numeros</span>
+                            </div>
                         </section>
                     </article>
+
+                    <!-- Input text del numero de telefono secundario -->
+
                     <article class="form-group">
                         <label class="control-label col-sm-2" for="tlf-2">Tlf. contacto 2:</label>
                         <section class="col-sm-8">
                             <input type="tel" maxlength="9" class="form-control" id="tlf-2" placeholder="Introduce un segundo telefono de contacto" value="123456789">
                         </section>
                     </article>
+
+                    <!-- Input text del email -->
+
                     <article class="form-group">
                         <label class="control-label col-sm-2" for="email">Email*:</label>
                         <section class="col-sm-8">
-                            <input type="email" class="form-control required" id="email" placeholder="Ej. nombre@dominio.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}" value="una@yotra.com"><i class="glyphicon glyphicon-ok">Debe tener el formato ce un email</i>
+                            <input type="email" class="form-control required" id="email" placeholder="Ej. nombre@dominio.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}" value="una@yotra.com">
+                            <div class="error-msg" hidden>
+                                <i class="glyphicon glyphicon-remove"></i><span> Debe tener el formato de un email valido</span>
+                            </div>
                         </section>
                     </article>
+
+                    <!-- Input text para la foto -->
+
                     <article class="form-group">
                         <label class="control-label col-sm-2" for="foto">Foto:</label>
                         <section class="col-sm-8">
                             <input type="file" class="form-control" id="foto">
                         </section>
                     </article>
+
+                    <!-- Boton siguiente para cargar el cuadro de educacion -->
+
                     <article class="form-group btn-siguiente">
                         <section class="col-sm-5"></section>
                         <section class="col-sm-2">
@@ -199,6 +253,7 @@
 
             <!--------------------------------------------------------------------------------------------------------------------------->
 
+            <!-- Segunda parte del formulario dedicada a la educacion -->
 
             <section id="cuadro-educacion" class="seccion-campos">
                 <header class="bajoborde row centrado">
@@ -210,6 +265,7 @@
 
                 <main class="bajoborde row">
 
+                    <!-- Input text de la fecha de inicio -->
 
                     <article class="form-group">
                         <div class="col-sm-2"></div>
@@ -218,19 +274,37 @@
                     <article class="form-group">
                         <label class="control-label col-sm-2" for="desde-edu">Desde:</label>
                         <section class="col-sm-3">
-                            <input type="date" class="form-control required desde" id="desde-edu" name="desde-edu">
+                            <input type="date" class="form-control required desde" id="desde-edu" name="desde-edu" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
+                            <div class="error-msg" hidden>
+                                <i class="glyphicon glyphicon-remove"></i><span> Debes rellenar todos los campos de la fecha</span>
+                            </div>
                         </section>
                     </article>
+
+                    <!-- Input text de la fecha de fin -->
+
                     <article class="form-group">
                         <label class="control-label col-sm-2" for="hasta-edu">Hasta:</label>
                         <section class="col-sm-3">
-                            <input type="date" class="form-control required hasta" id="hasta-edu" name="hasta-edu">
+                            <input type="date" class="form-control required hasta" id="hasta-edu" name="hasta-edu" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
+                            <div class="error-msg" hidden>
+                                <i class="glyphicon glyphicon-remove"></i><span> Debes rellenar todos los campos de la fecha</span>
+                            </div>
                         </section>
                     </article>
+
+                    <!-- textarea para describir el tipo de educacion del usuario -->
+
                     <article class="form-group form-inline">
                         <label class="control-label col-sm-4" for="educacion">Introduce una descripcion:</label>
-                        <textarea name="educacion" id="educacion" rows="8" class="col-sm-6 required textarea-descripcion" wrap="hard"></textarea>
+                        <textarea name="educacion" id="educacion" rows="8" class="col-sm-6 required textarea-descripcion" wrap="hard" pattern=" +"></textarea>
+                        <div class="error-msg" hidden>
+                            <i class="glyphicon glyphicon-remove"></i><span> Debe tener al menos un espacio</span>
+                        </div>
                     </article>
+
+                    <!-- boton añadir para insertar los datos anteriores en una lista y mostrarla -->
+
                     <article class="form-group btn-anadir">
                         <section class="col-sm-2"></section>
                         <section class="col-sm-2">
@@ -241,6 +315,9 @@
                             <button type="button" class="btn btn-success btn-lg anadir">Añadir</button>
                         </section>
                     </article>
+
+                    <!-- boton siguiente y anterior para poder navegar y corregir -->
+
                     <article class="from-group btn-siguiente">
                         <section class="row">
                             <div class="col-sm-2"></div>
@@ -259,6 +336,7 @@
 
             <!--------------------------------------------------------------------------------------------------------------------------->
 
+            <!-- Tercera parte del formulario dedicada a la experiencia laboral -->
 
             <section id="cuadro-exp-laboral" class="seccion-campos">
                 <header class="bajoborde row centrado">
@@ -270,35 +348,66 @@
 
                 <main class="bajoborde row">
 
-                    <article class="form-group">
-                        <div class="col-sm-4"></div>
-                        <button id="introducir-educacion" class="btn btn-lg col-sm-4" disabled>Introducir experiencia laboral</button>
-                    </article>
-                    <article class="form-group form-inline">
-                        <label class="control-label col-sm-2" for="desde-exp">Desde:</label>
-                        <section class="col-sm-3">
-                            <input type="date" class="form-control desde" id="desde-exp">
-                        </section>
-                        <label class="control-label col-sm-2" for="hasta-exp">Hasta:</label>
-                        <section class="col-sm-3">
-                            <input type="date" class="form-control hasta" id="hasta-exp">
-                        </section>
-                    </article>
-                    <article class="form-group form-inline">
-                        <label class="control-label col-sm-4" for="educacion">Introduce una descripcion:</label>
-                        <textarea name="educacion" id="educacion" rows="8" class="col-sm-6 textarea-descripcion"></textarea>
-                    </article>
+                    <!-- Input text de la fecha de inicio -->
 
                     <article class="form-group">
-                        <section class="col-sm-1"></section>
-                        <section class="col-sm-2">
-                            <button class="btn btn-success btn-lg mostrar-educacion">Volver</button>
+                        <div class="col-sm-2"></div>
+                        <p class="cursiva">Por favor elija un rango de fechas y rellene la descripción para generar una relación de estudios.</p>
+                    </article>
+                    <article class="form-group">
+                        <label class="control-label col-sm-2" for="desde-exp">Desde:</label>
+                        <section class="col-sm-3">
+                            <input type="date" class="form-control required desde" id="desde-exp" name="desde-exp" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
+                            <div class="error-msg" hidden>
+                                <i class="glyphicon glyphicon-remove"></i><span> Debes rellenar todos los campos de la fecha</span>
+                            </div>
                         </section>
-                        <section class="col-sm-2">
-                            <button class="btn btn-success btn-lg" onclick="">Añadir</button>
+                    </article>
+
+                    <!-- Input text de la fecha de fin -->
+
+                    <article class="form-group">
+                        <label class="control-label col-sm-2" for="hasta-exp">Hasta:</label>
+                        <section class="col-sm-3">
+                            <input type="date" class="form-control required hasta" id="hasta-exp" name="hasta-exp" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
+                            <div class="error-msg" hidden>
+                                <i class="glyphicon glyphicon-remove"></i><span> Debes rellenar todos los campos de la fecha</span>
+                            </div>
                         </section>
+
+                        <!-- textarea para describir el tipo de educacion del usuario -->
+
+                    </article>
+                    <article class="form-group form-inline">
+                        <label class="control-label col-sm-4" for="exp-laboral">Introduce una descripcion:</label>
+                        <textarea name="exp-laboral" id="exp-laboral" rows="8" class="col-sm-6 textarea-descripcion"></textarea>
+                    </article>
+
+                    <!-- boton añadir para insertar los datos anteriores en una lista y mostrarla -->
+
+                    <article class="form-group btn-anadir">
+                        <section class="col-sm-2"></section>
                         <section class="col-sm-2">
-                            <button type="button" class="btn btn-success btn-lg" onclick="">Enviar</button>
+                            <button type="button" class="btn btn-success btn-lg mostrar-datos">Volver</button>
+                        </section>
+                        <section class="col-sm-4"></section>
+                        <section class="col-sm-2">
+                            <button type="button" class="btn btn-success btn-lg anadir">Añadir</button>
+                        </section>
+                    </article>
+
+                    <!-- boton siguiente y anterior para poder navegar y corregir -->
+
+                    <!-- Este grupo de botones hay ke modificarlo todavia -->
+
+                    <article class="from-group btn-siguiente">
+                        <section class="row">
+                            <div class="col-sm-2"></div>
+                            <ul class="col-sm-8 lista-datos" id="lista-exp"></ul>
+                        </section>
+                        <section class="row">
+                            <div class="col-sm-5"></div>
+                            <button type="button" class="btn btn-success btn-lg mostrar-exp">Paso 3</button>
                         </section>
                     </article>
 
@@ -309,7 +418,59 @@
             <!--------------------------------------------------------------------------------------------------------------------------->
 
         </form>
+
+        <!-- Footer de informacion y vinculos a redes sociales y demas -->
         <footer>
+
+            <section class="text-center">
+                <header>
+                    <h2 class="text-center">Mis proyectos</h2>
+                </header>
+                <article class="row">
+                    <section class="col-sm-3">
+                        <ul class="nav nav-pills nav-stacked">
+                            <li><a href="#">Curriculum</a></li>
+                            <li><a href="#">segundo</a></li>
+                        </ul>
+                    </section>
+                    <section class="col-sm-3">
+                        <ul class="nav nav-pills nav-stacked">
+                            <li><a href="#">tercero</a></li>
+                            <li><a href="#">cuarto</a></li>
+                        </ul>
+                    </section>
+                    <section class="col-sm-3">
+                        <ul class="nav nav-pills nav-stacked">
+                            <li><a href="#">quinto</a></li>
+                            <li><a href="#">sexto</a></li>
+                        </ul>
+                    </section>
+                    <section class="col-sm-3">
+                        <ul class="nav nav-pills nav-stacked">
+                            <li><a href="#">septimo</a></li>
+                            <li><a href="#">octavo</a></li>
+                        </ul>
+                    </section>
+                </article>
+                <article class="row">
+
+                    <ul class="nav nav-pills nav-justified">
+                        <li><a href="/">autor</a></li>
+                        <li><a href="#">copyright</a></li>
+                        <li><a href="#">Politica</a></li>
+                    </ul>
+
+                </article>
+            </section>
+            <section>
+                <h2 class="text-center">Sigueme en :</h2>
+                <article class="text-center center-block">
+                    <a href=""><i class="fa fa-facebook-square fa-3x social"></i></a>
+                    <a href=""><i class="fa fa-twitter-square fa-3x social"></i></a>
+                    <a href=""><i class="fa fa-google-plus-square fa-3x social"></i></a>
+                    <a href=""><i class="fa fa-envelope-square fa-3x social"></i></a>
+                </article>
+            </section>
 
         </footer>
     </div>

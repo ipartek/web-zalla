@@ -58,18 +58,6 @@ a {
     margin-bottom: 1%;
 }
 
-.glyphicon {
-    position: relative;
-    float: left;
-    font-family: 'Roboto Condensed', sans-serif;
-}
-
-.glyphicon-remove {
+.error-msg {
     color: #A94442;
-    display: block;
-}
-
-.glyphicon-ok {
-    color: #3C763D;
-    display: none;
 }

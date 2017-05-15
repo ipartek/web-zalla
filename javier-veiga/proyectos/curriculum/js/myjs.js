@@ -13,16 +13,10 @@ $(document).ready(function () { //cargaremos las rutinas de jquery cuando el doc
     var validoCuadroDatos = true;
     var validoBtnSiguiente = false;
 
-    console.log("cuadro datos" + validoCuadroDatos);
-    console.log("cuadro edu" + validoCuadroEdu);
-    console.log("cuadro exp" + validoCuadroExp);
-    console.log("boton siguiente" + validoBtnSiguiente);
-
-
     mostrarOcultar($("#cuadro-datos-personales"), validoCuadroDatos);
     mostrarOcultar($("#cuadro-educacion"), validoCuadroEdu);
     mostrarOcultar($("#cuadro-exp-laboral"), validoCuadroExp);
-    mostrarOcultar($("#cuadro-datos-personales").find(".btn-siguiente"), validoBtnSiguiente);
+    deshabilitarBoton($("#cuadro-datos-personales").find(".btn-siguiente btn"), validoBtnSiguiente);
 
 
     //usamos esta funcion para mostrar u ocultar partes de la pagina dependiendo de un valor logico
@@ -32,6 +26,13 @@ $(document).ready(function () { //cargaremos las rutinas de jquery cuando el doc
             bloque.show();
         else
             bloque.hide();
+    }
+
+    function deshabilitarBoton(boton, valido) {
+        if (valido)
+            boton.removeAttribute("disabled");
+        else
+            boton.attr("disabled", "disabled");
     }
 
 
@@ -55,7 +56,7 @@ $(document).ready(function () { //cargaremos las rutinas de jquery cuando el doc
         mostrarOcultar($("#cuadro-datos-personales"), validoCuadroDatos);
         mostrarOcultar($("#cuadro-educacion"), validoCuadroEdu);
         mostrarOcultar($("#cuadro-exp-laboral"), validoCuadroExp);
-        mostrarOcultar($("#cuadro-datos-personales").find(".btn-siguiente"), validoBtnSiguiente);
+        deshabilitarBoton($("#cuadro-datos-personales").find(".btn-siguiente btn"), validoBtnSiguiente);
 
 
     });
@@ -70,7 +71,7 @@ $(document).ready(function () { //cargaremos las rutinas de jquery cuando el doc
         mostrarOcultar($("#cuadro-datos-personales"), validoCuadroDatos);
         mostrarOcultar($("#cuadro-educacion"), validoCuadroEdu);
         mostrarOcultar($("#cuadro-exp-laboral"), validoCuadroExp);
-        mostrarOcultar($("#cuadro-educacion").find(".btn-siguiente"), validoBtnSiguiente);
+        deshabilitarBoton($("#cuadro-educacion").find(".btn-siguiente btn"), validoBtnSiguiente);
 
 
     });
@@ -85,7 +86,7 @@ $(document).ready(function () { //cargaremos las rutinas de jquery cuando el doc
         mostrarOcultar($("#cuadro-datos-personales"), validoCuadroDatos);
         mostrarOcultar($("#cuadro-educacion"), validoCuadroEdu);
         mostrarOcultar($("#cuadro-exp-laboral"), validoCuadroExp);
-        mostrarOcultar($("#cuadro-exp-laboral").find(".btn-siguiente"), validoBtnSiguiente);
+        deshabilitarBoton($("#cuadro-exp-laboral").find(".btn-siguiente btn"), validoBtnSiguiente);
 
 
     });
@@ -116,24 +117,23 @@ $(document).ready(function () { //cargaremos las rutinas de jquery cuando el doc
         //Comparo los valores recogidos para añadir o eliminar las clases de bootstrap de estados de campos de formulario
 
         if (valor.length === 0 || valor.match(patron) === null) {
-            articulo.removeClass("has-success");
             articulo.addClass("has-error");
-            icono.removeClass("glyphicon-ok");
             icono.addClass("glyphicon-remove");
+            articulo.find(".error-msg").removeAttr("hidden");
 
         } else {
             articulo.removeClass("has-error");
-            articulo.addClass("has-success");
             icono.removeClass("glyphicon-remove");
-            icono.addClass("glyphicon-ok");
-
+            articulo.find(".error-msg").attr("hidden", "hidden");
 
         }
 
         //necesito saber si algun campo es erroneo para poder mostrar u ocultar el boton por eso recojo dentro de la variable logica validoBtnSiguiente un falso si algun campo es erroneo o un true si todos estan bien
         validoBtnSiguiente = validarSeccion(seccion);
+
+
         //Por ultimo llamo a la funcion para mostrar u ocultar dependiendo del valor anteriormente recogido
-        mostrarOcultar(seccion.find(".btn-siguiente"), validoBtnSiguiente);
+        deshabilitarBoton(seccion.find(".btn-siguiente btn"), validoBtnSiguiente);
 
     } //fin validar campos
 
@@ -143,14 +143,20 @@ $(document).ready(function () { //cargaremos las rutinas de jquery cuando el doc
 
     function validarSeccion(seccion) {
 
+        var valido = true;
+
         //para todos los elementos de la seccion que tengan un error o sean requeridos debo validar el valor
         seccion.find(".required").each(function () {
 
+            console.log($(this));
+
             if ($(this).parents(".form-group").attr("class").match("has-error") || $(this).val().length === 0) {
-                return false;
-            } else
-                return true;
+                valido = false;
+                return valido;
+            }
         });
+
+        return valido;
 
 
     } //fin validar seccion
