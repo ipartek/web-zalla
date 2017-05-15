@@ -44,10 +44,12 @@ window.onload = function () {
     
     var rGenero = form.rGenero;
     for(var i = 0; i < rGenero.length; i++) {
-        rGenero[i].onclick = function() {
+        rGenero[i].onchange = function() {
             txtMensajes.value = this.value;
         };
     }
+    
+    
 };
 
 function envioFormulario() {
