@@ -16,7 +16,9 @@ $(document).ready(function () { //cargaremos las rutinas de jquery cuando el doc
     mostrarOcultar($("#cuadro-datos-personales"), validoCuadroDatos);
     mostrarOcultar($("#cuadro-educacion"), validoCuadroEdu);
     mostrarOcultar($("#cuadro-exp-laboral"), validoCuadroExp);
-    deshabilitarBoton($("#cuadro-datos-personales").find(".btn-siguiente btn"), validoBtnSiguiente);
+    deshabilitarBoton($("#cuadro-datos-personales").find(".btn-siguiente .btn"), validoBtnSiguiente);
+
+    console.log($("#cuadro-datos-personales").find(".btn-siguiente .btn"));
 
 
     //usamos esta funcion para mostrar u ocultar partes de la pagina dependiendo de un valor logico
@@ -30,7 +32,7 @@ $(document).ready(function () { //cargaremos las rutinas de jquery cuando el doc
 
     function deshabilitarBoton(boton, valido) {
         if (valido)
-            boton.removeAttribute("disabled");
+            boton.removeAttr("disabled");
         else
             boton.attr("disabled", "disabled");
     }
@@ -56,7 +58,7 @@ $(document).ready(function () { //cargaremos las rutinas de jquery cuando el doc
         mostrarOcultar($("#cuadro-datos-personales"), validoCuadroDatos);
         mostrarOcultar($("#cuadro-educacion"), validoCuadroEdu);
         mostrarOcultar($("#cuadro-exp-laboral"), validoCuadroExp);
-        deshabilitarBoton($("#cuadro-datos-personales").find(".btn-siguiente btn"), validoBtnSiguiente);
+        deshabilitarBoton($("#cuadro-datos-personales").find(".btn-siguiente .btn"), validoBtnSiguiente);
 
 
     });
@@ -71,7 +73,7 @@ $(document).ready(function () { //cargaremos las rutinas de jquery cuando el doc
         mostrarOcultar($("#cuadro-datos-personales"), validoCuadroDatos);
         mostrarOcultar($("#cuadro-educacion"), validoCuadroEdu);
         mostrarOcultar($("#cuadro-exp-laboral"), validoCuadroExp);
-        deshabilitarBoton($("#cuadro-educacion").find(".btn-siguiente btn"), validoBtnSiguiente);
+        deshabilitarBoton($("#cuadro-educacion").find(".btn-siguiente .btn"), validoBtnSiguiente);
 
 
     });
@@ -86,7 +88,7 @@ $(document).ready(function () { //cargaremos las rutinas de jquery cuando el doc
         mostrarOcultar($("#cuadro-datos-personales"), validoCuadroDatos);
         mostrarOcultar($("#cuadro-educacion"), validoCuadroEdu);
         mostrarOcultar($("#cuadro-exp-laboral"), validoCuadroExp);
-        deshabilitarBoton($("#cuadro-exp-laboral").find(".btn-siguiente btn"), validoBtnSiguiente);
+        deshabilitarBoton($("#cuadro-exp-laboral").find(".btn-siguiente .btn"), validoBtnSiguiente);
 
 
     });
@@ -133,7 +135,7 @@ $(document).ready(function () { //cargaremos las rutinas de jquery cuando el doc
 
 
         //Por ultimo llamo a la funcion para mostrar u ocultar dependiendo del valor anteriormente recogido
-        deshabilitarBoton(seccion.find(".btn-siguiente btn"), validoBtnSiguiente);
+        deshabilitarBoton(seccion.find(".btn-siguiente .btn"), validoBtnSiguiente);
 
     } //fin validar campos
 
