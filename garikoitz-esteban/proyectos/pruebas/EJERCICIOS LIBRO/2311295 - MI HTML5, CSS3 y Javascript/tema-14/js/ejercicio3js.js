@@ -19,7 +19,7 @@ window.onload = function () {
             alert("La fecha de nacimiento no es correcta");
             return false;
         }
-        if ((this.idioma1.checked) || (this.idiomma2.checked) || (this.idiomma3.checked)) {
+        if (!(this.idioma1.checked) || (this.idioma2.checked) || (this.idioma3.checked)) {
             alert("Debe elegir un idioma como minimo");
             return false;
         }
