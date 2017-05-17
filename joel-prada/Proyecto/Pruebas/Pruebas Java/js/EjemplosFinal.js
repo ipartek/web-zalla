@@ -1,14 +1,4 @@
 "use strict";
-
-window.onload = function () {
-    var btnIntroducir = document.getElementById("btnIntroducir");
-
-    btnIntroducir.onclick = introducirDatos;
-
-    var btnCrear = document.getElementById("btnCrear");
-
-    btnCrear.onclick = crearTablas;
-
     var celda;
     var celda1;
     var celda2;
@@ -18,7 +8,14 @@ window.onload = function () {
     var celda6;
     var celda7;
 
+window.onload = function () {
+    var btnIntroducir = document.getElementById("btnIntroducir");
 
+    btnIntroducir.onclick = introducirDatos;
+
+    var btnCrear = document.getElementById("btnCrear");
+
+    btnCrear.onclick = crearTablas;
     //  var btnCrear = document.getElementById("btnCrear");
     // btnCrear.onclick = crearFila;
 };
@@ -39,11 +36,10 @@ function crearTablas() {
     celda5 = fila.insertCell(5);
     celda6 = fila.insertCell(6);
     celda7 = fila.insertCell(7);
-
-
 }
 
 function introducirDatos() {
+    var datoModificar = tabla1.modificar.value;
     var datoNombre = formulario1.nombre.value;
     var datoDescripcion = formulario1.descripcion.value;
     var datoPrecio = formulario1.precio.value;
@@ -51,17 +47,16 @@ function introducirDatos() {
     var datoFecha = formulario1.fecha.value;
     var datoCosa = formulario1.cosa.value;
 
+    celda.innerHTML = datoModificar;
+    celda1.innerHTML = datoNombre;
+    celda2.innerHTML = datoDescripcion;
+    celda3.innerHTML = datoPrecio;
 
-    celda1.innerHTML = datoNombre;
-    celda1.innerHTML = datoNombre;
-    celda1.innerHTML = datoNombre;
+    celda4.innerHTML = datoStock;
+    celda5.innerHTML = datoFecha;
 
-    celda1.innerHTML = datoNombre;
-    celda1.innerHTML = datoNombre;
-
-    celda1.innerHTML = datoNombre;
-    celda1.innerHTML = datoNombre;
-
+    celda6.innerHTML = datoCosa;
+   
 }
 
 //function
