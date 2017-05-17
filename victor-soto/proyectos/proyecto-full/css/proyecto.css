@@ -93,9 +93,12 @@ legend {
     margin-bottom: 0.2em
 }
 
-input {
+input, button {
     display: block;
+    border-radius: 1em 1em 1em 1em;
 }
+
+
 
 
 /* ****************************************************
@@ -119,8 +122,16 @@ input {
     margin-right: auto;
 }
 
-.aniadir {
-    font-weight: normal;
+#aniadir {
+    background-color: lightgreen;
+}
+
+.editar{
+    background-color: lightsalmon;
+}
+
+.borrar{
+    background-color: lightcoral;
 }
 
 .aceptar,

@@ -85,25 +85,24 @@
             <li><a href="#">&#62|</a></li>
         </ul>
         <form name="formularioAniadir" id="formularioAniadir" method="post" action="">
-
-            <label for="id">ID: </label>
+            <label  for="id">ID: </label>
             <label for="id_numero"></label><br>
             <label for="nombre">Nombre: </label><input type="text" class="nombre" id="nombre" placeholder="Nombre">
             <label for="descripcion">Descripción: </label><br>
-            <textarea name="descripcion" id="descripcion" cols="30" rows="10" placeholder="Descripción del producto"></textarea><br>
+            <textarea name="descripcion" class="descripcion" id="descripcion" cols="30" rows="10" placeholder="Descripción del producto"></textarea><br>
             <label for="precio">Precio:</label>
-            <input type="number" class="numero" id="numero" placeholder="1.000">
+            <input type="number" class="precio" id="precio" placeholder="1000">
             <label for="stock">Stock:</label>
             <input type="number" class="stock" id="stock" placeholder="10">
             <label for="fecha">Fecha alta:</label>
-            <input type="date" class="fecha" id="fecha">
+            <input type="text" class="fecha" id="fecha" disabled>
             <label for="categoria">Categoría</label>
             <select name="categoria" id="categoria">Categoría:<option value="0">A</option>
             <option value="1">B</option>
             <option value="2">C</option>
             </select><br>
             <input type="submit" id="aceptar" class="aceptar" value="Aceptar">
-            <input type="submit" id="cancelar" class="cancelar" value="Cancelar">
+            <button type="button" id="cancelar" class="cancelar" title="Cancelar">Cancelar</button>
         </form>
     </main>
 

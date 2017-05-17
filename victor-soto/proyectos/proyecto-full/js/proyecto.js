@@ -1,47 +1,76 @@
 'use strict'
 
-var patron = /^([A-Z]{1}[0-9a-zñáéíóú._%+-]{1,19})+$/;
+var patronNombre = /^([A-Z]{1}[0-9a-zñáéíóú._%+-]{1,19})+$/;
+var patronDescripcion = /^([0-9A-Za-zñáéíóú-\s]{10,200})+$/;
+var patronPrecio = /^([0-9]{1,10})+$/;
+var patronStock = /^([0-9]{1,4})+$/;
+var patronFecha = /^\d{2}\/\d{2}\/\d{4}$/;
+var d = new Date();
+var strDate = d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear();
 
 $(function () {
     $('.borrar').on('click', function () {
         confirm("¿Estas seguro de borrar esa línea?");
     });
-    $('#aniadir').click(mostrarFormulario);
-    $('.editar').click(mostrarFormulario);
+    $('#aniadir').click(aniadir);
+    $('.editar').click(editar);
+    $('#cancelar').click(cancelar);
     $('#formularioAniadir').on('submit', validar);
 });
 
 
-function mostrarFormulario() {
+function aniadir() {
     if (!$('#formularioAniadir').is(":visible")) {
         $("#formularioAniadir").css("display", "block");
+        $('<legend class="tituloFormulario">Producto a añadir</legend>').insertBefore($('label[for=id]'));
+    } else {
+        $('.tituloFormulario').remove();
+        $('<legend class="tituloFormulario">Producto a añadir</legend>').insertBefore($('label[for=id]'));
+    }
+    $('#fecha').val(strDate);
+
+}
+
+function editar() {
+    if (!$('#formularioAniadir').is(":visible")) {
+        $("#formularioAniadir").css("display", "block");
+        $('<legend class="tituloFormulario">Producto a modificar</legend>').insertBefore($('label[for=id]'));
+    } else {
+        $('.tituloFormulario').remove();
+        $('<legend class="tituloFormulario">Producto a modificar</legend>').insertBefore($('label[for=id]'));
+    }
+    /*if (!$('#formularioAniadir').is(":visible")) {
+        $("#formularioAniadir").css("display", "block");
+        $('<legend class="tituloFormulario">Producto a modificar</legend>').insertBefore($('label[for=id]'));
     } else {
         $("#formularioAniadir").css("display", "none");
-    }
+        $('.tituloFormulario').remove();
+    }*/
+
+}
+
+function cancelar(){
+        $("#formularioAniadir").css("display", "none");
+        $('.tituloFormulario').remove();
 }
 
 function validar() {
-    if (!$('#nombre').val().match(patron)) {
+    if (!$('#nombre').val().match(patronNombre)) {
         alert("¡¡¡Has introducido incorrectamente el nombre!!!");
         $('#nombre').focus();
         return false;
-    }
-    else if(!$('#descripcion').val()){
-        
-    }
-}
-
-function evaluarNombre() {
-    alert("Estoy dentro");
-    var nombreValor = $('#nombre').val();
-    alert(nombreValor);
-    //var nombreValor = nombre.value;
-    validarPatron = patron.test(nombreValor);
-    if (!validarPatron) { // || !correcto(compNombre)) {
-        alert("Estoy aqui");
+    } else if (!$('#descripcion').val().match(patronDescripcion)) {
+        alert("¡¡¡Has introducido incorrectamente la descripción!!!");
+        $('#descripcion').focus();
         return false;
-    } else {
-        return true;
+    } else if (!$('#precio').val().match(patronPrecio)) {
+        alert("¡¡¡Has introducido incorrectmante el número!!!");
+        $("#precio").focus();
+        return false;
+    } else if (!$('#stock').val().match(patronPrecio)) {
+        alert("¡¡¡Has introducido incorrectmante el stock!!!");
+        $("#stock").focus();
+        return false;
     }
 }
 
