@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Proyecto Full-Developer</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/funciones.js"></script>
+    <script src="js/proyecto.js"></script>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/proyecto.css">
+</head>
+
+<body>
+    <header>
+        <h1>Proyecto</h1>
+    </header>
+    <main>
+        <table class="productos">
+            <caption>Información de los productos</caption>
+            <colgroup span="1" class="botones">
+                <colgroup span="1" class="id">
+                    <colgroup span="6" class="datos">
+                        <thead>
+                            <tr>
+                                <th><button id="aniadir" href="" title="Añadir">Añadir</button></th>
+                                <th class="id" title="ID">ID</th>
+                                <th title="Nombre">Nombre</th>
+                                <th title="Descripción">Descripción</th>
+                                <th title="Precio">Precio(€)</th>
+                                <th title="Stock">Stock</th>
+                                <th title="Fecha Alta">Fecha Alta</th>
+                                <th title="Categoría">Categoría</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <button href="" title="Editar" class="editar">Editar</button>
+                                    <button href="" title="Borrar" class="borrar">Borrar</button>
+                                </td>
+                                <td>1</td>
+                                <td>Portatil</td>
+                                <td>Asdf</td>
+                                <td>2.000</td>
+                                <td>10</td>
+                                <td>24/5</td>
+                                <td>A</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button href="" title="Editar" class="editar">Editar</button>
+                                    <button href="" title="Borrar" class="borrar">Borrar</button>
+                                </td>
+                                <td>2</td>
+                                <td>Sobremesa</td>
+                                <td>Sdfa</td>
+                                <td>3.000</td>
+                                <td>20</td>
+                                <td>24/5</td>
+                                <td>A</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button href="" title="Editar" class="editar">Editar</button>
+                                    <button href="" title="Borrar" class="borrar">Borrar</button>
+                                </td>
+                                <td>3</td>
+                                <td>Tablet</td>
+                                <td>Dfas</td>
+                                <td>100</td>
+                                <td>15</td>
+                                <td>24/5</td>
+                                <td>A</td>
+                            </tr>
+                        </tbody>
+        </table>
+        <ul>
+            <li><a href="#">|&#60</a></li>
+            <li><a href="#">&#60&#60</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">&#62&#62</a></li>
+            <li><a href="#">&#62|</a></li>
+        </ul>
+        <form name="formularioAniadir" id="formularioAniadir" method="post" action="">
+
+            <label for="id">ID: </label>
+            <label for="id_numero"></label><br>
+            <label for="nombre">Nombre: </label><input type="text" class="nombre" id="nombre" placeholder="Nombre">
+            <label for="descripcion">Descripción: </label><br>
+            <textarea name="descripcion" id="descripcion" cols="30" rows="10" placeholder="Descripción del producto"></textarea><br>
+            <label for="precio">Precio:</label>
+            <input type="number" class="numero" id="numero" placeholder="1.000">
+            <label for="stock">Stock:</label>
+            <input type="number" class="stock" id="stock" placeholder="10">
+            <label for="fecha">Fecha alta:</label>
+            <input type="date" class="fecha" id="fecha">
+            <label for="categoria">Categoría</label>
+            <select name="categoria" id="categoria">Categoría:<option value="0">A</option>
+            <option value="1">B</option>
+            <option value="2">C</option>
+            </select><br>
+            <input type="submit" id="aceptar" class="aceptar" value="Aceptar">
+            <input type="submit" id="cancelar" class="cancelar" value="Cancelar">
+        </form>
+    </main>
+
+</body>
+
+</html>
