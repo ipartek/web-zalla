@@ -158,12 +158,54 @@ table {
 /* Etiquetas
 ******************************************************************************************* */
 
-table,
-table thead tr,
-table thead tr th,
-table tbody tr th,
-table tbody tr td {
+h1 {
+    font-family: 'Permanent Marker', cursive;
+    color: white;
+    font-size: 8em;
+    text-align: center;
+    background: linear-gradient(pink, red, pink);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-top: 1em;
+}
+
+caption {
+    font-family: 'Audiowide', cursive;
+    background: linear-gradient(yellow, red);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-top: 5em;
+    margin-bottom: 2em;
+    font-size: 3em;
+}
+
+table {
     border: 2px solid black;
+    text-align: center;
+    width: 800px;
+    margin: 0px auto;
+}
+
+th {
+    border: 2px solid black;
+    padding: 8px;
+    background: #005ff9;
+    color: white;
+    font-weight: bold;
+}
+
+td {
+    border: 1px solid black;
+    padding: 8px;
+    height: 16.66%;
+    background: #63ff3d;
+    font-weight: bold;
+}
+
+body {}
+
+html {
+    background-image: url(../img/tablasmadera.jpg)
 }
 
 
