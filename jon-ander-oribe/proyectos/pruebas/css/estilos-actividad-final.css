@@ -201,3 +201,11 @@ a {
     text-align: center;
     padding: 5px;
 }
+
+tr:nth-child(2n+2) {
+    background-color: #9fa4ad;
+}
+
+tr:nth-child(2n+3) {
+    background-color: #5f697a;
+}

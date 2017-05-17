@@ -28,7 +28,7 @@
             </tr>
             <tr>
                 <td>
-                    <input type="button" class="btnTabla1" value="Modificar">
+                    <input type="button" class="btnTabla1" value="Modificar" id="idTabla1">
                 </td>
                 <td>1</td>
                 <td>Condensador de "fluZo"</td>
@@ -39,7 +39,7 @@
             </tr>
             <tr>
                 <td>
-                    <input type="button" class="btnTabla2" value="Modificar">
+                    <input type="button" class="btnTabla1" value="Modificar" id="idTabla2">
                 </td>
                 <td>2</td>
                 <td>Cafetera Capuchino triple</td>
@@ -50,7 +50,7 @@
             </tr>
             <tr>
                 <td>
-                    <input type="button" class="btnTabla3" value="Modificar">
+                    <input type="button" class="btnTabla1" value="Modificar" id="idTabla3">
                 </td>
                 <td>3</td>
                 <td>Maceta de autoriego</td>
@@ -61,7 +61,7 @@
             </tr>
             <tr id="tr2">
                 <td>
-                    <input type="button" class="btnTabla4" value="Modificar">
+                    <input type="button" class="btnTabla1" value="Modificar" id="idTabla4">
                 </td>
                 <td id="id4"></td>
                 <td id="nombre4"></td>
@@ -80,7 +80,7 @@
             <fieldset>
                 <legend>Información Básica</legend>
                 <label for="Lid">Id:</label>
-                <input type="text" id="inpId" placeholder="Introduce el id del producto" required>
+                <input type="text" id="inpId" placeholder="Introduce el id.Solo números hasta 999" pattern="[0-9]{1,3}" required>
                 <br>
                 <label for="Lnombre">Nombre: </label>
                 <input type="text" id="inpNombre" placeholder="Introduce el nombre del producto" required>
@@ -103,7 +103,7 @@
             </fieldset>
             <fieldset class="botonera">
                 <legend>Opciones</legend>
-                <input type="submit" value="Enviar" onclick="cargarDatos()">
+                <input type="button" value="Enviar" onclick="cargarDatos()">
                 <input type="button" value="Anular Formulario" class="reseteoBoton">
                 <input type="reset" value="Borrar Formulario">
                 <button onclick="autoRellenar()">Rellenar</button>

@@ -1,6 +1,19 @@
 'use strict'
 
+var rows = 4;
+var idDinamico = 0;
+var nombreDinamico = "";
+var descripcionDinamico = "";
+var precioDinamico = 0.0;
+var stockDinamico = 0;
+var fechaDinamico = "";
+var auxiliar = "";
+
 $(function() {
+
+    var auxiliar = $("idTabla1").value;
+
+
     $(".btnTabla1").click(function() {
         $("form").fadeToggle(1000);
         $(".btnTabla1").val("Enviar");
@@ -11,45 +24,7 @@ $(function() {
         $("form").fadeOut(1000);
     });
 
-    $(".btnTabla2").click(function() {
-        $("form").fadeToggle(1000);
-        $(".btnTabla2").val("Enviar");
-    });
 
-    $(".reseteoBoton").click(function() {
-        $(".btnTabla2").val("Modificar");
-        $("form").fadeOut(1000);
-    });
-
-    $(".btnTabla3").click(function() {
-        $("form").fadeToggle(1000);
-        $(".btnTabla3").val("Enviar");
-    });
-
-    $(".reseteoBoton").click(function() {
-        $(".btnTabla3").val("Modificar");
-        $("form").fadeOut(1000);
-    });
-
-    $(".btnTabla4").click(function() {
-        $("form").fadeToggle(1000);
-        $(".btnTabla4").val("Enviar");
-    });
-
-    $(".reseteoBoton").click(function() {
-        $(".btnTabla4").val("Modificar");
-        $("form").fadeOut(1000);
-    });
-
-    $(".btnTabla5").click(function() {
-        $("form").fadeToggle(1000);
-        $(".btnTabla5").val("Enviar");
-    });
-
-    $(".reseteoBoton").click(function() {
-        $(".btnTabla5").val("Modificar");
-        $("form").fadeOut(1000);
-    });
 
 });
 
@@ -68,12 +43,38 @@ document.getElementById("inpStock").value = stock;
 document.getElementById("inpFecha").value = fechaAlta;
 
 function cargarDatos() {
-    document.getElementById("id4").innerHTML = document.getElementById("inpId").value;
-    document.getElementById("nombre4").innerHTML = document.getElementById("inpNombre").value;
+    var cuenta = 1;
+    if (document.getElementById("inpId").value > 0 && document.getElementById("inpId").value < 1000) {
+        document.getElementById("id4").innerHTML = document.getElementById("inpId").value;
+        cuenta += cuenta;
+    } else {
+        return;
+    }
+
+    if (document.getElementById("inpNombre").value != null) {
+        document.getElementById("nombre4").innerHTML = document.getElementById("inpNombre").value;
+        cuenta += cuenta;
+    } else {
+        return;
+    }
     document.getElementById("descripcion4").innerHTML = document.getElementById("inpDescripcion").value;
-    document.getElementById("precio4").innerHTML = document.getElementById("inpPrecio").value;
-    document.getElementById("stock4").innerHTML = document.getElementById("inpStock").value;
+    if (document.getElementById("precio4").value != NaN) {
+        document.getElementById("precio4").innerHTML = document.getElementById("inpPrecio").value;
+        cuenta += cuenta;
+    } else {
+        return;
+    }
+    if (document.getElementById("stock4").value != NaN) {
+        document.getElementById("stock4").innerHTML = document.getElementById("inpStock").value;
+        cuenta += cuenta;
+    } else {
+        return;
+    }
     document.getElementById("fecha4").innerHTML = document.getElementById("inpFecha").value;
+    /*if (cuenta == 4) {
+        document.forms[0].submit;
+    } else {
+        return; }*/
 
 }
 
@@ -103,7 +104,7 @@ function nuevaFila() {
     var campo1 = document.createElement("input");
     campo1.type = "button";
     campo1.value = "Modificar";
-    campo1.class = "btnTabla5";
+    campo1.class = "btnTabla1";
 
     var campo2 = document.createElement("td");
     var campo3 = campo2.cloneNode(true);
@@ -121,5 +122,9 @@ function nuevaFila() {
     celda6.appendChild(campo6);
     celda7.appendChild(campo7);
 
+
+}
+
+function combinacionDinamica() {
 
 }
