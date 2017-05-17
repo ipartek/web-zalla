@@ -1,12 +1,51 @@
-//Inserta una línea en la siguiente posición a la input
-//document.forms[0].txtDni.parentNode.nsertBefore(document.createElement("hr"), txtDni.nextSibling)
+'use strict'
 
-"use strict"
+var patron = /^([A-Z]{1}[0-9a-zñáéíóú._%+-]{1,19})+$/;
 
-var form, nombre, apellidos, dni, validarPatron, sexo, dia, mes, anio, texto;
-var patron = /^([A-Z]{1}[a-zñáéíóú]+[\s]*)+$/;
-var patronDni = /^\d{8}[a-zA-Z]$/;
+$(function () {
+    $('.borrar').on('click', function () {
+        confirm("¿Estas seguro de borrar esa línea?");
+    });
+    $('#aniadir').click(mostrarFormulario);
+    $('.editar').click(mostrarFormulario);
+    $('#formularioAniadir').on('submit', validar);
+});
 
+
+function mostrarFormulario() {
+    if (!$('#formularioAniadir').is(":visible")) {
+        $("#formularioAniadir").css("display", "block");
+    } else {
+        $("#formularioAniadir").css("display", "none");
+    }
+}
+
+function validar() {
+    if (!$('#nombre').val().match(patron)) {
+        alert("¡¡¡Has introducido incorrectamente el nombre!!!");
+        $('#nombre').focus();
+        return false;
+    }
+    else if(!$('#descripcion').val()){
+        
+    }
+}
+
+function evaluarNombre() {
+    alert("Estoy dentro");
+    var nombreValor = $('#nombre').val();
+    alert(nombreValor);
+    //var nombreValor = nombre.value;
+    validarPatron = patron.test(nombreValor);
+    if (!validarPatron) { // || !correcto(compNombre)) {
+        alert("Estoy aqui");
+        return false;
+    } else {
+        return true;
+    }
+}
+
+/*
 window.onload = function () {
     form = document.forms[0];
     nombre = form.nombre;
@@ -16,13 +55,12 @@ window.onload = function () {
     dia = form.dia;
     mes = form.mes;
     anio = form.anio;
-    //var btnEnviar = form.boton_enviar;
-    //btnEnviar.onclick = validar();
-    form.onsubmit = validar;
+    var btnEnviar = form.boton_enviar;
+    btnEnviar.onclick = validar();
 }
 
 function validar() {
-    //form.onsubmit = function () {
+    form.onsubmit = function () {
         if (!evaluarNombre()) {
             nombre.focus();
             return false;
@@ -55,7 +93,7 @@ function validar() {
             form.idioma1.focus();
             return false;
         }
-    //}
+    }
 }
 
 function evaluarNombre() {
@@ -142,12 +180,16 @@ function evaluarIdiomas() {
         return false;
     }
 }
+*/
 
-function error(elemento, texto) {
+/*
+
+
+function formulario() {
     var altoDisplay = window.innerHeight;
     var anchoDisplay = window.innerWidth;
 
-    var divFondo = document.createElement("div");
+    var divFondo = $("<div></div>").text("EE");
 
     divFondo.id = "popupfondo";
 
@@ -185,7 +227,7 @@ function error(elemento, texto) {
 
     divFondo.appendChild(divMensaje);
 
-    divMensaje.innerHTML = "<h1>ERROR</h1><p>"+ texto +"</p>";
+    divMensaje.innerHTML = "<h1>ERROR</h1><p>AAAAA</p>";
 
     var boton = document.createElement("button");
 
@@ -197,3 +239,29 @@ function error(elemento, texto) {
 
     divMensaje.appendChild(boton);
 }
+
+*/
+
+/*$($(function() {
+    $('#borrar').on('click', function(){
+        $('input[type=text]:nth-child(2)').val('BORRADO');
+    });
+    
+    $('#conmutar').click(function() {
+        $('input[id!=conmutar]').toggle(1000); //.fadeOut(1000).fadeIn(1000); //.fadeToggle(1000); //.toggle(1000);//.hide(); //.show()
+        $('<span class="errorTexto">Error</span>').insertAfter($('#nombre'));
+        
+        $('input[type=text]').toggleClass('errorCuadro'); //addClass('asd')
+    });
+    
+    $('form').on('submit', function() {
+        alert($('#nombre').val());
+        
+        $('#opciones option').each(function() {
+            //alert(this.value);
+            alert($(this).val());
+        });
+
+    });
+    
+});)*/
