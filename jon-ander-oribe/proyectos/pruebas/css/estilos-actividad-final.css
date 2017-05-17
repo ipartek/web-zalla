@@ -149,6 +149,7 @@ main {
     margin: 10px auto;
     background-color: #a2bdc6;
     border-radius: 10px;
+    border: 1px solid #022359;
 }
 
 table {

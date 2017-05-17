@@ -79,3 +79,8 @@ function autoRellenar() {
     document.getElementById("inpStock").value = 1;
     document.getElementById("inpFecha").value = "1987-04-05";
 }
+
+function nuevaFila() {
+    var tab = document.createElement("TR");
+    document.getElementById("tabla").appendChild(tab);
+}
