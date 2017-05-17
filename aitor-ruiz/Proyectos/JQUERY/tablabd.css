@@ -1,0 +1,21 @@
+.tabla{
+    text-align: center;
+    border: 2px, blue;
+}
+#th, td{
+    border:1px, black;
+}
+#button{
+    border-style: double;
+    border: 3px; 
+    border-color: aquamarine;
+    background-color: blueviolet;
+    
+}
+#th{
+    background-color: coral;
+}
+.leyenda{
+    background-color: bisque;
+    font-size: 25 px;
+}
