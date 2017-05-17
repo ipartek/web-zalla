@@ -41,9 +41,15 @@ $(function() {
         $("form").fadeOut(1000);
     });
 
+    $(".btnTabla5").click(function() {
+        $("form").fadeToggle(1000);
+        $(".btnTabla5").val("Enviar");
+    });
 
-
-
+    $(".reseteoBoton").click(function() {
+        $(".btnTabla5").val("Modificar");
+        $("form").fadeOut(1000);
+    });
 
 });
 
@@ -81,6 +87,39 @@ function autoRellenar() {
 }
 
 function nuevaFila() {
-    var tab = document.createElement("TR");
-    document.getElementById("tabla").appendChild(tab);
+
+    var tab = document.getElementById("tabla");
+
+    var fila = tab.insertRow();
+
+    var celda1 = fila.insertCell(0);
+    var celda2 = fila.insertCell(1);
+    var celda3 = fila.insertCell(2);
+    var celda4 = fila.insertCell(3);
+    var celda5 = fila.insertCell(4);
+    var celda6 = fila.insertCell(5);
+    var celda7 = fila.insertCell(6);
+
+    var campo1 = document.createElement("input");
+    campo1.type = "button";
+    campo1.value = "Modificar";
+    campo1.class = "btnTabla5";
+
+    var campo2 = document.createElement("td");
+    var campo3 = campo2.cloneNode(true);
+    var campo4 = campo2.cloneNode(true);
+    var campo5 = campo2.cloneNode(true);
+    var campo6 = campo2.cloneNode(true);
+    var campo7 = campo2.cloneNode(true);
+
+
+    celda1.appendChild(campo1);
+    celda2.appendChild(campo2);
+    celda3.appendChild(campo3);
+    celda4.appendChild(campo4);
+    celda5.appendChild(campo5);
+    celda6.appendChild(campo6);
+    celda7.appendChild(campo7);
+
+
 }
