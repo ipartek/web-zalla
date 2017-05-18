@@ -28,53 +28,29 @@ $(function() {
 
 });
 
-var id;
-var nombre;
-var descripcion;
-var precio;
-var stock;
-var fechaAlta;
 
-document.getElementById("inpId").value = id;
-document.getElementById("inpNombre").value = nombre;
-document.getElementById("inpDescripcion").value = descripcion;
-document.getElementById("inpPrecio").value = precio;
-document.getElementById("inpStock").value = stock;
-document.getElementById("inpFecha").value = fechaAlta;
 
 function cargarDatos() {
-    var cuenta = 1;
-    if (document.getElementById("inpId").value > 0 && document.getElementById("inpId").value < 1000) {
+
+    if (document.getElementById("inpId").value != "" && document.getElementById("inpNombre").value != "") {
+
         document.getElementById("id4").innerHTML = document.getElementById("inpId").value;
-        cuenta += cuenta;
+
+        document.getElementById("nombre4").innerHTML = document.getElementById("inpNombre").value;
+
+        document.getElementById("descripcion4").innerHTML = document.getElementById("inpDescripcion").value;
+
+        document.getElementById("precio4").innerHTML = document.getElementById("inpPrecio").value;
+
+        document.getElementById("stock4").innerHTML = document.getElementById("inpStock").value;
+
+        document.getElementById("fecha4").innerHTML = document.getElementById("inpFecha").value;
+
     } else {
-        return;
+        return false;
     }
 
-    if (document.getElementById("inpNombre").value != null) {
-        document.getElementById("nombre4").innerHTML = document.getElementById("inpNombre").value;
-        cuenta += cuenta;
-    } else {
-        return;
-    }
-    document.getElementById("descripcion4").innerHTML = document.getElementById("inpDescripcion").value;
-    if (document.getElementById("precio4").value != NaN) {
-        document.getElementById("precio4").innerHTML = document.getElementById("inpPrecio").value;
-        cuenta += cuenta;
-    } else {
-        return;
-    }
-    if (document.getElementById("stock4").value != NaN) {
-        document.getElementById("stock4").innerHTML = document.getElementById("inpStock").value;
-        cuenta += cuenta;
-    } else {
-        return;
-    }
-    document.getElementById("fecha4").innerHTML = document.getElementById("inpFecha").value;
-    /*if (cuenta == 4) {
-        document.forms[0].submit;
-    } else {
-        return; }*/
+
 
 }
 
