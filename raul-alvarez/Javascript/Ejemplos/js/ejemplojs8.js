@@ -76,6 +76,8 @@ function validarFormDni() {
         span.innerHTML = "El DNI no es correcto";
         
         txtDni.parentNode.appendChild(span);
+        //txtDni.parentNode.insertBefore(span, txtDni.nextSibling); // como un insertAfter
+        
     } else if(dniCorrecto && txtDni.error) {
         txtDni.error.parentNode.removeChild(txtDni.error);
         delete txtDni.error; //txtDni.error = undefined; //txtDni.removeAttribute("error");
