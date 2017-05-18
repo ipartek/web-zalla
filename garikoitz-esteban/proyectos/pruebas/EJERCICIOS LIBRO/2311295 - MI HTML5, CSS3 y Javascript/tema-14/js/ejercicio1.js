@@ -14,7 +14,7 @@ function mostrarDatos(){
 	
 	var profesion="PROFESIÓN: ";
 	var encontrado=false;
-	for (var i = 0; i < datosPersonales.profesion.length && !encontrado; i++) {
+	for (var i = 0 ; i < datosPersonales.profesion.length && !encontrado ; i++) {
 		  if (datosPersonales.profesion[i].checked){
 			profesion +=datosPersonales.profesion[i].value;
 			encontrado=true;

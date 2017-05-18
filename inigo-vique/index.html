@@ -1,92 +1,71 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>Web Zalla</title>
-    <!-- CUSTOM -->
-    <link rel="stylesheet" href="css/style.css?v=20170505">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <title>Web Zalla - inigo001</title>
     <!-- FONT AWESOME -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!-- FAVICON -->
     <link rel="shortcut icon" href="favicon.ico?v=20170505" type="image/x-icon">
     <link rel="icon" href="favicon.ico?v=20170505" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Antic+Didone|Merriweather" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=20170511">
 </head>
 
-<body onload="init()">
-    <div id="container">
-        <header id="top-header">
-            <h1><span>inigo001</span></h1>
+<body>
+
+    <div id="main-container">
+
+        <header>
+            <h1>inigo001</h1>
         </header>
+
         <main>
-            <section id="ini-github">
-                <header>
-                    <h2>GitHup</h2>
-                </header>
-                <img class="inigo-icon" src="img/inigo001.jpg?v=20170406" alt="Icono de inigo001">
-                <p><a href="https://github.com/inigo001"><i class="fa fa-github"></i> Link a GitHup <i class="fa fa-github"></i></a></p>
+
+            <section id="listado-proyectos">
+                <h2>Listado de Proyectos</h2>
+
+                <p>Listado de proyectos creados durante el curso.</p>
+
+                <ul>
+                    <li><a href="proyectos/king-kong/index.html">King Kong</a></li>
+                    <li><a href="proyectos/pruebas/index.html">Pruebas</a></li>
+                    <li><a href="proyectos/mi-web-personal/index.html">Mi web personal</a></li>
+                    <li><a href="proyectos/fotografo/index.html">Fotógrafo</a></li>
+                    <li><a href="proyectos/animaciones/index.html">Animaciones</a></li>
+                    <li><a href="proyectos/javascript/index.html">Javascript</a></li>
+                    <li><a href="proyectos/tabla-final/index.html">Tabla Final</a></li>
+                    <li><a href="proyectos/personales/index.html">Personales</a></li>
+                </ul>
+
             </section>
-            <section id="ini-projects">
-                <header>
-                    <h2>Listado de proyectos</h2>
-                </header>
-                <nav>
-                    <ul class="lista-estilo">
-                        <li><a href="proyectos/king-kong/index.html">King Kong</a></li>
-                        <li><a href="proyectos/pruebas/index.html">Pruebas</a></li>
-                        <li><a href="proyectos/mi-web-personal/index.html">Mi web personal</a></li>
-                        <li><a href="proyectos/fotografo/index.html">Fotógrafo</a></li>
-                        <li><a href="proyectos/animaciones/index.html">Animaciones</a></li>
-                        <li><a href="proyectos/javascript/index.html">Javascript</a></li>
-                    </ul>
-                </nav>
-            </section>
-            <section id="ini-links">
-                <header>
-                    <h2>Links de interés</h2>
-                </header>
-                <p><a href="enlaces-de-interes.html">Enlaces de interés</a></p>
-            </section>
-            <section id="ini-apuntes">
-                <header>
-                    <h2>Apuntes</h2>
-                </header>
-                <p>Aquí van apuntes, un poco cutres <i class="fa fa-hand-o-right" aria-hidden="true"></i></p>
-                <ul class="lista-estilo">
-                    <li><a href="apuntes/primeros-apuntes.html">Primeros apuntes</a>
-                    </li>
-                    <li><a href="apuntes/estructura-html.html">Estructura HTML</a>
-                    </li>
-                    <li><a href="apuntes/etiquetas-html.html">Etiquetas HTML</a>
-                    </li>
-                    <li><a href="apuntes/posicionamiento-web.html">Posicionamiento Web</a>
-                    </li>
-                    <li><a href="apuntes/formularios.html">Formularios</a>
-                    </li>
+
+            <section id="otras-cosas">
+                <h2>Otras Cosas</h2>
+
+                <p>Información, apuntes y otras cosas</p>
+
+                <ul>
+                    <li><a href="otras-cosas/enlaces-de-interes.html">Enlaces de interés</a></li>
+                    <li><a href="otras-cosas/apuntes.html">Apuntes</a></li>
+                    <li><a href="otras-cosas/plugins-sublime.html">Plug-ins sublime</a></li>
+                    <li><a href="otras-cosas/extras.html">Extras</a></li>
+                    <li><a href="otras-cosas/old-index.html">Antiguo Índice</a></li>
                 </ul>
             </section>
-            <section id="ini-plugins">
-                <header>
-                    <h2>Plug-ins para Sublime</h2>
-                </header>
-                <p><a href="plugins-sublime.html">Plug-ins sublime</a></p>
-            </section>
-            <section id="ini-npm">
-                <header>
-                    <h2>Cosas de NPM</h2>
-                </header>
-                <dl class="lista-estilo">
-                    <dt>Http-server</dt>
-                    <dd><code>npm install -g http-server</code><br> Crea un servidor http en la ruta en la que estamos poniendo el comando <code>http-server</code> en PowerShell. Es un servidor pequeño para hacer pruebas y no tiene demasiado problema para
-                        funcionar. Unar maravilla :).</dd>
-                </dl>
-            </section>
+
         </main>
+
         <footer>
-            <p><small><i class="fa fa-smile-o" aria-hidden="true"></i> Cosas de inigo001 - <time>Mayo 2017</time></small></p>
+            <p><small>Página creada por inigo001</small></p>
+            <p><a href="https://github.com/inigo001"><i class="fa fa-github"></i> inigo001</a></p>
         </footer>
+
     </div>
-    <script src="js/main.js"></script>
+
+
 </body>
 
 </html>

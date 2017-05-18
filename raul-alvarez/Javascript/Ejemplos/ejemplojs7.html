@@ -29,11 +29,20 @@
                 </select>
             </p>
             <p>
+                <input type="checkbox" id="chkMensajes" name="chkMensajes" checked="checked" />
+            </p>
+            <p>
+               <label for="rMujer">Mujer</label>
+                <input type="radio" id="rMujer" name="rGenero" value="Mujer" />
+                <label for="rHombre">Hombre</label>
+                <input type="radio" id="rHombre" name="rGenero" value="Hombre" />
+            </p>
+            <p>
                 <input type="button" id="btnPruebas" value="PRUEBAS" />
                 <input type="submit" id="btnLogin" value="LOGIN" />
                 <input type="reset" id="btnReset" value="BORRAR" />
             </p>
-            <p>
+            <p id="bloqueMensajes">
                 <input id="txtMensajes" />
             </p>
         </fieldset>

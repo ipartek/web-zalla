@@ -57,3 +57,7 @@ a {
     padding-bottom: 1%;
     margin-bottom: 1%;
 }
+
+.error-msg {
+    color: #A94442;
+}
