@@ -5,11 +5,14 @@ var bMostrar, bModificar, bRellenar, bIncluir;
 var inID, inNombre, inPrice, inStock, inDate;
 var cTR, cTH, aModif, aBorrar, tdID, tdNombre, tdPrice, tdStock, tdFecha, imgModif, imgBorrar;
 var tbBody;
-var fila = 3;
+var fila = 3,
+    auxfila = 0;
 
 window.onload = cargar;
 
 function cargar() {
+
+
 
     tdID = document.getElementById("ID" + fila);
 
@@ -19,12 +22,9 @@ function cargar() {
     bMostrar = document.getElementById("Mostrar");
     bMostrar.onclick = mostrar;
 
-    bModificar = document.getElementsByClassName("Modificar");
-    bModificar.onclick = modificar;
-
     bRellenar = document.getElementById("Rellenar");
 
-    bRellenar.onclick = rellenar
+    bRellenar.onclick = rellenar;
 
 
     bIncluir = document.getElementById("Incluir");
@@ -64,10 +64,31 @@ function mostrar() {
 
 }
 
-function modificar() {
+function modificar(e) {
+
+    auxfila = e.id;
 
     inID = document.getElementById("inID");
-    inID.value = "EOEOEOEOEO";
+    inNombre = document.getElementById("nombre");
+    inPrice = document.getElementById("Price");
+    inStock = document.getElementById("Stock");
+    inDate = document.getElementById("fecha");
+
+    tdID = document.getElementById("ID" + auxfila);
+    tdNombre = document.getElementById("Nombre" + auxfila);
+    tdPrice = document.getElementById("precio" + auxfila);
+    tdStock = document.getElementById("stock" + auxfila);
+    tdFecha = document.getElementById("fecha" + auxfila);
+
+    inID.value = tdID.innerHTML;
+    inNombre.value = tdNombre.innerHTML;
+    inPrice.value = tdPrice.innerHTML;
+    inStock.value = tdStock.innerHTML;
+    inDate.value = tdFecha.innerHTML;
+
+    bMostrar.value = "Mostrar";
+    form.style.display = "none";
+
 
 }
 
