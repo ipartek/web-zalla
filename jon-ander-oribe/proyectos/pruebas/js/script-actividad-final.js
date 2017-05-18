@@ -2,12 +2,12 @@
 
 var rows = 4;
 var idDinamico = 0;
-var nombreDinamico = "";
-var descripcionDinamico = "";
+var nombreDinamico = "nombre";
+var descripcionDinamico = "descripcion";
 var precioDinamico = 0.0;
 var stockDinamico = 0;
-var fechaDinamico = "";
-var auxiliar = "";
+var fechaDinamico = "fecha";
+var auxfila = "";
 
 $(function() {
 
@@ -31,6 +31,25 @@ $(function() {
 
 
 function cargarDatos() {
+    /*
+        if (document.getElementById("inpId").value != "" && document.getElementById("inpNombre").value != "") {
+
+            document.getElementById(idDinamico).innerHTML = document.getElementById("inpId").value;
+
+            document.getElementById(nombreDinamico).innerHTML = document.getElementById("inpNombre").value;
+
+            document.getElementById(descripcionDinamico).innerHTML = document.getElementById("inpDescripcion").value;
+
+            document.getElementById(precioDinamico).innerHTML = document.getElementById("inpPrecio").value;
+
+            document.getElementById(stockDinamico).innerHTML = document.getElementById("inpStock").value;
+
+            document.getElementById(fechaDinamico).innerHTML = document.getElementById("inpFecha").value;
+
+        } else {
+            return false;
+        }
+    */
 
     if (document.getElementById("inpId").value != "" && document.getElementById("inpNombre").value != "") {
 
@@ -101,6 +120,25 @@ function nuevaFila() {
 
 }
 
-function combinacionDinamica() {
+function combinacionDinamica(seleccion) {
+
+    auxfila = seleccion.id;
+    idDinamico = 0;
+    nombreDinamico = "";
+    descripcionDinamico = "";
+    precioDinamico = 0.0;
+    stockDinamico = 0;
+    fechaDinamico = "";
+
+
+    auxfila = seleccion.id;
+    idDinamico += parseInt(auxfila);
+    nombreDinamico += auxfila;
+    descripcionDinamico += auxfila;
+    precioDinamico += parseFloat(auxfila);
+    stockDinamico += parseInt(auxfila);
+    fechaDinamico += auxfila;
+
+
 
 }
