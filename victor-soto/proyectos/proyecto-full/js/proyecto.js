@@ -2,7 +2,7 @@
 
 var patronNombre = /^([A-Z]{1}[0-9a-zñáéíóú._%+-]{1,19})+$/;
 var patronDescripcion = /^([0-9A-Za-zñáéíóú-\s]{10,200})+$/;
-var patronPrecio = /^([0-9]{1,10})+$/;
+var patronPrecio = /[0-9]{1,3}(\,[0-9]{2})/;
 var patronStock = /^([0-9]{1,4})+$/;
 var patronFecha = /^\d{2}\/\d{2}\/\d{4}$/;
 var d = new Date();
@@ -18,23 +18,25 @@ $(function () {
     $('#formularioAniadir').on('submit', validar);
 });
 
-
 function aniadir() {
     if (!$('#formularioAniadir').is(":visible")) {
         $("#formularioAniadir").css("display", "block");
+        $('<label for="id">ID: </label><label for = "id_numero" >1 </label>').insertBefore($('label[for=nombre]'));
         $('<legend class="tituloFormulario">Producto a añadir</legend>').insertBefore($('label[for=id]'));
+        $('label[for=nombre]').css("display", "block");
     } else {
         $('.tituloFormulario').remove();
         $('<legend class="tituloFormulario">Producto a añadir</legend>').insertBefore($('label[for=id]'));
     }
     $('#fecha').val(strDate);
-
 }
 
 function editar() {
     if (!$('#formularioAniadir').is(":visible")) {
         $("#formularioAniadir").css("display", "block");
+        $('<label for="id">ID: </label><label for = "id_numero" >1 </label>').insertBefore($('label[for=nombre]'));
         $('<legend class="tituloFormulario">Producto a modificar</legend>').insertBefore($('label[for=id]'));
+        $('label[for=nombre]').css("display", "block");
     } else {
         $('.tituloFormulario').remove();
         $('<legend class="tituloFormulario">Producto a modificar</legend>').insertBefore($('label[for=id]'));
@@ -49,14 +51,23 @@ function editar() {
 
 }
 
-function cancelar(){
-        $("#formularioAniadir").css("display", "none");
-        $('.tituloFormulario').remove();
+function cancelar() {
+    $("#formularioAniadir").css("display", "none");
+    $('.tituloFormulario').remove();
+    $('label[for=id]').remove();
+    $('label[for=id_numero]').remove();
 }
 
 function validar() {
     if (!$('#nombre').val().match(patronNombre)) {
         alert("¡¡¡Has introducido incorrectamente el nombre!!!");
+        $('#nombre').css("border", "3px solid red");
+        $('<label for="error">Mínimo dos caracteres empezando por mayusculas</label>').insertAfter($('#nombre'));
+        $('label[for=error]').css({
+            'color': 'red',
+            'display': 'block'
+        });
+        //$('label[for=error]').css("display", "block");
         $('#nombre').focus();
         return false;
     } else if (!$('#descripcion').val().match(patronDescripcion)) {
@@ -67,11 +78,12 @@ function validar() {
         alert("¡¡¡Has introducido incorrectmante el número!!!");
         $("#precio").focus();
         return false;
-    } else if (!$('#stock').val().match(patronPrecio)) {
+    } else if (!$('#stock').val().match(patronStock)) {
         alert("¡¡¡Has introducido incorrectmante el stock!!!");
         $("#stock").focus();
         return false;
     }
+    //rellenarCeros();
 }
 
 /*
