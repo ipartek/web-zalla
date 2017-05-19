@@ -1,6 +1,7 @@
 'use strict';
 
 var formModal,
+    descriptionModal,
     formulario;
 
 $(function()
@@ -8,6 +9,8 @@ $(function()
 
     formulario = $('#product-form');
     formModal = $('#form-modal');
+    descriptionModal = $('#description-modal');
+
 
     $('.btn-delete').click(function()
     {
@@ -16,16 +19,42 @@ $(function()
     });
 
     $('.btn-edit').click(editEntry);
-
     $('.btn-addnew').click(addEntry);
-
     $('.btn-formback').click(closeEntry);
 
-    console.log('fdauio');
+    $('.btn-description').click(showDescription);
+    $('.btn-close-description').click(closeDescription);
+
+    $('#go-to-page').change(goToPage);
+
     formulario.on('submit', validateForm);
-    console.log('fdafasdf ');
 
 });
+
+function goToPage()
+{
+    location.href = 'tf8-tabla.html?ahoraEstoyEnLaPagina=' + $(this).val();
+}
+
+function showDescription()
+{
+    let row = $(this).parents('tr')[0];
+    let dataBlock = $(row).children('td');
+    let editName = dataBlock[0].innerText;
+
+    descriptionModal.find('h2')[0].innerText = editName;
+    descriptionModal.find('p')[0].innerText = $(this).text();
+
+    descriptionModal.fadeIn(400);
+    descriptionModal.children('#description-content').toggleClass('hidden');
+}
+
+function closeDescription()
+{
+    // DO ANIMATION
+    descriptionModal.fadeOut(400);
+    descriptionModal.children('#description-content').toggleClass('hidden');
+}
 
 function askForDelete(idName_)
 {
@@ -46,7 +75,7 @@ function editEntry()
 
     let editId = $(row).children('th')[0].innerText;
     let editName = dataBlock[0].innerText;
-    let editDesc = dataBlock[1].innerText;
+    let editDesc = $(dataBlock[1]).children('span')[0].innerText; // Esto es obligatorio porque si pillamos el span mete un intro muy molesto que no valida con el REGEX después
     let editPrice = dataBlock[2].innerText;
     let editStock = dataBlock[3].innerText;
     let editDate = dataBlock[4].innerText;
@@ -70,11 +99,11 @@ function editEntry()
         askForDelete(editId);
     });
 
-
     // DO ANIMATION
     formModal.fadeIn(400);
     formModal.children('#form-modal-content').toggleClass('hidden');
 
+    $('#edit-name').focus();
 }
 
 function addEntry()
@@ -92,8 +121,12 @@ function addEntry()
     $('.btn-formdelete').hide();
     $('.btn-formdelete').prop('disabled', true);
 
+    // DO ANIMATION
     formModal.fadeIn(400);
     formModal.children('#form-modal-content').toggleClass('hidden');
+
+    $('#edit-name').focus();
+
 }
 
 function closeEntry()
@@ -105,7 +138,6 @@ function closeEntry()
 
 function validateForm()
 {
-
     $('.error-msg').text('');
 
     let errorArray = new Array();
@@ -127,8 +159,13 @@ function validateForm()
         {
             areErrors = true;
 
-            let errorMsgBlock = $('#edit-' + errorArray[i].errorPart).next('span').text(errorArray[i].errorMessage);
-            $('#edit-' + errorArray[i].errorPart).focus();
+            let wrongInput = $('#edit-' + errorArray[i].errorPart);
+            let errorMsgBlock = wrongInput.next('span').text(errorArray[i].errorMessage);
+
+            wrongInput.addClass('red-border');
+            wrongInput.on('animationend', function(){wrongInput.removeClass('red-border');});
+
+            wrongInput.focus();
         }
     }
 
@@ -137,7 +174,6 @@ function validateForm()
         //alert(errorMsg);
         return false;
     }
-
 }
 
 
@@ -193,7 +229,6 @@ var Tools = {
 
         return (year + '-' + datosFecha[1] /* mes */ + '-' + datosFecha[0] /* dia */ );
 
-
     }
 };
 
@@ -211,9 +246,10 @@ var Checker = {
 
     description: function(description_)
     {
-        const NAME_REGEX = /^\w(.{3,500})$/g;
+        // Permite intros en la descripcion \(^o^)/
+        const DESCRIPTION_REGEX = /^\w((.|\n){3,1500})$/g;
 
-        if (description_.match(NAME_REGEX) === null)
+        if (description_.match(DESCRIPTION_REGEX) === null)
             return new Error('desc', true, 'La descripción no cumple los parámetros');
 
         return false;
@@ -268,7 +304,7 @@ var Checker = {
     category: function(category_)
     {
         if (category_ === null)
-            return new Error('cat', true, 'Introduce una categoría.');
+            return new Error('cat', true, 'Selecciona una categoría válida.');
 
         return false;
     },
