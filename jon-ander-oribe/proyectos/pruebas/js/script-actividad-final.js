@@ -31,25 +31,28 @@ $(function() {
 
 
 function cargarDatos() {
+
     /*
-        if (document.getElementById("inpId").value != "" && document.getElementById("inpNombre").value != "") {
 
-            document.getElementById(idDinamico).innerHTML = document.getElementById("inpId").value;
+    if (document.getElementById("inpId").value != "" && document.getElementById("inpNombre").value != "") {
 
-            document.getElementById(nombreDinamico).innerHTML = document.getElementById("inpNombre").value;
+        document.getElementById(idDinamico).innerHTML = document.getElementById("inpId").value;
 
-            document.getElementById(descripcionDinamico).innerHTML = document.getElementById("inpDescripcion").value;
+        document.getElementById(nombreDinamico).innerHTML = document.getElementById("inpNombre").value;
 
-            document.getElementById(precioDinamico).innerHTML = document.getElementById("inpPrecio").value;
+        document.getElementById(descripcionDinamico).innerHTML = document.getElementById("inpDescripcion").value;
 
-            document.getElementById(stockDinamico).innerHTML = document.getElementById("inpStock").value;
+        document.getElementById(precioDinamico).innerHTML = document.getElementById("inpPrecio").value;
 
-            document.getElementById(fechaDinamico).innerHTML = document.getElementById("inpFecha").value;
+        document.getElementById(stockDinamico).innerHTML = document.getElementById("inpStock").value;
 
-        } else {
-            return false;
-        }
+        document.getElementById(fechaDinamico).innerHTML = document.getElementById("inpFecha").value;
+
+    } else {
+        return false;
+    }
     */
+
 
     if (document.getElementById("inpId").value != "" && document.getElementById("inpNombre").value != "") {
 
