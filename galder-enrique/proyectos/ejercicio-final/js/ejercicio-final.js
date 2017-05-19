@@ -48,7 +48,7 @@ function altaRegistro() {
     }
 
     if (precio.val() == "" || isNaN(precio.val())) {
-        spanPrecio[0].style.color = "red";
+        spanPrecio[0].style.color = "white";
         spanPrecio[0].style.display = "inline-block";
     } else {
         spanPrecio[0].style.display = "none";

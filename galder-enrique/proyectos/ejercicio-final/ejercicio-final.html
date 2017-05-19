@@ -11,8 +11,11 @@
 </head>
 
 <body>
+    <div id="logoCabecera">
+        <img id="logoResize" src="img/logo-min.png" alt="Logo Carreful">
+    </div>
     <div id="tabla-body">
-        <h3>Productos Carrefur</h3>
+        <h1>Productos Informáticos</h1>
         <table class="tablaProductos">
             <caption>Productos</caption>
             <thead>
@@ -38,7 +41,7 @@
                         </a>
                     </th>
                     <td id="id1">01</td>
-                    <td id="nom1">Portátil</td>
+                    <td id="nom1"><img src="img/portatil-mini.png" alt="Ordenador Portatil">Portátil</td>
                     <td id="desc1">Intel pentium 0 a 0 ghz de lentitud</td>
                     <td id="prec1">9999.99</td>
                     <td id="stk1">50</td>
@@ -53,7 +56,7 @@
                         </a>
                     </th>
                     <td>02</td>
-                    <td>Táblet</td>
+                    <td><img src="img/tablet-mini.png" alt="Tablet">Táblet</td>
                     <td>Ni puta idea</td>
                     <td>500.00</td>
                     <td>20</td>
@@ -68,7 +71,7 @@
                         </a>
                     </th>
                     <td>03</td>
-                    <td>PC All in one</td>
+                    <td><img src="img/all-in-one-mini.png" alt="Ordenador todo en uno">PC All in one</td>
                     <td>PC sin teclado</td>
                     <td>999.99</td>
                     <td>10</td>
@@ -83,7 +86,7 @@
                         </a>
                     </th>
                     <td>04</td>
-                    <td>PC Sobremesa</td>
+                    <td><img src="img/pc-mini.png" alt="Ordenador de Sobremesa">PC Sobremesa</td>
                     <td>El pc para quemar a diario</td>
                     <td>799.99</td>
                     <td>90</td>
@@ -98,7 +101,7 @@
                         </a>
                     </th>
                     <td>05</td>
-                    <td>Móvil</td>
+                    <td><img src="img/t-mobile-mini.png" alt="Telefono Movil">Móvil</td>
                     <td>Eso que se usa pa tó menos para llamar</td>
                     <td>750.00</td>
                     <td>5</td>
@@ -113,7 +116,7 @@
                         </a>
                     </th>
                     <td>06</td>
-                    <td>Auriculares para PC</td>
+                    <td><img src="img/auriculares-mini.png" alt="Auriculares">Auriculares para PC</td>
                     <td>Para escuchar heavy a tó trapo</td>
                     <td>30.00</td>
                     <td>750</td>
@@ -128,7 +131,7 @@
                         </a>
                     </th>
                     <td>07</td>
-                    <td>Impresora</td>
+                    <td><img src="img/impresora-mini.png" alt="Impresora">Impresora</td>
                     <td>Eso qué e lo que e</td>
                     <td>250.00</td>
                     <td>100</td>
@@ -140,6 +143,7 @@
     </div>
     <div id="formProductos">
         <form action="#" method="get">
+            <legend id="insertarFila">Insertar/Modificar fila</legend>
             <fieldset>
                 <label for="identificador">ID Producto: </label>
                 <input type="text" id="identificador" name="identificador" disabled="disabled">
@@ -147,16 +151,16 @@
             <fieldset>
                 <label for="txtNombre">Nombre de Producto: </label>
                 <input type="text" id="txtNombre" name="txtNombre">
-                <span class="errorNombre" style="display: none;">¡INTRODUCE UN NOMBRE CORRECTO!</span>
+                <span class="errorNombre" required="required" style="display: none;">¡INTRODUCE UN NOMBRE CORRECTO!</span>
             </fieldset>
             <fieldset>
-                <label for="txtDescripcion" id="txtUp">Descripción del Producto: </label>
+                <label for="txtDescripcion" id="txtDescripcion">Descripción del Producto: </label>
                 <textarea name="txtDescripcion" id="txtDescripcion" cols="40" rows="5"></textarea>
             </fieldset>
             <fieldset>
                 <label for="numPrecio">Precio del Producto: </label>
                 <input type="float" id="numPrecio" name="numPrecio">
-                <span class="errorPrecio" style="display: none;">¡INTRODUCE UN PRECIO CORRECTO!</span>
+                <span class="errorPrecio" required="required" style="display: none;">¡INTRODUCE UN PRECIO CORRECTO!</span>
             </fieldset>
             <fieldset>
                 <label for="numStock">Stock</label>
@@ -169,7 +173,7 @@
             <fieldset>
                 <label for="sCategoria">Categoría del Producto: </label>
                 <select name="sCategoria" id="sCategoria">
-                    <option value="">eleccione una categoría: </option>
+                    <option value="">Seleccione una categoría: </option>
                     <option value="informatica">Informática</option>
                     <option value="imagensonido">Imágen y Sonido</option>
                     <option value="perifericos">Periféricos</option>
