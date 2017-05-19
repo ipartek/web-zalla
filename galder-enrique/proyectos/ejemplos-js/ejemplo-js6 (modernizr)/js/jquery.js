@@ -7,7 +7,7 @@ $(function() {
     });
 
     $("#conmutar").click(function() {
-        $("input[id!=conmutar]").toggle();
+        $("input[id!=conmutar]").fadeOut(3000).fadeIn(3000);
     });
 
     $("form").on("submit", function() {
