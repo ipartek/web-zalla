@@ -13,7 +13,7 @@ $(function () {
         confirm("¿Estas seguro de borrar esa línea?");
     });
     $('#aniadir').click(aniadir);
-    $('.editar').click(editar);
+    $('.modificar').click(modificar);
     $('#cancelar').click(cancelar);
     $('#formularioAniadir').on('submit', validar);
 });
@@ -32,11 +32,11 @@ function aniadir() {
         $('textarea').css("border", "");
         $('select').css("border", "");
     }
-    $('#fecha').val(strDate);
     $('#formularioAniadir')[0].reset();
+    $('#fecha').val(strDate);
 }
 
-function editar() {
+function modificar() {
     if (!$('#formularioAniadir').is(":visible")) {
         $("#formularioAniadir").css("display", "block");
         $('<label for="id">ID: </label><label for = "id_numero" >1 </label>').insertBefore($('label[for=nombre]'));
@@ -74,16 +74,20 @@ function cancelar() {
     $('#formularioAniadir')[0].reset();
 }
 
+var error = $('<label for="error"></label>');
+
+function mensaje(elemento, mensaje) {
+    $(elemento).css("border", "3px solid red");
+    $(error).text(mensaje).insertAfter($(elemento));
+    $('label[for=error]').css({
+        'color': 'red',
+        'display': 'block'
+    });
+}
+
 function validar() {
     if (!$('#nombre').val().match(patronNombre)) {
-        alert("¡¡¡Has introducido incorrectamente el nombre!!!");
-        $('#nombre').css("border", "3px solid red");
-        $('<label for="error">Introduce mínimo dos caracteres empezando por mayusculas</label>').insertAfter($('#nombre'));
-        $('label[for=error]').css({
-            'color': 'red',
-            'display': 'block'
-        });
-        //$('label[for=error]').css("display", "block");
+        mensaje('#nombre','Introduce mínimo dos caracteres empezando por mayusculas');
         $('#nombre').focus();
         return false;
     } else {
@@ -91,13 +95,7 @@ function validar() {
         $('#nombre').css("border", "");
     }
     if (!$('#descripcion').val().match(patronDescripcion)) {
-        alert("¡¡¡Has introducido incorrectamente la descripción!!!");
-        $('#descripcion').css("border", "3px solid red");
-        $('<label for="error">Introduce una descripción de 10 a 200 caracteres</label>').insertAfter($('#descripcion'));
-        $('label[for=error]').css({
-            'color': 'red',
-            'display': 'block'
-        });
+        mensaje('#descripcion','Introduce una descripción de 10 a 200 caracteres');
         $('#descripcion').focus();
         return false;
     } else {
@@ -105,13 +103,7 @@ function validar() {
         $('#descripcion').css("border", "");
     }
     if (!$('#precio').val().match(patronPrecio)) {
-        alert("¡¡¡Has introducido incorrectmante el número!!!");
-        $('#precio').css("border", "3px solid red");
-        $('<label for="error">Introduce una cantidad con dos decimales separados por coma</label>').insertAfter($('#precio'));
-        $('label[for=error]').css({
-            'color': 'red',
-            'display': 'block'
-        });
+        mensaje('#precio','Introduce una cantidad con dos decimales separados por coma');
         $("#precio").focus();
         return false;
     } else {
@@ -119,28 +111,16 @@ function validar() {
         $('#precio').css("border", "");
     }
     if (!$('#stock').val().match(patronStock)) {
-        alert("¡¡¡Has introducido incorrectmante el stock!!!");
-        $('#stock').css("border", "3px solid red");
-        $('<label for="error">Introduce una cantidad positiva</label>').insertAfter($('#stock'));
-        $('label[for=error]').css({
-            'color': 'red',
-            'display': 'block'
-        });
+        mensaje('#stock','Introduce una cantidad positiva');
         $("#stock").focus();
         return false;
     } else {
         $('label[for=error]').remove();
         $('#stock').css("border", "");
     }
-    if (!$('#categoria').val() == 0) {
-        alert("¡¡¡No has introducido categoría!!!");
-        $('#categoria').css("border", "3px solid red");
-        $('<label for="error">Introduce una cantegoría</label>').insertAfter($('#categoria'));
-        $('label[for=error]').css({
-            'color': 'red',
-            'display': 'block'
-        });
-        $("#stock").focus();
+    if ($('#categoria').val() == 0) {
+        mensaje('#categoria','Introduce una cantegoría');
+        $("#categoria").focus();
         return false;
     } else {
         $('label[for=error]').remove();
