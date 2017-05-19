@@ -103,6 +103,7 @@ function nuevaFila() {
     campo1.type = "button";
     campo1.value = "Modificar";
     campo1.class = "btnTabla1";
+    campo1.onclick = combinacionDinamica;
 
     var campo2 = document.createElement("td");
     var campo3 = campo2.cloneNode(true);
