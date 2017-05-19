@@ -12,11 +12,11 @@ var auxfila = "";
 $(function() {
 
     var auxiliar = $("idTabla1").value;
-
+    var btnCambio = $(".btnTabla1").val();
 
     $(".btnTabla1").click(function() {
         $("form").fadeToggle(1000);
-        $(".btnTabla1").val("Enviar");
+
     });
 
     $(".reseteoBoton").click(function() {
@@ -24,37 +24,14 @@ $(function() {
         $("form").fadeOut(1000);
     });
 
-
-
 });
 
 
 
 function cargarDatos() {
 
-    /*
 
-    if (document.getElementById("inpId").value != "" && document.getElementById("inpNombre").value != "") {
-
-        document.getElementById(idDinamico).innerHTML = document.getElementById("inpId").value;
-
-        document.getElementById(nombreDinamico).innerHTML = document.getElementById("inpNombre").value;
-
-        document.getElementById(descripcionDinamico).innerHTML = document.getElementById("inpDescripcion").value;
-
-        document.getElementById(precioDinamico).innerHTML = document.getElementById("inpPrecio").value;
-
-        document.getElementById(stockDinamico).innerHTML = document.getElementById("inpStock").value;
-
-        document.getElementById(fechaDinamico).innerHTML = document.getElementById("inpFecha").value;
-
-    } else {
-        return false;
-    }
-    */
-
-
-    if (document.getElementById("inpId").value != "" && document.getElementById("inpNombre").value != "") {
+    if (document.getElementById("inpId").value != "" && document.getElementById("inpNombre").value != "" && document.getElementById("inpPrecio").value != "" && document.getElementById("inpStock").value != "") {
 
         document.getElementById("id4").innerHTML = document.getElementById("inpId").value;
 
