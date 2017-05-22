@@ -1,5 +1,11 @@
 'use strict'
 
+$("a").click(function(event) {
+    alert(event.isDefaultPrevented()); // false
+    event.preventDefault();
+    alert(event.isDefaultPrevented()); // true
+});
+
 var rows = 4;
 var idDinamico = 0;
 var nombreDinamico = "nombre";
@@ -44,6 +50,8 @@ function cargarDatos() {
         document.getElementById("stock4").innerHTML = document.getElementById("inpStock").value;
 
         document.getElementById("fecha4").innerHTML = document.getElementById("inpFecha").value;
+
+        return true;
 
     } else {
         return false;
