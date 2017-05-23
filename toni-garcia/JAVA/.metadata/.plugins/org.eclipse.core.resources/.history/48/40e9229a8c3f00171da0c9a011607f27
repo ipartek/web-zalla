@@ -1,0 +1,16 @@
+package paquete1;
+
+public class HolaEclipse {
+
+	public static void main(String[] args) {
+		System.out.println("Hola Eclipse");
+
+	}
+	public static int suma(int a,int b){
+		System.out.println("a: " + a);
+		System.out.println("b: " + b);
+		int c=a+b;
+		return c;
+	}
+
+}
