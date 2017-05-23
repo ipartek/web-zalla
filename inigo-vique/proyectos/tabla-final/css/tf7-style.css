@@ -35,10 +35,7 @@ body {
 }
 
 
-/* MAIN */
-
-
-/* - buttons - */
+/* - BUTTONS - */
 
 .btn-edit {
     background: url('img/i-edit.png');
@@ -69,6 +66,69 @@ body {
     cursor: pointer;
     font-size: 0;
 }
+
+input[type=submit] {
+    border: none;
+    background: #388e3c;
+    padding: 0.8rem;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn-formdelete {
+    border: none;
+    background: #d32f2f;
+    padding: 0.8rem;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.goto-last {
+    background: url('img/i-superflecha.png');
+    background-size: contain;
+    border: none;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    font-size: 0;
+}
+
+.goto-next {
+    background: url('img/i-flecha.png');
+    background-size: contain;
+    border: none;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    font-size: 0;
+}
+
+.goto-first {
+    background: url('img/i-superflecha.png');
+    transform: rotateZ(180deg);
+    background-size: contain;
+    border: none;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    font-size: 0;
+}
+
+.goto-back {
+    background: url('img/i-flecha.png');
+    transform: rotateZ(180deg);
+    background-size: contain;
+    border: none;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    font-size: 0;
+}
+
+
+/* MAIN */
 
 main {
     max-width: 1200px;
@@ -117,15 +177,24 @@ main {
 
 #product-table thead th {
     text-transform: capitalize;
-    padding: 0.75rem 0;
+    padding: 0.75rem 0.5rem;
     font-size: 110%;
     background-color: #686868;
     color: #f0f0f0;
     border-bottom: 3px solid #fff;
+    text-align: center;
+}
+
+#product-table tfoot td {
+    background: none;
+}
+
+#product-table tfoot td:last-child {
+    padding-top: 8px;
 }
 
 colgroup.col-id {
-    border-right: 1px solid #eee;
+    border-right: 2px solid #828282;
 }
 
 colgroup.col-controls {
@@ -187,7 +256,8 @@ main footer a {
 #form-modal-content {
     max-width: 1000px;
     margin: 10px auto;
-    background-color: #ddd;
+    background-color: #fafafa;
+    border: 4px solid #969696;
     box-shadow: 0px 2px 20px 5px #4d4d4d;
     margin-top: 5vh;
     padding: 1rem;
@@ -229,7 +299,7 @@ main footer a {
 #editfs-data {
     border: 3px solid green;
     padding: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0.75rem;
 }
 
 #editfs-data ul {
@@ -275,7 +345,7 @@ main footer a {
 
 .btn-formback {
     position: absolute;
-    top: 3px;
+    top: 0;
     right: 15px;
     background: url('img/i-close.png');
     background-size: contain;
@@ -311,11 +381,11 @@ main footer a {
     }
 }
 
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 557px) {
     main {
         padding: 1.5rem 0.5rem;
     }
-    .link-nexts {
+    main footer label {
         display: none;
     }
     #form-modal-content {
@@ -339,7 +409,7 @@ main footer a {
 }
 
 @media screen and (max-width: 420px) {
-    main footer label {
+    .link-nexts {
         display: none;
     }
     main footer select {

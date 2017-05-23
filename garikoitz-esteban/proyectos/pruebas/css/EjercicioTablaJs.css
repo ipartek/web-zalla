@@ -158,12 +158,79 @@ table {
 /* Etiquetas
 ******************************************************************************************* */
 
-table,
-table thead tr,
-table thead tr th,
-table tbody tr th,
-table tbody tr td {
+#search {
+    text-align: right;
+    padding: 0;
+    padding: 0;
+    margin-right: 1em;
+    margin-top: 5em;
+}
+
+#btnBusqueda {
+    margin-left: -4px;
+}
+
+#btnAnadir {
+    margin-left: 1em;
+}
+
+h1 {
+    font-family: 'Permanent Marker', cursive;
+    color: white;
+    font-size: 8em;
+    text-align: center;
+    background: linear-gradient(pink, red, pink);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+table {
     border: 2px solid black;
+    text-align: center;
+    width: 1300px;
+    margin: 0px auto;
+    font-size: 30px;
+}
+
+caption {
+    font-family: 'Audiowide', cursive;
+    background: linear-gradient(yellow, red);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+
+th {
+    border: 2px solid black;
+    padding: 8px;
+    background: #005ff9;
+    color: white;
+    font-weight: bold;
+}
+
+td {
+    border: 1px solid black;
+    padding: 8px;
+    height: 16.66%;
+    background: #63ff3d;
+    font-weight: bold;
+}
+
+#resumen {
+    font-family: 'Indie Flower', cursive;
+    color: white;
+    font-size: 4em;
+    width: 1000px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 5em;
+}
+
+html {
+    background-image: url(../img/tablasmadera.jpg)
 }
 
 

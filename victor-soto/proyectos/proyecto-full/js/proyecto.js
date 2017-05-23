@@ -13,7 +13,7 @@ $(function () {
         confirm("¿Estas seguro de borrar esa línea?");
     });
     $('#aniadir').click(aniadir);
-    $('.editar').click(editar);
+    $('.modificar').click(modificar);
     $('#cancelar').click(cancelar);
     $('#formularioAniadir').on('submit', validar);
 });
@@ -27,11 +27,16 @@ function aniadir() {
     } else {
         $('.tituloFormulario').remove();
         $('<legend class="tituloFormulario">Producto a añadir</legend>').insertBefore($('label[for=id]'));
+        $('label[for=error]').remove();
+        $('input').css("border", "");
+        $('textarea').css("border", "");
+        $('select').css("border", "");
     }
+    $('#formularioAniadir')[0].reset();
     $('#fecha').val(strDate);
 }
 
-function editar() {
+function modificar() {
     if (!$('#formularioAniadir').is(":visible")) {
         $("#formularioAniadir").css("display", "block");
         $('<label for="id">ID: </label><label for = "id_numero" >1 </label>').insertBefore($('label[for=nombre]'));
@@ -40,7 +45,13 @@ function editar() {
     } else {
         $('.tituloFormulario').remove();
         $('<legend class="tituloFormulario">Producto a modificar</legend>').insertBefore($('label[for=id]'));
+        $('label[for=error]').remove();
+        $('input').css("border", "");
+        $('textarea').css("border", "");
+        $('select').css("border", "");
     }
+    //Esto hay que quitar y sustituir por la integración de la información de la línea seleccionada
+    $('#formularioAniadir')[0].reset();
     /*if (!$('#formularioAniadir').is(":visible")) {
         $("#formularioAniadir").css("display", "block");
         $('<legend class="tituloFormulario">Producto a modificar</legend>').insertBefore($('label[for=id]'));
@@ -56,32 +67,64 @@ function cancelar() {
     $('.tituloFormulario').remove();
     $('label[for=id]').remove();
     $('label[for=id_numero]').remove();
+    $('label[for=error]').remove();
+    $('input').css("border", "");
+    $('textarea').css("border", "");
+    $('select').css("border", "");
+    $('#formularioAniadir')[0].reset();
+}
+
+var error = $('<label for="error"></label>');
+
+function mensaje(elemento, mensaje) {
+    $(elemento).css("border", "3px solid red");
+    $(error).text(mensaje).insertAfter($(elemento));
+    $('label[for=error]').css({
+        'color': 'red',
+        'display': 'block'
+    });
 }
 
 function validar() {
     if (!$('#nombre').val().match(patronNombre)) {
-        alert("¡¡¡Has introducido incorrectamente el nombre!!!");
-        $('#nombre').css("border", "3px solid red");
-        $('<label for="error">Mínimo dos caracteres empezando por mayusculas</label>').insertAfter($('#nombre'));
-        $('label[for=error]').css({
-            'color': 'red',
-            'display': 'block'
-        });
-        //$('label[for=error]').css("display", "block");
+        mensaje('#nombre','Introduce mínimo dos caracteres empezando por mayusculas');
         $('#nombre').focus();
         return false;
-    } else if (!$('#descripcion').val().match(patronDescripcion)) {
-        alert("¡¡¡Has introducido incorrectamente la descripción!!!");
+    } else {
+        $('label[for=error]').remove();
+        $('#nombre').css("border", "");
+    }
+    if (!$('#descripcion').val().match(patronDescripcion)) {
+        mensaje('#descripcion','Introduce una descripción de 10 a 200 caracteres');
         $('#descripcion').focus();
         return false;
-    } else if (!$('#precio').val().match(patronPrecio)) {
-        alert("¡¡¡Has introducido incorrectmante el número!!!");
+    } else {
+        $('label[for=error]').remove();
+        $('#descripcion').css("border", "");
+    }
+    if (!$('#precio').val().match(patronPrecio)) {
+        mensaje('#precio','Introduce una cantidad con dos decimales separados por coma');
         $("#precio").focus();
         return false;
-    } else if (!$('#stock').val().match(patronStock)) {
-        alert("¡¡¡Has introducido incorrectmante el stock!!!");
+    } else {
+        $('label[for=error]').remove();
+        $('#precio').css("border", "");
+    }
+    if (!$('#stock').val().match(patronStock)) {
+        mensaje('#stock','Introduce una cantidad positiva');
         $("#stock").focus();
         return false;
+    } else {
+        $('label[for=error]').remove();
+        $('#stock').css("border", "");
+    }
+    if ($('#categoria').val() == 0) {
+        mensaje('#categoria','Introduce una cantegoría');
+        $("#categoria").focus();
+        return false;
+    } else {
+        $('label[for=error]').remove();
+        $('#categoria').css("border", "");
     }
     //rellenarCeros();
 }

@@ -1,5 +1,11 @@
 'use strict'
 
+$("a").click(function(event) {
+    alert(event.isDefaultPrevented()); // false
+    event.preventDefault();
+    alert(event.isDefaultPrevented()); // true
+});
+
 var rows = 4;
 var idDinamico = 0;
 var nombreDinamico = "nombre";
@@ -12,11 +18,11 @@ var auxfila = "";
 $(function() {
 
     var auxiliar = $("idTabla1").value;
-
+    var btnCambio = $(".btnTabla1").val();
 
     $(".btnTabla1").click(function() {
         $("form").fadeToggle(1000);
-        $(".btnTabla1").val("Enviar");
+
     });
 
     $(".reseteoBoton").click(function() {
@@ -24,34 +30,14 @@ $(function() {
         $("form").fadeOut(1000);
     });
 
-
-
 });
 
 
 
 function cargarDatos() {
-    /*
-        if (document.getElementById("inpId").value != "" && document.getElementById("inpNombre").value != "") {
 
-            document.getElementById(idDinamico).innerHTML = document.getElementById("inpId").value;
 
-            document.getElementById(nombreDinamico).innerHTML = document.getElementById("inpNombre").value;
-
-            document.getElementById(descripcionDinamico).innerHTML = document.getElementById("inpDescripcion").value;
-
-            document.getElementById(precioDinamico).innerHTML = document.getElementById("inpPrecio").value;
-
-            document.getElementById(stockDinamico).innerHTML = document.getElementById("inpStock").value;
-
-            document.getElementById(fechaDinamico).innerHTML = document.getElementById("inpFecha").value;
-
-        } else {
-            return false;
-        }
-    */
-
-    if (document.getElementById("inpId").value != "" && document.getElementById("inpNombre").value != "") {
+    if (document.getElementById("inpId").value != "" && document.getElementById("inpNombre").value != "" && document.getElementById("inpPrecio").value != "" && document.getElementById("inpStock").value != "") {
 
         document.getElementById("id4").innerHTML = document.getElementById("inpId").value;
 
@@ -64,6 +50,8 @@ function cargarDatos() {
         document.getElementById("stock4").innerHTML = document.getElementById("inpStock").value;
 
         document.getElementById("fecha4").innerHTML = document.getElementById("inpFecha").value;
+
+        return true;
 
     } else {
         return false;
@@ -100,6 +88,7 @@ function nuevaFila() {
     campo1.type = "button";
     campo1.value = "Modificar";
     campo1.class = "btnTabla1";
+    campo1.onclick = combinacionDinamica;
 
     var campo2 = document.createElement("td");
     var campo3 = campo2.cloneNode(true);

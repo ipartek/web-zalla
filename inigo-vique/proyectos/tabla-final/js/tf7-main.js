@@ -57,10 +57,11 @@ function editEntry()
     $('#edit-desc').val(editDesc);
     $('#edit-price').val(editPrice);
     $('#edit-stock').val(editStock);
-    $('#edit-date').val(editDate);
+    $('#edit-date').val(Tools.cambiaFechas(editDate));
     $('#edit-cat').val(editCat);
     $('.error-msg').text('');
 
+    $('input[type=submit]').val('Modificar entrada');
     $('.btn-formdelete').show();
     $('.btn-formdelete').prop('disabled', false);
     $('.btn-formdelete').off('click');
@@ -87,6 +88,7 @@ function addEntry()
     $('#edit-cat').val('');
     $('.error-msg').text('');
 
+    $('input[type=submit]').val('Crear nueva entrada');
     $('.btn-formdelete').hide();
     $('.btn-formdelete').prop('disabled', true);
 
@@ -108,12 +110,12 @@ function validateForm()
 
     let errorArray = new Array();
 
-    errorArray.push(checkName($('#edit-name').val()));
-    errorArray.push(checkDescription($('#edit-desc').val()));
-    errorArray.push(checkPrice($('#edit-price').val()));
-    errorArray.push(checkStock($('#edit-stock').val()));
-    errorArray.push(checkDate($('#edit-date').val()));
-    errorArray.push(checkCategory($('#edit-cat').val()));
+    errorArray.push(Checker.name($('#edit-name').val()));
+    errorArray.push(Checker.description($('#edit-desc').val()));
+    errorArray.push(Checker.price($('#edit-price').val()));
+    errorArray.push(Checker.stock($('#edit-stock').val()));
+    errorArray.push(Checker.date($('#edit-date').val()));
+    errorArray.push(Checker.category($('#edit-cat').val()));
 
     let areErrors = false;
 
@@ -124,12 +126,8 @@ function validateForm()
         if (errorArray[i])
         {
             areErrors = true;
-            errorMsg += errorArray[i].errorMessage + '\n';
 
             let errorMsgBlock = $('#edit-' + errorArray[i].errorPart).next('span').text(errorArray[i].errorMessage);
-
-            console.log('#edit-' + errorArray[i].errorPart);
-
             $('#edit-' + errorArray[i].errorPart).focus();
         }
     }
@@ -140,82 +138,8 @@ function validateForm()
         return false;
     }
 
-
 }
 
-function checkName(name_)
-{
-    const NAME_REGEX = /^\w(.{3,19})$/g;
-
-    if (name_.match(NAME_REGEX) === null)
-        return new Error('name', true, 'El nombre no cumple los parámetros');
-
-    return false;
-}
-
-function checkDescription(description_)
-{
-    const NAME_REGEX = /^\w(.{3,500})$/g;
-
-    if (description_.match(NAME_REGEX) === null)
-        return new Error('desc', true, 'La descripción no cumple los parámetros');
-
-    return false;
-}
-
-function checkPrice(price_)
-{
-
-    let price = parseFloat(price_);
-
-    if (isNaN(price))
-        return new Error('price', true, 'No has introducido un número como precio');
-
-    if (price <= 0)
-        return new Error('price', true, 'El precio es negativo. Así no ganamos dinero');
-
-    if (Tools.decimales(price) > 2)
-        return new Error('price', true, 'El número introducido tiene más de dos decimales');
-
-    return false;
-}
-
-function checkStock(stock_)
-{
-    let stock = parseFloat(stock_);
-
-    if (isNaN(stock))
-        return new Error('stock', true, 'El stock ha de ser un número');
-
-    if (stock <= 0)
-        return new Error('stock', true, 'El stock no puede ser negativo');
-
-    if (Tools.decimales(stock) > 0)
-        return new Error('stock', true, 'El stock no puede tener decimales');
-
-    return false;
-}
-
-function checkDate(date_)
-{
-    let date = new Date(date_);
-
-    if (isNaN(date.getTime()))
-        return new Error('date', true, 'El dato introducido no es una fecha. Recuerda escribirla de la siguiente manera (YYYY-MM-DD)');
-
-    if (date > Date.now())
-        return new Error('date', true, 'La fecha introducida ha de ser anterior a la fecha actual');
-
-    return false;
-}
-
-function checkCategory(category_)
-{
-    if (category_ === null)
-        return new Error('cat', true, 'Introduce una categoría.');
-
-    return false;
-}
 
 
 
@@ -245,5 +169,108 @@ var Tools = {
             // Ajustado para notación científica.
             -
             (match[2] ? +match[2] : 0));
+    },
+
+    cambiaFechas: function(fecha_)
+    {
+
+        let datosFecha = fecha_.split('/');
+
+        if (datosFecha.length != 3)
+        {
+            console.error('La fecha introducida no está escrita correctamente. El formato ha de ser el siguiente (DD/MM/AAAA)');
+            return false;
+        }
+
+        for (let dato_ of datosFecha)
+        {
+            if (isNaN(parseInt(dato_)))
+                return false;
+        }
+
+        // Esto es supercutre, superDOLOROSO y superPELIGROSO. A revisar en un futuro. :(
+        let year = (datosFecha[2] /* ano */ < 100) ? datosFecha[2] + 2000 : datosFecha[2];
+
+        return (year + '-' + datosFecha[1] /* mes */ + '-' + datosFecha[0] /* dia */ );
+
+
     }
+};
+
+var Checker = {
+
+    name: function(name_)
+    {
+        const NAME_REGEX = /^\w(.{3,19})$/g;
+
+        if (name_.match(NAME_REGEX) === null)
+            return new Error('name', true, 'El nombre no cumple los parámetros');
+
+        return false;
+    },
+
+    description: function(description_)
+    {
+        const NAME_REGEX = /^\w(.{3,500})$/g;
+
+        if (description_.match(NAME_REGEX) === null)
+            return new Error('desc', true, 'La descripción no cumple los parámetros');
+
+        return false;
+    },
+
+    price: function(price_)
+    {
+
+        let price = parseFloat(price_);
+
+        if (isNaN(price))
+            return new Error('price', true, 'No has introducido un número como precio');
+
+        if (price <= 0)
+            return new Error('price', true, 'El precio es negativo. Así no ganamos dinero');
+
+        if (Tools.decimales(price) > 2)
+            return new Error('price', true, 'El número introducido tiene más de dos decimales');
+
+        return false;
+    },
+
+    stock: function(stock_)
+    {
+        let stock = parseFloat(stock_);
+
+        if (isNaN(stock))
+            return new Error('stock', true, 'El stock ha de ser un número');
+
+        if (stock <= 0)
+            return new Error('stock', true, 'El stock no puede ser negativo');
+
+        if (Tools.decimales(stock) > 0)
+            return new Error('stock', true, 'El stock no puede tener decimales');
+
+        return false;
+    },
+
+    date: function(date_)
+    {
+        let date = new Date(date_);
+
+        if (isNaN(date.getTime()))
+            return new Error('date', true, 'El dato introducido no es una fecha. Recuerda escribirla de la siguiente manera (YYYY-MM-DD)');
+
+        if (date > Date.now())
+            return new Error('date', true, 'La fecha introducida ha de ser anterior a la fecha actual');
+
+        return false;
+    },
+
+    category: function(category_)
+    {
+        if (category_ === null)
+            return new Error('cat', true, 'Introduce una categoría.');
+
+        return false;
+    },
+
 };

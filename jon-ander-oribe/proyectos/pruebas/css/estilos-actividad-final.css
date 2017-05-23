@@ -197,6 +197,10 @@ a {
     text-decoration: none;
 }
 
+label {
+    padding: 0 0 0 5px;
+}
+
 .botonera {
     text-align: center;
     padding: 5px;
@@ -208,4 +212,26 @@ tr:nth-child(2n+2) {
 
 tr:nth-child(2n+3) {
     background-color: #5f697a;
+}
+
+@media(max-width: 1200px) {
+    #tabla {
+        width: 200px;
+    }
+    main {
+        width: 600px;
+    }
+}
+
+@media(max-width: 900px) {
+    body {
+        margin: 0;
+        width: 350px;
+    }
+    #tabla {
+        width: 100px;
+    }
+    main {
+        width: 600px;
+    }
 }
