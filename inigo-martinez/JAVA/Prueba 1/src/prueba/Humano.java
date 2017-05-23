@@ -1,11 +1,11 @@
 package prueba;
 
+// La armadura no funciona correctamente. Deberia de reducir el daño, no sumarse directamente.
+
 public class Humano {
 
 	int PV, danio, armadura;
 	String raza;
-
-	
 
 	public Humano() {
 		raza = "Humano";
@@ -16,10 +16,11 @@ public class Humano {
 
 	public int atacar() {
 
-		int danioRealizado = Integer.parseInt(Double.toString((Math.random() * (this.danio))));
+		int danioRealizado = (int) (Math.random() * (this.danio));
 		return danioRealizado;
 
 	}
+
 	@Override
 	public String toString() {
 		return "Humano";

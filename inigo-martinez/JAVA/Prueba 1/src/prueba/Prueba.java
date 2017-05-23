@@ -2,14 +2,14 @@ package prueba;
 
 import java.util.Scanner;
 
-import org.omg.Messaging.SyncScopeHelper;
+// Falta arreglar el tema del combate.
 
 public class Prueba {
 
 	public static void main(String args[]) {
 
-		Humanos Humanos;
-		Orcos Orcos;
+		Humanos Humanos = null;
+		Orcos Orcos = null;
 		int eleccion, tamanio;
 
 		Scanner teclado = new Scanner(System.in);
@@ -27,10 +27,12 @@ public class Prueba {
 
 		case 1:
 			// Humanos
+			System.out.print("Introduce la cantidad de soldados de tu ejercito: ");
 			tamanio = teclado.nextInt();
 			Humanos = new Humanos(tamanio);
 			// ORCOS
-			Orcos = new Orcos(tamanio /**+ 50**/);
+			Orcos = new Orcos(tamanio /** + 50 **/
+			);
 
 			break;
 
@@ -41,13 +43,24 @@ public class Prueba {
 			Orcos = new Orcos(tamanio);
 			// HUMANOS
 			if (tamanio > 120) {
-				Humanos = new Humanos(tamanio /**- 100**/);
+				Humanos = new Humanos(tamanio /** - 100 **/
+				);
 			} else {
 				Humanos = new Humanos(20);
 			}
 
 		}
+		
+		int bajasH , bajasO;
+		
+		do{
+			
+			bajasO=Humanos.combate(Orcos.Orcos);
+			bajasH=Orcos.combate(Humanos.Humanos);
+			
+		}while(Humanos.Humanos.size()>0 && Orcos.Orcos.size()>0);
 
+		teclado.close();
 	}
 
 }

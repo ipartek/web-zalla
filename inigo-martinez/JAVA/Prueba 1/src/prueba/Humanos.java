@@ -13,8 +13,6 @@ public class Humanos implements Razas {
 	@Override
 	public ArrayList<Humano> Creacion(int tamanio) {
 
-		int danio, armadura, PV;
-
 		for (int i = 0; i < tamanio; i++) {
 
 			Humano soldado = new Humano();
@@ -29,35 +27,39 @@ public class Humanos implements Razas {
 	@Override
 	public int combate(ArrayList<?> Enemigos) {
 
-		int bajas=0, pos = 0;
+		int bajas = 0, pos = 0;
 
 		for (Humano soldadoSelecc : Humanos) {
 
-			Object enemigo = Enemigos.get(pos);
+			Object enemigo = Enemigos.get(pos);		
 			
-			switch(enemigo.toString()){
-			
+			Orco orco = (Orco) enemigo;
+
+			switch (orco.raza) {
+
 			case "Orco":
-				
+
 				Orco enemigoOrco = (Orco) enemigo;
-				
+
 				int saludTotal = enemigoOrco.armadura + enemigoOrco.PV;
 
 				if (soldadoSelecc.atacar() >= saludTotal) {
 
 					Enemigos.remove(enemigo);
 					bajas++;
+					System.out.println("LLEGO4" + bajas);
 
 				}
 				if (Enemigos.indexOf(enemigo) == Enemigos.size()) {
 					pos = 0;
 
 				}
-				
+				pos++;
+
 			}
 
 		}
-		
+
 		return bajas;
 
 	}

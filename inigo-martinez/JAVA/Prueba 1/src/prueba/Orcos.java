@@ -32,7 +32,8 @@ public class Orcos implements Razas {
 
 			Object enemigo = Enemigos.get(pos);
 
-			switch (enemigo.toString()) {
+			Humano humano = (Humano) enemigo;
+			switch (humano.raza) {
 
 			case "Humano":
 
@@ -44,6 +45,7 @@ public class Orcos implements Razas {
 
 					Enemigos.remove(enemigo);
 					bajas++;
+					System.out.println("LLEGO3"+bajas);
 
 				}
 				if (Enemigos.indexOf(enemigo) == Enemigos.size()) {
