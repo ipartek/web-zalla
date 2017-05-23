@@ -1,0 +1,17 @@
+package prueba;
+
+public class Prueba {
+	
+	public static void main(String args[]){
+		
+		System.out.println("Elige uno de los bandos:");
+		System.out.println("1.- Humanos");
+		System.out.println("2.- Orcos");
+		
+		
+		
+	}
+	
+	
+
+}

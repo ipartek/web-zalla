@@ -23,8 +23,8 @@
         <tbody>
             <tr>
                 <th>
-                    <a href="#" class="Modificar" id="1" onclick="modificar(this)">
-                        <img src="src/Custom-Icon-Design-Mono-General-1-Alert (1).png" alt="Modificar" >
+                    <a href="#" class="Modificar" id="1">
+                        <img src="src/Custom-Icon-Design-Mono-General-1-Alert (1).png" alt="Modificar">
                     </a>
                     <a href="#">
                         <img src="src/Cancel-128.png" alt="Borrar">
@@ -34,12 +34,12 @@
                 <td id="Nombre1">Albaricoque</td>
                 <td id="precio1">1.5€</td>
                 <td id="stock1">100</td>
-                <td id="fecha1">01/01/01</td>
+                <td id="fecha1">2017-05-17</td>
             </tr>
             <tr>
                 <th>
-                    <a href="#" id="2" class="Modificar" onclick="modificar(this)">
-                        <img src="src/Custom-Icon-Design-Mono-General-1-Alert (1).png" alt="Modificar" >
+                    <a href="#" id="2" class="Modificar">
+                        <img src="src/Custom-Icon-Design-Mono-General-1-Alert (1).png" alt="Modificar">
                     </a>
                     <a href="#">
                         <img src="src/Cancel-128.png" alt="Borrar">
@@ -49,12 +49,12 @@
                 <td id="Nombre2">Albaricoque</td>
                 <td id="precio2">3.5€</td>
                 <td id="stock2">400</td>
-                <td id="fecha2">01/01/01</td>
+                <td id="fecha2">1874-10-15</td>
             </tr>
             <tr>
                 <th>
-                    <a href="#" id="3" class="Modificar" onclick="modificar(this)">
-                        <img src="src/Custom-Icon-Design-Mono-General-1-Alert (1).png" alt="Modificar" >
+                    <a href="#" id="3" class="Modificar">
+                        <img src="src/Custom-Icon-Design-Mono-General-1-Alert (1).png" alt="Modificar">
                     </a>
                     <a href="#">
                         <img src="src/Cancel-128.png" alt="Borrar">
@@ -64,7 +64,7 @@
                 <td id="Nombre3">Melones</td>
                 <td id="precio3">1€</td>
                 <td id="stock3">10</td>
-                <td id="fecha3">01/02/01</td>
+                <td id="fecha3">2000-01-15</td>
             </tr>
         </tbody>
     </table>
@@ -82,7 +82,7 @@
         <fieldset>
             <legend>Inform. Almacén</legend>
             <label for="Precio">Precio:</label>
-            <input type="number" name="Price" id="Price">
+            <input type="number" name="Price" id="Price" pattern="[0-9]{1,3}" maxlength="3" step="any">
             <label for="Stock">Stock:</label>
             <input type="number" name="Stock" id="Stock">
         </fieldset>
@@ -90,6 +90,7 @@
             <label for="fecha">Fecha:</label>
             <input type="date" name="Fecha" id="fecha">
         </fieldset>
+        <input type="button" name="Insertar" id="Enviar" value="Enviar">
     </form>
 </body>
 

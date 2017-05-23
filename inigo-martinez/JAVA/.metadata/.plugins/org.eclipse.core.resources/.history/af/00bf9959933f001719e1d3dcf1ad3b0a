@@ -1,0 +1,50 @@
+package prueba;
+
+import java.util.ArrayList;
+
+public class Humanos implements Razas {
+
+	ArrayList<Humano> Humanos = new ArrayList<Humano>();
+
+	public Humanos(int tamanio) {
+		Creacion(tamanio);
+	}
+
+	@Override
+	public ArrayList<Humano> Creacion(int tamanio) {
+
+		int danio, armadura, PV;
+		
+		for (int i = 0; i < tamanio; i++) {
+			
+			danio = Integer.parseInt(Double.toString(Math.random() * 3));
+			armadura = Integer.parseInt(Double.toString(Math.random() * 5));
+			PV = Integer.parseInt(Double.toString(Math.random() * 7));
+			
+			Humano soldado = new Humano(danio, armadura, PV);
+			
+			Humanos.add(soldado);
+		}
+		
+		return Humanos;
+
+	}
+
+	@Override
+	/**public int combate(Object enemigo) {
+		
+		int totalDanio=0, bajas;
+		
+		for(int i = 0; i<=Humanos.size();i++){
+			
+			totalDanio+=Humanos.get(i).atacar();
+			
+		}
+		
+		bajas = totalDanio%enemigo.PV;
+		
+		return bajas;
+
+	}
+**/
+}

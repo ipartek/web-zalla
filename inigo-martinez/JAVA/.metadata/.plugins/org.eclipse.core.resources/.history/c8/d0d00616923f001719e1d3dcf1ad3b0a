@@ -1,0 +1,41 @@
+package prueba;
+
+import java.util.Scanner;
+
+import org.omg.Messaging.SyncScopeHelper;
+
+public class Prueba {
+
+	public static void main(String args[]) {
+
+		Humanos Humanos;
+		int eleccion, tamanio;
+
+		Scanner teclado = new Scanner(System.in);
+
+		System.out.println("Elige uno de los bandos:");
+		System.out.println("1.- Humanos");
+		System.out.println("2.- Orcos");
+
+		eleccion = teclado.nextInt();
+
+		switch (eleccion) {
+
+		case 1:
+
+			tamanio = teclado.nextInt();
+			Humanos = new Humanos(tamanio);
+
+			break;
+
+		case 2:
+
+			tamanio = teclado.nextInt();
+//ORCOS
+			Humanos = new Humanos(Integer.parseInt(Double.toString(Math.random() * tamanio)));
+
+		}
+
+	}
+
+}

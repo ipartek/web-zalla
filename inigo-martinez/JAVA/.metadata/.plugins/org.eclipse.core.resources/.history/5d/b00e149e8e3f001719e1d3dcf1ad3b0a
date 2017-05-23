@@ -1,0 +1,9 @@
+package prueba;
+
+public interface Razas {
+		
+	public int Creacion();
+	
+	public void combate();
+
+}

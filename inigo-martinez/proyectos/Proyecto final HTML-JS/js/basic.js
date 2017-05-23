@@ -7,12 +7,11 @@ var cTR, cTH, aModif, aBorrar, tdID, tdNombre, tdPrice, tdStock, tdFecha, imgMod
 var tbBody;
 var fila = 3,
     auxfila = 0;
+var listaA;
 
 window.onload = cargar;
 
 function cargar() {
-
-
 
     tdID = document.getElementById("ID" + fila);
 
@@ -26,6 +25,15 @@ function cargar() {
 
     bRellenar.onclick = rellenar;
 
+    listaA = document.getElementsByClassName("Modificar");
+
+    for (var i = 0; i < listaA.length; i++) {
+
+        listaA[i].onclick = modificar;
+
+    }
+
+    document.getElementById("Enviar").onclick = enviar;
 
     bIncluir = document.getElementById("Incluir");
     bIncluir.onclick = implementar;
@@ -33,40 +41,26 @@ function cargar() {
 
 function mostrar() {
 
+    document.getElementById("Enviar").disabled = true;
+
     if (bMostrar.value == "Mostrar") {
 
         form = document.forms[0];
         bMostrar = document.getElementById("Mostrar");
 
-
         bMostrar.value = "Ocultar";
         form.style.display = "block";
     } else {
 
-        inID = document.getElementById("inID");
-        inNombre = document.getElementById("nombre");
-        inPrice = document.getElementById("Price");
-        inStock = document.getElementById("Stock");
-        inDate = document.getElementById("fecha");
-
-        inID.value = "";
-        inNombre.value = "";
-        inPrice.value = "";
-        inStock.value = "";
-        inDate.value = "";
-
-        bMostrar.value = "Mostrar";
-        form.style.display = "none";
-
-        bRellenar.value = "Rellenar";
+    	vaciar();
 
     }
 
 }
 
-function modificar(e) {
+function modificar() {
 
-    auxfila = e.id;
+    auxfila = this.id;
 
     inID = document.getElementById("inID");
     inNombre = document.getElementById("nombre");
@@ -87,14 +81,16 @@ function modificar(e) {
     inDate.value = tdFecha.innerHTML;
 
     bMostrar.value = "Mostrar";
-    form.style.display = "none";
+    form.style.display = "block";
 
-
+    document.getElementById("Enviar").disabled = false;
 }
 
 function rellenar() {
 
     if (bRellenar.value == "Rellenar") {
+
+        form.style.display = "block";
 
         inID = document.getElementById("inID");
         inNombre = document.getElementById("nombre");
@@ -109,10 +105,14 @@ function rellenar() {
         inDate.value = "1999-01-01";
 
         bRellenar.value = "Incrustar"
+        bMostrar.value = "Ocultar";
+
 
     } else {
 
         incrustar();
+        form.style.display = "none";
+        bMostrar.value="Mostrar";
 
     }
 
@@ -139,7 +139,7 @@ function implementar() {
         tdStock = document.createElement("td");
         tdFecha = document.createElement("td");
 
-        cTR.id = "linea5";
+        cTR.id = "linea"+auxfila;
         tbBody.appendChild(cTR);
 
         cTR.appendChild(cTH);
@@ -153,6 +153,10 @@ function implementar() {
 
         aModif.appendChild(imgModif);
         aBorrar.appendChild(imgBorrar);
+
+        aModif.id = fila.toString();
+
+        aModif.onclick = modificar;
 
         imgModif.src = "src/Custom-Icon-Design-Mono-General-1-Alert (1).png";
         imgBorrar.src = "src/Cancel-128.png";
@@ -169,6 +173,7 @@ function implementar() {
         tdPrice.id = "precio" + fila;
         tdStock.id = "stock" + fila;
         tdFecha.id = "fecha" + fila;
+
 
 
     } else {
@@ -192,7 +197,7 @@ function incrustar() {
 
         tdID.innerHTML = inID.value;
         tdNombre.innerHTML = inNombre.value;
-        tdPrice.innerHTML = inPrice.value;
+        tdPrice.innerHTML = inPrice.value+"€";
         tdStock.innerHTML = inStock.value;
         tdFecha.innerHTML = inDate.value;
 
@@ -200,8 +205,63 @@ function incrustar() {
 
     } else {
 
-        alert(" LA FILA QUE INTENTAS SELECCIONAR NO ESTÁ HABILITADA PARA MODIFICAR. ");
+        implementar();
+
+        tdID.innerHTML = inID.value;
+        tdNombre.innerHTML = inNombre.value;
+        tdPrice.innerHTML = inPrice.value+"€";
+        tdStock.innerHTML = inStock.value;
+        tdFecha.innerHTML = inDate.value;
+
+        bRellenar.value = "Rellenar";
+        vaciar();
 
     }
+
+}
+
+function enviar() {
+
+    inID = document.getElementById("inID");
+    inNombre = document.getElementById("nombre");
+    inPrice = document.getElementById("Price");
+    inStock = document.getElementById("Stock");
+    inDate = document.getElementById("fecha");
+
+    tdID.id = "ID" + auxfila;
+    tdNombre.id = "Nombre" + auxfila;
+    tdPrice.id = "precio" + auxfila;
+    tdStock.id = "stock" + auxfila;
+    tdFecha.id = "fecha" + auxfila;
+
+    tdID.innerHTML = inID.value;
+    tdNombre.innerHTML = inNombre.value;
+    tdPrice.innerHTML = inPrice.value+"€";
+    tdStock.innerHTML = inStock.value;
+    tdFecha.innerHTML = inDate.value;
+
+    document.getElementById("Enviar").disabled = true;
+    vaciar();
+
+}
+
+function vaciar() {
+
+    inID = document.getElementById("inID");
+    inNombre = document.getElementById("nombre");
+    inPrice = document.getElementById("Price");
+    inStock = document.getElementById("Stock");
+    inDate = document.getElementById("fecha");
+
+    inID.value = "";
+    inNombre.value = "";
+    inPrice.value = "";
+    inStock.value = "";
+    inDate.value = "";
+
+    bMostrar.value = "Mostrar";
+    form.style.display = "none";
+
+    bRellenar.value = "Rellenar";
 
 }
