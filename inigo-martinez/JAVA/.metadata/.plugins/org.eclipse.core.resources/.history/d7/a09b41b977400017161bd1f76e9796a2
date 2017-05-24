@@ -43,17 +43,19 @@ public class Humanos implements Razas {
 
 				Orco enemigoOrco = (Orco) enemigo;
 
-				int vida = (soldadoSelecc.atacar() - orco.armadura) - orco.PV;
+				int saludTotal = enemigoOrco.armadura + enemigoOrco.PV;
 
-				if (vida<=0) {
+				if (soldadoSelecc.atacar() - orco.armadura >= orco.PV) {
 
 					enemigoOrco.setPV(0);
+					;
 					bajas++;
 					System.out.println("LLEGO4" + bajas);
 
 				} else {
 
-					orco.setPV(vida);
+					orco.setPV((soldadoSelecc.atacar() - orco.armadura) - orco.PV);
+					;
 
 				}
 				if (ejercitoOrco.indexOf(enemigo) == ejercitoOrco.size()) {

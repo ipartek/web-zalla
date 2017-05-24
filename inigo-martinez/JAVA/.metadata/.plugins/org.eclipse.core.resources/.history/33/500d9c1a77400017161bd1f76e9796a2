@@ -4,7 +4,9 @@ import java.util.ArrayList;
 
 public class Orcos implements Razas {
 
-	// CLASES
+	//CLASES
+	
+	ArrayList<Humano> ejercitoHumanos = Prueba.Humanos.Humanos;
 	ArrayList<Orco> Orcos = new ArrayList<Orco>();
 
 	public Orcos(int tamanio) {
@@ -27,8 +29,6 @@ public class Orcos implements Razas {
 	@Override
 	public int combate() {
 
-		ArrayList<Humano> ejercitoHumanos = Prueba.Humanos.Humanos;
-
 		int bajas = 0, pos = 0;
 
 		for (Orco soldadoSelecc : Orcos) {
@@ -42,9 +42,8 @@ public class Orcos implements Razas {
 			case "Humano":
 
 				Humano enemigoHumano = (Humano) enemigo;
-				int vida = (soldadoSelecc.atacar() - humano.armadura)- humano.PV;
 
-				if (vida<=0) {
+				if (soldadoSelecc.atacar() - humano.armadura >= humano.PV) {
 
 					enemigoHumano.setPV(0);
 					bajas++;
@@ -52,7 +51,7 @@ public class Orcos implements Razas {
 
 				} else {
 
-					humano.setPV(vida);
+					humano.setPV((soldadoSelecc.atacar() - humano.armadura) - humano.PV);
 
 				}
 				if (ejercitoHumanos.indexOf(enemigo) == ejercitoHumanos.size()) {
@@ -60,6 +59,8 @@ public class Orcos implements Razas {
 
 				}
 				if (bajas != 0) {
+
+					 
 
 				}
 				pos++;

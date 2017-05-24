@@ -1,15 +1,17 @@
 package prueba;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 // Falta arreglar el tema del combate.
 
 public class Prueba {
-
-	static Humanos Humanos;
-	static Orcos Orcos;
-
+	
+	static ArrayList<Humanos> Humanos = new ArrayList<Humanos>();
+	static ArrayList<Orcos> Orcos = new ArrayList<Orcos>();
+	
 	public static void main(String args[]) {
+		
 
 		int eleccion, tamanio;
 
@@ -28,7 +30,6 @@ public class Prueba {
 
 		case 1:
 			// Humanos
-
 			System.out.print("Introduce la cantidad de soldados de tu ejercito: ");
 			tamanio = teclado.nextInt();
 			Humanos = new Humanos(tamanio);
@@ -45,7 +46,8 @@ public class Prueba {
 			Orcos = new Orcos(tamanio);
 			// HUMANOS
 			if (tamanio > 120) {
-				Humanos = new Humanos(tamanio /** - 100 **/);
+				Humanos = new Humanos(tamanio /** - 100 **/
+				);
 			} else {
 				Humanos = new Humanos(20);
 			}

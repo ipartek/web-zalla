@@ -45,7 +45,8 @@ public class Prueba {
 			Orcos = new Orcos(tamanio);
 			// HUMANOS
 			if (tamanio > 120) {
-				Humanos = new Humanos(tamanio /** - 100 **/);
+				Humanos = new Humanos(tamanio /** - 100 **/
+				);
 			} else {
 				Humanos = new Humanos(20);
 			}

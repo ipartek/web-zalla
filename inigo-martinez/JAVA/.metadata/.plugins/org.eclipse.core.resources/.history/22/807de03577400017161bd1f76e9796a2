@@ -55,7 +55,7 @@ public class Humano {
 
 	@Override
 	public String toString() {
-		return "Humano"+this.PV;
+		return "Humano";
 	}
 
 }

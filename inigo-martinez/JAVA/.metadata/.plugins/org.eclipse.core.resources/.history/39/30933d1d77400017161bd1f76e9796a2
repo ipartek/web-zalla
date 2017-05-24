@@ -26,6 +26,7 @@ public class Humanos implements Razas {
 
 	@Override
 	public int combate() {
+		
 
 		ArrayList<Orco> ejercitoOrco = Prueba.Orcos.Orcos;
 
@@ -43,17 +44,18 @@ public class Humanos implements Razas {
 
 				Orco enemigoOrco = (Orco) enemigo;
 
-				int vida = (soldadoSelecc.atacar() - orco.armadura) - orco.PV;
+				int saludTotal = enemigoOrco.armadura + enemigoOrco.PV;
 
-				if (vida<=0) {
+				if (soldadoSelecc.atacar() - orco.armadura >= orco.PV) {
 
-					enemigoOrco.setPV(0);
+					enemigoOrco.setPV(0);;
 					bajas++;
 					System.out.println("LLEGO4" + bajas);
 
 				} else {
 
-					orco.setPV(vida);
+					orco.setPV((soldadoSelecc.atacar() - orco.armadura) - orco.PV);
+					;
 
 				}
 				if (ejercitoOrco.indexOf(enemigo) == ejercitoOrco.size()) {
@@ -89,12 +91,12 @@ public class Humanos implements Razas {
 		for (i = 0; i < Humanos.size() - 1; i++) {
 
 			System.out.println(Humanos.get(i));
-			if (Humanos.get(i).getPV() == 0) {
-
+			if(Humanos.get(i).getPV()==0){
+				
 				Humanos.remove(i);
 			}
 
 		}
 	}
-
+	
 }
