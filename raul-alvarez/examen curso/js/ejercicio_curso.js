@@ -7,6 +7,10 @@ $(function () {
     //-----------SELECCIONAR REGISTRO-----------------
 
     $("tbody#cuerpo tr").on('click', function () {
+        
+        
+        //-----------valores tabla---------------------------
+        
 
         $(".btnOcultar").css("display", "inline");
 
@@ -15,10 +19,45 @@ $(function () {
     //---------MODIFICAR-------------------
 
     $("#btnModificar").on('click', function () {
+        
 
+        //------------fondo
+        $("#titulo").text("Modificar Registro");
+
+        var altoDisplay = window.innerHeight;
+        var anchoDisplay = window.innerWidth;
+
+        var divFondo = document.createElement("div");
+
+        divFondo.id = "popupfondo";
+
+        divFondo.style.backgroundColor = "hsla(122, 52%, 63%, 0.38)";
+        divFondo.style.position = "fixed";
+        divFondo.style.top = 0;
+        divFondo.style.left = 0;
+        divFondo.style.height = altoDisplay + "px";
+        divFondo.style.width = anchoDisplay + "px";
+        divFondo.style.zIndex = 20;
+
+        document.body.appendChild(divFondo);
+
+
+
+//-------------------------------------
+        
+                
+        
+        //-------------------------------
+
+
+        $(divFondo).append($('#cajaFormulario'));
+        
+    
+        
         $("#cajaFormulario").css("display", "block");
         $("#btnBorrar").css("display", "none");
         $("#btnAnadir").css("display", "none");
+
 
 
     });
@@ -54,6 +93,32 @@ $(function () {
 
     //----------------NUEVO REGISTRO------------
     $("#btnAnadir").on('click', function () {
+        //------------fondo
+        $("#titulo").text("Nuevo Registro");
+        var altoDisplay = window.innerHeight;
+        var anchoDisplay = window.innerWidth;
+
+        var divFondo = document.createElement("div");
+
+        divFondo.id = "popupfondo";
+
+        divFondo.style.backgroundColor = "hsla(122, 52%, 63%, 0.38)";
+        divFondo.style.position = "fixed";
+        divFondo.style.top = 0;
+        divFondo.style.left = 0;
+        divFondo.style.height = altoDisplay + "px";
+        divFondo.style.width = anchoDisplay + "px";
+        divFondo.style.zIndex = 20;
+
+        document.body.appendChild(divFondo);
+
+
+
+
+        //-------------------------------
+
+
+        $(divFondo).append($('#cajaFormulario'));
 
         $("#cajaFormulario").css("display", "block");
 
@@ -61,6 +126,8 @@ $(function () {
     $("#btnenviar").on('click', function () {
 
         validar();
+
+
     });
 
 
@@ -70,3 +137,5 @@ $(function () {
         location.reload();
     });
 });
+
+

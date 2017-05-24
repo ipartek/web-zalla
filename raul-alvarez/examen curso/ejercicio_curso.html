@@ -24,92 +24,91 @@
                 </tr>
             </thead>
             <tbody id="cuerpo">
-                <tr>
+                <tr id="registro1" class="registro">
                     <td class="color nombre">Portatil</td>
                     <td class="descripcion">Acer I3</td>
-                    <td class="color" class="precio">380.00€</td>
+                    <td class="color precio">380.00€</td>
                     <td class="stock">20</td>
-                    <td class="color" class="fecha">12/05/2012</td>
+                    <td class="color fecha">12/05/2012</td>
                 </tr>
-                <tr>
-                    <td class="color" class="nombre">Portatil</td>
+                <tr id="registro2" class="registro">
+                    <td class="color nombre">Portatil</td>
                     <td class="descripcion">Asus I3</td>
-                    <td class="color" class="precio">380.00€</td>
+                    <td class="color precio">380.00€</td>
                     <td>20</td>
-                    <td class="color" class="fecha">12/05/2012</td>
+                    <td class="color fecha">12/05/2012</td>
                 </tr>
-                <tr>
-                    <td class="color" class="nombre">Portatil</td>
+                <tr id="registro3">
+                    <td class="color nombre">Portatil</td>
                     <td class="descripcion">Asus I5</td>
-                    <td class="color" class="precio">380.00€</td>
+                    <td class="color precio">380.00€</td>
                     <td class="stock">20</td>
-                    <td class="color" class="fecha">12/05/2014</td>
+                    <td class="color fecha">12/05/2014</td>
                 </tr>
-                <tr>
-                    <td class="color" class="nombre">Portatil</td>
+                <tr id="registro4">
+                    <td class="color nombre">Portatil</td>
                     <td class="descripcion">Acer I5</td>
-                    <td class="color" class="precio">380.00€</td>
+                    <td class="color precio">380.00€</td>
                     <td class="stock">10</td>
-                    <td class="color" class="fecha">12/05/2014</td>
+                    <td class="color fecha">12/05/2014</td>
                 </tr>
-                <tr>
-                    <td class="color" class="nombre">Portatil</td>
+                <tr id="registro5">
+                    <td class="color nombre">Portatil</td>
                     <td class="descripcion">Acer I3</td>
-                    <td class="color" class="precio">380.00€</td>
+                    <td class="color precio">380.00€</td>
                     <td class="stock">20</td>
-                    <td class="color" class="fecha">12/05/2012</td>
+                    <td class="color fecha">12/05/2012</td>
+                    
                 </tr>
             </tbody>
             <tfoot>
-                <td>
-                    <input type="button" id="btnAnadir" value="Nuevo" />
-                </td>
-                <td colspan="3">
-                    <input type="button" id="btnModificar" value="Modificar" class="btnOcultar" />
-                </td>
-                <td>
-                    <input type="button" id="btnBorrar" value="Borrar" class="btnOcultar" />
-                </td>
+                <tr>
+                    <td>
+                        <input type="button" id="btnAnadir" value="Nuevo" />
+                    </td>
+                    <td colspan="3">
+                        <input type="button" id="btnModificar" value="Modificar" class="btnOcultar" />
+                    </td>
+                    <td>
+                        <input type="button" id="btnBorrar" value="Borrar" class="btnOcultar" />
+                    </td>
+                </tr>
             </tfoot>
-            <!-- onclick="anadir(this.form)"
-            onclick="validar(this.form)"
-            onclick="borrar(this.form)"
--->
+           
         </table>
     </div>
     <div id="cajaFormulario">
-        <h1>Formulario</h1>
-        <form action="#" id="formulario1" name="formulario1" method="post" action="#">
-            <fildset id="bloqueFormulario">
-                <p>
-                    <legend>Nombre</legend>
-                    <input type="text" id="nombre" name="nombre" placeholder="Producto" />
-                </p>
-                <p>
-                    <legend>Descripcion</legend>
-                    <input type="text" id="descripcion" name="descripcion" placeholder="Descripcion" />
-                </p>
-                <p>
-                    <legend>Precio</legend>
-                    <input type="text" id="precio" name="precio" placeholder="Precio" />
-                </p>
-                <p id="stock2">
-                    <legend>Stock</legend>
-                    <input type="text" id="stock" name="stock" placeholder="Stock" />
-                </p>
-                <p>
-                    <legend>Fecha de alta</legend>
-                    <input type="date" id="fecha" name="fecha" placeholder="Fecha" />
-                </p>
-            </fildset>
-            <td>
+        <h1 id="titulo">Formulario</h1>
+        <form id="formulario1" name="formulario1" method="post" action="#">
+
+
+
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Producto" />
+
+
+
+            <label for="descripcion">Descripcion</label>
+            <input type="text" id="descripcion" name="descripcion" placeholder="Descripcion" />
+
+
+            <label for="precio">Precio</label>
+            <input type="text" id="precio" name="precio" placeholder="Precio" />
+
+
+            <label for="stock">Stock</label>
+            <input type="text" id="stock" name="stock" placeholder="Stock" />
+
+
+            <label for="fecha">Fecha de alta</label>
+            <input type="date" id="fecha" name="fecha" />
+
+            <div id="botones">
                 <input type="button" id="btnenviar" value="Aceptar" />
-            </td>
-            <td>
                 <input type="button" id="btnCancelar" value="Cancelar" />
-            </td>
-            <!--             onclick="cancelar(this.form)"
-onclick="validar(this.form);return false"-->
+            </div>
+
+        
         </form>
     </div>
 </body>

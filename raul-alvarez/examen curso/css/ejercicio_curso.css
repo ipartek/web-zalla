@@ -17,6 +17,7 @@ tbody#cuerpo tr:hover {
     width: 50%;
     margin: auto auto;
     padding: 10px;
+    z-index: 10;
 }
 
 #tabla_contenidos {
@@ -25,6 +26,7 @@ tbody#cuerpo tr:hover {
     padding: 10px;
     border: 2px solid green;
     background: #e0e8e0;
+    
 }
 
 td,
@@ -42,10 +44,20 @@ th {
     width: 300px;
     border: 2px solid green;
     padding: 20px;
+    z-index: 30;
+    
+   
+   
+    margin: auto auto;
+    
+    
+    
+    
 }
 
 h1 {
     text-align: center;
+    font-size: 1.4em;
 }
 
 #btnCancelar {
@@ -58,6 +70,13 @@ h1 {
 
 .error {
     font-size: 0.8em;
-   
-    
+}
+
+label {
+    display: block;
+}
+
+input {
+    margin-bottom: 10px;
+    display: inline-block;
 }
