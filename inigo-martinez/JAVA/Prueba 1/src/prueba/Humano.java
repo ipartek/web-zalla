@@ -21,6 +21,38 @@ public class Humano {
 
 	}
 
+	public int getPV() {
+		return PV;
+	}
+
+	public void setPV(int pV) {
+		PV = pV;
+	}
+
+	public int getDanio() {
+		return danio;
+	}
+
+	public void setDanio(int danio) {
+		this.danio = danio;
+	}
+
+	public int getArmadura() {
+		return armadura;
+	}
+
+	public void setArmadura(int armadura) {
+		this.armadura = armadura;
+	}
+
+	public String getRaza() {
+		return raza;
+	}
+
+	public void setRaza(String raza) {
+		this.raza = raza;
+	}
+
 	@Override
 	public String toString() {
 		return "Humano";

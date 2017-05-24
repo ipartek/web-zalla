@@ -1,15 +1,17 @@
 package prueba;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 // Falta arreglar el tema del combate.
 
 public class Prueba {
 
+	static Humanos Humanos = Prueba.Humanos;
+	static Orcos Orcos = null;
+	
 	public static void main(String args[]) {
 
-		Humanos Humanos = null;
-		Orcos Orcos = null;
 		int eleccion, tamanio;
 
 		Scanner teclado = new Scanner(System.in);
@@ -50,15 +52,15 @@ public class Prueba {
 			}
 
 		}
-		
-		int bajasH , bajasO;
-		
-		do{
-			
-			bajasO=Humanos.combate(Orcos.Orcos);
-			bajasH=Orcos.combate(Humanos.Humanos);
-			
-		}while(Humanos.Humanos.size()>0 && Orcos.Orcos.size()>0);
+
+		int bajasH, bajasO;
+
+		do {
+
+			bajasO = Humanos.combate();
+			bajasH = Orcos.combate();
+
+		} while (Humanos.Humanos.size() > 0 && Orcos.Orcos.size() > 0);
 
 		teclado.close();
 	}

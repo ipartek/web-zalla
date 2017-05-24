@@ -1,0 +1,90 @@
+package prueba;
+
+import java.util.ArrayList;
+
+public class Orcos implements Razas {
+
+	ArrayList<Orco> Orcos = new ArrayList<Orco>();
+
+	public Orcos(int tamanio) {
+		Creacion(tamanio);
+	}
+
+	public ArrayList<Orco> Creacion(int tamanio) {
+
+		for (int i = 0; i < tamanio; i++) {
+
+			Orco soldado = new Orco();
+
+			Orcos.add(soldado);
+		}
+
+		return Orcos;
+
+	}
+
+	@Override
+	public int combate(ArrayList<?> Enemigos) {
+
+		int bajas = 0, pos = 0;
+
+		for (Orco soldadoSelecc : Orcos) {
+
+			Object enemigo = Enemigos.get(pos);
+
+			Humano humano = (Humano) enemigo;
+
+			switch (humano.raza) {
+
+			case "Humano":
+
+				Humano enemigoOrco = (Humano) enemigo;
+
+				if (soldadoSelecc.atacar() - humano.armadura >= humano.PV) {
+
+					Enemigos.remove(enemigo);
+					bajas++;
+					System.out.println("LLEGO3" + bajas);
+
+				} else {
+
+					humano.setPV((soldadoSelecc.atacar() - humano.armadura) - humano.PV);
+
+				}
+				if (Enemigos.indexOf(enemigo) == Enemigos.size()) {
+					pos = 0;
+
+				}
+				if (bajas != 0) {
+
+					Ordenar();
+
+				}
+				pos++;
+			}
+
+		}
+
+		return bajas;
+
+	}
+
+	public void Ordenar() {
+
+		int i;
+		Orco aux;
+		for (i = 0; i < Orcos.size() - 1; i++) {
+			if (Orcos.get(i + 1).PV < Orcos.get(i).PV) {
+				aux = Orcos.get(i + 1);
+				Orcos.set(i + 1, Orcos.get(i));
+				Orcos.set(i, aux);
+			}
+		}
+		for (i = 0; i < Orcos.size() - 1; i++) {
+
+			System.out.println(Orcos.get(i));
+
+		}
+	}
+
+}

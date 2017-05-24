@@ -7,7 +7,7 @@ public interface Razas {
 	public ArrayList<?> Creacion(int T);
 	
 
-	int combate(ArrayList<?> E);
+	int combate();
 
 
 }
