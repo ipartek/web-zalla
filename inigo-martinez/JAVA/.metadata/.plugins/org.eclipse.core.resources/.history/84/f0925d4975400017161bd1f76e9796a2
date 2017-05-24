@@ -8,10 +8,11 @@ import java.util.Scanner;
 public class Prueba {
 	
 	static ArrayList<Humanos> Humanos = new ArrayList<Humanos>();
-	static ArrayList<Orcos> Orcos = new ArrayList<Orcos>();
+	static ArrayList<Orcos> Orcos = new ArrayList<Humanos>();
 	
 	public static void main(String args[]) {
 		
+		Humanos = new ArrayList<Humanos>();
 
 		int eleccion, tamanio;
 

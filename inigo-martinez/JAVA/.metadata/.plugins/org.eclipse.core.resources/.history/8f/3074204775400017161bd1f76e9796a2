@@ -6,12 +6,11 @@ import java.util.Scanner;
 // Falta arreglar el tema del combate.
 
 public class Prueba {
-	
-	static ArrayList<Humanos> Humanos = new ArrayList<Humanos>();
-	static ArrayList<Orcos> Orcos = new ArrayList<Orcos>();
+
+	static Humanos Humanos = Prueba.Humanos;
+	static Orcos Orcos = null;
 	
 	public static void main(String args[]) {
-		
 
 		int eleccion, tamanio;
 
