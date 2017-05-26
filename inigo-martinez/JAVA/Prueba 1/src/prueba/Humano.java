@@ -6,12 +6,22 @@ public class Humano {
 
 	private int PV, danio, armadura;
 	private String raza;
+	private boolean vivo;
+
+	public boolean isVivo() {
+		return vivo;
+	}
+
+	public void setVivo(boolean vivo) {
+		this.vivo = vivo;
+	}
 
 	public Humano() {
+		vivo=true;
 		raza = "Humano";
-		this.PV = (int) (Math.random() * 4) + 2;
-		this.danio = (int) (Math.random() * 3) + 4;
-		this.armadura = (int) (Math.random() * 4) + 4;
+		this.PV = (int) (Math.random() * 2) + 2;
+		this.danio = (int) (Math.random() * 3) + 8;
+		this.armadura = (int) (Math.random()) + 4;
 	}
 
 	public int atacar() {

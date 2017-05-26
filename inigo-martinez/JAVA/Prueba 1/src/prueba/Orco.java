@@ -6,12 +6,22 @@ public class Orco {
 
 	private int PV, danio, armadura;
 	private String raza;
+	private boolean vivo;
 
 	public Orco() {
+		vivo = true;
 		raza = "Orco";
-		this.PV = (int) (Math.random() * 4) + 4;
-		this.danio = (int) (Math.random() * 5) + 4;
-		this.armadura = (int) (Math.random() * 2) + 4;
+		this.PV = (int) (Math.random() * 2) + 4;
+		this.danio = (int) (Math.random() * 8) + 4;
+		this.armadura = (int) (Math.random()) + 4;
+	}
+
+	public boolean isVivo() {
+		return vivo;
+	}
+
+	public void setVivo(boolean vivo) {
+		this.vivo = vivo;
 	}
 
 	public int atacar() {
@@ -26,7 +36,7 @@ public class Orco {
 	}
 
 	public void setPV(int pV) {
-		PV = pV;
+		PV += pV;
 	}
 
 	public int getDanio() {
@@ -55,7 +65,7 @@ public class Orco {
 
 	@Override
 	public String toString() {
-		return "Orco"+this.PV;
+		return "Orco" + this.PV;
 	}
 
 }

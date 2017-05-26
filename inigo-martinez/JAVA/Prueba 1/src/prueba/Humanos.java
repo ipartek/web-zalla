@@ -5,6 +5,15 @@ import java.util.ArrayList;
 public class Humanos implements Razas {
 
 	ArrayList<Humano> Humanos = new ArrayList<Humano>();
+	private int bajas;
+
+	public int getBajas() {
+		return bajas;
+	}
+
+	public void setBajas(int bajas) {
+		this.bajas += bajas;
+	}
 
 	public Humanos(int tamanio) {
 		Creacion(tamanio);
@@ -25,53 +34,70 @@ public class Humanos implements Razas {
 	}
 
 	@Override
-	public int combate() {
+	public void combate() {
 
 		ArrayList<Orco> ejercitoOrco = Prueba.Orcos.Orcos;
 
-		int bajas = 0, pos = 0;
+		int pos = 0;
 
 		for (Humano soldadoSelecc : Humanos) {
 
+			
+			if(pos>=ejercitoOrco.size())pos=0;
+			
 			Object enemigo = ejercitoOrco.get(pos);
 
 			Orco orco = (Orco) enemigo;
 
-			switch (orco.getRaza()) {
+			if (!orco.isVivo()) {
 
-			case "Orco":
+				//for (int i = ejercitoOrco.lastIndexOf(orco); i < ejercitoOrco.size() - 1 && !orco.isVivo(); i++) {
 
-				Orco enemigoOrco = (Orco) enemigo;
+					//orco = ejercitoOrco.get(i);
 
-				int vida = (soldadoSelecc.atacar() - orco.getArmadura()) - orco.getPV();
-
-				if (vida<=0) {
-
-					enemigoOrco.setPV(0);
-					bajas++;
-					System.out.println("LLEGO4" + bajas);
-
-				} else {
-
-					orco.setPV(vida);
-
-				}
-				if (ejercitoOrco.indexOf(enemigo) == ejercitoOrco.size()) {
-					pos = 0;
-
-				}
-				if (bajas != 0) {
-
-					Ordenar();
-
-				}
-				pos++;
+				//}
+				
+				orco=ejercitoOrco.get(0);
 
 			}
 
-		}
+			if (soldadoSelecc.isVivo()) {
 
-		return bajas;
+				switch (orco.getRaza()) {
+
+				case "Orco":
+
+					Orco enemigoOrco = (Orco) enemigo;
+
+					int vida = (orco.getArmadura() - soldadoSelecc.atacar());
+
+					if (vida <= 0) {
+
+						enemigoOrco.setPV(0);
+						Prueba.Orcos.setBajas(1);
+						enemigoOrco.setVivo(false);
+						System.out.println("LLEGO4" + Prueba.Humanos.getBajas());
+
+					} else {
+
+						orco.setPV(vida);
+
+					}
+					if (ejercitoOrco.indexOf(enemigo) == ejercitoOrco.size()) {
+						pos = 0;
+
+					}
+					if (Prueba.Orcos.getBajas()!= 0) {
+
+						Prueba.Orcos.Ordenar();
+
+					}
+					pos++;
+
+				}
+			}
+
+		}
 
 	}
 
@@ -80,7 +106,7 @@ public class Humanos implements Razas {
 		int i;
 		Humano aux;
 		for (i = 0; i < Humanos.size() - 1; i++) {
-			if (Humanos.get(i + 1).getPV() < Humanos.get(i).getPV()) {
+			if (Humanos.get(i + 1).isVivo() && !Humanos.get(i).isVivo()) {
 				aux = Humanos.get(i + 1);
 				Humanos.set(i + 1, Humanos.get(i));
 				Humanos.set(i, aux);
@@ -89,7 +115,8 @@ public class Humanos implements Razas {
 		for (i = 0; i < Humanos.size() - 1; i++) {
 
 			System.out.println(Humanos.get(i));
-			if (Humanos.get(i).getPV() == 0) {
+			System.out.println(Humanos.size());
+			if (!Humanos.get(i).isVivo()) {
 
 				Humanos.remove(i);
 			}

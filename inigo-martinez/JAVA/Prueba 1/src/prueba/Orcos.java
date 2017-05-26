@@ -6,6 +6,15 @@ public class Orcos implements Razas {
 
 	// CLASES
 	ArrayList<Orco> Orcos = new ArrayList<Orco>();
+	private int bajas;
+
+	public int getBajas() {
+		return bajas;
+	}
+
+	public void setBajas(int bajas) {
+		this.bajas += bajas;
+	}
 
 	public Orcos(int tamanio) {
 		Creacion(tamanio);
@@ -25,7 +34,7 @@ public class Orcos implements Razas {
 	}
 
 	@Override
-	public int combate() {
+	public void combate() {
 
 		ArrayList<Humano> ejercitoHumanos = Prueba.Humanos.Humanos;
 
@@ -33,41 +42,48 @@ public class Orcos implements Razas {
 
 		for (Orco soldadoSelecc : Orcos) {
 
+			if (pos >= ejercitoHumanos.size())
+				pos = 0;
+
 			Object enemigo = ejercitoHumanos.get(pos);
 
 			Humano humano = (Humano) enemigo;
 
-			switch (humano.getRaza()) {
+			if (soldadoSelecc.isVivo()) {
 
-			case "Humano":
+				switch (humano.getRaza()) {
 
-				Humano enemigoHumano = (Humano) enemigo;
-				int vida = (soldadoSelecc.atacar() - humano.getArmadura())- humano.getPV();
+				case "Humano":
 
-				if (vida<=0) {
+					Humano enemigoHumano = (Humano) enemigo;
+					int vida = (humano.getArmadura() - soldadoSelecc.atacar());
 
-					enemigoHumano.setPV(0);
-					bajas++;
-					System.out.println("LLEGO3" + bajas);
+					if (vida <= 0) {
 
-				} else {
+						enemigoHumano.setPV(0);
+						Prueba.Humanos.setBajas(1);
+						enemigoHumano.setVivo(false);
+						System.out.println("LLEGO3" + Prueba.Humanos.getBajas());
 
-					humano.setPV(vida);
+					} else {
 
+						humano.setPV(vida);
+
+					}
+					if (ejercitoHumanos.indexOf(enemigo) == ejercitoHumanos.size()) {
+						pos = 0;
+
+					}
+					if (Prueba.Humanos.getBajas() != 0) {
+
+						Prueba.Humanos.Ordenar();
+
+					}
+					pos++;
 				}
-				if (ejercitoHumanos.indexOf(enemigo) == ejercitoHumanos.size()) {
-					pos = 0;
-
-				}
-				if (bajas != 0) {
-
-				}
-				pos++;
 			}
 
 		}
-
-		return bajas;
 
 	}
 
@@ -76,7 +92,7 @@ public class Orcos implements Razas {
 		int i;
 		Orco aux;
 		for (i = 0; i < Orcos.size() - 1; i++) {
-			if (Orcos.get(i + 1).getPV() < Orcos.get(i).getPV()) {
+			if (Orcos.get(i + 1).isVivo() && !Orcos.get(i).isVivo()) {
 				aux = Orcos.get(i + 1);
 				Orcos.set(i + 1, Orcos.get(i));
 				Orcos.set(i, aux);
@@ -85,6 +101,11 @@ public class Orcos implements Razas {
 		for (i = 0; i < Orcos.size() - 1; i++) {
 
 			System.out.println(Orcos.get(i));
+			System.out.println(Orcos.size());
+
+			if (!Orcos.get(i).isVivo())
+
+				Orcos.remove(i);
 
 		}
 	}

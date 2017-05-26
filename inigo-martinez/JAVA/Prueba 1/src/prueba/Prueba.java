@@ -70,18 +70,18 @@ public class Prueba {
 
 		default:
 			System.out.println("Opción no valida");
-			
 
 		}
 
-		int bajasH, bajasO;
-
 		do {
 
-			bajasO = Humanos.combate();
-			bajasH = Orcos.combate();
+			Humanos.combate();
+			Orcos.combate();
 
-		} while (Humanos.Humanos.size() > 0 && Orcos.Orcos.size() > 0);
+			System.out.println(Humanos.getBajas());
+			System.out.println(Orcos.getBajas());
+
+		} while (Humanos.Humanos.size()==0 || Orcos.Orcos.size()==0);
 
 		teclado.close();
 	}
