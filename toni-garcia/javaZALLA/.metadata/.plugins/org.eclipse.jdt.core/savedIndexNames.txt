@@ -1,3 +1,0 @@
-INDEX VERSION 1.130+C:\DESARROLLO\WEB\web-zalla\toni-garcia\javaZALLA\.metadata\.plugins\org.eclipse.jdt.core
-4134261820.index
-555834367.index
