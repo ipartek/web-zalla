@@ -4,8 +4,8 @@ package prueba;
 
 public class Orco {
 
-	private int PV, danio, armadura;
-	private String raza;
+	int PV, danio, armadura;
+	String raza;
 
 	public Orco() {
 		raza = "Orco";

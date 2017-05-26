@@ -2,16 +2,16 @@ package prueba;
 
 // La armadura no funciona correctamente. Deberia de reducir el daño, no sumarse directamente.
 
-public class Orco {
+public class Humano {
 
-	private int PV, danio, armadura;
-	private String raza;
+	int PV, danio, armadura;
+	String raza;
 
-	public Orco() {
-		raza = "Orco";
-		this.PV = (int) (Math.random() * 4) + 4;
-		this.danio = (int) (Math.random() * 5) + 4;
-		this.armadura = (int) (Math.random() * 2) + 4;
+	public Humano() {
+		raza = "Humano";
+		this.PV = (int) (Math.random() * 4) + 2;
+		this.danio = (int) (Math.random() * 3) + 4;
+		this.armadura = (int) (Math.random() * 4) + 4;
 	}
 
 	public int atacar() {
@@ -55,7 +55,7 @@ public class Orco {
 
 	@Override
 	public String toString() {
-		return "Orco"+this.PV;
+		return "Humano"+this.PV;
 	}
 
 }

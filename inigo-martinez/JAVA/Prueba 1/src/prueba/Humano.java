@@ -4,8 +4,8 @@ package prueba;
 
 public class Humano {
 
-	int PV, danio, armadura;
-	String raza;
+	private int PV, danio, armadura;
+	private String raza;
 
 	public Humano() {
 		raza = "Humano";

@@ -37,13 +37,13 @@ public class Humanos implements Razas {
 
 			Orco orco = (Orco) enemigo;
 
-			switch (orco.getRaza()) {
+			switch (orco.raza) {
 
 			case "Orco":
 
 				Orco enemigoOrco = (Orco) enemigo;
 
-				int vida = (soldadoSelecc.atacar() - orco.getArmadura()) - orco.getPV();
+				int vida = (soldadoSelecc.atacar() - orco.armadura) - orco.PV;
 
 				if (vida<=0) {
 
@@ -80,7 +80,7 @@ public class Humanos implements Razas {
 		int i;
 		Humano aux;
 		for (i = 0; i < Humanos.size() - 1; i++) {
-			if (Humanos.get(i + 1).getPV() < Humanos.get(i).getPV()) {
+			if (Humanos.get(i + 1).PV < Humanos.get(i).PV) {
 				aux = Humanos.get(i + 1);
 				Humanos.set(i + 1, Humanos.get(i));
 				Humanos.set(i, aux);
