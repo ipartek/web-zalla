@@ -42,22 +42,20 @@ public class Humanos implements Razas {
 
 		for (Humano soldadoSelecc : Humanos) {
 
-			
-			if(pos>=ejercitoOrco.size())pos=0;
-			
+			if (pos >= ejercitoOrco.size())
+				pos = 0;
+
 			Object enemigo = ejercitoOrco.get(pos);
 
 			Orco orco = (Orco) enemigo;
 
 			if (!orco.isVivo()) {
 
-				//for (int i = ejercitoOrco.lastIndexOf(orco); i < ejercitoOrco.size() - 1 && !orco.isVivo(); i++) {
+				for (int i = ejercitoOrco.lastIndexOf(orco); i < ejercitoOrco.size() - 1 && !orco.isVivo(); i++) {
 
-					//orco = ejercitoOrco.get(i);
+					orco = ejercitoOrco.get(i);
 
-				//}
-				
-				orco=ejercitoOrco.get(0);
+				}
 
 			}
 
@@ -67,29 +65,23 @@ public class Humanos implements Razas {
 
 				case "Orco":
 
-					Orco enemigoOrco = (Orco) enemigo;
-
 					int vida = (orco.getArmadura() - soldadoSelecc.atacar());
 
-					if (vida <= 0) {
+					orco.setPV(-vida);
 
-						enemigoOrco.setPV(0);
+					if (orco.getPV() == 0) {
+
 						Prueba.Orcos.setBajas(1);
-						enemigoOrco.setVivo(false);
-						System.out.println("LLEGO4" + Prueba.Humanos.getBajas());
+						System.out.println("LLEGO HUMANOS   " + Prueba.Orcos.getBajas());
 
-					} else {
-
-						orco.setPV(vida);
+						Orco auxOrco = null;
+						auxOrco = ejercitoOrco.get(ejercitoOrco.size() - 1);
+						ejercitoOrco.set(ejercitoOrco.size() - 1, orco);
+						ejercitoOrco.remove(ejercitoOrco.size() - 1);
 
 					}
 					if (ejercitoOrco.indexOf(enemigo) == ejercitoOrco.size()) {
 						pos = 0;
-
-					}
-					if (Prueba.Orcos.getBajas()!= 0) {
-
-						Prueba.Orcos.Ordenar();
 
 					}
 					pos++;
@@ -100,28 +92,4 @@ public class Humanos implements Razas {
 		}
 
 	}
-
-	public void Ordenar() {
-
-		int i;
-		Humano aux;
-		for (i = 0; i < Humanos.size() - 1; i++) {
-			if (Humanos.get(i + 1).isVivo() && !Humanos.get(i).isVivo()) {
-				aux = Humanos.get(i + 1);
-				Humanos.set(i + 1, Humanos.get(i));
-				Humanos.set(i, aux);
-			}
-		}
-		for (i = 0; i < Humanos.size() - 1; i++) {
-
-			System.out.println(Humanos.get(i));
-			System.out.println(Humanos.size());
-			if (!Humanos.get(i).isVivo()) {
-
-				Humanos.remove(i);
-			}
-
-		}
-	}
-
 }

@@ -19,9 +19,9 @@ public class Humano {
 	public Humano() {
 		vivo=true;
 		raza = "Humano";
-		this.PV = (int) (Math.random() * 2) + 2;
-		this.danio = (int) (Math.random() * 3) + 8;
-		this.armadura = (int) (Math.random()) + 4;
+		this.PV = 4;
+		this.danio = 9;
+		this.armadura = 4;
 	}
 
 	public int atacar() {
@@ -37,6 +37,9 @@ public class Humano {
 
 	public void setPV(int pV) {
 		PV = pV;
+		if(this.PV<0){
+			this.PV=0;
+		}
 	}
 
 	public int getDanio() {
@@ -65,7 +68,7 @@ public class Humano {
 
 	@Override
 	public String toString() {
-		return "Humano"+this.PV;
+		return "Humano: "+this.PV+" armadura "+this.armadura+" daño "+this.danio;
 	}
 
 }

@@ -55,59 +55,30 @@ public class Orcos implements Razas {
 
 				case "Humano":
 
-					Humano enemigoHumano = (Humano) enemigo;
 					int vida = (humano.getArmadura() - soldadoSelecc.atacar());
 
-					if (vida <= 0) {
+					humano.setPV(-vida);
 
-						enemigoHumano.setPV(0);
+					if (humano.getPV() == 0) {
+
 						Prueba.Humanos.setBajas(1);
-						enemigoHumano.setVivo(false);
-						System.out.println("LLEGO3" + Prueba.Humanos.getBajas());
+						System.out.println("LLEGO ORCOS  " + Prueba.Humanos.getBajas());
 
-					} else {
+						Humano auxHumano = null;
+						auxHumano = ejercitoHumanos.get(ejercitoHumanos.size() - 1);
+						ejercitoHumanos.set(ejercitoHumanos.size() - 1, humano);
+						ejercitoHumanos.remove(ejercitoHumanos.size() - 1);
 
-						humano.setPV(vida);
+						if (ejercitoHumanos.indexOf(enemigo) == ejercitoHumanos.size()) {
+							pos = 0;
 
+						}
+						pos++;
 					}
-					if (ejercitoHumanos.indexOf(enemigo) == ejercitoHumanos.size()) {
-						pos = 0;
-
-					}
-					if (Prueba.Humanos.getBajas() != 0) {
-
-						Prueba.Humanos.Ordenar();
-
-					}
-					pos++;
 				}
+
 			}
 
 		}
-
 	}
-
-	public void Ordenar() {
-
-		int i;
-		Orco aux;
-		for (i = 0; i < Orcos.size() - 1; i++) {
-			if (Orcos.get(i + 1).isVivo() && !Orcos.get(i).isVivo()) {
-				aux = Orcos.get(i + 1);
-				Orcos.set(i + 1, Orcos.get(i));
-				Orcos.set(i, aux);
-			}
-		}
-		for (i = 0; i < Orcos.size() - 1; i++) {
-
-			System.out.println(Orcos.get(i));
-			System.out.println(Orcos.size());
-
-			if (!Orcos.get(i).isVivo())
-
-				Orcos.remove(i);
-
-		}
-	}
-
 }

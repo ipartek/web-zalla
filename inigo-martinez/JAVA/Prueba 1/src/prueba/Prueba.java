@@ -83,6 +83,17 @@ public class Prueba {
 
 		} while (Humanos.Humanos.size()==0 || Orcos.Orcos.size()==0);
 
+		for(int i=0;Humanos.Humanos.size()-1>=i;i++){
+
+			System.out.println(Humanos.Humanos.get(i));
+			
+		}
+		for(int i=0;Orcos.Orcos.size()-1>=i;i++){
+
+			System.out.println(Orcos.Orcos.get(i));
+			
+		}
+		
 		teclado.close();
 	}
 
