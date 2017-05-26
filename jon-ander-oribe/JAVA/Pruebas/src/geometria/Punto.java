@@ -23,20 +23,28 @@ public class Punto { // Constructor vacio
 	public void desplazar(Direccion direccionSeleccionada) {
 		System.out.println("Elige la dirección del desplazamiento");
 		String sc1 = sc.next();
+		System.out.println("Elige un objeto sobre el que trabajar");
+		String sc2 = sc.next();
+		Punto sc3 = Punto(sc2);// sc2 es un string no un objeto
+		double sc4 = 0.0;
 
 		switch (sc1) {
 
 		case "arriba":
-			Direccion.arriba += 1;
+			sc4 = sc3.getY();
+			sc4 += Direccion.arriba;
 			break;
 		case "abajo":
-			Direccion.abajo += 1;
+			sc4 = sc3.getY();
+			sc4 -= Direccion.abajo;
 			break;
 		case "izquierda":
-			Direccion.izquierda += 1;
+			sc4 = sc3.getX();
+			sc4 += Direccion.izquierda;
 			break;
 		case "derecha":
-			Direccion.derecha += 1;
+			sc4 = sc3.getX();
+			sc4 -= Direccion.derecha;
 			break;
 
 		}
@@ -99,7 +107,7 @@ public class Punto { // Constructor vacio
 		double distancia = calcularDistancia(3, 2, 3, 2);
 		System.out.println("La distancia es " + distancia);
 		System.out.println("***************************");
-		System.out.println("");//Evaluación metodo desplazar() sobrecargado
+		System.out.println("La distancia más el valor de desplazamiento es"+ );//Evaluación metodo desplazar() sobrecargado
 		
 
 	}
