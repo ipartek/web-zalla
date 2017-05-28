@@ -17,7 +17,7 @@ public class Humano {
 	}
 
 	public Humano() {
-		vivo = true;
+		vivo=true;
 		raza = "Humano";
 		this.PV = 4;
 		this.danio = 9;
@@ -36,9 +36,9 @@ public class Humano {
 	}
 
 	public void setPV(int pV) {
-		PV += pV;
-		if (this.PV <= 0) {
-
+		PV = pV;
+		if(this.PV<0){
+			this.PV=0;
 			this.setVivo(false);
 		}
 	}
@@ -69,15 +69,7 @@ public class Humano {
 
 	@Override
 	public String toString() {
-		return "Humano: " + this.PV + " armadura " + this.armadura + " daño " + this.danio;
+		return "Humano: "+this.PV+" armadura "+this.armadura+" daño "+this.danio;
 	}
 
-	public void herir(int damage) {
-
-		if (damage <= 0) {
-			return;
-		}
-		this.setPV(-damage);
-
-	}
 }

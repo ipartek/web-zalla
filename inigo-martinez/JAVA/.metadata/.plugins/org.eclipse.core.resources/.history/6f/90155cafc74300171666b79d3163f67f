@@ -42,11 +42,6 @@ public class Orcos implements Razas {
 
 		for (Orco soldadoSelecc : Orcos) {
 
-			if (ejercitoHumanos.isEmpty()) {
-
-				return;
-
-			}
 			if (pos >= ejercitoHumanos.size())
 				pos = 0;
 
@@ -54,17 +49,27 @@ public class Orcos implements Razas {
 
 			Humano humano = (Humano) enemigo;
 
+			if (!humano.isVivo()) {
+
+				for(int posici=ejercitoHumanos.indexOf(humano);humano.isVivo();posici++) {
+
+					humano=ejercitoHumanos.get(posici);
+
+				}
+
+			}
+
 			if (soldadoSelecc.isVivo()) {
 
 				switch (humano.getRaza()) {
 
 				case "Humano":
 
-					int vida = (soldadoSelecc.atacar() - humano.getArmadura());
+					int vida = (humano.getArmadura() - soldadoSelecc.atacar());
 
-					humano.herir(vida);
+					humano.setPV(-vida);
 
-					if (!humano.isVivo()) {
+					if (humano.getPV() == 0) {
 
 						Prueba.Humanos.setBajas(1);
 						System.out.println("LLEGO ORCOS  " + Prueba.Humanos.getBajas());

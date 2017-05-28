@@ -42,12 +42,6 @@ public class Humanos implements Razas {
 
 		for (Humano soldadoSelecc : Humanos) {
 
-			if(ejercitoOrco.isEmpty()){
-				
-				return;
-				
-			}
-			
 			if (pos >= ejercitoOrco.size())
 				pos = 0;
 
@@ -61,9 +55,9 @@ public class Humanos implements Razas {
 
 				case "Orco":
 
-					int vida = (soldadoSelecc.atacar() - orco.getArmadura() );
+					int vida = (orco.getArmadura() - soldadoSelecc.atacar());
 
-					orco.herir(vida);
+					orco.setPV(-vida);
 
 					if (!orco.isVivo()) {
 

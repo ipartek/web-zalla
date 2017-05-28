@@ -38,15 +38,10 @@ public class Orcos implements Razas {
 
 		ArrayList<Humano> ejercitoHumanos = Prueba.Humanos.Humanos;
 
-		int pos = 0;
+		int bajas = 0, pos = 0;
 
 		for (Orco soldadoSelecc : Orcos) {
 
-			if (ejercitoHumanos.isEmpty()) {
-
-				return;
-
-			}
 			if (pos >= ejercitoHumanos.size())
 				pos = 0;
 
@@ -60,16 +55,17 @@ public class Orcos implements Razas {
 
 				case "Humano":
 
-					int vida = (soldadoSelecc.atacar() - humano.getArmadura());
+					int vida = (humano.getArmadura() - soldadoSelecc.atacar());
 
-					humano.herir(vida);
+					humano.setPV(-vida);
 
-					if (!humano.isVivo()) {
+					if (humano.getPV() == 0) {
 
 						Prueba.Humanos.setBajas(1);
 						System.out.println("LLEGO ORCOS  " + Prueba.Humanos.getBajas());
 
-						Humano auxHumano = ejercitoHumanos.get(ejercitoHumanos.size() - 1);
+						Humano auxHumano = null;
+						auxHumano = ejercitoHumanos.get(ejercitoHumanos.size() - 1);
 						ejercitoHumanos.set(ejercitoHumanos.size() - 1, humano);
 						ejercitoHumanos.remove(ejercitoHumanos.size() - 1);
 

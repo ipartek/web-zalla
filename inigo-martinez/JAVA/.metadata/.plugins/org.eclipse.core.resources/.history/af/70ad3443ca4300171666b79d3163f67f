@@ -36,9 +36,9 @@ public class Humano {
 	}
 
 	public void setPV(int pV) {
-		PV += pV;
-		if (this.PV <= 0) {
-
+		PV = pV;
+		if (this.PV < 0) {
+			this.PV = 0;
 			this.setVivo(false);
 		}
 	}
@@ -72,12 +72,4 @@ public class Humano {
 		return "Humano: " + this.PV + " armadura " + this.armadura + " daño " + this.danio;
 	}
 
-	public void herir(int damage) {
-
-		if (damage <= 0) {
-			return;
-		}
-		this.setPV(-damage);
-
-	}
 }

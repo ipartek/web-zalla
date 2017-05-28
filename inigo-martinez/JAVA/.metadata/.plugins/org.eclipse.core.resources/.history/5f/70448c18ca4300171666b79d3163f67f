@@ -2,11 +2,19 @@ package prueba;
 
 // La armadura no funciona correctamente. Deberia de reducir el daño, no sumarse directamente.
 
-public class Humano {
+public class Orco {
 
 	private int PV, danio, armadura;
 	private String raza;
 	private boolean vivo;
+
+	public Orco() {
+		vivo = true;
+		raza = "Orco";
+		this.PV = 4;
+		this.danio = 9;
+		this.armadura = 4;
+	}
 
 	public boolean isVivo() {
 		return vivo;
@@ -14,14 +22,6 @@ public class Humano {
 
 	public void setVivo(boolean vivo) {
 		this.vivo = vivo;
-	}
-
-	public Humano() {
-		vivo = true;
-		raza = "Humano";
-		this.PV = 4;
-		this.danio = 9;
-		this.armadura = 4;
 	}
 
 	public int atacar() {
@@ -37,8 +37,8 @@ public class Humano {
 
 	public void setPV(int pV) {
 		PV += pV;
-		if (this.PV <= 0) {
-
+		if(this.PV<0){
+			this.PV=0;
 			this.setVivo(false);
 		}
 	}
@@ -69,15 +69,9 @@ public class Humano {
 
 	@Override
 	public String toString() {
-		return "Humano: " + this.PV + " armadura " + this.armadura + " daño " + this.danio;
+		
+		return "Orco " + this.PV + " armadura " + this.armadura + "daño " + this.danio;
+		
 	}
 
-	public void herir(int damage) {
-
-		if (damage <= 0) {
-			return;
-		}
-		this.setPV(-damage);
-
-	}
 }

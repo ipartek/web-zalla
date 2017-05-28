@@ -36,9 +36,10 @@ public class Orco {
 	}
 
 	public void setPV(int pV) {
-		PV += pV;
-		if(this.PV<0){
-			this.PV=0;
+		this.PV+=pV;
+		
+		if(this.PV<=0){
+			this.setVivo(false);
 		}
 	}
 
@@ -70,6 +71,14 @@ public class Orco {
 	public String toString() {
 		
 		return "Orco " + this.PV + " armadura " + this.armadura + "daño " + this.danio;
+		
+	}
+	public void herir(int damage){
+		
+		if(damage<=0){
+			return;
+		}
+		this.setPV(-damage);
 		
 	}
 

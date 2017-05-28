@@ -42,10 +42,10 @@ public class Orcos implements Razas {
 
 		for (Orco soldadoSelecc : Orcos) {
 
-			if (ejercitoHumanos.isEmpty()) {
-
+			if(ejercitoHumanos.isEmpty()){
+				
 				return;
-
+				
 			}
 			if (pos >= ejercitoHumanos.size())
 				pos = 0;
@@ -60,7 +60,7 @@ public class Orcos implements Razas {
 
 				case "Humano":
 
-					int vida = (soldadoSelecc.atacar() - humano.getArmadura());
+					int vida = (soldadoSelecc.atacar() - humano.getArmadura() );
 
 					humano.herir(vida);
 

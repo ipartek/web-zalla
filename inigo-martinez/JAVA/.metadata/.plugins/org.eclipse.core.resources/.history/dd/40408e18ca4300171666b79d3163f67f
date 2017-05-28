@@ -2,10 +2,7 @@ package prueba;
 
 import java.util.Scanner;
 
-/** El programa funciona correctamente
- * 
- * Falta integrar hilos y hacer funcional goblins. Esta última parte te la dejo a ti, Jon Ander.
-**/
+// Falta arreglar el tema del combate.
 
 public class Prueba {
 
