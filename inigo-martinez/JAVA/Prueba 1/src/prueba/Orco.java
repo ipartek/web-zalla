@@ -70,7 +70,7 @@ public class Orco {
 	@Override
 	public String toString() {
 		
-		return "Orco " + this.PV + " armadura " + this.armadura + "daño " + this.danio;
+		return "Orco " + this.PV + " armadura " + this.armadura + " daño " + this.danio;
 		
 	}
 	public void herir(int damage){
