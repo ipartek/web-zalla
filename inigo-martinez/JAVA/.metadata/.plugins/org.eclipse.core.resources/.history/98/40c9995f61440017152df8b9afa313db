@@ -69,7 +69,9 @@ public class Orcos implements Razas {
 						Prueba.Humanos.setBajas(1);
 						System.out.println("LLEGO ORCOS  " + Prueba.Humanos.getBajas());
 
-						ejercitoHumanos.remove(ejercitoHumanos.indexOf(humano));
+						Humano auxHumano = ejercitoHumanos.get(ejercitoHumanos.size() - 1);
+						ejercitoHumanos.set(ejercitoHumanos.size() - 1, humano);
+						ejercitoHumanos.remove(ejercitoHumanos.size() - 1);
 
 						if (ejercitoHumanos.indexOf(enemigo) == ejercitoHumanos.size()) {
 							pos = 0;
