@@ -7,6 +7,7 @@ public class Punto { // Constructor vacio
 
 	private double x = 0.0;
 	private double y = 0.0;
+	private String nombre = "";
 	Scanner sc = new Scanner(System.in);
 
 	public Punto(double x, double y) { // Constructor X e Y
@@ -20,13 +21,16 @@ public class Punto { // Constructor vacio
 		this.y = punto.y;
 	}
 
-	public void desplazar(Direccion direccionSeleccionada) {
+	public void desplazar(double... x) {
 		System.out.println("Elige la dirección del desplazamiento");
 		String sc1 = sc.next();
 		System.out.println("Elige un objeto sobre el que trabajar");
 		String sc2 = sc.next();
-		Punto sc3 = Punto(sc2);// sc2 es un string no un objeto
-		double sc4 = 0.0;
+		switch (sc2) {
+		case "cuadrado":
+			Punto sc3 = Principal.cuadrado;
+		}//FALTA RELLENAR ESTE SWITCH
+		double sc4 = 0.0;//NECESITAS OTRO PARA EL OTRO EJE
 
 		switch (sc1) {
 
@@ -77,39 +81,18 @@ public class Punto { // Constructor vacio
 		this.y = y;
 	}
 
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
 	public static double calcularDistancia(double x1, double x2, double y1, double y2) {
 		double valorFinal = 0.0;
 		valorFinal = Math.sqrt(Math.pow(x1, 2) - Math.pow(x2, 2) + Math.pow(y1, 2) - Math.pow(y2, 2));
 		return valorFinal;
-	}
-
-	public static void main(String[] args) {
-
-		Punto punto1 = new Punto(2, 3);
-		Punto punto2 = new Punto(7, 7);
-		System.out.println(punto1.getX());
-		System.out.println(punto1.getY());
-		punto1.setX(12);
-		punto1.setY(9);
-		System.out.println(punto1.getX());
-		System.out.println(punto1.getY());
-		System.out.println("***************************");
-		Punto puntoClon = new Punto(punto2);
-		System.out.println(puntoClon.getX());
-		System.out.println(puntoClon.getY());
-		desplazarObjeto(punto2, 3, 4);
-		System.out.println(punto2.getX());
-		System.out.println(punto2.getY());
-		desplazarObjeto(punto2, 8, 6);
-		System.out.println(punto2.getX());
-		System.out.println(punto2.getY());
-		System.out.println("***************************");
-		double distancia = calcularDistancia(3, 2, 3, 2);
-		System.out.println("La distancia es " + distancia);
-		System.out.println("***************************");
-		System.out.println("La distancia más el valor de desplazamiento es"+ );//Evaluación metodo desplazar() sobrecargado
-		
-
 	}
 
 }

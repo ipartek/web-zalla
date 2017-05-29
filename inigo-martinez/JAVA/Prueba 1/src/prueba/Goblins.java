@@ -28,6 +28,7 @@ public class Goblins implements Razas {
 
 	@Override
 	public void combate() {
+		
 
 		ArrayList<Orco> ejercitoOrco = Prueba.Orcos.Orcos;
 
@@ -71,8 +72,8 @@ public class Goblins implements Razas {
 
 			}
 
-		}
-	}
+		}}
+	
 
 	public void Ordenar() {
 
