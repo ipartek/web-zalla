@@ -99,7 +99,6 @@ public class Prueba {
 			
 			Goblins = new Goblins(tamanio);
 			break;
-			
 		default:
 			System.out.println("NO EXISTE");
 		}

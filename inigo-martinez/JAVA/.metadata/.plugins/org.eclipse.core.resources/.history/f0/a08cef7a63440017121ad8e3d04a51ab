@@ -2,12 +2,10 @@ package prueba;
 
 import java.util.Scanner;
 
-/**
- * El programa funciona correctamente
+/** El programa funciona correctamente
  * 
- * Falta integrar hilos y hacer funcional goblins. Esta última parte te la dejo
- * a ti, Jon Ander.
- **/
+ * Falta integrar hilos y hacer funcional goblins. Esta última parte te la dejo a ti, Jon Ander.
+**/
 
 public class Prueba {
 
@@ -31,25 +29,18 @@ public class Prueba {
 		System.out.println("Goblins ---> 80 soldados");
 
 		eleccion = teclado.nextInt();
-		int opt = 0;
-
-		System.out.println("Elige la raza ENEMIGA");
-		System.out.println("1.- Humanos");
-		System.out.println("2.- Orcos");
-
-		int eleccEnemiga = teclado.nextInt();
-
-		System.out.print("Introduce la cantidad de soldados de tu ejercito: ");
-		tamanio = teclado.nextInt();
 
 		switch (eleccion) {
 
 		case 1:
 			// Humanos
 
+			System.out.print("Introduce la cantidad de soldados de tu ejercito: ");
+			tamanio = teclado.nextInt();
 			Humanos = new Humanos(tamanio);
 			// ORCOS
-			// Orcos = new Orcos(tamanio /** + 50 **/
+			Orcos = new Orcos(tamanio /** + 50 **/
+			);
 
 			break;
 
@@ -84,25 +75,7 @@ public class Prueba {
 			System.out.println("Opción no valida");
 
 		}
-		switch (eleccEnemiga) {
-		case 1:
-			
-			Humanos = new Humanos(tamanio);
-			break;
-			
-		case 2:
-			
-			Orcos = new Orcos(tamanio);
-			break;
-			
-		case 3:
-			
-			Goblins = new Goblins(tamanio);
-			break;
-			
-		default:
-			System.out.println("NO EXISTE");
-		}
+
 		do {
 
 			Humanos.combate();
