@@ -42,7 +42,7 @@ public class Algoritmo {
 		arrayOrdenado[5] = f;
 		int aux=0;
 		
-		for(int i=0;i<(arrayOrdenado.length-1);i++){
+		for(int i=0;i<(arrayOrdenado.length-1);i++){// ESTO NO FUNCIONA
 			for(int j=1;j<(arrayOrdenado.length-1);j++){
 			if(arrayOrdenado[i]>arrayOrdenado[j]){
 				aux=arrayOrdenado[i];
