@@ -38,20 +38,19 @@ public class Principal {
 				System.out.println("Su saldo es: " + tragaperras.getSaldo());
 				break;
 			case 3:
-				Funciones.jugar();
-				
-				tragaperras.setSaldo(Funciones.premio("a", "a", "a"));
+
+				tragaperras.setSaldo(Funciones.premio(Funciones.jugar()));
 				System.out.println("Tu saldo actual es de: " + tragaperras.getSaldo());
 				break;
 			case 4:
-				System.out.println("Retirando saldo de:" + tragaperras.getSaldo());
-				tragaperras.setSaldo(0.0);
-				System.out.print(".El valor de su cuenta es ahora : " + tragaperras.getSaldo());
+				System.out.println("Retirando saldo de: " + tragaperras.getSaldo());
+				tragaperras.borrarSaldo();
+				System.out.print("El valor de su cuenta es ahora : " + tragaperras.getSaldo());
 				break;
 			case 5:
 				break;
 			}
 		} while (sc1 != 5);
-
+		sc.close();
 	}
 }

@@ -135,7 +135,7 @@ public class Algoritmo {
 		Scanner sc = new Scanner(System.in);
 		int sc1 = sc.nextInt();
 		System.out.println(busquedaBinaria(sc1));
-
+		sc.close();
 	}
 
 }

@@ -1,13 +1,12 @@
 package tragaperras;
 
-import java.util.Scanner;
 
 public class Maquina {
 	
 	private double saldo=0.0;
 	private int numeroPremios=0;
 	final static int casillas=3;
-	private final double precioPartida=0.25;
+	public final static double precioPartida=0.25;
 	
 	String[] Premio= new String[3];
 	
@@ -19,9 +18,15 @@ public class Maquina {
 		this.saldo+=saldo;
 	}
 	
+	public void borrarSaldo(){
+		this.saldo=0.0;
+	}
+	
 	public double getNumeroPremios(){
 		return numeroPremios;
 	}
+
+
 	
 	
 

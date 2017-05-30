@@ -13,35 +13,37 @@ public class Funciones {
 		return valorIntroducido;
 	}
 
-	public static double jugar() {
+	public static String[] jugar() {
 
-		double premio = 0.0;
 		Random generador = new Random();
 		int index = generador.nextInt(5);
 		String[] frutasArray = new String[Maquina.casillas];
 
 		Premio.Fruta[] frutaObtenido = Premio.Fruta.values();
-		String frutasObtenidas = "";
+		
 		for (int i = 0; i < Maquina.casillas; i++) {
 
 			frutasArray[i] = frutaObtenido[index].toString();
 			index = generador.nextInt(5);
 
 		}
-		frutasObtenidas = frutaObtenido.toString();
+		
 		System.out.println("Las frutas obtenidas son: " + frutasArray[0]);
 		System.out.println("Las frutas obtenidas son: " + frutasArray[1]);
 		System.out.println("Las frutas obtenidas son: " + frutasArray[2]);
-		return premio;
+		return frutasArray;
 	}
 
-	public static double premio(String x,String y, String z) {
+	public static double premio(String[] frutasArray) {
 		
 		double premio = 0.0;
 		
-		if(x==y && x==z){
+		if(frutasArray[0]==frutasArray[1] && frutasArray[0]==frutasArray[2]){
 			System.out.println("Premio!!");
 			premio+=100;
+		}else{
+			System.out.println("No a habido suerte.INTENTALO DE NUEVO!!");
+			premio-=Maquina.precioPartida;
 		}
 		
 		return premio;
