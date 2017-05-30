@@ -22,6 +22,10 @@ public class Punto { // Constructor vacio
 	}
 
 	public void desplazar(double... x) {
+		
+		double incrementoY = 0.0;
+		double incrementoX = 0.0;
+		
 		System.out.println("Elige la dirección del desplazamiento");
 		String sc1 = sc.next();
 		System.out.println("Elige un objeto sobre el que trabajar");
@@ -29,29 +33,45 @@ public class Punto { // Constructor vacio
 		switch (sc2) {
 		case "cuadrado":
 			Punto sc3 = Principal.cuadrado;
-		}//FALTA RELLENAR ESTE SWITCH
-		double sc4 = 0.0;//NECESITAS OTRO PARA EL OTRO EJE
+			
+			switch (sc1) {
 
-		switch (sc1) {
+			case "arriba":
+				System.out.println("Posicion inicial: "+  sc3.getY());
+				double posicionSc3 = sc3.getY();
+				posicionSc3 += Direccion.arriba;
+				System.out.println("Posicion final: " + sc3.getY());
+				break;
+			case "abajo":
+				System.out.println("Posicion inicial: "+  sc3.getY());
+				posicionSc3 = sc3.getY();
+				posicionSc3 -= Direccion.abajo;
+				System.out.println("Posicion final: " + sc3.getY());
+				break;
+			case "izquierda":
+				System.out.println("Posicion inicial: "+  sc3.getX());
+				posicionSc3 = sc3.getX();
+				posicionSc3 += Direccion.izquierda;
+				System.out.println("Posicion final: " + sc3.getX());
+				break;
+			case "derecha":
+				System.out.println("Posicion inicial: "+  sc3.getX());
+				posicionSc3 = sc3.getX();
+				posicionSc3 -= Direccion.derecha;
+				System.out.println("Posicion final: " + sc3.getX());
+				break;
 
-		case "arriba":
-			sc4 = sc3.getY();
-			sc4 += Direccion.arriba;
-			break;
-		case "abajo":
-			sc4 = sc3.getY();
-			sc4 -= Direccion.abajo;
-			break;
-		case "izquierda":
-			sc4 = sc3.getX();
-			sc4 += Direccion.izquierda;
-			break;
-		case "derecha":
-			sc4 = sc3.getX();
-			sc4 -= Direccion.derecha;
-			break;
-
+			}
+			
+			
+		case "circulo":
+			Punto sc4= Principal.cuadrado;
+		case "triangulo":
+			Punto sc5=Principal.triangulo;
 		}
+
+
+
 
 	}
 

@@ -41,7 +41,9 @@ public class Principal {
 																				// sobrecargado
 		double x = 1.2, y = 5.3;
 		circulo = new Punto(x, y);
-		Punto.desplazar();
+		cuadrado = new Punto(x,y);
+		triangulo = new Punto (x,y);
+		Punto.desplazar(5,5);
 	}
 
 }
