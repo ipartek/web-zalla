@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="css/reset.css?v=20170529">
+    <link rel="stylesheet" href="css/style.css?v=20170529">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+
+</head>
+
+<body onload="load()">
+    <div id="myform">
+        <label for="Formulario">Formulario</label>
+        <form action="" id="Formulario">
+
+            <input type="text" id="name" required placeholder="Nombre">
+            <input type="number" id="age" required placeholder="elija edad">
+            <input type="email" id="mail" name="mail" required placeholder="Email">
+            <input type="button" id="add" value="Add" onclick="Javascript:addRow()">
+        </form>
+
+    </div>
+    <div id="mydata">
+        <caption>Tabla editable</caption>
+
+        <table id="myTableData" border="1" cellpadding="3">
+            <tr>
+                <th>&nbsp;</th>
+                <th><b>Name</b></th>
+                <th><b>Age</b></th>
+                <th><b>Email</b></th>
+            </tr>
+        </table>
+        &nbsp;<br/>
+    </div>
+</body>
+
+</html>
