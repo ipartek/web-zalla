@@ -21,9 +21,3 @@ function deleteRow(obj) {
     table.deleteRow(index);
 
 }
-
-function load() {
-    "use strict";
-    console.log("Page load finished");
-
-}

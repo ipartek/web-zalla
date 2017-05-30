@@ -32,7 +32,7 @@ tr:hover {
     padding: 2em;
 }
 
-label {
+label, h1 {
     font-family: 'Droid serif', serif;
     font-size: 36px;
     font-weight: 400;
