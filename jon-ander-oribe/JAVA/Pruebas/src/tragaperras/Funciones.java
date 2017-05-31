@@ -5,6 +5,9 @@ import java.util.Random;
 public class Funciones {
 
 	double valorIntroducido;
+	static String[] frutasArray = new String[Maquina.casillas];
+	static double premio = 0.0;
+	
 
 	public static double introducirSaldo(double valorIntroducido) {
 
@@ -17,7 +20,7 @@ public class Funciones {
 
 		Random generador = new Random();
 		int index = generador.nextInt(5);
-		String[] frutasArray = new String[Maquina.casillas];
+		
 
 		Premio.Fruta[] frutaObtenido = Premio.Fruta.values();
 		
@@ -36,7 +39,7 @@ public class Funciones {
 
 	public static double premio(String[] frutasArray) {
 		
-		double premio = 0.0;
+		
 		
 		if(frutasArray[0]==frutasArray[1] && frutasArray[0]==frutasArray[2]){
 			System.out.println("Premio!!");

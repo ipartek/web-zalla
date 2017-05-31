@@ -20,9 +20,11 @@ public class GUI {
 	private JFrame frame;
 	private JButton btnNewButton;
 	private JTextField txtSaldo;
-	private JTextPane textPane;
+	private JTextPane textPane_3;
 	
 	Maquina tragaperras=new Maquina();
+	private JTextPane textPane;
+	private JTextPane textPane_1;
 
 	/**
 	 * Launch the application.
@@ -60,7 +62,14 @@ public class GUI {
 		btnNewButton.setBounds(317, 87, 117, 74);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 				Funciones.jugar();
+				tragaperras.setSaldo(-Maquina.precioPartida);
+				txtSaldo.setText("Saldo: " + tragaperras.getSaldo() +"              "+"Premio: " + Funciones.premio);
+				textPane.setText(Funciones.frutasArray[0].toUpperCase());
+				textPane_1.setText(Funciones.frutasArray[1].toUpperCase());
+				textPane_3.setText(Funciones.frutasArray[2].toUpperCase());
+				Funciones.premio(Funciones.frutasArray);
 			}
 		});
 		frame.getContentPane().setLayout(null);
@@ -81,18 +90,19 @@ public class GUI {
 			public void actionPerformed(ActionEvent e) {
 				tragaperras.setSaldo(20);
 				txtSaldo.setText("Saldo: " + tragaperras.getSaldo());
+				
 			}
 		});
 		frame.getContentPane().add(btnAgregarSaldo);
 		
-		textPane = new JTextPane();
-		textPane.setBounds(61, 11, 246, 132);
-		frame.getContentPane().add(textPane);
+		textPane_3 = new JTextPane();
+		textPane_3.setBounds(213, 11, 94, 74);
+		frame.getContentPane().add(textPane_3);
 		
 		JButton btnSalirCorriendoCon = new JButton("Salir corriendo con la pasta".toUpperCase());
 		btnSalirCorriendoCon.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				tragaperras.setSaldo(Funciones.premio);
 				txtSaldo.setText("Saldo OBTENIDO: " + tragaperras.getSaldo()+"!!!!!!!");
 				tragaperras.borrarSaldo();
 			}
@@ -100,5 +110,13 @@ public class GUI {
 		btnSalirCorriendoCon.setBackground(Color.YELLOW);
 		btnSalirCorriendoCon.setBounds(61, 168, 373, 62);
 		frame.getContentPane().add(btnSalirCorriendoCon);
+		
+		textPane = new JTextPane();
+		textPane.setBounds(114, 11, 94, 74);
+		frame.getContentPane().add(textPane);
+		
+		textPane_1 = new JTextPane();
+		textPane_1.setBounds(10, 11, 94, 74);
+		frame.getContentPane().add(textPane_1);
 	}
 }
