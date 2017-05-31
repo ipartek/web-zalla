@@ -58,6 +58,7 @@ public class GUI {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		btnNewButton = new JButton("Apostar");
+		btnNewButton.setForeground(Color.BLACK);
 		btnNewButton.setBackground(Color.ORANGE);
 		btnNewButton.setBounds(317, 87, 117, 74);
 		btnNewButton.addActionListener(new ActionListener() {
@@ -82,7 +83,7 @@ public class GUI {
 		txtSaldo.setColumns(10);
 		
 		
-		JButton btnAgregarSaldo = new JButton("Agregar 20 euros");
+		JButton btnAgregarSaldo = new JButton("Agregar 20$");
 		btnAgregarSaldo.setBackground(Color.GREEN);
 		btnAgregarSaldo.setForeground(Color.BLACK);
 		btnAgregarSaldo.setBounds(317, 0, 117, 91);
@@ -100,15 +101,16 @@ public class GUI {
 		frame.getContentPane().add(textPane_3);
 		
 		JButton btnSalirCorriendoCon = new JButton("Salir corriendo con la pasta".toUpperCase());
+		btnSalirCorriendoCon.setForeground(Color.WHITE);
 		btnSalirCorriendoCon.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				tragaperras.setSaldo(Funciones.premio);
-				txtSaldo.setText("Saldo OBTENIDO: " + tragaperras.getSaldo()+"!!!!!!!");
+				txtSaldo.setText("Saldo OBTENIDO: " + tragaperras.getSaldo()+"$ !!!!!!!");
 				tragaperras.borrarSaldo();
 			}
 		});
-		btnSalirCorriendoCon.setBackground(Color.YELLOW);
-		btnSalirCorriendoCon.setBounds(61, 168, 373, 62);
+		btnSalirCorriendoCon.setBackground(Color.BLUE);
+		btnSalirCorriendoCon.setBounds(30, 168, 373, 62);
 		frame.getContentPane().add(btnSalirCorriendoCon);
 		
 		textPane = new JTextPane();
