@@ -1,5 +1,6 @@
 package prueba;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -11,7 +12,7 @@ import java.util.Scanner;
 
 public class Prueba {
 
-	static Humanos Humanos;
+	static Razas ejercMaqu, ejercJugador;
 	static Orcos Orcos;
 	static Goblins Goblins;
 
@@ -31,7 +32,6 @@ public class Prueba {
 		System.out.println("Goblins ---> 80 soldados");
 
 		eleccion = teclado.nextInt();
-		int opt = 0;
 
 		System.out.println("Elige la raza ENEMIGA");
 		System.out.println("1.- Humanos");
@@ -46,39 +46,20 @@ public class Prueba {
 
 		case 1:
 			// Humanos
-
-			Humanos = new Humanos(tamanio);
-			// ORCOS
-			// Orcos = new Orcos(tamanio /** + 50 **/
-
+			ejercJugador = new Humanos(tamanio);
 			break;
 
 		case 2:
-			System.out.print("Introduce la cantidad de soldados de tu ejercito: ");
-			tamanio = teclado.nextInt();
-			// ORCOS
-			Orcos = new Orcos(tamanio);
-			// HUMANOS
-			if (tamanio > 120) {
-				Humanos = new Humanos(tamanio /** - 100 **/
-				);
-			} else {
-				Humanos = new Humanos(20);
-			}
+
+			ejercJugador = new Orcos(tamanio);
+
 			break;
 
 		case 3:
-			System.out.println("Introduce la cantidad de soldados de tu ejercito: ");
-			tamanio = teclado.nextInt();
 			// GOBLINS
-			Goblins = new Goblins(tamanio);
-			// HUMANOS
-			if (tamanio > 120) {
-				Humanos = new Humanos(tamanio /** - 100 **/
-				);
-			} else {
-				Humanos = new Humanos(20);
-			}
+			ejercJugador = new Goblins(tamanio);
+
+			break;
 
 		default:
 			System.out.println("Opción no valida");
@@ -86,27 +67,30 @@ public class Prueba {
 		}
 		switch (eleccEnemiga) {
 		case 1:
-			
-			Humanos = new Humanos(tamanio);
+
+			ejercMaqu = new Humanos(tamanio);
 			break;
-			
+
 		case 2:
-			
-			Orcos = new Orcos(tamanio);
+
+			ejercMaqu = new Orcos(tamanio);
+
 			break;
-			
+
 		case 3:
-			
-			Goblins = new Goblins(tamanio);
+
+			ejercMaqu = new Goblins(tamanio);
 			break;
-			
+
 		default:
 			System.out.println("NO EXISTE");
 		}
 		do {
+				
+				ejercJugador ;
+	
+				ejercMaqu.combate();
 
-			Humanos.combate();
-			Orcos.combate();
 
 			System.out.println(Humanos.getBajas());
 			System.out.println(Orcos.getBajas());

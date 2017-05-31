@@ -1,0 +1,50 @@
+package tragaperras;
+
+import java.util.Scanner;
+
+public class Maquina {
+
+	public static void main(String []args) {
+		
+		int saldo = 0;
+		String arrayFrutas[] = { "fresa", "sandía", "plátano", "melocotón", "pera" };
+		boolean exit=false;
+		String resultados[] = new String[2];
+		
+		Scanner teclado = new Scanner(System.in);
+		int dev
+		
+		saldo=teclado.nextInt();
+		
+		
+		do{
+			if(saldo>0){
+				
+				int jugadas=saldo/20;
+				dev=saldo%20;
+				
+				
+				if(jugadas>0){
+					
+					resultados[0]=arrayFrutas[(int)Math.random()*4];
+					resultados[1]=arrayFrutas[(int)Math.random()*4];
+					resultados[2]=arrayFrutas[(int)Math.random()*4];
+					
+					System.out.println(resultados[0]+"  "+resultados[1]+"   "+resultados[2]);
+					
+					tragaperras.Premio.resolver(resultados);
+					
+				}else{
+					
+					exit=true;
+				}
+				
+			}
+			
+		}while(!exit);
+		
+		System.out.println("Sobran "+dev+"€");
+
+	}
+
+}

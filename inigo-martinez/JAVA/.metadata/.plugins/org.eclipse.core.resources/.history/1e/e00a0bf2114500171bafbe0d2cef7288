@@ -1,0 +1,9 @@
+package tragaperras;
+
+import java.lang.reflect.Array;
+
+public class Premio {
+
+	String arrayPremios[]= new Array {"fresa", "sandía", "plátano", "melocotón","pera"};
+
+}
