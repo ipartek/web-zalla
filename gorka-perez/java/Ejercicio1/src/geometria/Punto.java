@@ -23,11 +23,15 @@ public class Punto {
 		this.x = this.x + desplazamientoX;
 		this.y = this.y + desplazamientoY;
 	}
+	
 
-	public static void desplazar(Punto punto, double desplazamientoX, double desplazamientoY) {
+	
+	public void desplazar(Punto punto, double desplazamientoX, double desplazamientoY) {
 		punto.desplazar(desplazamientoX, desplazamientoY);
 	}
-
+	public double distancia(Punto punto1, Punto punto2){
+		return Math.sqrt(Math.pow((punto1.x - punto2.x), 2) + Math.pow((punto1.y - punto2.y), 2));
+	}
 	public double getX() {
 		return x;
 	}
