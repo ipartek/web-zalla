@@ -5,6 +5,12 @@ public class EjemploMatrices {
 		//
 		int NUM_FILAS = 4;
 		int NUM_COLUMNAS = 4;
+
+		int NUM_FILAS3 = 2;
+		int NUM_COLUMNAS3 = 3;
+
+		int NUM_FILAS4 = 3;
+		int NUM_COLUMNAS4 = 2;
 		int[][] matrizEnteros = new int[NUM_FILAS][NUM_COLUMNAS];
 		matrizEnteros[0] = new int[] { 1, 4, 2, 6 };
 		matrizEnteros[1] = new int[] { 11, -4, 12, 2 };
@@ -17,13 +23,30 @@ public class EjemploMatrices {
 		matrizEnteros2[2] = new int[] { 133, 41, 3, -16 };
 		matrizEnteros2[3] = new int[] { 10, 44, -16, 4 };
 		//
+		int[][] matrizEnteros3 = new int[NUM_FILAS3][NUM_COLUMNAS3];
+		matrizEnteros3[0] = new int[] { 1, 4, 2 };
+		matrizEnteros3[1] = new int[] { 11, -4, 12 };
+
+		//
+		int[][] matrizEnteros4 = new int[NUM_FILAS4][NUM_COLUMNAS4];
+		matrizEnteros4[0] = new int[] { 1, 4 };
+		matrizEnteros4[1] = new int[] { 11, -57 };
+		matrizEnteros4[2] = new int[] { 133, 41 };
+		//
 		int[][] matrizSuma = new int[NUM_FILAS][NUM_COLUMNAS];
+
+		//
+		// int filasTemporal = NUM_FILAS3 * NUM_FILAS4;
+		//int[][] matrizMultiplicar = new int[NUM_FILAS][NUM_COLUMNAS];
+		int[] matrizTemporal = new int[60];
+		matrizTemporal = new int[] { };
 
 		recorrer(matrizEnteros);
 		calcularMaximo(matrizEnteros);
 		matrizSimetrica(matrizEnteros);
 		sumaDiagonal(matrizEnteros);
 		sumarMatrices(matrizEnteros, matrizEnteros2, matrizSuma);
+		multiplicarMatrices(matrizEnteros3, matrizEnteros4, matrizTemporal);
 	}
 
 	public static void recorrer(int[][] matrizEnteros) {
@@ -65,6 +88,52 @@ public class EjemploMatrices {
 			cadenaMatriz = cadenaMatriz + cadenaFila;
 		}
 		System.out.println("        Matriz 2");
+		System.out.println("----------------------");
+
+		System.out.println(cadenaMatriz);
+	}
+
+	public static void recorrer3(int[][] matrizEnteros3) {
+		String cadenaMatriz = "";
+		String cadenaFila = "";
+		for (int i = 0; i < matrizEnteros3.length; i++) {
+			cadenaFila = "";
+			for (int j = 0; j < matrizEnteros3[0].length; j++) {
+				cadenaFila = cadenaFila + matrizEnteros3[i][j];
+				if (j != matrizEnteros3[0].length - 1) {
+					cadenaFila = cadenaFila + " , ";
+				}
+			}
+			if (i != matrizEnteros3.length - 1) {
+				cadenaFila = cadenaFila + "\n";
+			}
+			cadenaMatriz = cadenaMatriz + cadenaFila;
+		}
+		System.out.println("  ");
+		System.out.println("        Matriz 3 ");
+		System.out.println("----------------------");
+
+		System.out.println(cadenaMatriz);
+	}
+
+	public static void recorrer4(int[][] matrizEnteros4) {
+		String cadenaMatriz = "";
+		String cadenaFila = "";
+		for (int i = 0; i < matrizEnteros4.length; i++) {
+			cadenaFila = "";
+			for (int j = 0; j < matrizEnteros4[0].length; j++) {
+				cadenaFila = cadenaFila + matrizEnteros4[i][j];
+				if (j != matrizEnteros4[0].length - 1) {
+					cadenaFila = cadenaFila + " , ";
+				}
+			}
+			if (i != matrizEnteros4.length - 1) {
+				cadenaFila = cadenaFila + "\n";
+			}
+			cadenaMatriz = cadenaMatriz + cadenaFila;
+		}
+		System.out.println(" ");
+		System.out.println("        Matriz 4 ");
 		System.out.println("----------------------");
 
 		System.out.println(cadenaMatriz);
@@ -149,7 +218,56 @@ public class EjemploMatrices {
 		}
 		recorrerSuma(matrizSuma);
 	}
-	
+
+	public static void multiplicarMatrices(int[][] matrizEnteros3, int[][] matrizEnteros4,int[] matrizTemporal) {
+		
+		int matriz3Columna = matrizEnteros3[0].length;
+		int matriz4Fila = matrizEnteros4.length;
+		int matriz4Columna = matrizEnteros4[0].length;
+		int tempSuma = 0;
+		int tempMultiplicacion=matrizEnteros3[0][0] ;
+		int tempMultiplicacion2=matrizEnteros4[0][0] ;
+		int tempMultiplicacion3 ;
+		recorrer3(matrizEnteros3);
+		recorrer4(matrizEnteros4);
+		if (matriz3Columna == matriz4Fila) {
+
+			for (int i = 0; i < matrizEnteros3.length; i++) {
+				System.out.println("");
+				tempMultiplicacion3=0;
+				tempMultiplicacion = matrizEnteros3[i][0];
+				
+				//for (int j = 0; j < matrizEnteros3[0].length; j++) {			
+					for (int k = 0; k < matrizEnteros4.length; k++) {
+						tempMultiplicacion3=0;
+						tempMultiplicacion2=matrizEnteros4[k][0];
+						tempMultiplicacion3 =tempMultiplicacion* tempMultiplicacion2;
+						//tempSuma=tempSuma+tempMultiplicacion;
+						//matrizTemporal[i] = tempSuma;
+						System.out.println("");
+						System.out.print("");
+						System.out.print(tempMultiplicacion3 + ",");
+						//for (int q = 0; q < matrizEnteros4[0].length; q++) {	
+							
+						//}
+						
+					//}
+				}
+				//recorrerMultiplicar(matrizTemporal);
+			}
+		} else {
+			System.out.println("la matriz no se puede multiplicar");
+		}
+	}
+
+	public static void recorrerMultiplicar(int[] matrizTemporal) {
+		for (int i = 0; i < matrizTemporal.length; i++) {
+			System.out.println("");
+			System.out.print(matrizTemporal + ",");
+		}
+
+	}
+
 	public static void recorrerSuma(int[][] matrizSuma) {
 		String cadenaMatriz = "";
 		String cadenaFila = "";
@@ -166,6 +284,7 @@ public class EjemploMatrices {
 			}
 			cadenaMatriz = cadenaMatriz + cadenaFila;
 		}
+		System.out.println("");
 		System.out.println("        Matriz Suma");
 		System.out.println("----------------------");
 
