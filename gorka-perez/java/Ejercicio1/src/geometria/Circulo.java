@@ -32,6 +32,10 @@ public class Circulo {
 			this.centro = centro;
 		}
 		
+		public void escalar(double escala){
+			this.radio = this.radio*escala / 100;
+		}
+		
 		public Punto getCentro() {
 			return centro;
 		}

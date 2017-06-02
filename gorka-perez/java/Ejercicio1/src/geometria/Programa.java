@@ -7,6 +7,8 @@ public class Programa {
 		// Declara la variable local punto1 y asigna un objeto Punto en (2, 3).
 		Punto punto1 = new Punto(2, 3);
 		Punto origen = new Punto();
+		
+		
 		// Desplaza punto1 en la dirección hacia arriba.
 		punto1.desplazar(Direccion.arriba);
 		punto1.desplazar(Direccion.arriba);
@@ -39,33 +41,45 @@ public class Programa {
 		// Declara la variable circulo1 que sea asignada por un círculo que
 		// tenga como centro
 		// punto1 y radio 3.
-		Circulo circulo1 = new Circulo();
+		Circulo circulo1 = new Circulo(punto1, 3);
 		
-
 		// Declara la variable circulo2 que sea asignada por un círculo que
 		// tenga de nuevo como
 		// centro punto1 y radio 5.
-
+		Circulo circulo2 = new Circulo(punto1, 5);
+		
 		// Desplaza circulo1 3 unidades en el eje X y 2 unidades en Y.
-
+		circulo1.desplazar(3,2);
+		
 		// Muestra por la consola las coordenadas del centro de circulo1 y
 		// circulo2. Las
 		// coordenadas deben ser distintas puesto que el desplazamiento del
 		// circulo1 no debe
 		// influir en el circulo2.
-
+		mostrarInfo("Círculo1: ", circulo1.getCentro());
+		mostrarInfo("Círculo2: ", circulo2.getCentro());
+		
+		Punto centro = new Punto(circulo2.getCentro());
+		
 		// Declara la variable centro y asignale el resultado de la consulta del
 		// centro del circulo2.
 		// Desplaza el centro hacia abajo.
-
+		centro.desplazar(Direccion.abajo);
+		
 		// Muestra por la consola las coordenadas del centro y del centro del
 		// circulo2. Las
 		// coordenadas deben ser distintas puesto que el desplazamiento del
 		// centro no debe
 		// influir en el circulo2.
-
+		mostrarInfo("Centro: ", centro);
+		mostrarInfo("Círculo2: ", circulo2.getCentro());
+		
 		// Escala circulo2 al 150% y muestra sus propiedades por la consola.
+		System.out.println("Radio círculo2: " + circulo2.getRadio());
+		circulo2.escalar(150);
+		System.out.println("Radio círculo2 escalado 150%: " + circulo2.getRadio());
 
+		
 	}
 
 	public static void mostrarInfo(String nombrePunto, Punto punto) {
