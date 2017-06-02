@@ -2,6 +2,10 @@ package subastas;
 
 public class Usuario {
 
+	@Override
+	public String toString() {
+		return nombre+","+" credito=" + credito + "";
+	}
 	protected String nombre="";
 	protected double credito=0.0;
 	
