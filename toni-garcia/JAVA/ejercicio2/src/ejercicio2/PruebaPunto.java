@@ -1,4 +1,4 @@
-package geometria;
+package ejercicio2;
 
 public class PruebaPunto {
 
