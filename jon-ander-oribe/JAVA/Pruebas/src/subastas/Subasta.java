@@ -9,7 +9,31 @@ public class Subasta {
 	private boolean estado = true;
 	private ArrayList<Double> listaPujas = new ArrayList<Double>();
 	private double pujaMayor = 0.0;
+	
+	public Subasta(String nombreObjeto,Usuario propietario,boolean estado){
+		this.nombreObjeto=nombreObjeto;
+		this.usur1=propietario; 
+		this.estado=estado;
 
+	
+		
+	}
+
+	@Override
+	public String toString() {
+		return "Subasta [Nombre del Objeto=" + nombreObjeto + ", Propietario=" + usur1 + ", Estado=" + estado + ", Lista de Pujas="
+				+ listaPujas + ", Puja Mayor=" + pujaMayor + "]";
+	}
+
+	public Subasta(String nombreObjeto,Usuario propietario,boolean estado,ArrayList<Double>listado,double pujaMayor){
+		this.nombreObjeto=nombreObjeto;
+		this.usur1=propietario; 
+		this.estado=estado;
+		this.listaPujas=listado;
+		this.pujaMayor=pujaMayor;
+		
+	}
+	
 	public String getNombreObjeto() {
 		return nombreObjeto;
 	}

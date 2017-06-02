@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class MultiplicacionMatrices {
 	
-	static int [][] respuesta;
+	static int [][] respuesta= new int[][]{{1,2,3},{3,4,5}};
 	
 	public static String MultiplicaMatrices(int[][] array1,int[][] array2){
 		
