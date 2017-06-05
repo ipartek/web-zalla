@@ -25,14 +25,14 @@ public class Subasta {
 				+ listaPujas + ", Puja Mayor=" + pujaMayor + "]";
 	}
 
-	public Subasta(String nombreObjeto,Usuario propietario,boolean estado,ArrayList<Double>listado,double pujaMayor){
+	public Subasta(String nombreObjeto,Usuario propietario,boolean estado,double pujaMayor){
 		this.nombreObjeto=nombreObjeto;
 		this.usur1=propietario; 
 		this.estado=estado;
-		this.listaPujas=listado;
 		this.pujaMayor=pujaMayor;
 		
 	}
+	
 	
 	public String getNombreObjeto() {
 		return nombreObjeto;
@@ -64,6 +64,13 @@ public class Subasta {
 
 	public void setPujaMayor(double pujaMayor) {
 		this.pujaMayor = pujaMayor;
+	}
+	
+	public static void consultarCatalogo(){
+		System.out.println(Principal.subasta1.toString());
+		System.out.println(Principal.subasta2.toString());
+		System.out.println(Principal.subasta3.toString());
+		System.out.println(Principal.subasta4.toString());
 	}
 
 }
