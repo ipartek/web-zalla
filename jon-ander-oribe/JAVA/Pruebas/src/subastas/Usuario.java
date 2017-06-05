@@ -4,9 +4,7 @@ package subastas;
 
 
 public class Usuario {
-	
 
-	
 
 	@Override
 	public String toString() {
@@ -14,7 +12,7 @@ public class Usuario {
 	}
 	protected int ID=0;
 	protected String nombre="";
-	protected static double credito=0.0;
+	protected double credito=0.0;
 	public enum Usuarios{Mariano,Cristina,Pedro,Ghao_Pin,Magnate_del_petroleo,Artista_anonimo};
 	
 	static Usuarios[] ids=Usuarios.values();
@@ -32,14 +30,14 @@ public class Usuario {
 	}
 
 	public String getNombre(){return nombre;}
-	public static double getCredito(){return credito;}
+	public double getCredito(){return credito;}
 	
-	public static double incrementarCredito(double credito){
-		credito+=credito;
+	public double incrementarCredito(double credito){
+		this.credito+=credito;
 		return credito;
 	}
-	public static double decrementarCredito(double credito){
-		credito-=credito;
+	public double decrementarCredito(double credito){
+		this.credito-=credito;
 		return credito;
 	}
 }
