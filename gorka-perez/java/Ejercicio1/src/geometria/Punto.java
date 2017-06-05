@@ -53,13 +53,20 @@ public class Punto {
 	public double distancia(Punto punto) {
 		return Math.sqrt(Math.pow((this.x - punto.x), 2) + Math.pow((this.y - punto.y), 2));
 	}
-	
-	public static Punto mayorDistancia(Punto... puntos){
-		Punto puntoMayor = new Punto();
-		Punto origen = new Punto();
-		for(int i=0; i < puntos.length; i++){
-			if (origen.distancia(puntos[i]) > origen.distancia(puntoMayor)){
+
+	public static Punto mayorDistancia(Punto... puntos) {
+		Punto puntoMayor = null;
+		Punto origen = new Punto(0, 0);
+		double distancia = 0;
+		double distanciaMax = 0;
+
+		for (int i = 0; i < puntos.length; i++) {
+
+			distancia = origen.distancia(puntos[i]);
+
+			if (distancia > distanciaMax) {
 				puntoMayor = puntos[i];
+				distanciaMax = distancia;
 			}
 		}
 		return puntoMayor;

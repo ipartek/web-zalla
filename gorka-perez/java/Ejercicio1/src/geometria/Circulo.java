@@ -4,7 +4,7 @@ public class Circulo {
 
 		private Punto centro;
 		private double radio;
-		private double perimetro = 2 * radio * Math.PI;
+
 		private static Punto centroCoord = new Punto();
 		private static double radioDefecto = 5;
 		
@@ -45,6 +45,6 @@ public class Circulo {
 		}
 		
 		public double getPerimetro() {
-			return perimetro;
+			return 2 * radio * Math.PI;
 		}
 }

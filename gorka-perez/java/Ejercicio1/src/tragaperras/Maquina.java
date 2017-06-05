@@ -8,7 +8,7 @@ public class Maquina {
 	private double credito;
 	private Premio[] premios;
 
-	public Maquina(int casillas, double precioJugada, Premio[] premios) {
+	public Maquina(int casillas, double precioJugada, Premio... premios) {
 
 		this.casillas = casillas;
 		this.precioJugada = precioJugada;
@@ -27,20 +27,24 @@ public class Maquina {
 
 	public Fruta[] jugar() {
 		double creditoJugada = this.credito - this.precioJugada;
-		if (creditoJugada > 0) {
-
+		if (creditoJugada >= 0) {
+			
+			boolean premiado = false;
 			this.credito = creditoJugada;
-
-			// Fruta[] arrayFrutasEnumeracion = Fruta.values();
 
 			Random random = new Random();
 			Fruta[] combinacionFrutas = new Fruta[this.casillas];
 
 			for (int i = 0; i < this.casillas; i++) {
-				// combinacionFrutas[i] =
-				// arrayFrutasEnumeracion[random.nextInt(arrayFrutasEnumeracion.length)];
 				combinacionFrutas[i] = Fruta.values()[random.nextInt(Fruta.values().length)];
-			}
+			}			
+			for (int i = 0; i < premios.length || premiado; i++) {
+				if (combinacionFrutas.equals(premios[i])){
+					premiado = true;
+					credito = credito + premios[i].getPremio();
+				}
+			}			
+			return combinacionFrutas;
 		} else {
 			return null;
 		}
