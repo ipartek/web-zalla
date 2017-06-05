@@ -11,19 +11,22 @@ public class Punto {
 	}
 
 	public Punto() {
-		this(0, 0);
+		this.x=0;
+		this.y=0;
 	}
 
 	public Punto(Punto punto) {
 		this(punto.x, punto.y);
 
 	}
-
+//este es la primera funcionalidad desplazar.......
+	//desplaza la propia instancia...metodo de instancia
 	public void desplazar(double desplazamientoX, double desplazamientoY) {
 		this.x = this.x + desplazamientoX;
 		this.y = this.y + desplazamientoY;
 	}
-
+//paso un punto y dos parametros y desplaza ese punto
+	//funcion de utilidad
 	public static void desplazar(Punto punto, double desplazamientoX, double desplazamientoY) {
 		punto.desplazar(desplazamientoX, desplazamientoY);
 	}
