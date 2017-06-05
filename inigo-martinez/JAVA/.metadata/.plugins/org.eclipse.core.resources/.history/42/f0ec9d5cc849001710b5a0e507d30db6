@@ -1,0 +1,28 @@
+package hilos;
+
+public class hilo extends Thread {
+	
+	private double litros;
+	
+	public hilo() {
+		super();
+		this.litros = 0.00;
+	}
+
+
+
+	public void run(){
+		
+		int balde=(int)(Math.random()*3);
+		try {
+			sleep(1000);
+			litros+=balde;
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+
+}

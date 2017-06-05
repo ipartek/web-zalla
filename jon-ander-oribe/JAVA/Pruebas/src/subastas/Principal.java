@@ -4,16 +4,16 @@ import java.util.*;
 
 public class Principal {
 
-	static Usuario arrayUsuario[]=new Usuario[6];
+	static Usuario [] arrayUsuario=new Usuario[6];
 
 	// CLIENTES
 
-	arrayUsuario[0]=new Usuario(1,"Mariano",3400);
-	arrayUsuario[1]=new Usuario(2,"Cristina",7405);
-	arrayUsuario[2]=new Usuario(3,"Pedro",2840);
-	arrayUsuario[3]=new Usuario(4,"Ghao-Pin",12000);
-	arrayUsuario[4]=new Usuario(5,"Magnate del petroleo",300);
-	arrayUsuario[5]=new Usuario(6,"Artista anonimo",210);
+	static arrayUsuario[0]=new Usuario(1,"Mariano",3400);
+	static arrayUsuario[1]=new Usuario(2,"Cristina",7405);
+	static arrayUsuario[2]=new Usuario(3,"Pedro",2840);
+	static arrayUsuario[3]=new Usuario(4,"Ghao-Pin",12000);
+	static arrayUsuario[4]=new Usuario(5,"Magnate del petroleo",300);
+	static arrayUsuario[5]=new Usuario(6,"Artista anonimo",210);
 
 	// SUBASTAS
 

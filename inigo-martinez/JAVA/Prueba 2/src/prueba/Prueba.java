@@ -8,19 +8,20 @@ import java.util.Scanner;
  * El programa funciona correctamente
  * 
  * Falta integrar hilos y hacer funcional goblins. Esta última parte te la dejo
- * a ti, Jon Ander.
+ * a ti Jon Ander.
  **/
 
 public class Prueba {
 
+	static Thread ejercitoMaq;
+	static Thread ejercitoHum;
+	static int bajasJug, bajasMaq;
 
 	public static void main(String args[]) {
 
-		int bajasTotal=0, bajasMaq=0, bajasJug=0;
-		
 		List<Unidad> ejercMaqu = new ArrayList<Unidad>();
 		List<Unidad> ejercJugador = new ArrayList<Unidad>();
-		
+
 		int eleccion, tamanio;
 
 		Scanner teclado = new Scanner(System.in);
@@ -44,71 +45,77 @@ public class Prueba {
 
 		System.out.print("Introduce la cantidad de soldados de tu ejercito: ");
 		tamanio = teclado.nextInt();
+		try {
 
-		switch (eleccion) {
+			switch (eleccion) {
 
-		case 1:
-			// Humanos
-			crearEjercito("Humano", tamanio, ejercJugador);
-			break;
+			case 1:
+				// Humanos
+				crearEjercito("Humano", tamanio, ejercJugador);
+				break;
 
-		case 2:
+			case 2:
 
-			crearEjercito("Orco", tamanio, ejercJugador);
-			break;
+				crearEjercito("Orco", tamanio, ejercJugador);
+				break;
 
-		case 3:
-			// GOBLINS
-			crearEjercito("Goblin", tamanio, ejercJugador);
+			case 3:
+				// GOBLINS
+				crearEjercito("Goblin", tamanio, ejercJugador);
 
-			break;
+				break;
 
-		default:
-			System.out.println("Opción no valida");
+			default:
+				System.out.println("Opción no valida");
 
-		}
-		switch (eleccEnemiga) {
-		case 1:
-			// Humanos
-			crearEjercito("Humano", tamanio, ejercMaqu);
-			break;
+			}
+			switch (eleccEnemiga) {
+			case 1:
+				// Humanos
+				crearEjercito("Humano", tamanio, ejercMaqu);
+				break;
 
-		case 2:
+			case 2:
 
-			crearEjercito("Orco", tamanio, ejercMaqu);
-			break;
+				crearEjercito("Orco", tamanio, ejercMaqu);
+				break;
 
-		case 3:
-			// GOBLINS
-			crearEjercito("Goblin", tamanio, ejercMaqu);
+			case 3:
+				// GOBLINS
+				crearEjercito("Goblin", tamanio, ejercMaqu);
 
-			break;
+				break;
 
-		default:
-			System.out.println("Opción no valida");
+			default:
+				System.out.println("Opción no valida");
 
-		}
-		do {
+			}
 
-			bajasMaq=combate(ejercJugador, ejercMaqu,bajasMaq);
+			ejercitoMaq = new Thread(new Combatir(ejercMaqu, ejercJugador));
+			ejercitoHum = new Thread(new Combatir(ejercMaqu, ejercJugador));
 
-			bajasJug=combate(ejercMaqu, ejercJugador,bajasJug);
+			// bajasMaq = combate(ejercJugador, ejercMaqu, bajasMaq);
+			// bajasJug = combate(ejercMaqu, ejercJugador, bajasJug);
+			ejercitoMaq.start();
+			ejercitoHum.start();
 
 			System.out.println(bajasJug);
 			System.out.println(bajasMaq);
-			System.out.println(bajasTotal=bajasJug+bajasMaq);
+			System.out.println("TOTAL " + bajasMaq + bajasJug);
 
-		} while (!ejercJugador.isEmpty() && !ejercMaqu.isEmpty());
+			for (int i = 0; ejercJugador.size() - 1 >= i; i++) {
 
-		for (int i = 0; ejercJugador.size() - 1 >= i; i++) {
+				System.out.println(ejercJugador.get(i));
 
-			System.out.println(ejercJugador.get(i));
+			}
+			for (int i = 0; ejercMaqu.size() - 1 >= i; i++) {
 
-		}
-		for (int i = 0; ejercMaqu.size() - 1 >= i; i++) {
+				System.out.println(ejercMaqu.get(i));
 
-			System.out.println(ejercMaqu.get(i));
+			}
 
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
 		}
 
 		teclado.close();
@@ -138,43 +145,37 @@ public class Prueba {
 
 	}
 
-	public static int combate(List<Unidad> ejercAtac, List<Unidad> ejercDefen, int bajas) {
-
-		int pos = 0;
-
-		for (Unidad unidadAtac : ejercAtac) {
-
-			if (ejercDefen.isEmpty()) {
-
-				return bajas;
-
-			}
-			if (pos >= ejercDefen.size())
-				pos = 0;
-
-			Unidad enemigo = (Unidad) ejercDefen.get(pos);
-
-			if (unidadAtac.isVivo()) {
-
-				int vida = (unidadAtac.atacar() - enemigo.getArmadura());
-
-				enemigo.herir(vida);
-
-				if (!enemigo.isVivo()) {
-
-					bajas++;
-					System.out.println("LLEGO " + unidadAtac.getRaza() + " " + bajas);
-
-					ejercDefen.remove(ejercDefen.indexOf(enemigo));
-
-					if (ejercDefen.indexOf(enemigo) == ejercDefen.size()) {
-						pos = 0;
-
-					}
-					pos++;
-				}
-			}
-		}
-		return bajas;
-	}
+	/**
+	 * public static int combate(List<Unidad> ejercAtac, List<Unidad>
+	 * ejercDefen, int bajas) {
+	 * 
+	 * int pos = 0;
+	 * 
+	 * for (Unidad unidadAtac : ejercAtac) {
+	 * 
+	 * if (ejercDefen.isEmpty()) {
+	 * 
+	 * return bajas;
+	 * 
+	 * } if (pos >= ejercDefen.size()) pos = 0;
+	 * 
+	 * Unidad enemigo = (Unidad) ejercDefen.get(pos);
+	 * 
+	 * if (unidadAtac.isVivo()) {
+	 * 
+	 * int vida = (unidadAtac.atacar() - enemigo.getArmadura());
+	 * 
+	 * enemigo.herir(vida);
+	 * 
+	 * if (!enemigo.isVivo()) {
+	 * 
+	 * bajas++; System.out.println("LLEGO " + unidadAtac.getRaza() + " " +
+	 * bajas);
+	 * 
+	 * ejercDefen.remove(ejercDefen.indexOf(enemigo));
+	 * 
+	 * if (ejercDefen.indexOf(enemigo) == ejercDefen.size()) { pos = 0;
+	 * 
+	 * } pos++; } } } return bajas; }
+	 **/
 }

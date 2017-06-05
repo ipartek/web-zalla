@@ -1,0 +1,14 @@
+package hilos;
+
+public class hilo extends Thread {
+	
+	private double litros=0.00;
+	
+	public void run(){
+		
+		int balde=(int)(Math.random()*3);
+		
+	}
+	
+
+}

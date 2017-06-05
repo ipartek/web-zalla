@@ -1,0 +1,8 @@
+package hilos;
+
+public class Principal {
+	
+	hilo concursante1 = new hilo();
+	hilo concursante2 = new hilo();
+
+}
