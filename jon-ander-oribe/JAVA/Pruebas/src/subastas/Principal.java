@@ -4,34 +4,48 @@ import java.util.*;
 
 public class Principal {
 
-	static Usuario [] arrayUsuario=new Usuario[6];
+	static Usuario[] arrayUsuario = new Usuario[6];
+	static Subasta[] arraySubasta = new Subasta[4];
+	static int idUsuario = 0;
 
-	// CLIENTES
+	public static Usuario[] inicializarUsuario() {
 
-	static arrayUsuario[0]=new Usuario(1,"Mariano",3400);
-	static arrayUsuario[1]=new Usuario(2,"Cristina",7405);
-	static arrayUsuario[2]=new Usuario(3,"Pedro",2840);
-	static arrayUsuario[3]=new Usuario(4,"Ghao-Pin",12000);
-	static arrayUsuario[4]=new Usuario(5,"Magnate del petroleo",300);
-	static arrayUsuario[5]=new Usuario(6,"Artista anonimo",210);
+		// CLIENTES
 
-	// SUBASTAS
+		arrayUsuario[0] = new Usuario(0, "Mariano", 3400);
+		arrayUsuario[1] = new Usuario(1, "Cristina", 7405);
+		arrayUsuario[2] = new Usuario(2, "Pedro", 2840);
+		arrayUsuario[3] = new Usuario(3, "Ghao-Pin", 12000);
+		arrayUsuario[4] = new Usuario(4, "Magnate del petroleo", 300);
+		arrayUsuario[5] = new Usuario(5, "Artista anonimo", 210);
 
-	static Subasta subasta1 = new Subasta("Jarron Minh", new Usuario(4, "Ghao-Pin", 12000), true);
+		return arrayUsuario;
+	}
 
-	static Subasta subasta2 = new Subasta("Brujula Mágica", new Usuario(4, "Ghao-Pin", 12000), true, 350);
+	public static Subasta[] inicializarSubasta() {
 
-	static Subasta subasta3 = new Subasta("Joya ridiculamente brillante", new Usuario(5, "Magnate del petroleo", 300),
-			true, 280);
+		// SUBASTAS
 
-	static Subasta subasta4 = new Subasta("Monton de estiercol", new Usuario(6, "Artista anonimo", 210), false, 12);
+		arraySubasta[0] = new Subasta("Jarron Minh", arrayUsuario[3], true);
+
+		arraySubasta[1] = new Subasta("Brujula Mágica", arrayUsuario[3], true, 350);
+
+		arraySubasta[2] = new Subasta("Joya ridiculamente brillante", arrayUsuario[4], true,
+				280);
+
+		arraySubasta[3] = new Subasta("Monton de estiercol", arrayUsuario[5], false, 12);
+
+		return arraySubasta;
+	}
 
 	public static void main(String[] args) {
 
 		int sc1 = 0;
-		int idUsuario = 0;
+		
+		Usuario[] arrayUsuario = inicializarUsuario();
+		Subasta[] arraySubasta = inicializarSubasta();
 		System.out.println("Objetos en venta");
-		Subasta.consultarCatalogo();
+		// Subasta.consultarCatalogo();
 		do {
 			System.out.println("***********************************************");
 			System.out.println("Elija una opción");
@@ -53,34 +67,44 @@ public class Principal {
 			case 0:
 				System.out.println("¿Quien eres?");
 				idUsuario = sc.nextInt();
-				System.out.println("Eres: "+Usuario.ids[idUsuario].toString());
+				System.out.println("Eres: " + Usuario.ids[idUsuario].toString());
 
 				break;
 			case 1:
-				Subasta.consultarCatalogo();
+				// Subasta.consultarCatalogo();
+
+				System.out.println(arraySubasta[0].toString());
+				System.out.println(arraySubasta[1].toString());
+				System.out.println(arraySubasta[2].toString());
+				System.out.println(arraySubasta[3].toString());
+
 				break;
 			case 2:
 
+				Puja.Comprar();
+
 				break;
 			case 3:
-				System.out.println("Dime "+Usuario.ids[idUsuario].toString()+",¿En cantidad quieres aumentar tu saldo?");
+				System.out.println(
+						"Dime " + Usuario.ids[idUsuario].toString() + ",¿En cantidad quieres aumentar tu saldo?");
 				sc1 = sc.nextInt();
-				arrayUsuario[0].incrementarCredito(sc1);
-				System.out.println("Tu saldo actual es " + arrayUsuario[0].getCredito());
+				arrayUsuario[idUsuario].incrementarCredito(sc1);
+				System.out.println("Tu saldo actual es " + arrayUsuario[idUsuario].getCredito());
 				break;
 			case 4:
-				System.out.println("Dime "+Usuario.ids[idUsuario].toString()+",¿En cantidad quieres reducir tu saldo?");
+				System.out.println(
+						"Dime " + Usuario.ids[idUsuario].toString() + ",¿En cantidad quieres reducir tu saldo?");
 				sc1 = sc.nextInt();
-				arrayUsuario[0].decrementarCredito(sc1);
-				System.out.println("Tu saldo actual es " + arrayUsuario[0].getCredito());
+				arrayUsuario[idUsuario].decrementarCredito(sc1);
+				System.out.println("Tu saldo actual es " + arrayUsuario[idUsuario].getCredito());
 				break;
 			case 5:
 				break;
 			case 6:
+				System.exit(0);
 				break;
 
 			}
 		} while (sc1 != 6);
-
 	}
-}}
+}
