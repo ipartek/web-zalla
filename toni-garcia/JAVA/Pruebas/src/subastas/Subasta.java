@@ -5,14 +5,14 @@ import java.util.ArrayList;
 public class Subasta {
 
 	private String nombreObjeto = "";
-	private Usuario usur1 = new Usuario("nombre");
+	private Usuario usur = new Usuario("nombre");
 	private boolean estado = true;
 	private ArrayList<Double> listaPujas = new ArrayList<Double>();
 	private double pujaMayor = 0.0;
 	
 	public Subasta(String nombreObjeto,Usuario propietario,boolean estado){
 		this.nombreObjeto=nombreObjeto;
-		this.usur1=propietario; 
+		this.usur=propietario; 
 		this.estado=estado;
 
 	
@@ -21,18 +21,17 @@ public class Subasta {
 
 	@Override
 	public String toString() {
-		return "Subasta [Nombre del Objeto=" + nombreObjeto + ", Propietario=" + usur1 + ", Estado=" + estado + ", Lista de Pujas="
-				+ listaPujas + ", Puja Mayor=" + pujaMayor + "]";
+		return "Subasta [Nombre del Objeto=" + nombreObjeto + ", Propietario=" + usur + ", Estado=" + estado + ", Puja Mayor=" + pujaMayor + "]";
 	}
 
-	public Subasta(String nombreObjeto,Usuario propietario,boolean estado,ArrayList<Double>listado,double pujaMayor){
+	public Subasta(String nombreObjeto,Usuario propietario,boolean estado,double pujaMayor){
 		this.nombreObjeto=nombreObjeto;
-		this.usur1=propietario; 
+		this.usur=propietario; 
 		this.estado=estado;
-		this.listaPujas=listado;
 		this.pujaMayor=pujaMayor;
 		
 	}
+	
 	
 	public String getNombreObjeto() {
 		return nombreObjeto;
@@ -40,6 +39,13 @@ public class Subasta {
 
 	public void setNombreObjeto(String nombreObjeto) {
 		this.nombreObjeto = nombreObjeto;
+	}
+	
+	public void setNombrePropietario(Usuario propietario){
+		this.usur=propietario;
+	}
+	public Usuario getNombrePropietario(){
+		return usur;
 	}
 
 	public boolean isEstado() {
@@ -64,6 +70,11 @@ public class Subasta {
 
 	public void setPujaMayor(double pujaMayor) {
 		this.pujaMayor = pujaMayor;
+	}
+	
+	
+	public static void consultarCatalogo(){
+		
 	}
 
 }

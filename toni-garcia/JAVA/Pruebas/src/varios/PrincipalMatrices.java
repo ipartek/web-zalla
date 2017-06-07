@@ -12,7 +12,7 @@ public class PrincipalMatrices {
 
 	public static void main(String[] args) {
 
-		System.out.println("Introduce los valores de la matriz con la que quieres trabajar: [Formato i,j]");
+		/*System.out.println("Introduce los valores de la matriz con la que quieres trabajar: [Formato i,j]");
 
 		Scanner sc = new Scanner(System.in);
 
@@ -69,7 +69,7 @@ public class PrincipalMatrices {
 		 */
 
 		// FOR APROXIMACION
-
+/*
 		for (int i = 0; i < arrayTest1.length; i++) {
 			for (int j = 0; j < arrayTest2.length; j++) {
 				for(int z=0;z< arrayFinal.length;z++){
@@ -87,7 +87,29 @@ public class PrincipalMatrices {
 		System.out.println("");
 		System.out.println("Array TEST: ");
 		System.out.println("\t" + Arrays.toString(arrayAux1).replace("], ", "]\n\t"));
-		System.out.println("\t" + Arrays.toString(arrayAux2).replace("], ", "]\n\t"));
+		System.out.println("\t" + Arrays.toString(arrayAux2).replace("], ", "]\n\t"));*/
+		
+		int[][] m1 = {{1,3,2},{-1,3,1}};
+		int[][] m2 = {{3,1},{1,1},{1,5}};
+		
+		int fil_m1 = m1.length;
+		int col_m1 = m1[0].length;
+		 
+		int fil_m2 = m2.length;
+		int col_m2 = m2[0].length;
+		
+		int[][] multiplicacion = new int[fil_m1][col_m2];
+		
+		for (int x=0; x < multiplicacion.length; x++) {
+			  for (int y=0; y < multiplicacion[x].length; y++) {
+			    for (int z=0; z<col_m1; z++) {
+			      multiplicacion [x][y] += m1[x][z]*m2[z][y]; 
+			    }
+			  }
+			}
+
+		String respuesta=Arrays.deepToString(multiplicacion);
+		System.out.println(respuesta);
 
 	}
 
