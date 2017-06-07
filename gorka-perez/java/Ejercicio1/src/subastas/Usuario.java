@@ -1,9 +1,11 @@
 package subastas;
 
+import java.util.LinkedList;
+
 public class Usuario {
 	private String nombre;
 	private double credito;
-	
+	private LinkedList<Subasta> subastas;
 	/**
 	 * @param nombre
 	 * @param credito
@@ -12,8 +14,11 @@ public class Usuario {
 		super();
 		this.nombre = nombre;
 		this.credito = credito;
+		this.subastas = new LinkedList<Subasta>();
 	}
-
+	public void añadirSubasta(Subasta subasta){
+		subastas.add(subasta);
+	}
 	public void incrementarCredito(double cantidad){
 		this.credito = this.credito + cantidad;
 	}

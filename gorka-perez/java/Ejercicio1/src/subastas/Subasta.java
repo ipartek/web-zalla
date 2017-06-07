@@ -17,6 +17,7 @@ public class Subasta {
 		super();
 		this.producto = producto;
 		this.propietario = propietario;
+		this.propietario.añadirSubasta(this);
 		this.abierto = true;
 		this.pujaMayor = null;
 		this.listaPujas = new LinkedList<Puja>();
@@ -25,8 +26,11 @@ public class Subasta {
 	public boolean pujar(Usuario pujador, double cantidadPuja) {
 		if ((this.abierto && pujador.getCredito() >= cantidadPuja) && (pujador != this.propietario)
 				&& (this.pujaMayor == null || this.pujaMayor.getCantidadPuja() < cantidadPuja)) {
+			
 			Puja nuevaPuja = new Puja(pujador, cantidadPuja);
 			this.listaPujas.add(nuevaPuja);
+			this.pujaMayor = nuevaPuja;
+			
 			return true;
 		} else {
 			return false;
@@ -45,7 +49,15 @@ public class Subasta {
 		return this.pujar(pujador, puja);
 	}
 	public boolean ejecutar(){
-		if (this.abierto)
+		if (this.abierto && this.pujaMayor != null){
+			this.pujaMayor.getUsuario().decrementarCredito(this.pujaMayor.getCantidadPuja());
+			this.propietario.incrementarCredito(this.pujaMayor.getCantidadPuja());
+			this.abierto = false;
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 
 	/**

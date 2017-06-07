@@ -22,7 +22,7 @@ public class Puja {
 	 * @return the cantidadPuja
 	 */
 	public double getCantidadPuja() {
-		return cantidadPuja;
+		return this.cantidadPuja;
 	}
 }
 
