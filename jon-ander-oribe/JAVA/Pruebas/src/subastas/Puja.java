@@ -1,10 +1,12 @@
 package subastas;
 import java.io.File;
+import java.io.FileWriter;
 import java.util.Scanner;
 
 public class Puja extends Usuario {
 
 	private double cantidadPujada = 0.0;
+	static String registro="";
 
 	public Puja(String nombre, double cantidadPujada) {
 		super(nombre);
@@ -34,6 +36,7 @@ public class Puja extends Usuario {
 		
 		if (puja < Principal.arrayUsuario[Principal.idUsuario].getCredito() && puja> Principal.arraySubasta[eleccion].getPujaMayor()) {
 			System.out.println("Objeto adquirido!!");
+			registro="-->"+Principal.arrayUsuario[Principal.idUsuario].getNombre()+" ha comprado "+ Principal.arraySubasta[eleccion].getNombreObjeto()+" a "+Principal.arraySubasta[eleccion].getNombrePropietario()+" por "+puja+".\n";
 			Principal.arrayUsuario[Principal.idUsuario].decrementarCredito(puja);
 			//REVISAR EL INCREMENTO;HACE COSAS MUY RARAS
 			System.out.println(Principal.arraySubasta[eleccion].getNombrePropietario()+" ahora tiene "+((double)(Principal.arraySubasta[eleccion].getNombrePropietario().credito)+puja)+" euros!!");
@@ -51,6 +54,7 @@ public class Puja extends Usuario {
 			
 			Principal.arraySubasta[eleccion].setNombrePropietario(Principal.arrayUsuario[Principal.idUsuario]);
 			Principal.arraySubasta[eleccion].setPujaMayor(puja);
+			System.out.println(registro);
 			
 			
 		} else {
@@ -67,11 +71,15 @@ public class Puja extends Usuario {
 			directorio.mkdir();
 			System.out.println("La carpeta "+directorio.getName() +" se ha creado en "+System.getProperty("user.dir"));
 			String ruta=System.getProperty("Facturas.dir");
-			System.out.println(ruta);
 			File archivo = new File("C:/desarrollo/web/web-zalla/jon-ander-oribe/JAVA/Pruebas/Facturas"+File.separator+"Registro.txt");
 			archivo.getParentFile().mkdirs();
 			archivo.createNewFile();
-			} catch(Exception e) {}
+			FileWriter textoSalida=new FileWriter(archivo,true);
+			textoSalida.write(registro);
+			textoSalida.close();
+			} catch(Exception e) {
+				System.out.println("Fallo durante la generación del documento");
+			}
 		
 	}
 }
