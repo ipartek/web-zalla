@@ -30,8 +30,7 @@ public class Principal {
 
 		arraySubasta[1] = new Subasta("Brujula Mágica", arrayUsuario[3], true, 350);
 
-		arraySubasta[2] = new Subasta("Joya ridiculamente brillante", arrayUsuario[4], true,
-				280);
+		arraySubasta[2] = new Subasta("Joya ridiculamente brillante", arrayUsuario[4], true, 280);
 
 		arraySubasta[3] = new Subasta("Monton de estiercol", arrayUsuario[5], false, 12);
 
@@ -41,7 +40,7 @@ public class Principal {
 	public static void main(String[] args) {
 
 		int sc1 = 0;
-		
+
 		Usuario[] arrayUsuario = inicializarUsuario();
 		Subasta[] arraySubasta = inicializarSubasta();
 		System.out.println("Objetos en venta");
@@ -99,6 +98,8 @@ public class Principal {
 				System.out.println("Tu saldo actual es " + arrayUsuario[idUsuario].getCredito());
 				break;
 			case 5:
+				System.out.println("Creando carpeta...");
+				Puja.imprimirFactura();
 				break;
 			case 6:
 				System.exit(0);

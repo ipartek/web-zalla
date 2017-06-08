@@ -1,4 +1,5 @@
 package subastas;
+import java.io.File;
 import java.util.Scanner;
 
 public class Puja extends Usuario {
@@ -17,6 +18,8 @@ public class Puja extends Usuario {
 
 	public static void Comprar() {
 		
+		//Usuario nombrePropietario=Principal.arraySubasta[Principal.idUsuario].getNombrePropietario();
+		
 		Scanner sc=new Scanner(System.in);
 		
 		System.out.println("¿Que quieres comprar?");
@@ -33,21 +36,22 @@ public class Puja extends Usuario {
 			System.out.println("Objeto adquirido!!");
 			Principal.arrayUsuario[Principal.idUsuario].decrementarCredito(puja);
 			//REVISAR EL INCREMENTO;HACE COSAS MUY RARAS
-			System.out.println(Principal.arraySubasta[Principal.idUsuario].getNombrePropietario()+" acaba de ganar "+((double)(Principal.arraySubasta[eleccion].getNombrePropietario().credito)+puja)+" euros!!");
+			System.out.println(Principal.arraySubasta[eleccion].getNombrePropietario()+" ahora tiene "+((double)(Principal.arraySubasta[eleccion].getNombrePropietario().credito)+puja)+" euros!!");
+			double aumentoCredito=(double)(Principal.arraySubasta[eleccion].getNombrePropietario().credito)+puja;
+			Principal.arrayUsuario[0].incrementarCredito(aumentoCredito);
 			
-			for(Usuario usuarioVende: Principal.arrayUsuario){
+			/*for(Usuario usuarioVende: Principal.arrayUsuario){
 				
-				if(usuarioVende.getNombre().equals(Principal.arraySubasta[eleccion].getNombrePropietario())){
+				if(usuarioVende.getNombre().equals(nombrePropietario)){
 					System.out.println(usuarioVende.incrementarCredito(puja));
 				}
 				
-			}
+			}*/
 			//Principal.arrayUsuario[Principal.arraySubasta[eleccion].].incrementarCredito(puja);
 			
 			Principal.arraySubasta[eleccion].setNombrePropietario(Principal.arrayUsuario[Principal.idUsuario]);
 			Principal.arraySubasta[eleccion].setPujaMayor(puja);
-			//Principal.arraySubasta[Principal.idUsuario].incrementarCredito(puja);
-			//Principal.arrayUsuario[Principal.idUsuario].incrementarCredito(Principal.arraySubasta[eleccion].getPujaMayor());//ESTA MAL;PERO A POSTA
+			
 			
 		} else {
 			System.out.println("Falta credito");
@@ -56,5 +60,18 @@ public class Puja extends Usuario {
 
 	}
 	
-	public void imprimirFactura(){}
+	public static void imprimirFactura(){
+		
+		try {
+			File directorio = new File("Facturas");
+			directorio.mkdir();
+			System.out.println("La carpeta "+directorio.getName() +" se ha creado en "+System.getProperty("user.dir"));
+			String ruta=System.getProperty("Facturas.dir");
+			System.out.println(ruta);
+			File archivo = new File("C:/desarrollo/web/web-zalla/jon-ander-oribe/JAVA/Pruebas/Facturas"+File.separator+"Registro.txt");
+			archivo.getParentFile().mkdirs();
+			archivo.createNewFile();
+			} catch(Exception e) {}
+		
+	}
 }
