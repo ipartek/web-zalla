@@ -55,6 +55,7 @@ public class Puja extends Usuario {
 			Principal.arraySubasta[eleccion].setNombrePropietario(Principal.arrayUsuario[Principal.idUsuario]);
 			Principal.arraySubasta[eleccion].setPujaMayor(puja);
 			System.out.println(registro);
+			imprimirFactura();
 			
 			
 		} else {
