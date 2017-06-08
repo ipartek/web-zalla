@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 /*Raza creada para ver como lo habias ido haciendo,NO ES FUNCIONAL,aun*/
 
-public class Goblins implements Razas{
-	
+public class Goblins implements Razas {
+
 	ArrayList<Goblin> Goblins = new ArrayList<Goblin>();
 
 	public Goblins(int tamanio) {
@@ -27,7 +27,8 @@ public class Goblins implements Razas{
 	}
 
 	@Override
-	public int combate() {
+	public void combate() {
+		
 
 		ArrayList<Orco> ejercitoOrco = Prueba.Orcos.Orcos;
 
@@ -39,15 +40,15 @@ public class Goblins implements Razas{
 
 			Orco orco = (Orco) enemigo;
 
-			switch (orco.raza) {
+			switch (orco.getRaza()) {
 
 			case "Orco":
 
 				Orco enemigoOrco = (Orco) enemigo;
 
-				int vida = (soldadoSelecc.atacar() - orco.armadura) - orco.PV;
+				int vida = (soldadoSelecc.atacar() - orco.getArmadura()) - orco.getPV();
 
-				if (vida<=0) {
+				if (vida <= 0) {
 
 					enemigoOrco.setPV(0);
 					bajas++;
@@ -71,18 +72,15 @@ public class Goblins implements Razas{
 
 			}
 
-		}
-
-		return bajas;
-
-	}
+		}}
+	
 
 	public void Ordenar() {
 
 		int i;
 		Goblin aux;
 		for (i = 0; i < Goblins.size() - 1; i++) {
-			if (Goblins.get(i + 1).PV < Goblins.get(i).PV) {
+			if (Goblins.get(i + 1).getPV()< Goblins.get(i).getPV()) {
 				aux = Goblins.get(i + 1);
 				Goblins.set(i + 1, Goblins.get(i));
 				Goblins.set(i, aux);

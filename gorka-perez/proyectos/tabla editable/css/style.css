@@ -1,35 +1,85 @@
-@import "compass/css3";
-.table-editable {
-    position: relative;
-    .glyphicon {
-        font-size: 20px;
-    }
+html {
+    background-color: aqua;
 }
 
-.table-remove {
-    color: #700;
-    cursor: pointer;
-    &:hover {
-        color: #f00;
-    }
+table {
+    border-collapse: collapse;
+    background-color: aliceblue;
+    width: 100%;
 }
 
-.table-up,
-.table-down {
-    color: #007;
-    cursor: pointer;
-    &:hover {
-        color: #00f;
-    }
+th {
+    text-align: left;
+    padding: 1em;
+    border-bottom: 2px solid grey;
 }
 
-.table-add {
-    color: #070;
+td {
+    padding: 1em;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2
+}
+
+tr:hover {
+    background-color: cadetblue;
+}
+
+table.tablesorter thead tr .header {
+    background-image: url(../img/bg.gif);
+    background-repeat: no-repeat;
+    background-position: center right;
     cursor: pointer;
-    position: absolute;
-    top: 8px;
-    right: 0;
-    &:hover {
-        color: #0b0;
-    }
+}
+
+table.tablesorter thead tr .headerSortUp {
+    background-image: url(../img/asc.gif);
+}
+
+table.tablesorter thead tr .headerSortDown {
+    background-image: url(../img/desc.gif);
+}
+/* pager wrapper, div */
+.tablesorter-pager {
+  padding: 5px;
+}
+/* pager wrapper, in thead/tfoot */
+td.tablesorter-pager {
+  background-color: #e6eeee;
+  margin: 0; /* needed for bootstrap .pager gets a 18px bottom margin */
+}
+/* pager navigation arrows */
+.tablesorter-pager img {
+  vertical-align: middle;
+  margin-right: 2px;
+  cursor: pointer;
+}
+
+/* pager output text */
+.tablesorter-pager .pagedisplay {
+  padding: 0 5px 0 5px;
+  width: 50px;
+  text-align: center;
+}
+
+/* pager element reset (needed for bootstrap) */
+.tablesorter-pager select {
+  margin: 0;
+  padding: 0;
+}
+
+/*** css used when "updateArrows" option is true ***/
+/* the pager itself gets a disabled class when the number of rows is less than the size */
+.tablesorter-pager.disabled {
+  display: none;
+}
+/* hide or fade out pager arrows when the first or last row is visible */
+.tablesorter-pager .disabled {
+  /* visibility: hidden */
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  cursor: default;
 }

@@ -1,0 +1,11 @@
+package tragaperras;
+
+import java.lang.reflect.Array;
+
+public class Premio {
+	
+	Array Premios[]= new Array[5];
+	
+	Premios[0]="Platano";
+
+}

@@ -1,0 +1,21 @@
+package hilos;
+
+public class Principal {
+	
+	static Thread concursante1 = new Thread(new hilo("JOSE"));
+	static Thread concursante2 = new Thread(new hilo("PEPE"));
+	
+	public static void main(String[]args){
+		
+		concursante1.start();
+		concursante2.start();
+		
+		try {
+			if(concursante1.)
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+	}
+
+}

@@ -1,0 +1,35 @@
+package hilos;
+
+public class hilo extends Thread {
+
+	private double litros;
+	private String nombre;
+
+	public hilo(String nombre) {
+		super();
+		this.nombre = nombre;
+		this.litros = 0.00;
+	}
+
+	public double verLitros() {
+
+		return litros;
+	}
+
+	public void run() {
+
+		int balde = (int) (Math.random() * 3)+3;
+		try {
+			sleep(10);
+			litros += balde;
+			System.out.println("EL CONCURSANTE " + nombre + " TIENE YA " + litros);
+			if (litros >= 100) {
+				stop();
+			}
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+		}
+
+	}
+}

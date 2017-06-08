@@ -1,12 +1,18 @@
 package prueba;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
-// Falta arreglar el tema del combate.
+/**
+ * El programa funciona correctamente
+ * 
+ * Falta integrar hilos y hacer funcional goblins. Esta última parte te la dejo
+ * a ti, Jon Ander.
+ **/
 
 public class Prueba {
 
-	static Humanos Humanos;
+	static Razas ejercMaqu, ejercJugador;
 	static Orcos Orcos;
 	static Goblins Goblins;
 
@@ -27,61 +33,80 @@ public class Prueba {
 
 		eleccion = teclado.nextInt();
 
+		System.out.println("Elige la raza ENEMIGA");
+		System.out.println("1.- Humanos");
+		System.out.println("2.- Orcos");
+
+		int eleccEnemiga = teclado.nextInt();
+
+		System.out.print("Introduce la cantidad de soldados de tu ejercito: ");
+		tamanio = teclado.nextInt();
+
 		switch (eleccion) {
 
 		case 1:
 			// Humanos
-
-			System.out.print("Introduce la cantidad de soldados de tu ejercito: ");
-			tamanio = teclado.nextInt();
-			Humanos = new Humanos(tamanio);
-			// ORCOS
-			Orcos = new Orcos(tamanio /** + 50 **/
-			);
-
+			ejercJugador = new Humanos(tamanio);
 			break;
 
 		case 2:
-			System.out.print("Introduce la cantidad de soldados de tu ejercito: ");
-			tamanio = teclado.nextInt();
-			// ORCOS
-			Orcos = new Orcos(tamanio);
-			// HUMANOS
-			if (tamanio > 120) {
-				Humanos = new Humanos(tamanio /** - 100 **/
-				);
-			} else {
-				Humanos = new Humanos(20);
-			}
+
+			ejercJugador = new Orcos(tamanio);
+
 			break;
 
 		case 3:
-			System.out.println("Introduce la cantidad de soldados de tu ejercito: ");
-			tamanio = teclado.nextInt();
 			// GOBLINS
-			Goblins = new Goblins(tamanio);
-			// HUMANOS
-			if (tamanio > 120) {
-				Humanos = new Humanos(tamanio /** - 100 **/
-				);
-			} else {
-				Humanos = new Humanos(20);
-			}
+			ejercJugador = new Goblins(tamanio);
+
+			break;
 
 		default:
 			System.out.println("Opción no valida");
-			
 
 		}
+		switch (eleccEnemiga) {
+		case 1:
 
-		int bajasH, bajasO;
+			ejercMaqu = new Humanos(tamanio);
+			break;
 
+		case 2:
+
+			ejercMaqu = new Orcos(tamanio);
+
+			break;
+
+		case 3:
+
+			ejercMaqu = new Goblins(tamanio);
+			break;
+
+		default:
+			System.out.println("NO EXISTE");
+		}
 		do {
+				
+				ejercJugador ;
+	
+				ejercMaqu.combate();
 
-			bajasO = Humanos.combate();
-			bajasH = Orcos.combate();
 
-		} while (Humanos.Humanos.size() > 0 && Orcos.Orcos.size() > 0);
+			System.out.println(Humanos.getBajas());
+			System.out.println(Orcos.getBajas());
+
+		} while (!Humanos.Humanos.isEmpty() && !Orcos.Orcos.isEmpty());
+
+		for (int i = 0; Humanos.Humanos.size() - 1 >= i; i++) {
+
+			System.out.println(Humanos.Humanos.get(i));
+
+		}
+		for (int i = 0; Orcos.Orcos.size() - 1 >= i; i++) {
+
+			System.out.println(Orcos.Orcos.get(i));
+
+		}
 
 		teclado.close();
 	}

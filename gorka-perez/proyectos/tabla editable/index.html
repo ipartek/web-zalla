@@ -2,61 +2,72 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/reset.css?v=20170518">
-    <link rel="stylesheet" href="css/style.css?v=20170518">
+    <link rel="stylesheet" href="css/reset.css?v=20170529">
+    <link rel="stylesheet" href="css/style.css?v=20170529">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/jquery.tablesorter.js"></script>
+    <script src="js/jquery.tablesorter.pager.js"></script>
     <script src="js/index.js"></script>
-    <title>Tabla editable</title>
+
 </head>
 
 <body>
-    <div class="container">
-        <h1>HTML5 Editable Table</h1>
-        <p>Through the powers of <strong>contenteditable</strong> and some simple jQuery you can easily create a custom editable table. No need for a robust JavaScript library anymore these days.</p>
+    <table id="myTable" class="tablesorter">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Country</th>
+                <th>Age</th>
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id="row1">
+                <td id="name_row1">Gorka</td>
+                <td id="country_row1">Euskadi</td>
+                <td id="age_row1">20</td>
+                <td><input type="button" value="Delete Row1"></td>
+            </tr>
 
-        <ul>
-            <li>An editable table that exports a hash array. Dynamically compiles rows from headers</li>
-            <li>Simple / powerful features such as add row, remove row, move row up/down.</li>
-        </ul>
+            <tr id="row2">
+                <td id="name_row2">George</td>
+                <td id="country_row2">United Kingdom</td>
+                <td id="age_row2">26</td>
+                <td><input type="button" value="Delete Row1"></td>
+            </tr>
 
-        <div id="table" class="table-editable">
-            <span class="table-add glyphicon glyphicon-plus"></span>
-            <table class="table">
-                <tr>
-                    <th>Name</th>
-                    <th>Value</th>
-                    <th></th>
-                    <th></th>
-                </tr>
-                <tr>
-                    <td contenteditable="true">Stir Fry</td>
-                    <td contenteditable="true">stir-fry</td>
-                    <td>
-                        <span class="table-remove glyphicon glyphicon-remove"></span>
-                    </td>
-                    <td>
-                        <span class="table-up glyphicon glyphicon-arrow-up"></span>
-                        <span class="table-down glyphicon glyphicon-arrow-down"></span>
-                    </td>
-                </tr>
-                <!-- This is our clonable table line -->
-                <tr class="hide">
-                    <td contenteditable="true">Untitled</td>
-                    <td contenteditable="true">undefined</td>
-                    <td>
-                        <span class="table-remove glyphicon glyphicon-remove"></span>
-                    </td>
-                    <td>
-                        <span class="table-up glyphicon glyphicon-arrow-up"></span>
-                        <span class="table-down glyphicon glyphicon-arrow-down"></span>
-                    </td>
-                </tr>
-            </table>
-        </div>
+            <tr id="row3">
+                <td id="name_row3">Jorge</td>
+                <td id="country_row3">España</td>
+                <td id="age_row3">19</td>
+                <td><input type="button" value="Delete Row1"></td>
+            </tr>
+        </tbody>
+        <tfoot>
 
-        <button id="export-btn" class="btn btn-primary">Export Data</button>
-        <p id="export"></p>
-    </div>
+        </tfoot>
+
+        <!--
+            
+            <div id="pager" class="pager">
+                <form>
+                    <img src="img/first.png" class="first" />
+                    <img src="img/prev.png" class="prev" />
+                    <input type="text" class="pagedisplay" />
+                    <img src="img/next.png" class="next" />
+                    <img src="img/last.png" class="last" />
+                    <select class="pagesize">
+                        <option value="">>LIMIT</option>
+                        <option value="2">2 per page</option>
+                        <option value="5">5 per page</option>
+                        <option value="10">10 per page</option>
+                    </select>
+                </form>
+            </div>
+            -->
+    </table>
+    <button onclick="InsertNewRow();">Insert a new row!</button>
 </body>
 
 </html>
