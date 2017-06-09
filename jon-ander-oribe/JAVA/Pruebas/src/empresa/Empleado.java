@@ -14,8 +14,7 @@ public abstract class Empleado extends Persona {
 
 	}
 
-	public void trabajar() {
-	}
+	public abstract void trabajar();
 
 	public double obtenerSueldo() {
 		return sueldo;
