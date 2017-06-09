@@ -10,52 +10,65 @@ public class Combatir extends Thread {
 	static int bajas = 0;
 
 	public Combatir(List<Unidad> ejercEnemigo, List<Unidad> ejercAliado) {
-		
+
 		super();
 		this.ejercEnemigo = ejercEnemigo;
 		this.ejercAliado = ejercAliado;
-	
+
 	}
 
-	public synchronized void run() {
+	public void run() {
 
 		do {
 
-			int pos = 0;
+			try {
+				sleep(100);
+				int pos = 0;
 
-			for (Unidad unidadAtac : ejercAliado) {
+				for (Unidad unidadAtac : ejercAliado) {
 
-				if (ejercEnemigo.isEmpty()) {
+					if (pos >= ejercEnemigo.size())
+						pos = 0;
 
-					System.out.println(bajas);
+					Unidad enemigo = (Unidad) ejercEnemigo.get(pos);
 
-				}
-				if (pos >= ejercEnemigo.size())
-					pos = 0;
+					if (unidadAtac.isVivo()) {
 
-				Unidad enemigo = (Unidad) ejercEnemigo.get(pos);
+						int vida = (unidadAtac.atacar() - enemigo.getArmadura());
 
-				if (unidadAtac.isVivo()) {
+						enemigo.herir(vida);
+						if (!enemigo.isVivo()) {
 
-					int vida = (unidadAtac.atacar() - enemigo.getArmadura());
-
-					enemigo.herir(vida);
-
-					if (!enemigo.isVivo()) {
-
-						bajas++;
-						System.out.println("LLEGO " + unidadAtac.getRaza() + " " + bajas);
-
-						ejercEnemigo.remove(ejercEnemigo.indexOf(enemigo));
-
-						if (ejercEnemigo.indexOf(enemigo) == ejercEnemigo.size()) {
-							pos = 0;
-
+							
+							Borrar(enemigo);
+							if (ejercEnemigo.indexOf(enemigo) == ejercEnemigo.size()) {
+								pos=0;
+								
+							}
+							
 						}
-						pos++;
+					}
+					pos++;
+					if (ejercEnemigo.size() - 1==0) {
+
+						interrupt();
+
 					}
 				}
+				
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				System.out.println(e.getMessage());
 			}
 		} while (!ejercEnemigo.isEmpty() && !ejercAliado.isEmpty());
+
+	}
+	
+	synchronized void Borrar(Unidad enemigo){
+		
+		bajas++;
+		System.out.println(enemigo.getRaza() + " MUERE. BAJAS TOTALES: " + bajas);
+		ejercEnemigo.remove(ejercEnemigo.indexOf(enemigo));	
+		
 	}
 }

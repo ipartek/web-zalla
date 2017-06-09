@@ -1,0 +1,5 @@
+package empresa;
+
+public abstract class Empleado {
+
+}
