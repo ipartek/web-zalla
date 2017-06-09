@@ -96,5 +96,5 @@ public class Puja extends Usuario {
 			System.out.println("Fallo durante la generación del documento");
 		}
 
-	}
+	} 
 }
