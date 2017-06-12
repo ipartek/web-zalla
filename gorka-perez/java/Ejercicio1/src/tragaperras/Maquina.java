@@ -1,5 +1,6 @@
 package tragaperras;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class Maquina {
@@ -29,7 +30,7 @@ public class Maquina {
 		double creditoJugada = this.credito - this.precioJugada;
 		if (creditoJugada >= 0) {
 			
-			boolean premiado = false;
+			
 			this.credito = creditoJugada;
 
 			Random random = new Random();
@@ -38,8 +39,11 @@ public class Maquina {
 			for (int i = 0; i < this.casillas; i++) {
 				combinacionFrutas[i] = Fruta.values()[random.nextInt(Fruta.values().length)];
 			}			
+			
+			boolean premiado = false;
 			for (int i = 0; i < premios.length && (!premiado); i++) {
-				if (combinacionFrutas.equals(premios[i].getCombinacion())){
+				
+				if (Arrays.equals(combinacionFrutas, premios[i].getCombinacion())){
 					premiado = true;
 					credito = credito + premios[i].getPremio();
 				}
