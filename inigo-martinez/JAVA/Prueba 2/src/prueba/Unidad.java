@@ -2,36 +2,18 @@ package prueba;
 
 public class Unidad {
 
-	private int PV;
-	private int danio;
-	private int armadura;
+	private int PV, danio, armadura;
 	private String raza;
 	private boolean vivo;
 
-	public Unidad(String raza) {
+	public Unidad(String raza, int PV, int danio, int armadura) {
 		vivo = true;
 		this.raza = raza;
-		switch (raza) {
-		
-		case "Orco":
 
-			this.PV = 4;
-			this.danio = 9;
-			this.armadura = 4;
-			break;
-		case "Humano":
-			this.PV = 4;
-			this.danio = 9;
-			this.armadura = 4;
-			break;
-			
-		case "Goblins":
+		this.PV = PV;
+		this.danio = danio;
+		this.armadura = armadura;
 
-			this.PV=(int)(Math.random()*2)+2;
-			this.danio=(int)(Math.random()*3+2);
-			this.armadura=(int) (Math.random()*3+3);
-			break;
-		}
 	}
 
 	public boolean isVivo() {
@@ -40,13 +22,6 @@ public class Unidad {
 
 	public void setVivo(boolean vivo) {
 		this.vivo = vivo;
-	}
-
-	public int atacar() {
-
-		int danioRealizado = (int) (Math.random() * (this.danio));
-		return danioRealizado;
-
 	}
 
 	public int getPV() {
@@ -88,7 +63,7 @@ public class Unidad {
 	@Override
 	public String toString() {
 
-		return this.raza+" " + this.PV + " armadura " + this.armadura + " daño " + this.danio;
+		return this.raza + " " + this.PV + " armadura " + this.armadura + " daño " + this.danio;
 
 	}
 
@@ -98,6 +73,45 @@ public class Unidad {
 			return;
 		}
 		this.setPV(-damage);
+
+	}
+
+	public int atacar() {
+
+		int danioARealizado = (int) Math.floor((Math.random() * (this.danio) + 1));
+		return danioARealizado;
+
+	}
+
+	public void resucitar() {
+
+		int pV = 0, danio = 0, armadura = 0;
+		switch (this.raza) {
+
+		case "Orco":
+
+			pV = (int) Math.floor(Math.random() * (25) + 1);
+			danio = (int) Math.floor(Math.random() * (12) + 1);
+			armadura = 1;
+			break;
+		case "Humano":
+
+			pV = (int) Math.floor(Math.random() * (10) + 1);
+			danio = (int) Math.floor(Math.random() * (12) + 1);
+			armadura = (int) Math.floor(Math.random() * (2) + 1);
+			break;
+		case "Goblin":
+
+			pV = (int) Math.floor(Math.random() * (10) + 2);
+			danio = (int) Math.floor(Math.random() * (20) + 2);
+			break;
+
+		}
+
+		this.setPV(pV);
+		this.setDanio(danio);
+		this.setArmadura(armadura);
+		this.setVivo(true);
 
 	}
 
