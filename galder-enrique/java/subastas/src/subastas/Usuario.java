@@ -4,9 +4,11 @@ public class Usuario {
 	public String nombre;
 	public double credito;
 	private double pujaTotal = 0.0;
+	int idUsuario;
 	
 
-	public Usuario(String nombre, double credito) {
+	public Usuario(int idUsuario, String nombre, double credito) {
+		this.idUsuario = idUsuario;
 		this.nombre = nombre;
 		this.credito = credito;
 	}
