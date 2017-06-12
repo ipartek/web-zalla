@@ -5,8 +5,8 @@ public class Premio {
 	private Fruta[] combinacion;
 	private double premio;	
 	
-	public Premio(Fruta[] fruta, double premio){
-		this.combinacion = java.util.Arrays.copyOf(fruta, fruta.length);
+	public Premio(Fruta[] frutas, double premio){
+		this.combinacion = java.util.Arrays.copyOf(frutas, frutas.length);
 		this.premio = premio;
 	}
 

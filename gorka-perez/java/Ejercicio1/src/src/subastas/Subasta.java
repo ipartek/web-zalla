@@ -15,6 +15,7 @@ public class Subasta {
 	 */
 	public Subasta(String producto, Usuario propietario) {
 		super();
+		System.out.println("Subasta.Subasta()");
 		this.producto = producto;
 		this.propietario = propietario;
 		this.propietario.añadirSubasta(this);
@@ -24,6 +25,9 @@ public class Subasta {
 	}
 
 	public boolean pujar(Usuario pujador, double cantidadPuja) {
+		
+		System.out.println("Subasta.pujar()");
+		
 		if ((this.abierto && pujador.getCredito() >= cantidadPuja) && (pujador != this.propietario)
 				&& (this.pujaMayor == null || this.pujaMayor.getCantidadPuja() < cantidadPuja)) {
 			
@@ -38,6 +42,8 @@ public class Subasta {
 	}
 	
 	public boolean pujar(Usuario pujador) {
+		
+		System.out.println("Subasta.pujar()");
 		double puja;
 		
 		if (this.pujaMayor != null){
@@ -64,6 +70,9 @@ public class Subasta {
 	 * @return the producto
 	 */
 	public String getProducto() {
+		
+		System.out.println("Subasta.getProducto()");
+		
 		return producto;
 	}
 
@@ -71,6 +80,9 @@ public class Subasta {
 	 * @return the propietario
 	 */
 	public Usuario getPropietario() {
+		
+		System.out.println("Subasta.getPropietario()");
+		
 		return propietario;
 	}
 
@@ -78,6 +90,9 @@ public class Subasta {
 	 * @return the abierto
 	 */
 	public boolean isAbierto() {
+		
+		System.out.println("Subasta.isAbierto()");
+		
 		return abierto;
 	}
 
@@ -85,6 +100,9 @@ public class Subasta {
 	 * @return the listaPujas
 	 */
 	public LinkedList<Puja> getListaPujas() {
+		
+		System.out.println("Subasta.getListaPujas()");
+		
 		return listaPujas;
 	}
 
@@ -92,6 +110,9 @@ public class Subasta {
 	 * @return the pujaMayor
 	 */
 	public Puja getPujaMayor() {
+		
+		System.out.println("Subasta.getPujaMayor()");
+		
 		return pujaMayor;
 	}
 

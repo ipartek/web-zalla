@@ -3,15 +3,14 @@ package tragaperras;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Prueba {
+public class Programa {
 	public static void main(String[] args) {
 
 		// 1. Declara y construye dos premios
 
 		Fruta[] combinacion1 = { Fruta.fresa, Fruta.fresa, Fruta.fresa };
-		Fruta[] combinacion2 = { Fruta.sandia, Fruta.fresa, Fruta.sandia };
-
 		Premio premio1 = new Premio(combinacion1, 20);
+		Fruta[] combinacion2 = { Fruta.sandia, Fruta.fresa, Fruta.sandia };
 		Premio premio2 = new Premio(combinacion2, 10);
 
 		/*
@@ -39,7 +38,6 @@ public class Prueba {
 
 			// 4.2 Muestra la combinación obtenida y el crédito
 			System.out.println(Arrays.toString(combinacion) + " --- " + maquina.getCredito());
-
 			// 4.3 Pide al usuario que pulse intro para continuar
 			System.out.println("Pulse Intro para volver a jugar");
 			teclado.nextLine();

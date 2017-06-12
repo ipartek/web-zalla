@@ -12,7 +12,7 @@ public class Maquina {
 
 		this.casillas = casillas;
 		this.precioJugada = precioJugada;
-		this.premios = java.util.Arrays.copyOf(premios, premios.length);
+		this.premios = premios;
 	}
 
 	public void incrementarCredito(double credito) {
@@ -38,8 +38,8 @@ public class Maquina {
 			for (int i = 0; i < this.casillas; i++) {
 				combinacionFrutas[i] = Fruta.values()[random.nextInt(Fruta.values().length)];
 			}			
-			for (int i = 0; i < premios.length || premiado; i++) {
-				if (combinacionFrutas.equals(premios[i])){
+			for (int i = 0; i < premios.length && (!premiado); i++) {
+				if (combinacionFrutas.equals(premios[i].getCombinacion())){
 					premiado = true;
 					credito = credito + premios[i].getPremio();
 				}
