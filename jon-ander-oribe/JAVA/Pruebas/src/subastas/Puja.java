@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class Puja extends Usuario {
 	private static LocalDateTime ahora = LocalDateTime.now();
 	private double cantidadPujada = 0.0;
+	private double pujaMinima=0.0;
 	static String registro = "";
 
 	public Puja(String nombre, double cantidadPujada) {
@@ -33,8 +34,9 @@ public class Puja extends Usuario {
 		System.out.println("Opcion 2: " + Principal.arraySubasta[2].toString());
 		System.out.println("Opcion 3: " + Principal.arraySubasta[3].toString());
 		int eleccion = sc.nextInt();
+		pujaMinima=Principal.arraySubasta[eleccion].getPujaMayor+(Principal.arraySubasta[eleccion].getPujaMayor/10);
 		System.out.println("El precio actual de " + Principal.arraySubasta[eleccion].getNombreObjeto() + " es de "
-				+ Principal.arraySubasta[eleccion].getPujaMayor());
+				+ Principal.arraySubasta[eleccion].getPujaMayor()+" y la puja MINIMA es de "+ pujaMinima);
 		System.out.println("¿Cuanto quieres pagar por " + Principal.arraySubasta[eleccion].getNombreObjeto() + " ?");
 		double puja = sc.nextDouble();
 
