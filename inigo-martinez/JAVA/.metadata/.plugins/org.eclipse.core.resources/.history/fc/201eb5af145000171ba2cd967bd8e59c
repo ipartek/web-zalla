@@ -13,6 +13,7 @@ import java.util.Scanner;
 public class Prueba {
 
 	static int bajasJug, bajasMaq;
+	static List<Unidad> muertosDefinitivos;
 
 	public static void main(String args[]) {
 
@@ -200,11 +201,8 @@ public class Prueba {
 	@SuppressWarnings("resource")
 	@SafeVarargs
 	public static void eventos(List<Unidad>... ejercitos) {
-		
 
-		List<Unidad> muertosDefinitivos = new ArrayList<Unidad>();
 		List<Unidad> ejercitoSobreviviente;
-		
 		String eleccion;
 		Scanner teclado = new Scanner(System.in);
 
@@ -213,7 +211,7 @@ public class Prueba {
 		else
 			ejercitoSobreviviente = ejercitos[1];
 
-		int evento = (int) Math.floor(Math.random() * (2) + 1);
+		int evento = 1;// (int) Math.floor(Math.random() * (2) + 1);
 		switch (evento) {
 
 		case 1:

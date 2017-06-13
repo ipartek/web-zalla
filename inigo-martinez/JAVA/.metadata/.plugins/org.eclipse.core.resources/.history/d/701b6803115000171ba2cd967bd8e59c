@@ -13,6 +13,7 @@ import java.util.Scanner;
 public class Prueba {
 
 	static int bajasJug, bajasMaq;
+	static List<Unidad> muertosDefinitivos;
 
 	public static void main(String args[]) {
 
@@ -111,7 +112,7 @@ public class Prueba {
 			eventos(ejercMaqu, ejercJugador, bajas);
 
 		} catch (Exception e) {
-			System.out.println("PRINGADO");
+			System.out.println(e.getMessage());
 		}
 
 		teclado.close();
@@ -197,14 +198,10 @@ public class Prueba {
 		}
 	}
 
-	@SuppressWarnings("resource")
 	@SafeVarargs
 	public static void eventos(List<Unidad>... ejercitos) {
-		
 
-		List<Unidad> muertosDefinitivos = new ArrayList<Unidad>();
 		List<Unidad> ejercitoSobreviviente;
-		
 		String eleccion;
 		Scanner teclado = new Scanner(System.in);
 
@@ -213,7 +210,7 @@ public class Prueba {
 		else
 			ejercitoSobreviviente = ejercitos[1];
 
-		int evento = (int) Math.floor(Math.random() * (2) + 1);
+		int evento = 1;// (int) Math.floor(Math.random() * (2) + 1);
 		switch (evento) {
 
 		case 1:
@@ -227,7 +224,7 @@ public class Prueba {
 				crearEjercito("Orco", 25, ejercitoSobreviviente);
 				crearEjercito("Goblin", 40, ejercitoSobreviviente);
 
-				for (int pos = 0; pos < ejercitos[2].size(); pos++) {
+				for (int pos = 0; pos < ejercitos[2].size() - 1; pos++) {
 
 					Unidad resucitando = ejercitos[2].get(pos);
 
@@ -260,6 +257,6 @@ public class Prueba {
 		default:
 			System.out.println("NO pasó nada. La lluvia cae en el campo de combate.");
 		}
-		teclado.close();
+
 	}
 }

@@ -20,7 +20,6 @@ public class Orco extends Unidad {
 		this.setPV(pV);
 		this.setDanio(danio); 
 		this.setArmadura(1); 
-		this.setVivo(true);
 		
 	}
 

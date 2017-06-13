@@ -29,9 +29,6 @@ public class Unidad {
 	}
 
 	public void setPV(int pV) {
-		this.PV = pV;
-	}
-	public void daniar(int pV) {
 		this.PV += pV;
 
 		if (this.PV <= 0) {
@@ -75,7 +72,7 @@ public class Unidad {
 		if (damage <= 0) {
 			return;
 		}
-		this.daniar(-damage);
+		this.setPV(-damage);
 
 	}
 

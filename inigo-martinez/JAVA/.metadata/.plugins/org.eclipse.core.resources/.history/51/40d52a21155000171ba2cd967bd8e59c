@@ -223,9 +223,9 @@ public class Prueba {
 
 			if (eleccion.equals("CONTINUAR") || eleccion.equals("continuar")) {
 				// ALZAMIENTO DE LOS MUERTOS.RESURRECIÓN
-				crearEjercito("Humano", 10, ejercitoSobreviviente);
-				crearEjercito("Orco", 25, ejercitoSobreviviente);
-				crearEjercito("Goblin", 40, ejercitoSobreviviente);
+				//crearEjercito("Humano", 10, ejercitoSobreviviente);
+				//crearEjercito("Orco", 25, ejercitoSobreviviente);
+				//crearEjercito("Goblin", 40, ejercitoSobreviviente);
 
 				for (int pos = 0; pos < ejercitos[2].size(); pos++) {
 

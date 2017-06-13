@@ -18,9 +18,9 @@ public class Humano extends Unidad {
 		int danio = (int) Math.floor(Math.random() * (12) + 1);
 		int armadura = (int) Math.floor(Math.random() * (2) + 1);
 
-		this.setPV(pV);
-		this.setDanio(danio);
-		this.setArmadura(armadura);
+		this.setPV(1);
+		this.setDanio(1);
+		this.setArmadura(1);
 		this.setVivo(true);
 	}
 

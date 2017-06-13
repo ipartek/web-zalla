@@ -21,7 +21,6 @@ public class Humano extends Unidad {
 		this.setPV(pV);
 		this.setDanio(danio);
 		this.setArmadura(armadura);
-		this.setVivo(true);
 	}
 
 }
