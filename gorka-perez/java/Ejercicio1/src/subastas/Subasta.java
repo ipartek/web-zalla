@@ -5,7 +5,7 @@ import java.util.LinkedList;
 public class Subasta {
 	private String producto;
 	private Usuario propietario;
-	private boolean abierto;
+	protected boolean abierto;
 	private LinkedList<Puja> listaPujas;
 	private Puja pujaMayor;
 
