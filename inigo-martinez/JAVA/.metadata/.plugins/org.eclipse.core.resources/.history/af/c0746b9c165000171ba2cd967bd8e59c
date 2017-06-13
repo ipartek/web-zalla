@@ -220,7 +220,7 @@ public class Prueba {
 			System.out.println("Escribe CONTINUAR para entrar en combate por los vivos.");
 			eleccion = teclado.nextLine();
 
-			if (eleccion.equals("CONTINUAR") || eleccion.equals("continuar") || eleccion.equals("ee")) {
+			if (eleccion.equals("CONTINUAR") || eleccion.equals("continuar") || eleccion.equals('\n')) {
 				// ALZAMIENTO DE LOS MUERTOS.RESURRECIÓN
 				crearEjercito("Humano", 10, ejercitoSobreviviente);
 				crearEjercito("Orco", 25, ejercitoSobreviviente);
