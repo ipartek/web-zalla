@@ -65,6 +65,9 @@ public class Principal {
 			switch (sc1) {
 			case 0:
 				System.out.println("¿Quien eres?");
+				for (Usuario users : arrayUsuario) {
+					System.out.println(users);
+				}
 				idUsuario = sc.nextInt();
 				System.out.println("Eres: " + Usuario.ids[idUsuario].toString());
 

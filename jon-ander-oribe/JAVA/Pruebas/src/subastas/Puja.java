@@ -45,21 +45,12 @@ public class Puja extends Usuario {
 					+ Principal.arraySubasta[eleccion].getNombreObjeto() + " a "
 					+ Principal.arraySubasta[eleccion].getNombrePropietario() + " por " + puja + ".\n";
 			Principal.arrayUsuario[Principal.idUsuario].decrementarCredito(puja);
-			// REVISAR EL INCREMENTO;HACE COSAS MUY RARAS
+
 			System.out.println(Principal.arraySubasta[eleccion].getNombrePropietario() + " ahora tiene "
 					+ ((double) (Principal.arraySubasta[eleccion].getNombrePropietario().credito) + puja) + " euros!!");
-			double aumentoCredito = (double) (Principal.arraySubasta[eleccion].getNombrePropietario().credito) + puja;
-			Principal.arrayUsuario[0].incrementarCredito(aumentoCredito);
-
-			/*
-			 * for(Usuario usuarioVende: Principal.arrayUsuario){
-			 * 
-			 * if(usuarioVende.getNombre().equals(nombrePropietario)){
-			 * System.out.println(usuarioVende.incrementarCredito(puja)); }
-			 * 
-			 * }
-			 */
-			// Principal.arrayUsuario[Principal.arraySubasta[eleccion].].incrementarCredito(puja);
+			
+			int verificacion=Principal.arraySubasta[eleccion].getNombrePropietario().getID();
+			Principal.arrayUsuario[verificacion].incrementarCredito(puja);
 
 			Principal.arraySubasta[eleccion].setNombrePropietario(Principal.arrayUsuario[Principal.idUsuario]);
 			Principal.arraySubasta[eleccion].setPujaMayor(puja);
