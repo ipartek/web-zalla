@@ -8,7 +8,8 @@ import java.util.Scanner;
 public class Puja extends Usuario {
 	private static LocalDateTime ahora = LocalDateTime.now();
 	private double cantidadPujada = 0.0;
-	private double pujaMinima=0.0;
+	private static double pujaMinima=0.0;
+	private static int contadorPujas=0;
 	static String registro = "";
 
 	public Puja(String nombre, double cantidadPujada) {
@@ -34,13 +35,18 @@ public class Puja extends Usuario {
 		System.out.println("Opcion 2: " + Principal.arraySubasta[2].toString());
 		System.out.println("Opcion 3: " + Principal.arraySubasta[3].toString());
 		int eleccion = sc.nextInt();
-		pujaMinima=Principal.arraySubasta[eleccion].getPujaMayor+(Principal.arraySubasta[eleccion].getPujaMayor/10);
+		pujaMinima=Principal.arraySubasta[eleccion].getPujaMayor()+(Principal.arraySubasta[eleccion].getPujaMayor()/10);
 		System.out.println("El precio actual de " + Principal.arraySubasta[eleccion].getNombreObjeto() + " es de "
 				+ Principal.arraySubasta[eleccion].getPujaMayor()+" y la puja MINIMA es de "+ pujaMinima);
 		System.out.println("¿Cuanto quieres pagar por " + Principal.arraySubasta[eleccion].getNombreObjeto() + " ?");
 		double puja = sc.nextDouble();
+		
+		if(contadorPujas>=8){
+			
+			System.out.println("Numero de pujas por sesion superado.Vuelva otro dia");
+		}
 
-		if (puja < Principal.arrayUsuario[Principal.idUsuario].getCredito()
+		else if (puja < Principal.arrayUsuario[Principal.idUsuario].getCredito()
 				&& puja > Principal.arraySubasta[eleccion].getPujaMayor()) {
 			System.out.println("Objeto adquirido!!");
 			registro = "-->" + Principal.arrayUsuario[Principal.idUsuario].getNombre() + " ha comprado "
@@ -60,6 +66,7 @@ public class Puja extends Usuario {
 			imprimirFactura();
 			ahora=LocalDateTime.now();
 			System.out.println("La compra se realizo: "+ahora);
+			contadorPujas++;
 
 		} else {
 			System.out.println("Falta credito");
