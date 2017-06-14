@@ -21,7 +21,7 @@ public class Programa {
 
 
 		/*
-		 * 2. Crea una m�quina con un tama�o de combinaci�n de 3 frutas, un
+		 * 2. Crea una maquina con un tama�o de combinacion de 3 frutas, un
 		 * precio por partida de 0,5 euros y los dos premios declarados
 		 * previamente
 		 */
@@ -30,24 +30,33 @@ public class Programa {
 
 		/*
 		 * 3. Solicita al usuario que introduzca por teclado la cantidad de
-		 * cr�dito para jugar.
+		 * credito para jugar.
 		 */
-		System.out.println("Introduzca el cr�dito: ");
+		System.out.println("Introduzca el credito: ");
 		Scanner teclado = new Scanner(System.in);
 		double credito = teclado.nextDouble();
 		teclado.nextLine();
 		maquina.incrementarCredito(credito);
 
-		// 4. Jugamos mientras haya cr�dito disponible
-		while (maquina.getCredito() > 0) {
+		// 4. Jugamos mientras haya credito disponible
+		
+		boolean cobrar = false;
+		
+		while ((maquina.getCredito() > 0) && (!cobrar)) {
 			// 4.1 Realiza la jugada
 			Fruta[] combinacion = maquina.jugar();
 
-			// 4.2 Muestra la combinaci�n obtenida y el cr�dito
+			// 4.2 Muestra la combinaci�n obtenida y el credito
 			System.out.println(Arrays.toString(combinacion) + " --- " + maquina.getCredito());
 			// 4.3 Pide al usuario que pulse intro para continuar
-			System.out.println("Pulse Intro para volver a jugar");
-			teclado.nextLine();
+			System.out.println("Para cobrar escriba cobrar, para seguir jugando pulse enter");
+			
+			String mensaje = teclado.nextLine();
+		
+			if (mensaje.equals("cobrar")){
+				cobrar = true;
+				maquina.cobrar();
+			}
 		}
 		teclado.close();
 	}

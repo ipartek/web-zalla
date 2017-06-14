@@ -53,6 +53,10 @@ public class Maquina {
 			return null;
 		}
 	}
+	public void cobrar(){
+		System.out.println("has obtenido: " + this.credito + "€");
+		this.credito = 0;
+	}
 
 	/**
 	 * @return the casillas
