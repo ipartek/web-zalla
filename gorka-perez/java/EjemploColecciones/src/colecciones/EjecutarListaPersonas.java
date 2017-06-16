@@ -16,15 +16,13 @@ public class EjecutarListaPersonas {
 	// Cargar un ArrayList con 4 personas y lo devuelve
 	public static List<Persona> cargarListaPersonas() {
 		Dni dni1 = new Dni("111111111", 'A');
-		Persona persona1 = new Persona(1, "Persona1", "Apellido1", dni1);
-
 		Dni dni2 = new Dni("222222222", 'B');
-		Persona persona2 = new Persona(2, "Persona2", "Apellido2", dni2);
-
 		Dni dni3 = new Dni("333333333", 'C');
-		Persona persona3 = new Persona(3, "Persona3", "Apellido3", dni3);
-
 		Dni dni4 = new Dni("444444444", 'D');
+		
+		Persona persona1 = new Persona(1, "Persona1", "Apellido1", dni1);
+		Persona persona2 = new Persona(2, "Persona2", "Apellido2", dni2);	
+		Persona persona3 = new Persona(3, "Persona3", "Apellido3", dni3);
 		Persona persona4 = new Persona(4, "Persona4", "Apellido4", dni4);
 
 		List<Persona> arrayLista = new ArrayList<Persona>();
