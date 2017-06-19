@@ -19,8 +19,14 @@ public class Persona
         System.out.println("Apellido: " + apellido);
         dni.obtenerInfo();
     }
+   
     
-    public String getNombre()
+    @Override
+	public String toString() {
+		return  nombre + ", " + apellido + ", " + dni;
+	}
+
+	public String getNombre()
     {
     	return nombre;
     }

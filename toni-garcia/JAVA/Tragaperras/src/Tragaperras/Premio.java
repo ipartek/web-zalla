@@ -1,4 +1,4 @@
-package Tragaperras;
+package tragaperras;
 
 public class Premio {
 	

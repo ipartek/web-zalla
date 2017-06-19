@@ -43,7 +43,7 @@ public class Principal {
 		circulo = new Punto(x, y);
 		cuadrado = new Punto(x,y);
 		triangulo = new Punto (x,y);
-		Punto.desplazar(5,5);
+		
 	}
 
 }

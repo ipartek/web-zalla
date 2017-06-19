@@ -1,4 +1,4 @@
-package Tragaperras;
+package tragaperras;
 
 import java.util.Random;
 

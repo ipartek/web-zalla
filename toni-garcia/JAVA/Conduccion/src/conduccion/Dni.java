@@ -36,4 +36,10 @@ public class Dni
     {
     	this.letra = letra;
     }
+
+	@Override
+	public String toString() {
+		return   numero + "-" + letra ;
+	}
+    
 }
