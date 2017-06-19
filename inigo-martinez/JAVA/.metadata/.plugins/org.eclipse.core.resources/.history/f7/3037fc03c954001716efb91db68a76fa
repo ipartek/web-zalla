@@ -1,0 +1,64 @@
+package prueba;
+
+import java.util.List;
+
+public class Combate extends Thread {
+	
+	private List<Unidad> ejercAliado;
+	private List<Unidad> ejercEnemigo;
+	private List<Unidad> bajasGenerales;
+	private int bajas;
+	
+	
+	
+	public Combate(List<Unidad> ejercAliado, List<Unidad> ejercEnemigo, List<Unidad> arrayBajas, int bajas) {
+		super();
+		this.ejercAliado = ejercAliado;
+		this.ejercEnemigo = ejercEnemigo;
+		this.bajasGenerales=arrayBajas;
+		this.bajas = bajas;
+	}
+
+
+
+	public int run() {
+
+		int pos = 0;
+
+		for (Unidad unidadAtac : ejercAliado) {
+
+			if (ejercEnemigo.isEmpty()) {
+
+				return bajas;
+
+			}
+			if (pos >= ejercEnemigo.size())
+				pos = 0;
+
+			Unidad enemigo = (Unidad) ejercEnemigo.get(pos);
+
+			if (unidadAtac.isVivo()) {
+
+				int danioRealizado = (unidadAtac.atacar() - enemigo.getArmadura());
+
+				enemigo.herir(danioRealizado);
+
+				if (!enemigo.isVivo()) {
+
+					bajas++;
+					System.out.println("LLEGO " + unidadAtac.getRaza() + " " + bajas);
+					arrayBajas.add(enemigo);
+					ejercEnemigo.remove(ejercEnemigo.indexOf(enemigo));
+
+					if (ejercEnemigo.indexOf(enemigo) == ejercEnemigo.size()) {
+						pos = 0;
+
+					}
+					pos++;
+				}
+			}
+		}
+		return bajas;
+	}
+
+}

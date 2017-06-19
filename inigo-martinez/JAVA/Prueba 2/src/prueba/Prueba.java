@@ -1,6 +1,5 @@
 package prueba;
 
-import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -10,8 +9,6 @@ import java.util.Scanner;
  **/
 
 public class Prueba {
-
-	static int bajasJug, bajasMaq;
 
 	public static void main(String args[]) {
 
@@ -26,7 +23,7 @@ public class Prueba {
 		System.out.println("Elige uno de los bandos:");
 		System.out.println("1.- Humanos");
 		System.out.println("2.- Orcos");
-		System.out.println("3.- Los poderosos Goblins[Aun en fase Alpha]");
+		System.out.println("3.- Goblins");
 		System.out.println("Recuerdo que las aldeas se defienden con un minimo:");
 		System.out.println("Humanos ---> 20 soldados");
 		System.out.println("Orcos ---> 50 soldados");
@@ -95,14 +92,16 @@ public class Prueba {
 				System.out.println("Opción no valida");
 
 			}
+			Thread comandante = new Thread(new Hechizos(ejercJugador, ejercMaqu));
+
+			Thread ejercJug = new Thread(new Combate(ejercJugador, ejercMaqu, bajas, eleccEnemiga));
+			Thread ejercMaq = new Thread(new Combate(ejercMaqu, ejercJugador, bajas, eleccEnemiga));
 			do {
 
-				bajasMaq = combate(ejercJugador, ejercMaqu, bajas, bajasMaq);
-				bajasJug = combate(ejercMaqu, ejercJugador, bajas, bajasJug);
+				ejercJug.run();
+				ejercMaq.run();
 
-				System.out.println(bajasJug);
-				System.out.println(bajasMaq);
-				System.out.println("TOTAL " + (bajasMaq + bajasJug));
+				System.out.println("Han muerto " + bajas.size());
 
 			} while (!ejercMaqu.isEmpty() && !ejercJugador.isEmpty());
 
@@ -140,45 +139,46 @@ public class Prueba {
 
 	}
 
-	public static int combate(List<Unidad> ejercAtac, List<Unidad> ejercDefen, List<Unidad> arrayBajas, int bajas) {
-
-		int pos = 0;
-
-		for (Unidad unidadAtac : ejercAtac) {
-
-			if (ejercDefen.isEmpty()) {
-
-				return bajas;
-
-			}
-			if (pos >= ejercDefen.size())
-				pos = 0;
-
-			Unidad enemigo = (Unidad) ejercDefen.get(pos);
-
-			if (unidadAtac.isVivo()) {
-
-				int danioRealizado = (unidadAtac.atacar() - enemigo.getArmadura());
-
-				enemigo.herir(danioRealizado);
-
-				if (!enemigo.isVivo()) {
-
-					bajas++;
-					System.out.println("LLEGO " + unidadAtac.getRaza() + " " + bajas);
-					arrayBajas.add(enemigo);
-					ejercDefen.remove(ejercDefen.indexOf(enemigo));
-
-					if (ejercDefen.indexOf(enemigo) == ejercDefen.size()) {
-						pos = 0;
-
-					}
-					pos++;
-				}
-			}
-		}
-		return bajas;
-	}
+	// public static int combate(List<Unidad> ejercAtac, List<Unidad>
+	// ejercDefen, List<Unidad> arrayBajas, int bajas) {
+	//
+	// int pos = 0;
+	//
+	// for (Unidad unidadAtac : ejercAtac) {
+	//
+	// if (ejercDefen.isEmpty()) {
+	//
+	// return bajas;
+	//
+	// }
+	// if (pos >= ejercDefen.size())
+	// pos = 0;
+	//
+	// Unidad enemigo = (Unidad) ejercDefen.get(pos);
+	//
+	// if (unidadAtac.isVivo()) {
+	//
+	// int danioRealizado = (unidadAtac.atacar() - enemigo.getArmadura());
+	//
+	// enemigo.herir(danioRealizado);
+	//
+	// if (!enemigo.isVivo()) {
+	//
+	// bajas++;
+	// System.out.println("LLEGO " + unidadAtac.getRaza() + " " + bajas);
+	// arrayBajas.add(enemigo);
+	// ejercDefen.remove(ejercDefen.indexOf(enemigo));
+	//
+	// if (ejercDefen.indexOf(enemigo) == ejercDefen.size()) {
+	// pos = 0;
+	//
+	// }
+	// pos++;
+	// }
+	// }
+	// }
+	// return bajas;
+	// }
 
 	@SafeVarargs
 	public static void mensajesFinal(List<Unidad>... ejercitos) {
@@ -199,11 +199,10 @@ public class Prueba {
 	@SuppressWarnings("resource")
 	@SafeVarargs
 	public static void eventos(List<Unidad>... ejercitos) {
-		
 
 		List<Unidad> muertosDefinitivos = new ArrayList<Unidad>();
 		List<Unidad> ejercitoSobreviviente;
-		
+
 		String eleccion;
 		Scanner teclado = new Scanner(System.in);
 
@@ -212,7 +211,7 @@ public class Prueba {
 		else
 			ejercitoSobreviviente = ejercitos[1];
 
-		int evento = (int) Math.floor(Math.random() * (2) + 1);
+		int evento = 1;//(int) Math.floor(Math.random() * (2) + 1);
 		switch (evento) {
 
 		case 1:
@@ -220,7 +219,7 @@ public class Prueba {
 			System.out.println("Escribe CONTINUAR para entrar en combate por los vivos.");
 			eleccion = teclado.nextLine();
 
-			if (eleccion.equals("CONTINUAR") || eleccion.equals("continuar") || eleccion.equals("ee")) {
+			if (eleccion.equals("CONTINUAR") || eleccion.equals("continuar") || eleccion.equals("")) {
 				// ALZAMIENTO DE LOS MUERTOS.RESURRECIÓN
 				crearEjercito("Humano", 10, ejercitoSobreviviente);
 				crearEjercito("Orco", 25, ejercitoSobreviviente);
@@ -235,11 +234,15 @@ public class Prueba {
 				}
 
 				int bajas = 0;
+				Thread ejercitoVivo = new Thread(
+						new Combate(ejercitoSobreviviente, ejercitos[2], muertosDefinitivos, bajas));
+				Thread ejercitoMuerto = new Thread(
+						new Combate(ejercitos[2], ejercitoSobreviviente, muertosDefinitivos, bajas));
 
 				do {
 
-					bajas += combate(ejercitoSobreviviente, ejercitos[2], muertosDefinitivos, 0);
-					bajas += combate(ejercitos[2], ejercitoSobreviviente, muertosDefinitivos, 0);
+					ejercitoVivo.run();
+					ejercitoMuerto.run();
 
 				} while (!ejercitoSobreviviente.isEmpty() && !ejercitos[2].isEmpty());
 

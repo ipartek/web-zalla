@@ -2,16 +2,25 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="ejercitoOrcos" key="selection"/>
+		<item value="bajasGenerales" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="arrayBajas"/>
+			<item value="ejercDefen"/>
+			<item value="ejercAtac"/>
+			<item value="curacion"/>
+			<item value="danio"/>
 			<item value="Orcos"/>
 			<item value="Humanos"/>
 		</list>
 		<list key="replacehistory">
+			<item value="bajasGenerales"/>
+			<item value="ejercEnemigo"/>
+			<item value="ejercAliado"/>
+			<item value="impacto"/>
 			<item value="ejercitoOrcos"/>
 			<item value="Orcos"/>
 		</list>
