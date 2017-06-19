@@ -21,6 +21,10 @@ public class Ejercicio01 {
 		listado.add("Manolo");
 		listado.add("Susana");
 		listado.add("Carmen");
+		listado.add("Manu");
+		listado.add("Julian");
+		listado.add("Esther");
+		listado.add("Josep");
 		
 		return listado;
 		
