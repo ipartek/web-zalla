@@ -20,7 +20,9 @@ public class BusquedaPorDNI {
 		Persona persona3 = new Persona(3, "Oscar", "Igartua", new Dni("2233445588", 'C'));
 		mapaPersonas.put(persona3.getDni(), persona3);
 		Persona persona4 = new Persona(3, "Oscar", "Igartua", new Dni("2233445588", 'C'));
-		mapaPersonas.put(persona4.getDni(), persona3);
+		mapaPersonas.put(persona4.getDni(), persona4);
+		
+		Dni dniPrueba=new Dni("2233445577",'B');
 		
 		Dni clave=null;
 		Iterator<Dni> elementos=mapaPersonas.keySet().iterator();
@@ -38,18 +40,19 @@ public class BusquedaPorDNI {
 		Map<Telefono, Persona> mapaTelefonos=new HashMap<Telefono,Persona>();
 		mapaTelefonos.put(telefono1, persona1);
 		
-		System.out.println(mapaTelefonos);
+		System.out.println("Mapa TELEFONOS: "+mapaTelefonos);
 		
 		
 		//FIN TEST
 		
-		int codigo=telefono1.getNumero();
+		Dni codigo=dniPrueba;
+		System.out.println("****************************************");
 		System.out.println(codigo);
-		System.out.println(mapaTelefonos.keySet());
-		System.out.println(mapaTelefonos.containsKey(codigo));
+		System.out.println(mapaPersonas.keySet());
+		System.out.println(mapaPersonas.containsKey(codigo));
 		
-		if(mapaTelefonos.containsKey(codigo)){
-			System.out.println(codigo);
+		if(mapaPersonas.containsKey(codigo)){
+			System.out.println("El CODIGO "+codigo+ "EXISTE");
 		}else{
 			System.out.println("El DNI no existe");
 		}

@@ -17,15 +17,23 @@ public class TestSortedSetPersonas {
 		Persona persona3 = new Persona(3, "Oscar", "Igartua", new Dni("2233445588", 'C'));
 		listaPersonas.add(persona3);
 		
-		Persona clave=null;
+		//REVISAR
+		
+		System.out.println(" Lista con " + listaPersonas.size() + 
+				" elementos"); 
+				for( Iterator it = listaPersonas.iterator(); it.hasNext();) {
+				Persona elemento = (Persona)it.next(); 
+				System.out.println(elemento);
+		
+		/*Persona clave=null;
 		Iterator<Persona> elementos=listaPersonas.iterator();
 		System.out.println("Existen los siguientes elementos: ");
 		while(elementos.hasNext()){
 			clave= elementos.next();
 			System.out.println(clave+"-->"+listaPersonas);
 			
-		}
+		}*/
 
 	}
 
-}
+}}

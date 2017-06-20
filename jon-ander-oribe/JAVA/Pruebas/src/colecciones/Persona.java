@@ -95,7 +95,7 @@ public class Persona implements Comparable<Persona> {
 
 	@Override
 	public int compareTo(Persona persona) {
-		// TODO Auto-generated method stub
+		
 		return 0;
 	}
 	
