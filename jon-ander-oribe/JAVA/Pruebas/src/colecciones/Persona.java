@@ -96,7 +96,25 @@ public class Persona implements Comparable<Persona> {
 	@Override
 	public int compareTo(Persona persona) {
 		
+		int diferencia = this.apellido.compareTo(persona.apellido);
+		if(diferencia==0){
+			diferencia=this.nombre.compareTo(persona.nombre);
+			if(diferencia==0){
+				diferencia=this.dni.compareTo(persona.dni);
+			}
+		}
+		
 		return 0;
+	}
+	
+	public void obtenerInfo() {
+
+		System.out.println("Nombre: " + nombre);
+		System.out.println("Apellido: " + apellido);
+		System.out.println("--------------------------");
+		dni.obtenerInfo();
+		System.out.println("--------------------------");
+
 	}
 	
 

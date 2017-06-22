@@ -49,12 +49,24 @@ public class TestSortedSetPersonas {
 	 * }
 	 */
 
-	public static void recorrer(Set<Persona> listaPersonas) {
+	/*public static void recorrer(Set<Persona> listaPersonas) {
 		System.out.println("ITERADOR:");
 		Iterator<Persona> iterator = listaPersonas.iterator();
 		while (iterator.hasNext()) {
 			System.out.print(iterator.next() + " ");
 		}
 
+	}*/
+	
+	public static void recorrer(Set<Persona> listaPersonas) {
+		//
+		Iterator<Persona> iterator = listaPersonas.iterator();
+		Persona persona = null;
+		while (iterator.hasNext()) {
+			persona = iterator.next();
+			persona.obtenerInfo();
+		}
 	}
+	
+	
 }
