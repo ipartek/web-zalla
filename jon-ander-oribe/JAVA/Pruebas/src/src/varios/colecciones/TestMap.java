@@ -1,12 +1,11 @@
-package colecciones;
+package varios.colecciones;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import conduccion.Dni;
-import conduccion.Persona;
 
 public class TestMap {
 

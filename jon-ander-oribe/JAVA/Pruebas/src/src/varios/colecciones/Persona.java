@@ -1,4 +1,5 @@
-package colecciones;
+package varios.colecciones;
+
 
 public class Persona implements Comparable<Persona> {
 	
@@ -58,6 +59,10 @@ public class Persona implements Comparable<Persona> {
 	@Override
 	public String toString() {
 		return "Persona [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", dni=" + dni + "]";
+	}
+	
+	public String toStringClasificacion(){
+		return this.getId()+EscrituraDeDatosBasur.SEPARADOR_CONSTANTE+this.getNombre()+EscrituraDeDatosBasur.SEPARADOR_CONSTANTE+this.getApellido();
 	}
 
 	public int getId() {

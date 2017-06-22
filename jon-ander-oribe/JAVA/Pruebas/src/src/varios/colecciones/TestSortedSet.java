@@ -1,4 +1,5 @@
-package colecciones;
+package varios.colecciones;
+
 
 import java.util.Iterator;
 import java.util.SortedSet;

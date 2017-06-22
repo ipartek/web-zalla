@@ -1,4 +1,5 @@
-package colecciones;
+package varios.colecciones;
+
 
 public class Telefono {
 	

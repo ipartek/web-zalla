@@ -1,11 +1,11 @@
-package colecciones;
+package varios.colecciones;
+
 
 import java.util.Iterator;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-import conduccion.Dni;
-import conduccion.Persona;
+
 
 public class TestSortedSet2 {
 
