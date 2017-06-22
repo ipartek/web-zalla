@@ -1,19 +1,27 @@
 package DOM;
 
 import java.io.File;
+import java.io.IOException;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 import org.w3c.dom.Element;
 
 public class HandlerDOM2 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 
 		try {
 			File file = new File("C:\\Users\\ZALLA\\Documents\\java\\XMLparaDOM.xml");
@@ -29,25 +37,28 @@ public class HandlerDOM2 {
 			System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
 
 			if (doc.hasChildNodes()) {
-
 				printNote(doc.getChildNodes());
 				addSubject(doc);
+				printNote(doc.getChildNodes());
+				writeDOM(doc);
 			}
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
+		} catch (ParserConfigurationException pce) {
+			pce.printStackTrace();
+		} catch (IOException ioe) {
+			ioe.printStackTrace();
+		} catch (SAXException sae) {
+			sae.printStackTrace();
 		}
+
 	}
 
 	private static void addSubject(Document doc) {
-		for (int i = 0; i < doc.getElementsByTagName("student").getLength(); i++){
-			
-		Node student = doc.getElementsByTagName("student").item(i);
-		// append a new node to staff
-		
-		Element subject = doc.createElement("subject");
-		subject.appendChild(doc.createTextNode("clase de java"));
-		
-		student.appendChild(subject);
+
+		for (int i = 0; i < doc.getElementsByTagName("student").getLength(); i++) {
+			// append a new node to student
+			Element subject = doc.createElement("subject");
+			subject.appendChild(doc.createTextNode("clase de java"));
+			doc.getElementsByTagName("student").item(i).appendChild(subject);
 		}
 	}
 
@@ -85,5 +96,13 @@ public class HandlerDOM2 {
 				System.out.println("Node Name =" + tempNode.getNodeName() + " [CLOSE]");
 			}
 		}
+	}
+	
+	private static void writeDOM(Document doc) throws TransformerException {
+		TransformerFactory transformerFactory = TransformerFactory.newInstance();
+		Transformer transformer = transformerFactory.newTransformer();
+		DOMSource source = new DOMSource(doc);
+		StreamResult result = new StreamResult(new File("C:\\Users\\ZALLA\\Documents\\java\\XMLparaDOMresultado.xml"));
+		transformer.transform(source, result);
 	}
 }
