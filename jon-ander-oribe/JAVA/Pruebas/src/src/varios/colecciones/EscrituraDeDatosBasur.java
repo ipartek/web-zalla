@@ -13,7 +13,6 @@ public class EscrituraDeDatosBasur {
 
 		// String nombreFichero =
 		// "D:/Desarrollo/web-zalla/jon-ander-oribe/JAVA/Pruebas/PruebaEscritura.txt";
-		// BASUR
 		String nombreFichero = "C:/desarrollo/web/web-zalla/jon-ander-oribe/JAVA/Pruebas/PruebaEscritura.txt";
 		File fichero = new File(nombreFichero);
 		BufferedReader lector = null;
