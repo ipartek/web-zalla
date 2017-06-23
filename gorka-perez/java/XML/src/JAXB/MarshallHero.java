@@ -5,7 +5,7 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 
-public class MarshallHero {
+	public class MarshallHero {
 
 	public static void main(String[] args) {
 		
@@ -23,13 +23,17 @@ public class MarshallHero {
 		dritz.setHeroClass(HeroClass.Rogue);
 		dritz.setLevel(200);
 		
+		Heroes heroesList = new Heroes();
+		heroesList.add(redSonja);
+		heroesList.add(dritz);
+		
 		try{	
-			JAXBContext jaxbContext = JAXBContext.newInstance(Hero.class);
+			JAXBContext jaxbContext = JAXBContext.newInstance(Heroes.class);
 			Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
 			
 			jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-			jaxbMarshaller.marshal(redSonja, new File("C:\\Users\\ZALLA\\Documents\\java\\Heroes.xml"));
-			jaxbMarshaller.marshal(redSonja, System.out);
+			jaxbMarshaller.marshal(heroesList, new File("C:\\Users\\ZALLA\\Documents\\java\\Heroes.xml"));
+			jaxbMarshaller.marshal(heroesList, System.out);
 			
 		}catch (JAXBException e) {
 			e.printStackTrace();

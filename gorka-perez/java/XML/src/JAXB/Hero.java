@@ -5,49 +5,47 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
-@XmlType(propOrder = {"heroName", "race", "heroClass", "Level"})
+@XmlType(propOrder = {"name", "race", "heroClass", "level"})
 
 @XmlRootElement
 public class Hero {
-	String heroName;
+	String name;
 	Race race;
 	HeroClass heroClass;
-	int Level;
+	int level;
 	int id;
 	
-	
 	public String getName() {
-		return heroName;
+		return this.name;
 	}
 	@XmlElement
 	public void setName(String name) {
-		heroName = name;
+		this.name = name;
 	}
 	public Race getRace() {
-		return race;
+		return this.race;
 	}
 	@XmlElement
 	public void setRace(Race race) {
-		this.race = race;
+		this.race = race;	
 	}
 	public HeroClass getHeroClass() {
-		return heroClass;
+		return this.heroClass;
 	}
 	@XmlElement
 	public void setHeroClass(HeroClass heroClass) {
 		this.heroClass = heroClass;
 	}
 	public int getLevel() {
-		return Level;
+		return this.level;
 	}
 	@XmlElement
 	public void setLevel(int level) {
-		Level = level;
+		this.level = level;
 	}
 	public int getId() {
-		return id;
+		return this.id;
 	}
-
 	@XmlAttribute
 	public void setId(int id) {
 		this.id = id;
