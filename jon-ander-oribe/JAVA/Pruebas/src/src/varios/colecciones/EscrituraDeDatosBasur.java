@@ -21,15 +21,15 @@ public class EscrituraDeDatosBasur {
 		BufferedReader lector1 = null;
 		FileReader lectorArchivo1 = null;
 
-		Persona persona1 = new Persona(1, "Jose", "Martinez", new Dni("2233445566", 'A'));
+		Persona persona1 = new Persona("1", "Jose", "Martinez", new Dni("2233445566", 'A'));
 
-		Persona persona2 = new Persona(2, "Marta", "Bilbao", new Dni("2233445577", 'B'));
+		Persona persona2 = new Persona("2", "Marta", "Bilbao", new Dni("2233445577", 'B'));
 
-		Persona persona3 = new Persona(3, "Oscar", "Igartua", new Dni("2233445588", 'C'));
+		Persona persona3 = new Persona("3", "Oscar", "Igartua", new Dni("2233445588", 'C'));
 
-		Persona persona4 = new Persona(3, "Oscar", "Igartua", new Dni("2233445588", 'C'));
+		Persona persona4 = new Persona("3", "Oscar", "Igartua", new Dni("2233445588", 'C'));
 
-		Persona personaTest;
+		Persona personaTest=null;
 
 		try {
 			if (fichero.exists()) {
@@ -52,8 +52,8 @@ public class EscrituraDeDatosBasur {
 			while ((lectura = lector.readLine()) != null) {
 				System.out.println(lectura);
 			}
-			//lectorArchivo.close();
-			//lector.close();
+			lectorArchivo.close();
+			lector.close();
 		} catch (Exception e) {
 			System.out.println("Error en el lector");
 		}
@@ -68,19 +68,23 @@ public class EscrituraDeDatosBasur {
 			String[] subLectura;
 
 			String lectura1;
+			String[] subFilas;
 			while ((lectura1 = lector1.readLine()) != null) {
-				System.out.println("FUNCIONO");
+				
+				subFilas=lectura1.split(".");
 				subLectura = lectura1.split(",");
-				System.out.println(subLectura[0]+subLectura[1]+subLectura[2]);
-				/*personaTest = new Persona(Integer.parseInt(subLectura[0]), subLectura[1], subLectura[2],
-						new Dni(subLectura[3], subLectura[4].charAt(0)));
-				System.out.println(personaTest);*/
-				System.out.println(subLectura[6]+subLectura[7]+subLectura[8]);
+				System.out.println("FUNCIONO");
+				
+				personaTest = new Persona(subLectura[0], subLectura[1], subLectura[2]);
+				
+				System.out.println(personaTest.toStringClasificacion());
+				
 
 			}
 
 		} catch (Exception e) {
 			System.out.println("Error convertidor a objetos");
+			System.out.println(personaTest);
 		}
 	}
 
