@@ -16,7 +16,7 @@ public class AlmacenamientoFicheros {
 		FileWriter fichero = null;
 		PrintWriter pw = null;
 		try {
-			fichero = new FileWriter("C:\\Users\\PORT-Z6\\Desktop\\Proyectos-web\\archivoPersonas.txt");
+			fichero = new FileWriter("C:\desarrollo\web\web-zalla\jon-ander-oribe\archivoDePrueba.txt");
 			pw = new PrintWriter(fichero);
 
 			System.out.println("Escribiendo en el archivo.txt");
