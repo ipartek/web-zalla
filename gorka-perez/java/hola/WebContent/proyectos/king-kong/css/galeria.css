@@ -1,0 +1,12 @@
+#miniaturas li {
+    display: inline-block;
+}
+
+#miniaturas img {
+    border: white solid 5px;
+    margin: 10px;
+}
+
+#miniaturas img:hover {
+    border: #F8F404 solid 5px;
+}
