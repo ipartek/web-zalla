@@ -31,6 +31,11 @@ public class Dni implements Comparable<Dni> {
 	}
 
 	@Override
+	public String toString() {
+		return numero + "-" +letra;
+	}
+
+	@Override
 	public int compareTo(Dni otroDni) {
 		int diferencia = Integer.parseInt(this.numero) - Integer.parseInt(otroDni.numero);
 		if (diferencia == 0) {
@@ -38,7 +43,7 @@ public class Dni implements Comparable<Dni> {
 		}
 		return diferencia;
 	}
-	
+
 	public int compareToGorka(Dni otroDni) {
 		int diferencia = this.numero.compareTo(otroDni.numero);
 		if (diferencia == 0) {

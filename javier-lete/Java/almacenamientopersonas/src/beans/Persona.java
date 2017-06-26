@@ -21,6 +21,11 @@ public class Persona implements Comparable<Persona> {
 
 	}
 
+	@Override
+	public String toString() {
+		return nombre + "," + apellido + "," + dni;
+	}
+
 	public String getNombre() {
 		return nombre;
 	}
