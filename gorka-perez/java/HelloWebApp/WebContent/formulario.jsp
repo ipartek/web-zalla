@@ -10,7 +10,7 @@
 
 	<h1>Calcular edad jubilación</h1>
 
-	<form action="http://localhost:8080/HelloWebApp/"
+	<form action="/HelloWebApp/"
 		method="post">
 
 		<label for="name">Edad</label> 

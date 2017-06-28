@@ -27,21 +27,12 @@ public class Calcular extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		/*PrintWriter out = response.getWriter();
-		String edad = request.getParameter("edad"); 
-		out.append("<p>parametro edad= <b>"+edad+"</b></p>");
-		*/
-		
 		//recojer parámetros del formulario enviados por request
-		String edad = request.getParameter("edad"); 
+		String Operador1 = request.getParameter("Operador1"); 
+		String Operador2 = request.getParameter("Operador2");
 		
-		//Calcular edad jubilación
-		final int edadJuvilacion = 68;	
-		int anhosHastaJubilacion = edadJuvilacion - Integer.parseInt(edad);
-		
-		
-		//enviar valor edad al JSP  para que lo pinte
-		request.setAttribute("resultado", String.valueOf(anhosHastaJubilacion));
+		//enviar valor 
+		request.setAttribute("resultado", String.valueOf(Integer.parseInt(Operador1) + Integer.parseInt(Operador2)));
 
 		//Ir a JSP
 		request.getRequestDispatcher("calculadora.jsp").forward(request, response);

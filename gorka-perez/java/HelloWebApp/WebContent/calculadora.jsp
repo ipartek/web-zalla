@@ -13,18 +13,23 @@
 	<input type="number" required value="0" name="Operador1">
 	<label for="name">Operador2</label>
 	<input type="number" required value="0" name="Operador2">
-	
-	
+
+
+
 	<%
 		//código java que se puede juntar con html, porque se compila en el servidor
 
-		//Recibir atributo enviado desde el HomeController
+		//Recibir atributo enviado desde Calcular
 		String resultado = (String) request.getAttribute("resultado");
 		if (resultado != null) {
 	%>
-	<p>La suma es <%=resultado%></p>
+	<label for="name">Resultado</label>
+	<input type="text" value=<%=resultado%> name="Resultado">
+	
 	<%
 		}
 	%>
+
+
 </body>
 </html>

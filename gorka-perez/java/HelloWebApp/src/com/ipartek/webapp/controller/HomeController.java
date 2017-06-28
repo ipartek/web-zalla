@@ -78,7 +78,8 @@ public class HomeController extends HttpServlet {
 		out.append("<p>Navegador <b>"+userAgent+"</b></p>");
 		
 		out.append("<h2>Mismo ejercicio por post</h2>");
-		out.append("<a href='formulario.jsp'>Ir a formulario</a>");
+		out.append("<p><a href='formulario.jsp'>Ir a formulario</a></p>");
+		out.append("<p><a href='calculadora.jsp'>Ir a Calculadora</a></p>");
 		
 		out.flush();
 	}
