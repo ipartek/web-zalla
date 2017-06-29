@@ -16,10 +16,6 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class HomeController
  */
-@WebServlet(
-		description = "Servlet de inicio",
-		urlPatterns = { "/" }
-		)
 
 public class HomeController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
