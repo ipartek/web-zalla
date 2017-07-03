@@ -88,7 +88,7 @@ public class SrvCicloVida extends HttpServlet {
 				request.setAttribute("alMenu",resultado);
 			}
 			
-			if (validacion==true) {
+			if (validacion==true) { //Este IF es unicamente para pruebas.Eliminar al terminar
 				we="WEEEEEEE";
 				request.setAttribute("wee",we);
 			}
@@ -98,7 +98,7 @@ public class SrvCicloVida extends HttpServlet {
 			
 			
 
-		} else {
+		} else { //Entramos aqui cuando el USER o el PASS son incorrectos
 			usuario = "Zoquete";
 			contrasenia = "0000";
 			validacion = false;
