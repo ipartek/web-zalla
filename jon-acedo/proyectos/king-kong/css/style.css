@@ -62,10 +62,11 @@ h1 {
     font-weight: normal;
 }
 
-h1 a {
+h1 a:hover {
     background: url("../img/estrella.png") no-repeat;
     background-position: 0 10px;
     padding-left: 40px;
+    color: #B5C8FF;
 }
 
 p {
