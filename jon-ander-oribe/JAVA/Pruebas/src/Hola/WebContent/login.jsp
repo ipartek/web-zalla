@@ -20,6 +20,9 @@
 		String resultadoContrasenia = (String) request
 				.getAttribute("resultadoContrasenia");
 		
+		String sesionNombre= (String) session.getAttribute("nombre");
+		String sesionPassword=(String) session.getAttribute("password");
+		
 	
 		String alMenu=(String) request.getAttribute("alMenu");
 		String wee= (String) request.getAttribute("wee");
@@ -33,6 +36,8 @@
 		Datos:
 		<%=resultadoNombre%>
 		<%=resultadoContrasenia%>
+		<%=sesionNombre %>
+		<%=sesionPassword %>
 
 	</p>
 	<p>Aqui va el link al menu</p>

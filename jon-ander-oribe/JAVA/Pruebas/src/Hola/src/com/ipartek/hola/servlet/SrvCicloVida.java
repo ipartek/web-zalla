@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.servlet.annotation.WebServlet;
 
 /**
@@ -37,16 +38,7 @@ public class SrvCicloVida extends HttpServlet {
 		} else if (request.getMethod().equals("POST")) {
 			doPost(request, response);
 		}
-		// PrintWriter out = response.getWriter();
-		/* TODO output your page here. You may use following sample code. */
-		/*
-		 * out.println("<!DOCTYPE html>"); out.println("<html>");
-		 * out.println("<head>"); out.println("<title>Servlet Home</title>");
-		 * out.println("</head>"); out.println("<body>");
-		 * out.println("<h1>Servlet Home at " + request.getContextPath() +
-		 * "</h1>"); out.println(request.getClass().getName());
-		 * System.out.println("</body>"); System.out.println("</html>");
-		 */
+
 	}
 
 	@Override
@@ -62,14 +54,20 @@ public class SrvCicloVida extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		// super.doPost(request, response);
+		
+		HttpSession sesion=request.getSession(true);
 
 		PrintWriter out = response.getWriter();
 		String usuario = request.getParameter("usuario");
 		String contrasenia = request.getParameter("contrasenia");
+		
+		//Introducimos los valores en la sesion
+		
+		sesion.setAttribute("nombre", usuario);
+		sesion.setAttribute("password",contrasenia);
 		Boolean validacion = false;
 		Boolean validacionCorrecta=true;
-		// out.append("<p>El nombre es "+usuario+"</p>");
-		// out.append("<p>La contraseña es "+contrasenia+"</p>");
+		
 		String usuarioCorrecto = "Paco";
 		String contraseniaCorrecta = "1234";
 
