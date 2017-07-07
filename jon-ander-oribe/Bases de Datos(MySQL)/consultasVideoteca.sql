@@ -1,4 +1,4 @@
 USE videoteca;
 
-SELECT * FROM actor,pelicula;
+SELECT * FROM pelicula;
 
