@@ -1,0 +1,211 @@
+package vistas;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.LineBorder;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+
+import java.awt.Color;
+import javax.swing.SwingConstants;
+import java.awt.Font;
+import java.awt.Label;
+
+import javax.swing.JRadioButton;
+import javax.swing.AbstractButton;
+import javax.swing.ButtonGroup;
+import javax.swing.ButtonModel;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class Menu extends JFrame implements ChangeListener {
+
+	private JPanel contentPane;
+	private JTextField textField;
+	private JTextField textField_1;
+	private final ButtonGroup buttonGroup = new ButtonGroup();
+	private final ButtonGroup buttonGroup_1 = new ButtonGroup();
+	private static JLabel gifJug = new JLabel("");
+	private JRadioButton rdBttnGoblins = new JRadioButton("Poderosos Goblins");
+	private JRadioButton rdBttnOrcos = new JRadioButton("Orcos");
+	private JRadioButton rdBttnHumanos = new JRadioButton("Humanos");
+	private static JLabel gifMaq;
+	private JRadioButton rdBttnGoblinsMaq;
+	private JRadioButton rdBttnOrcosMaq;
+	private JRadioButton rdBttnHumanosMaq;
+	static Menu frame = new Menu();
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Menu() {
+
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 521, 411);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+
+		// BOTON SALIR
+		JButton btnSalir = new JButton("Salir");
+		btnSalir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
+		btnSalir.setBounds(406, 338, 89, 23);
+		contentPane.add(btnSalir);
+
+		JButton btnComenzar = new JButton("Comenzar");
+		btnComenzar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+					JRadioButton rdSelec = (JRadioButton) buttonGroup.getSelection();
+				    
+				
+				
+			}
+		};
+		btnComenzar.setBounds(406, 304, 89, 23);
+		contentPane.add(btnComenzar);
+
+		JPanel panel = new JPanel();
+		panel.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		panel.setBounds(10, 50, 250, 125);
+		contentPane.add(panel);
+		panel.setLayout(null);
+
+		JLabel lblTamaoDelEjercito = new JLabel("Tama\u00F1o del ejercito");
+		lblTamaoDelEjercito.setBounds(10, 11, 134, 23);
+		panel.add(lblTamaoDelEjercito);
+
+		textField = new JTextField();
+		textField.setBounds(154, 12, 86, 20);
+		panel.add(textField);
+		textField.setColumns(10);
+
+		buttonGroup_1.add(rdBttnHumanos);
+		rdBttnHumanos.setBounds(10, 41, 109, 23);
+		panel.add(rdBttnHumanos);
+
+		buttonGroup_1.add(rdBttnOrcos);
+		rdBttnOrcos.setBounds(10, 67, 109, 23);
+		panel.add(rdBttnOrcos);
+
+		buttonGroup_1.add(rdBttnGoblins);
+		rdBttnGoblins.setBounds(10, 93, 184, 23);
+		panel.add(rdBttnGoblins);
+
+		JLabel lblNewLabel = new JLabel("Ejercito del JUGADOR");
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(36, 11, 204, 28);
+		contentPane.add(lblNewLabel);
+
+		JPanel panel_1 = new JPanel();
+		panel_1.setLayout(null);
+		panel_1.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		panel_1.setBounds(10, 236, 250, 125);
+		contentPane.add(panel_1);
+
+		JLabel label = new JLabel("Tama\u00F1o del ejercito");
+		label.setBounds(10, 11, 134, 23);
+		panel_1.add(label);
+
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(154, 12, 86, 20);
+		panel_1.add(textField_1);
+
+		rdBttnHumanosMaq = new JRadioButton("Humanos");
+		buttonGroup.add(rdBttnHumanosMaq);
+		rdBttnHumanosMaq.setBounds(10, 41, 109, 23);
+		panel_1.add(rdBttnHumanosMaq);
+
+		rdBttnOrcosMaq = new JRadioButton("Orcos");
+		buttonGroup.add(rdBttnOrcosMaq);
+		rdBttnOrcosMaq.setBounds(10, 67, 109, 23);
+		panel_1.add(rdBttnOrcosMaq);
+
+		rdBttnGoblinsMaq = new JRadioButton("Poderosos Goblins");
+		buttonGroup.add(rdBttnGoblinsMaq);
+		rdBttnGoblinsMaq.setBounds(10, 93, 184, 23);
+		panel_1.add(rdBttnGoblinsMaq);
+
+		JLabel lblEjercitoDelMquina = new JLabel("Ejercito del M\u00C1QUINA");
+		lblEjercitoDelMquina.setHorizontalAlignment(SwingConstants.CENTER);
+		lblEjercitoDelMquina.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lblEjercitoDelMquina.setBounds(36, 197, 204, 28);
+		contentPane.add(lblEjercitoDelMquina);
+
+		gifJug.setBounds(270, 50, 120, 125);
+		contentPane.add(gifJug);
+
+		gifMaq = new JLabel("");
+		gifMaq.setBounds(270, 236, 120, 125);
+		contentPane.add(gifMaq);
+
+		rdBttnOrcos.addChangeListener(this);
+		rdBttnHumanos.addChangeListener(this);
+		rdBttnGoblins.addChangeListener(this);
+		rdBttnOrcosMaq.addChangeListener(this);
+		rdBttnHumanosMaq.addChangeListener(this);
+		rdBttnGoblinsMaq.addChangeListener(this);
+
+	}
+
+	@Override
+	public void stateChanged(ChangeEvent e) {
+		// TODO Auto-generated method stub
+
+		// Cambio GIF jugador
+		if (rdBttnOrcos.isSelected())
+			gifJug.setIcon(new javax.swing.ImageIcon(
+					"C:/desarrollo/web-zalla/inigo-martinez/JAVA/Prueba 2/src/img/orcos.gif"));
+		else if (rdBttnHumanos.isSelected())
+			gifJug.setIcon(new javax.swing.ImageIcon(
+					"C:/desarrollo/web-zalla/inigo-martinez/JAVA/Prueba 2/src/img/humans.gif"));
+		else if (rdBttnGoblins.isSelected())
+			gifJug.setIcon(new javax.swing.ImageIcon(
+					"C:/desarrollo/web-zalla/inigo-martinez/JAVA/Prueba 2/src/img/goblins.gif"));
+
+		// Cambio GIF Máquina
+		if (rdBttnOrcosMaq.isSelected())
+			gifMaq.setIcon(new javax.swing.ImageIcon(
+					"C:/desarrollo/web-zalla/inigo-martinez/JAVA/Prueba 2/src/img/orcos.gif"));
+		else if (rdBttnHumanosMaq.isSelected())
+			gifMaq.setIcon(new javax.swing.ImageIcon(
+					"C:/desarrollo/web-zalla/inigo-martinez/JAVA/Prueba 2/src/img/humans.gif"));
+		else if (rdBttnGoblinsMaq.isSelected())
+			gifMaq.setIcon(new javax.swing.ImageIcon(
+					"C:/desarrollo/web-zalla/inigo-martinez/JAVA/Prueba 2/src/img/goblins.gif"));
+
+	}
+}
