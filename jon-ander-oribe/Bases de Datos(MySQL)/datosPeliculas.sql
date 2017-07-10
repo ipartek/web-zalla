@@ -13,17 +13,18 @@ id_director INT,
 id_actor INT,
 id_genero INT,
 id_soporte INT,
+estreno YEAR,
 PRIMARY KEY (id_Pelicula),
 CONSTRAINT fk_actor FOREIGN KEY (id_actor) REFERENCES actor(id_Actor)
 )ENGINE=InnoDB;
 
-INSERT INTO pelicula VALUES (0,"Star-Wars",1,1,1,2),
-(0,"Indiana Jones",2,1,2,1),
-(0,"Blade Runner",3,1,1,1),
-(0,"Alien",3,2,2,2),
-(0,"El padrino",4,4,3,2),
-(0,"El hobbit",5,3,4,2),
-(0,"Batman",6,5,4,1);
+INSERT INTO pelicula VALUES (0,"Star-Wars",1,1,1,2,"1987"),
+(0,"Indiana Jones",2,1,2,1,"1992"),
+(0,"Blade Runner",3,1,1,1,"1975"),
+(0,"Alien",3,2,2,2,"1987"),
+(0,"El padrino",4,4,3,2,"1983"),
+(0,"El hobbit",5,3,4,2,"2012"),
+(0,"Batman",6,5,4,1,"1990");
 
 DROP TABLE IF EXISTS actor;
 CREATE TABLE IF NOT EXISTS actor(
@@ -84,10 +85,26 @@ CREATE TABLE IF NOT EXISTS actores_por_pelicula(
 id_PeliculaInter INT,
 id_ActorInter INT,
 PRIMARY KEY(id_PeliculaInter,id_ActorInter),
+INDEX actores_por_pelicula_fk1(id_PeliculaInter),
+INDEX actores_por_pelicula_fk2(id_ActorInter),
 CONSTRAINT fk_PeliculaInter FOREIGN KEY (id_PeliculaInter) REFERENCES Pelicula(id_Pelicula),
 CONSTRAINT fk_ActorInter FOREIGN KEY (id_ActorInter) REFERENCES actor(id_Actor)
 )ENGINE=InnoDB;
 
+INSERT INTO actores_por_pelicula VALUES (1,1),(2,1),(3,1),(4,4),(5,3),(6,5);
+
+DROP TABLE IF EXISTS directores_por_pelicula;
+CREATE TABLE IF NOT EXISTS directores_por_pelicula(
+id_PeliculaInter INT,
+id_DirectorInter INT,
+PRIMARY KEY(id_PeliculaInter,id_DirectorInter),
+INDEX directores_por_pelicula_fk1(id_PeliculaInter),
+INDEX directores_por_pelicula_fk2(id_DirectorInter),
+CONSTRAINT fk_PeliculaDirectInter FOREIGN KEY (id_PeliculaInter) REFERENCES Pelicula(id_Pelicula),
+CONSTRAINT fk_DirectorInter FOREIGN KEY (id_DirectorInter) REFERENCES director(id_Director)
+)ENGINE=InnoDB;
+
+INSERT INTO directores_por_pelicula VALUES (1,1),(2,1),(3,3),(4,3),(5,4),(6,5),(7,6);
 
 
  SET foreign_key_checks=1;
