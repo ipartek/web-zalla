@@ -31,7 +31,7 @@ public class BdOperaciones extends BdBase {
 	public boolean validarUsuario(String user, String password) {
 		boolean correcto = true;
 		try {
-			String sentenciaSql = "select usuario,password from usuarios where" + " usuario='" + user
+			String sentenciaSql = "select user,password from usuarios where" + " user='" + user
 					+ "' and password='" + password + "'";
 			System.out.println(sentenciaSql);
 			Statement stmt = conexion.createStatement();
@@ -50,7 +50,7 @@ public class BdOperaciones extends BdBase {
 	public List<Cliente> getClientes() {
 		List<Cliente> clientes = new ArrayList<Cliente>();
 		try {
-			String sentenciaSql = "select dni,nombre,apellido,edad from CLIENTE";
+			String sentenciaSql = "select dni,nombre,apellido,edad from clientes";
 			System.out.println(sentenciaSql);
 			Statement stmt = conexion.createStatement();
 			ResultSet rs = stmt.executeQuery(sentenciaSql);
@@ -77,7 +77,7 @@ public class BdOperaciones extends BdBase {
 	public Cliente getCliente(String dni) {
 		Cliente cliente = null;
 		try {
-			String sentenciaSql = "select dni,nombre,apellido,edad,direccion,codPostal,localidad,telefono from CLIENTE "
+			String sentenciaSql = "select dni,nombre,apellido,edad,direccion,codPostal,localidad,telefono from clientes "
 					+ "where dni='" + dni + "'";
 			System.out.println(sentenciaSql);
 			Statement stmt = conexion.createStatement();
@@ -103,11 +103,39 @@ public class BdOperaciones extends BdBase {
 		}
 		return cliente;
 	}
+	
+	public List<Pedido> getPedidos() {
+		
+		List<Pedido> pedidos = new ArrayList<Pedido>();		
+		
+		try {
+			String sentenciaSql="SELECT * FROM pedido";
+			System.out.println(sentenciaSql);
+			Statement stmt=conexion.createStatement();
+			ResultSet rs=stmt.executeQuery(sentenciaSql);
+			boolean hayMas=rs.next();
+			Pedido pedido=null;
+			while(hayMas) {
+				pedido=new Pedido();
+				pedido.setDni(rs.getString(1));
+				pedido.setNumPedido(rs.getInt(2));
+				pedido.setDetallePedido(rs.getString(3));
+				pedidos.add(pedido);
+				hayMas=rs.next();
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("Consulta de pedidos no efectuada correctamente");
+		}
+				
+		return pedidos;
+		
+	}
 
 	public boolean eliminarCliente(String dni) {
 		boolean correcto = true;
 		try {
-			String sentenciaSql = "delete from CLIENTE where dni='" + dni + "'";
+			String sentenciaSql = "delete from clientes where dni='" + dni + "'";
 			System.out.println(sentenciaSql);
 			Statement stmt = conexion.createStatement();
 			stmt.execute(sentenciaSql);
@@ -123,7 +151,7 @@ public class BdOperaciones extends BdBase {
 	public boolean insertarCliente(Cliente cliente) {
 		boolean correcto = true;
 		try {
-			String sentenciaSql = "insert into CLIENTE(dni,nombre,apellido,edad,direccion,codPostal,localidad,telefono) values ('"
+			String sentenciaSql = "insert into clientes(dni,nombre,apellido,edad,direccion,codPostal,localidad,telefono) values ('"
 					+ cliente.getDni() + "','" + cliente.getNombre() + "','" + cliente.getApellido() + "',"
 					+ cliente.getEdad() + ",'" + cliente.getDireccion() + "'," + cliente.getCodPostal() + ",'"
 					+ cliente.getLocalidad() + "'," + cliente.getTelefono() + ")";
@@ -142,7 +170,7 @@ public class BdOperaciones extends BdBase {
 	public boolean modificarCliente(Cliente cliente) {
 		boolean correcto = true;
 		try {
-			String sentenciaSql = "update CLIENTE set " + "nombre='" + cliente.getNombre() + "', " + "apellido='"
+			String sentenciaSql = "update clientes set " + "nombre='" + cliente.getNombre() + "', " + "apellido='"
 					+ cliente.getApellido() + "', " + "edad=" + cliente.getEdad() + ", " + "direccion='"
 					+ cliente.getDireccion() + "', " + "codPostal=" + cliente.getCodPostal() + ", " + "localidad='"
 					+ cliente.getLocalidad() + "', " + "telefono=" + cliente.getTelefono() + " where dni = '"
