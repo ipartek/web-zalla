@@ -16,20 +16,20 @@
 	function ejecutarOpcion(opcion) {
 		if (opcion == 'alta') {
 			alert('alta');
-			document.form1.modo_entrada.value = 'modo_alta';
-			document.form1.action = 'SrvProcesarCliente';
-			document.form1.submit();
+			document.formPedidos1.modo_entrada.value = 'modo_alta';
+			document.formPedidos1.action = 'SrvProcesarCliente';
+			document.formPedidos1.submit();
 		} else {
 			if (opcion == 'modificacion') {
 				alert('modificacion');
-				document.form1.modo_entrada.value = 'modo_modificacion';
-				document.form1.action = 'SrvProcesarCliente';
-				document.form1.submit();
+				document.formPedidos1.modo_entrada.value = 'modo_modificacion';
+				document.formPedidos1.action = 'SrvProcesarCliente';
+				document.formPedidos1.submit();
 			} else {
 				alert('baja');
-				document.form1.modo_entrada.value = 'modo_baja';
-				document.form1.action = 'SrvEliminarCliente';
-				document.form1.submit();
+				document.formPedidos1.modo_entrada.value = 'modo_baja';
+				document.formPedidos1.action = 'SrvEliminarPedido';
+				document.formPedidos1.submit();
 			}
 		}
 	}
@@ -39,7 +39,7 @@
 <body>
 	USUARIO:
 	<b><%=user%></b>
-	<form name=form1 method=post>
+	<form name=formPedidos1 method=post>
 		<table>
 			<tr>
 				<th>Opcion</th>

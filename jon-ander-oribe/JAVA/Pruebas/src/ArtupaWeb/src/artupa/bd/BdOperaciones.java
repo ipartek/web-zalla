@@ -109,7 +109,7 @@ public class BdOperaciones extends BdBase {
 		List<Pedido> pedidos = new ArrayList<Pedido>();		
 		
 		try {
-			String sentenciaSql="SELECT * FROM pedido";
+			String sentenciaSql="SELECT * FROM pedidos";
 			System.out.println(sentenciaSql);
 			Statement stmt=conexion.createStatement();
 			ResultSet rs=stmt.executeQuery(sentenciaSql);
@@ -147,6 +147,22 @@ public class BdOperaciones extends BdBase {
 		}
 		return correcto;
 	}
+	
+	public boolean eliminarPedido(String dni) {
+		boolean correcto=true;
+		try {
+			String sentenciasSql = "DELETE FROM pedidos WHERE dni='"+dni+"'";
+			System.out.println(sentenciasSql);
+			Statement stmt= conexion.createStatement();
+			stmt.executeQuery(sentenciasSql);
+			stmt.close();
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("Borrado de pedido no efectuado correctamente");
+			correcto=false;
+		}
+		return correcto;
+	}
 
 	public boolean insertarCliente(Cliente cliente) {
 		boolean correcto = true;
@@ -162,6 +178,23 @@ public class BdOperaciones extends BdBase {
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("Inserción de cliente no efectuada correctamente");
+			correcto = false;
+		}
+		return correcto;
+	}
+	
+	public boolean insertarPedido(Pedido pedido) {
+		boolean correcto = true;
+		try {
+			String sentenciaSql = "insert into pedidos values ('"
+					+ pedido.getDni() + "','" + pedido.getNumPedido() + "','" + pedido.getDetallePedido()+")";
+			System.out.println(sentenciaSql);
+			Statement stmt = conexion.createStatement();
+			stmt.execute(sentenciaSql);
+			stmt.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Inserción de pedido no efectuada correctamente");
 			correcto = false;
 		}
 		return correcto;
