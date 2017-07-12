@@ -158,4 +158,109 @@ public class BdOperaciones extends BdBase {
 		}
 		return correcto;
 	}
+	public List<Pedido> getPedidos() {
+		List<Pedido> pedidos = new ArrayList<Pedido>();
+		try {
+			String sentenciaSql = "select dni,numpedido,detallepedido from pedidos";
+			System.out.println(sentenciaSql);
+			Statement stmt = conexion.createStatement();
+			ResultSet rs = stmt.executeQuery(sentenciaSql);
+			boolean hayMas = rs.next();
+			Pedido pedido = null;
+			while (hayMas) {
+				pedido = new Pedido();
+				pedido.setDni(rs.getString(1));
+				pedido.setNumPedido(rs.getInt(2));
+				pedido.setDetallePedido(rs.getString(3));
+				pedidos.add(pedido);
+				hayMas = rs.next();
+			}
+			rs.close();
+			stmt.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Consulta de pedidos no efectuada correctamente");
+		}
+		return pedidos;
+	}
+
+	public Pedido getPedido(String numPedido) {
+		Pedido pedido = null;
+		try {
+			String sentenciaSql = "select dni,numpedido,detallepedido from pedidos "
+					+ "where numpedido='" + numPedido + "'";
+			System.out.println(sentenciaSql);
+			Statement stmt = conexion.createStatement();
+			ResultSet rs = stmt.executeQuery(sentenciaSql);
+			boolean hayMas = rs.next();
+			if (hayMas) {
+				pedido = new Pedido();
+				pedido.setDni(rs.getString(1));
+				pedido.setNumPedido(rs.getInt(2));
+				pedido.setDetallePedido(rs.getString(3));
+				hayMas = rs.next();
+			}
+			rs.close();
+			stmt.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Consulta de pedidos no efectuada correctamente");
+		}
+		return pedido;
+	}
+
+	public boolean eliminarPedido(String numPedido) {
+		boolean correcto = true;
+		try {
+			String sentenciaSql = "delete from pedidos where numpedido='" + numPedido + "'";
+			System.out.println(sentenciaSql);
+			Statement stmt = conexion.createStatement();
+			stmt.execute(sentenciaSql);
+			stmt.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Borrado de pedido no efectuado correctamente");
+			correcto = false;
+		}
+		return correcto;
+	}
+
+	public boolean insertarPedido(Pedido pedido) {
+		boolean correcto = true;
+		try {
+			String sentenciaSql = "insert into clientes(dni,nombre,apellido,edad,direccion,codPostal,localidad,telefono) values ('"
+					+ cliente.getDni() + "','" + cliente.getNombre() + "','" + cliente.getApellido() + "',"
+					+ cliente.getEdad() + ",'" + cliente.getDireccion() + "'," + cliente.getCodPostal() + ",'"
+					+ cliente.getLocalidad() + "'," + cliente.getTelefono() + ")";
+			System.out.println(sentenciaSql);
+			Statement stmt = conexion.createStatement();
+			stmt.execute(sentenciaSql);
+			stmt.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Inserción de cliente no efectuada correctamente");
+			correcto = false;
+		}
+		return correcto;
+	}
+
+	public boolean modificarCliente(Cliente cliente) {
+		boolean correcto = true;
+		try {
+			String sentenciaSql = "update clientes set " + "nombre='" + cliente.getNombre() + "', " + "apellido='"
+					+ cliente.getApellido() + "', " + "edad=" + cliente.getEdad() + ", " + "direccion='"
+					+ cliente.getDireccion() + "', " + "codPostal=" + cliente.getCodPostal() + ", " + "localidad='"
+					+ cliente.getLocalidad() + "', " + "telefono=" + cliente.getTelefono() + " where dni = '"
+					+ cliente.getDni() + "'";
+			System.out.println(sentenciaSql);
+			Statement stmt = conexion.createStatement();
+			stmt.execute(sentenciaSql);
+			stmt.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Inserción de cliente no efectuada correctamente");
+			correcto = false;
+		}
+		return correcto;
+	}
 }

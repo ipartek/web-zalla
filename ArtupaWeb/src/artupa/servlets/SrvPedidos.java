@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import artupa.bd.BdOperaciones;
-import artupa.beans.Cliente;
+import artupa.beans.Pedido;
 
 /**
  * Servlet implementation class SrvPedidos
@@ -25,7 +25,7 @@ public class SrvPedidos extends HttpServlet {
 		if (sesion != null) {
 			BdOperaciones bdOperaciones = new BdOperaciones();
 			bdOperaciones.abrirConexion();
-			List<Cliente> clientes = bdOperaciones.getPedidos();
+			List<Pedido> pedidos = bdOperaciones.getPedidos();
 			bdOperaciones.cerrarConexion();
 			request.setAttribute("pedidos", pedidos);
 			ServletContext ct = getServletContext();
