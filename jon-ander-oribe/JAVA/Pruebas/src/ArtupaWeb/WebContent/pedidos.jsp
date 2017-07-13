@@ -17,13 +17,13 @@
 		if (opcion == 'alta') {
 			alert('alta');
 			document.formPedidos1.modo_entrada.value = 'modo_alta';
-			document.formPedidos1.action = 'SrvProcesarCliente';
+			document.formPedidos1.action = 'SrvProcesarPedido';
 			document.formPedidos1.submit();
 		} else {
 			if (opcion == 'modificacion') {
 				alert('modificacion');
 				document.formPedidos1.modo_entrada.value = 'modo_modificacion';
-				document.formPedidos1.action = 'SrvProcesarCliente';
+				document.formPedidos1.action = 'SrvProcesarPedido';
 				document.formPedidos1.submit();
 			} else {
 				alert('baja');

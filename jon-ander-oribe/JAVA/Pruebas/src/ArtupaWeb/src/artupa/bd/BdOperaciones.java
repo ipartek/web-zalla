@@ -104,6 +104,31 @@ public class BdOperaciones extends BdBase {
 		return cliente;
 	}
 	
+	public Pedido getPedido(String dni) {
+		Pedido pedido = null;
+		try {
+			String sentenciaSql = "select dni,numPedido,detallePedido from pedidos "
+					+ "where dni='" + dni + "'";
+			System.out.println(sentenciaSql);
+			Statement stmt = conexion.createStatement();
+			ResultSet rs = stmt.executeQuery(sentenciaSql);
+			boolean hayMas = rs.next();
+			if (hayMas) {
+				pedido = new Pedido();
+				pedido.setDni(rs.getString(1));
+				pedido.setNumPedido(Integer.parseInt(rs.getString(2)));
+				pedido.setDetallePedido(rs.getString(3));
+				hayMas = rs.next();
+			}
+			rs.close();
+			stmt.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Consulta de clientes no efectuada correctamente");
+		}
+		return pedido;
+	}
+	
 	public List<Pedido> getPedidos() {
 		
 		List<Pedido> pedidos = new ArrayList<Pedido>();		
@@ -154,7 +179,7 @@ public class BdOperaciones extends BdBase {
 			String sentenciasSql = "DELETE FROM pedidos WHERE dni='"+dni+"'";
 			System.out.println(sentenciasSql);
 			Statement stmt= conexion.createStatement();
-			stmt.executeQuery(sentenciasSql);
+			stmt.execute(sentenciasSql);
 			stmt.close();
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -216,6 +241,22 @@ public class BdOperaciones extends BdBase {
 			e.printStackTrace();
 			System.out.println("Inserción de cliente no efectuada correctamente");
 			correcto = false;
+		}
+		return correcto;
+	}
+	
+	public boolean modificarPedido(Pedido pedido) {
+		boolean correcto=true;
+		try {
+			String sentenciasSql="update pedidos set"+ "dni='"+pedido.getDni()+"',"+"numPedido='"+pedido.getNumPedido()+"',"+"detallePedido="+pedido.getDetallePedido()+"'";
+			System.out.println(sentenciasSql);
+			Statement stmt=conexion.createStatement();
+			stmt.execute(sentenciasSql);
+			stmt.close();		
+		}catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("Insercion de pedido no efectuada correctamente");
+			correcto=false;
 		}
 		return correcto;
 	}
