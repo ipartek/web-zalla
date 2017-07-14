@@ -50,8 +50,7 @@
 					cliente = clientes.get(i);
 			%>
 			<tr>
-				<td><input type="radio" name="dni"
-					value="<%=cliente.getDni()%>"></td>
+				<td><input type="radio" name="dni" value="<%=cliente.getDni()%>"></td>
 				<td><%=cliente.getDni()%></td>
 				<td><%=cliente.getNombre()%></td>
 				<td><%=cliente.getApellido()%></td>
@@ -61,12 +60,10 @@
 				}
 			%>
 		</table>
-		<input type=hidden name=modo_entrada> <input type=button
-			value=Nuevo onclick="JavaScript:ejecutarOpcion('alta')"> <input
-			type=button value=Modificar
-			onclick="JavaScript:ejecutarOpcion('modificacion')"> <input
-			type=button value=Eliminar
-			onclick="JavaScript:ejecutarOpcion('baja')">
+		<input type=hidden name=modo_entrada>
+	    <input type=button value=Nuevo onclick="JavaScript:ejecutarOpcion('alta')">
+	    <input type=button value=Modificar onclick="JavaScript:ejecutarOpcion('modificacion')">
+	    <input type=button value=Eliminar onclick="JavaScript:ejecutarOpcion('baja')">
 	</form>
 </body>
 </html>

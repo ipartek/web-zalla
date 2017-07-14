@@ -188,7 +188,7 @@ public class BdOperaciones extends BdBase {
 		Pedido pedido = null;
 		try {
 			String sentenciaSql = "select dni,numpedido,detallepedido from pedidos "
-					+ "where numpedido='" + numPedido + "'";
+					+ "where numpedido=" + numPedido;
 			System.out.println(sentenciaSql);
 			Statement stmt = conexion.createStatement();
 			ResultSet rs = stmt.executeQuery(sentenciaSql);
@@ -212,7 +212,7 @@ public class BdOperaciones extends BdBase {
 	public boolean eliminarPedido(String numPedido) {
 		boolean correcto = true;
 		try {
-			String sentenciaSql = "delete from pedidos where numpedido='" + numPedido + "'";
+			String sentenciaSql = "delete from pedidos where numpedido=" + numPedido;
 			System.out.println(sentenciaSql);
 			Statement stmt = conexion.createStatement();
 			stmt.execute(sentenciaSql);
@@ -228,10 +228,12 @@ public class BdOperaciones extends BdBase {
 	public boolean insertarPedido(Pedido pedido) {
 		boolean correcto = true;
 		try {
-			String sentenciaSql = "insert into clientes(dni,nombre,apellido,edad,direccion,codPostal,localidad,telefono) values ('"
-					+ cliente.getDni() + "','" + cliente.getNombre() + "','" + cliente.getApellido() + "',"
-					+ cliente.getEdad() + ",'" + cliente.getDireccion() + "'," + cliente.getCodPostal() + ",'"
-					+ cliente.getLocalidad() + "'," + cliente.getTelefono() + ")";
+			String sentenciaSql = "insert into pedidos(dni,numpedido,detallepedido) "
+					+ "values ('"
+					+ pedido.getDni() + "'," 
+					+ pedido.getNumPedido() + ",'" 
+					+ pedido.getDetallePedido() + "',"
+					+ ")";
 			System.out.println(sentenciaSql);
 			Statement stmt = conexion.createStatement();
 			stmt.execute(sentenciaSql);
@@ -244,14 +246,12 @@ public class BdOperaciones extends BdBase {
 		return correcto;
 	}
 
-	public boolean modificarCliente(Cliente cliente) {
+	public boolean modificarPedido(Pedido pedido) {
 		boolean correcto = true;
 		try {
-			String sentenciaSql = "update clientes set " + "nombre='" + cliente.getNombre() + "', " + "apellido='"
-					+ cliente.getApellido() + "', " + "edad=" + cliente.getEdad() + ", " + "direccion='"
-					+ cliente.getDireccion() + "', " + "codPostal=" + cliente.getCodPostal() + ", " + "localidad='"
-					+ cliente.getLocalidad() + "', " + "telefono=" + cliente.getTelefono() + " where dni = '"
-					+ cliente.getDni() + "'";
+			String sentenciaSql = "update pedidos set " 
+					+ "detallepedido ='" + pedido.getDetallePedido() + "' "  
+					+ " where dni = '" + pedido.getDni() + "'" + "and numpedido = " + pedido.getDetallePedido();
 			System.out.println(sentenciaSql);
 			Statement stmt = conexion.createStatement();
 			stmt.execute(sentenciaSql);
