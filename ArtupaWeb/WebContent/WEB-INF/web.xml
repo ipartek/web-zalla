@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
- <welcome-file-list>
+  <welcome-file-list>
     <welcome-file>login.html</welcome-file>
   </welcome-file-list>
   <servlet>
@@ -57,5 +57,35 @@
   <servlet-mapping>
     <servlet-name>SrvPedidos</servlet-name>
     <url-pattern>/SrvPedidos</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SrvProcesarPedido</display-name>
+    <servlet-name>SrvProcesarPedido</servlet-name>
+    <servlet-class>artupa.servlets.SrvProcesarPedido</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SrvProcesarPedido</servlet-name>
+    <url-pattern>/SrvProcesarPedido</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SrvActualizarPedido</display-name>
+    <servlet-name>SrvActualizarPedido</servlet-name>
+    <servlet-class>artupa.servlets.SrvActualizarPedido</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SrvActualizarPedido</servlet-name>
+    <url-pattern>/SrvActualizarPedido</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SrvEliminarPedido</display-name>
+    <servlet-name>SrvEliminarPedido</servlet-name>
+    <servlet-class>artupa.servlets.SrvEliminarPedido</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SrvEliminarPedido</servlet-name>
+    <url-pattern>/SrvEliminarPedido</url-pattern>
   </servlet-mapping>
 </web-app>

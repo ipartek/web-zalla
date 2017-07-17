@@ -49,8 +49,8 @@
 					pedido = pedidos.get(i);
 			%>
 			<tr>
-				<td><input type="radio" name="dni" value="<%=pedido.getDni()%>"></td>
 				<td><%=pedido.getDni()%></td>
+				<td><input type="radio" name="numPedido" value="<%=pedido.getNumPedido()%>"></td>
 				<td><%=pedido.getNumPedido()%></td>
 				<td><%=pedido.getDetallePedido()%></td>
 			</tr>
@@ -58,10 +58,12 @@
 				}
 			%>
 		</table>
-		<input type=hidden name=modo_entrada> 
-		<input type=button value=Nuevo onclick="JavaScript:ejecutarOpcion('alta')">
-	    <input type=button value=Modificar onclick="JavaScript:ejecutarOpcion('modificacion')"> 
-	    <input type=button value=Eliminar onclick="JavaScript:ejecutarOpcion('baja')">
+		<input type=hidden name=modo_entrada> <input type=button
+			value=Nuevo onclick="JavaScript:ejecutarOpcion('alta')"> <input
+			type=button value=Modificar
+			onclick="JavaScript:ejecutarOpcion('modificacion')"> <input
+			type=button value=Eliminar
+			onclick="JavaScript:ejecutarOpcion('baja')">
 	</form>
 </body>
 </html>

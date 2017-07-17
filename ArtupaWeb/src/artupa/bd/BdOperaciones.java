@@ -184,7 +184,7 @@ public class BdOperaciones extends BdBase {
 		return pedidos;
 	}
 
-	public Pedido getPedido(String numPedido) {
+	public Pedido getPedido(int numPedido) {
 		Pedido pedido = null;
 		try {
 			String sentenciaSql = "select dni,numpedido,detallepedido from pedidos "
@@ -209,7 +209,7 @@ public class BdOperaciones extends BdBase {
 		return pedido;
 	}
 
-	public boolean eliminarPedido(String numPedido) {
+	public boolean eliminarPedido(int numPedido) {
 		boolean correcto = true;
 		try {
 			String sentenciaSql = "delete from pedidos where numpedido=" + numPedido;
@@ -232,7 +232,7 @@ public class BdOperaciones extends BdBase {
 					+ "values ('"
 					+ pedido.getDni() + "'," 
 					+ pedido.getNumPedido() + ",'" 
-					+ pedido.getDetallePedido() + "',"
+					+ pedido.getDetallePedido() + "'"
 					+ ")";
 			System.out.println(sentenciaSql);
 			Statement stmt = conexion.createStatement();
@@ -251,7 +251,7 @@ public class BdOperaciones extends BdBase {
 		try {
 			String sentenciaSql = "update pedidos set " 
 					+ "detallepedido ='" + pedido.getDetallePedido() + "' "  
-					+ " where dni = '" + pedido.getDni() + "'" + "and numpedido = " + pedido.getDetallePedido();
+					+ " where numPedido = " + pedido.getNumPedido();
 			System.out.println(sentenciaSql);
 			Statement stmt = conexion.createStatement();
 			stmt.execute(sentenciaSql);
