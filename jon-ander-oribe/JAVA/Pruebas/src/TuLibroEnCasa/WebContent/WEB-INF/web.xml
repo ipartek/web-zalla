@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:web="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<welcome-file-list>
+		<welcome-file>login.jsp</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<servlet-name>SrvLogin</servlet-name>
+		<servlet-class>bdLibreria.servlets.SrvLogin</servlet-class>
+		<init-param>
+			<param-name>fichero_propiedades</param-name>
+			<param-value>C:\\Eclipse_JavaEE\\eclipse\\workspace\\TuLibroEnCasa\\WebContent\\WEB-INF\\bdlibreria.properties</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SrvLogin</servlet-name>
+		<url-pattern>/SrvLogin</url-pattern>
+	</servlet-mapping>
+
+</web-app>
