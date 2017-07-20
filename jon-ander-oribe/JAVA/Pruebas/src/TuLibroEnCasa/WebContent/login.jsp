@@ -7,7 +7,7 @@
 <title>Página de Login</title>
 </head>
 <body>
-	<h1>Zona de Login</h1>
+	<h1>Librería Virtual Clonica:Acceso</h1>
 
 	<%
 		String user = (String) session.getAttribute("user");
@@ -19,6 +19,8 @@
 		<label>Password</label><br> <input type=text name=password><br>
 		<input type=submit value=Enviar>
 	</form>
+	
+	<p>Si no estas registrado <a href="formularioRegistro.jsp">pincha aqui</a></p>
 <%=user %>
 <%=password %>
 </body>
