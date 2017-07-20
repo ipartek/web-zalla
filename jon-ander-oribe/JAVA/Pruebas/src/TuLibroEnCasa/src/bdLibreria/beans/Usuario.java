@@ -43,7 +43,9 @@ public class Usuario implements Serializable{
 		this.password=password;
 		this.confirmPassword=confirmPassword;
 		
-		this.password=password;
+	}
+	public Usuario() {
+		super();
 	}
 	public String getPrimerApellido() {
 		return primerApellido;

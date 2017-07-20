@@ -115,7 +115,7 @@ CREATE TABLE IF NOT EXISTS `libreria`.`usuario` (
   `segundoApellido` VARCHAR(45) NOT NULL,
   `dni`VARCHAR(9) NOT NULL,
   `direccion`VARCHAR(120) NOT NULL,
-  `fechaDeNacimiento` DATE NOT NULL,
+  `fechaDeNacimiento` VARCHAR(45) NOT NULL,
   `e-mail` VARCHAR(45) NOT NULL,
   `nombreUsuario`VARCHAR(45) NOT NULL,
   `password` VARCHAR(45) NOT NULL,
