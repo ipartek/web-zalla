@@ -14,7 +14,7 @@ import javax.servlet.ServletException;
 //import javax.servlet.jsp.*;
 import javax.servlet.http.*;
 import artupa.bd.BdOperaciones;
-import artupa.beans.Cliente;
+import artupa.beans.Usuario;
 
 /**
  * @author Administrador
@@ -37,7 +37,7 @@ public class SrvClientes extends HttpServlet
 		{			
 			BdOperaciones bdOperaciones = new BdOperaciones();
 			bdOperaciones.abrirConexion();
-			List<Cliente> clientes = bdOperaciones.getClientes();
+			List<Usuario> clientes = bdOperaciones.getClientes();
 			bdOperaciones.cerrarConexion();
 			request.setAttribute("clientes",clientes);
 			ServletContext ct = getServletContext();

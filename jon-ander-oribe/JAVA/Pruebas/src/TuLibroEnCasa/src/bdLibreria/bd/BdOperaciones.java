@@ -107,4 +107,56 @@ public class BdOperaciones extends BdBase {
 		}
 		return correcto;
 	}
+	
+	public boolean modificarUsuario(Usuario usuario) {
+		boolean correcto = true;
+		try {
+			String sentenciaSql = "update usuario set " + "nombre='" + usuario.getNombre() + "', " + "primerApellido='"
+					+ usuario.getPrimerApellido() + "', " + "segundoApellido=" + usuario.getSegundoApellido() + ", " + "dni='"
+					+ usuario.getDni() + "', " + "direccion=" + usuario.getDireccion() + ", " + "fechaDeNacimiento='"
+					+ usuario.getFechaDeNacimiento() + "', " + "e-mail=" + usuario.getMail() + "nombreUsuario="+usuario.getNombreUsuario()+"password="+usuario.getPassword()+"passwordConfirmado="+usuario.getConfirmPassword()+ " where dni = '"
+					+ usuario.getDni() + "'";
+			System.out.println(sentenciaSql);
+			Statement stmt = conexion.createStatement();
+			stmt.execute(sentenciaSql);
+			stmt.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Inserción de usuario no efectuada correctamente");
+			correcto = false;
+		}
+		return correcto;
+	}
+	
+	public Usuario getUsuario(String dni) {
+		Usuario usuario = null;
+		try {
+			String sentenciaSql = "select * from usuario "
+					+ "where dni='" + dni + "'";
+			System.out.println(sentenciaSql);
+			Statement stmt = conexion.createStatement();
+			ResultSet rs = stmt.executeQuery(sentenciaSql);
+			boolean hayMas = rs.next();
+			if (hayMas) {
+				usuario = new Usuario();
+				usuario.setNombre(rs.getString(2));
+				usuario.setPrimerApellido(rs.getString(3));
+				usuario.setSegundoApellido(rs.getString(4));
+				usuario.setDni(rs.getString(5));
+				usuario.setDireccion(rs.getString(6));
+				usuario.setFechaDeNacimiento(rs.getString(7));
+				usuario.setMail(rs.getString(8));
+				usuario.setNombreUsuario(rs.getString(9));
+				usuario.setPassword(rs.getString(10));
+				usuario.setConfirmPassword(rs.getString(11));
+				hayMas = rs.next();
+			}
+			rs.close();
+			stmt.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Consulta de clientes no efectuada correctamente");
+		}
+		return usuario;
+	}
 }

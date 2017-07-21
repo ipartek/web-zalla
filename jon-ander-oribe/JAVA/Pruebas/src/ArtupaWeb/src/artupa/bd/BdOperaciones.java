@@ -47,17 +47,17 @@ public class BdOperaciones extends BdBase {
 		return correcto;
 	}
 
-	public List<Cliente> getClientes() {
-		List<Cliente> clientes = new ArrayList<Cliente>();
+	public List<Usuario> getClientes() {
+		List<Usuario> clientes = new ArrayList<Usuario>();
 		try {
 			String sentenciaSql = "select dni,nombre,apellido,edad from clientes";
 			System.out.println(sentenciaSql);
 			Statement stmt = conexion.createStatement();
 			ResultSet rs = stmt.executeQuery(sentenciaSql);
 			boolean hayMas = rs.next();
-			Cliente cliente = null;
+			Usuario cliente = null;
 			while (hayMas) {
-				cliente = new Cliente();
+				cliente = new Usuario();
 				cliente.setDni(rs.getString(1));
 				cliente.setNombre(rs.getString(2));
 				cliente.setApellido(rs.getString(3));
@@ -74,8 +74,8 @@ public class BdOperaciones extends BdBase {
 		return clientes;
 	}
 
-	public Cliente getCliente(String dni) {
-		Cliente cliente = null;
+	public Usuario getCliente(String dni) {
+		Usuario cliente = null;
 		try {
 			String sentenciaSql = "select dni,nombre,apellido,edad,direccion,codPostal,localidad,telefono from clientes "
 					+ "where dni='" + dni + "'";
@@ -84,7 +84,7 @@ public class BdOperaciones extends BdBase {
 			ResultSet rs = stmt.executeQuery(sentenciaSql);
 			boolean hayMas = rs.next();
 			if (hayMas) {
-				cliente = new Cliente();
+				cliente = new Usuario();
 				cliente.setDni(rs.getString(1));
 				cliente.setNombre(rs.getString(2));
 				cliente.setApellido(rs.getString(3));
@@ -189,7 +189,7 @@ public class BdOperaciones extends BdBase {
 		return correcto;
 	}
 
-	public boolean insertarCliente(Cliente cliente) {
+	public boolean insertarCliente(Usuario cliente) {
 		boolean correcto = true;
 		try {
 			String sentenciaSql = "insert into clientes(dni,nombre,apellido,edad,direccion,codPostal,localidad,telefono) values ('"
@@ -225,7 +225,7 @@ public class BdOperaciones extends BdBase {
 		return correcto;
 	}
 
-	public boolean modificarCliente(Cliente cliente) {
+	public boolean modificarCliente(Usuario cliente) {
 		boolean correcto = true;
 		try {
 			String sentenciaSql = "update clientes set " + "nombre='" + cliente.getNombre() + "', " + "apellido='"

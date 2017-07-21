@@ -14,7 +14,7 @@ import java.io.Serializable;
  * TODO To change the template for this generated type comment go to
  * Window - Preferences - Java - Code Style - Code Templates
  */
-public class Cliente implements Serializable{
+public class Usuario implements Serializable{
 	/**
 	 * 
 	 */
@@ -123,12 +123,12 @@ public class Cliente implements Serializable{
 	private int codPostal;
 	private String localidad;
 	private int telefono;
-	public Cliente()
+	public Usuario()
 	{
 		super();
 		
 	}
-	public Cliente(String dni,String nombre,String apellido,int edad, String direccion, int codPostal, String localidad, int telefono)
+	public Usuario(String dni,String nombre,String apellido,int edad, String direccion, int codPostal, String localidad, int telefono)
 	{
 		super();
 		this.dni=dni;

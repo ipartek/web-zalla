@@ -13,13 +13,13 @@
 		if (opcion == 'alta') {
 			alert('alta');
 			document.form1.modo_entrada.value = 'modo_alta';
-			document.form1.action = 'SrvProcesarCliente';
+			document.form1.action = 'SrvProcesarUsuario';
 			document.form1.submit();
 		} else {
 			if (opcion == 'modificacion') {
 				alert('modificacion');
 				document.form1.modo_entrada.value = 'modo_modificacion';
-				document.form1.action = 'SrvProcesarCliente';
+				document.form1.action = 'SrvProcesarUsuario';
 				document.form1.submit();
 			} else {
 				alert('baja');

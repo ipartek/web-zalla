@@ -1,21 +1,21 @@
-
-package artupa.servlets;
+/*
+ * Created on 24-may-2006
+ *
+ * TODO To change the template for this generated file go to
+ * Window - Preferences - Java - Code Style - Code Templates
+ */
+package bdLibreria.servlets;
 
 import java.io.IOException;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-import artupa.bd.BdOperaciones;
-import artupa.beans.Usuario;
+import bdLibreria.bd.BdOperaciones;
+import bdLibreria.beans.Usuario;
 
-/**
- * @author Administrador
- *
- * TODO To change the template for this generated type comment go to
- * Window - Preferences - Java - Code Style - Code Templates
- */
-public class SrvProcesarCliente extends HttpServlet {
+
+public class SrvProcesarUsuario extends HttpServlet {
 	/**
 	 * 
 	 */
@@ -33,18 +33,18 @@ public class SrvProcesarCliente extends HttpServlet {
 				String dni = request.getParameter("dni");
 				BdOperaciones bdOperaciones = new BdOperaciones();
 				bdOperaciones.abrirConexion();
-				Usuario cliente = bdOperaciones.getCliente(dni);
+				Usuario usuario = bdOperaciones.getUsuario(dni);
 				bdOperaciones.cerrarConexion();
-				request.setAttribute("cliente",cliente);
+				request.setAttribute("usuario",usuario);
 			}
 			
 			ServletContext ct = getServletContext();
-			RequestDispatcher rd = ct.getRequestDispatcher("/cliente.jsp");
+			RequestDispatcher rd = ct.getRequestDispatcher("/usuarios.jsp");
 			rd.forward(request,response);
 		}
 		else
 		{
-			response.sendRedirect("login.html");
+			response.sendRedirect("login.jsp");
 		}
 	}
 

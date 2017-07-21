@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -8,14 +8,14 @@
 </head>
 <body>
 <!-- http://130.206.138.139:8080/TuLibroEnCasa/ -->
-<h1>Menu</h1>
+<%		String user = (String) session.getAttribute("user");
+ %>
+ <center>
+<h3>USUARIO:<%=user %></h3>
+<h1>Libreria Virtual:Menu</h1>
 
 	<form name=form3 action=SrvLogin method=post>
-		<label>Usuario</label><br> <input type=text name=user><br>
-		<label>Password</label><br> <input type=text name=password><br>
-		<input type=submit value=Enviar>
-	</form>
-
-
-</body>
-</html>
+		<input type="button" name="comprarLibro" value="Comprar Libros"><br>
+		<input type="button" name="foro" value="Foro"><br>
+		<input type="button" name="modificarDatos" value="Modificar"><br>
+		</center>

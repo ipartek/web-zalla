@@ -12,7 +12,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 
 import artupa.bd.BdOperaciones;
-import artupa.beans.Cliente;
+import artupa.beans.Usuario;
 
 /**
  * @author Administrador
@@ -42,7 +42,7 @@ public class SrvActualizarCliente extends HttpServlet {
 			int codPostal = Integer.parseInt(request.getParameter("codPostal"));
 			String localidad = request.getParameter("localidad");
 			int telefono = Integer.parseInt(request.getParameter("telefono"));
-			Cliente cliente = new Cliente(dni,nombre,apellido,edad,direccion,codPostal,localidad,telefono);
+			Usuario cliente = new Usuario(dni,nombre,apellido,edad,direccion,codPostal,localidad,telefono);
 			
 			BdOperaciones bdOperaciones = new BdOperaciones();
 			bdOperaciones.abrirConexion();
