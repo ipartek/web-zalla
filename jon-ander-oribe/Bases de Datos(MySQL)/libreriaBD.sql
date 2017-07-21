@@ -70,6 +70,8 @@ INSERT INTO libro VALUES (0,'Patria: Tierra de nadie',8,'Segunda','2008-04-12',4
 -- -----------------------------------------------------
 -- Table `libreria`.`libro_autor`
 -- -----------------------------------------------------
+
+DELETE FROM libro_autor;
 CREATE TABLE IF NOT EXISTS `libreria`.`libro_autor` (
   `idLibro_Autor` INT(10) UNSIGNED NOT NULL,
   `idAutor_Libro` INT(10) UNSIGNED NOT NULL,
@@ -86,8 +88,8 @@ DEFAULT CHARACTER SET = utf8;
 
 INSERT INTO libro_autor VALUES (1,1);
 INSERT INTO libro_autor VALUES (2,1);
-INSERT INTO libro_autor VALUES (1,2);
 INSERT INTO libro_autor VALUES (3,3);
+INSERT INTO libro_autor VALUES (4,4);
 
 
 -- -----------------------------------------------------

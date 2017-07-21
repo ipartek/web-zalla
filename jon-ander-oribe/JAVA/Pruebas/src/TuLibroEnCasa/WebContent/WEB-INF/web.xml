@@ -56,4 +56,14 @@
     <servlet-name>SrvProcesarUsuario</servlet-name>
     <url-pattern>/SrvProcesarUsuario</url-pattern>
   </servlet-mapping>
+    <servlet>
+      <description></description>
+    <display-name>SrvBuscarLibros</display-name>
+    <servlet-name>SrvBuscarLibros</servlet-name>
+    <servlet-class>bdLibreria.servlets.SrvBuscarLibros</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SrvBuscarLibros</servlet-name>
+    <url-pattern>/SrvBuscarLibros</url-pattern>
+  </servlet-mapping>
 </web-app>
