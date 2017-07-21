@@ -84,6 +84,11 @@ CREATE TABLE IF NOT EXISTS `libreria`.`libro_autor` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
+INSERT INTO libro_autor VALUES (1,1);
+INSERT INTO libro_autor VALUES (2,1);
+INSERT INTO libro_autor VALUES (1,2);
+INSERT INTO libro_autor VALUES (3,3);
+
 
 -- -----------------------------------------------------
 -- Table `libreria`.`libro_genero`
@@ -109,7 +114,6 @@ DEFAULT CHARACTER SET = utf8;
 
 DROP TABLE IF EXISTS usuario;
 CREATE TABLE IF NOT EXISTS `libreria`.`usuario` (
-  `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(45) NOT NULL,
   `primerApellido` VARCHAR(45) NOT NULL,
   `segundoApellido` VARCHAR(45) NOT NULL,
@@ -120,13 +124,13 @@ CREATE TABLE IF NOT EXISTS `libreria`.`usuario` (
   `nombreUsuario`VARCHAR(45) NOT NULL,
   `password` VARCHAR(45) NOT NULL,
   `passwordConfirmado` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id`))
+  PRIMARY KEY (`dni`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-INSERT INTO usuario VALUES (0,'Manu','Santos','Benitez','34564398D','Su casa','1990-07-23','Msb@gmail.com','Manu','1234','1234');
-INSERT INTO usuario VALUES (0,'Montse','Urdan','Benitez','3444398E','Calle 123','1987-09-23','Mub@gmail.com','Montse','0000','0000');
-INSERT INTO usuario VALUES (0,'Ane','Mondego','Espad','12764398F','Calle 456','1992-12-26','Ame@gmail.com','Ane','1111','1111');
+INSERT INTO usuario VALUES ('Manu','Santos','Benitez','34564398D','Su casa','1990-07-23','Msb@gmail.com','Manu','1234','1234');
+INSERT INTO usuario VALUES ('Montse','Urdan','Benitez','3444398E','Calle 123','1987-09-23','Mub@gmail.com','Montse','0000','0000');
+INSERT INTO usuario VALUES ('Ane','Mondego','Espad','12764398F','Calle 456','1992-12-26','Ame@gmail.com','Ane','1111','1111');
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;

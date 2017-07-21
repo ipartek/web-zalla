@@ -37,54 +37,53 @@
 		String user = (String) session.getAttribute("user");
 		List<Usuario> usuarios = (List<Usuario>) request.getAttribute("usuarios");
 	%>
+	<center>
+		<h1>Listado de usuarios</h1>
 
-	<h1>Listado de usuarios</h1>
-
-	USUARIO:
-	<b><%=user%></b>
-	<form name=form1 method=post>
-		<table>
-			<tr>
-				<th>Opción</th>
-				<th>DNI</th>
-				<th>NOMBRE</th>
-				<th>PRIMER APELLIDO</th>
-				<th>SEGUNDO APELLIO</th>
-				<th>DIRECCION</th>
-				<th>FECHA_DE_NACIMIENTO</th>
-				<th>E-MAIL</th>
-				<th>NOMBRE_USUARIO</th>
-				<th>PASSWORD</th>
-				<th>PASSWORD_CONFIRMACION</th>
-			</tr>
-			<%
-				Usuario usuario = null;
-				for (int i = 0; i < usuarios.size(); i++) {
-					usuario = usuarios.get(i);
-			%>
-			<tr>
-				<td><input type="radio" name="Rbdni"
-					value="<%=usuario.getDni()%>"></td>
-				<td><%=usuario.getDni()%></td>
-				<td><%=usuario.getNombre()%></td>
-				<td><%=usuario.getPrimerApellido()%></td>
-				<td><%=usuario.getSegundoApellido()%></td>
-				<td><%=usuario.getDireccion()%></td>
-				<td><%=usuario.getFechaDeNacimiento()%></td>
-				<td><%=usuario.getMail()%></td>
-				<td><%=usuario.getNombreUsuario()%></td>
-				<td><%=usuario.getPassword()%></td>
-				<td><%=usuario.getConfirmPassword()%></td>
-			</tr>
-			<%
-				}
-			%>
-		</table>
-		<input type=hidden name=modo_entrada> <input type=button
-			value=Modificar onclick="JavaScript:ejecutarOpcion('modificacion')">
-		<input type=button value=Eliminar
-			onclick="JavaScript:ejecutarOpcion('baja')">
-	</form>
-
+		USUARIO: <b><%=user%></b>
+		<form name=form1 method=post>
+			<table>
+				<tr>
+					<th>Opción</th>
+					<th>DNI</th>
+					<th>NOMBRE</th>
+					<th>PRIMER APELLIDO</th>
+					<th>SEGUNDO APELLIO</th>
+					<th>DIRECCION</th>
+					<th>FECHA_DE_NACIMIENTO</th>
+					<th>E-MAIL</th>
+					<th>NOMBRE_USUARIO</th>
+					<th>PASSWORD</th>
+					<th>PASSWORD_CONFIRMACION</th>
+				</tr>
+				<%
+					Usuario usuario = null;
+					for (int i = 0; i < usuarios.size(); i++) {
+						usuario = usuarios.get(i);
+				%>
+				<tr>
+					<td><input type="radio" name="Rbdni"
+						value="<%=usuario.getDni()%>"></td>
+					<td><%=usuario.getDni()%></td>
+					<td><%=usuario.getNombre()%></td>
+					<td><%=usuario.getPrimerApellido()%></td>
+					<td><%=usuario.getSegundoApellido()%></td>
+					<td><%=usuario.getDireccion()%></td>
+					<td><%=usuario.getFechaDeNacimiento()%></td>
+					<td><%=usuario.getMail()%></td>
+					<td><%=usuario.getNombreUsuario()%></td>
+					<td><%=usuario.getPassword()%></td>
+					<td><%=usuario.getConfirmPassword()%></td>
+				</tr>
+				<%
+					}
+				%>
+			</table>
+			<input type=hidden name=modo_entrada> <input type=button
+				value=Modificar onclick="JavaScript:ejecutarOpcion('modificacion')">
+			<input type=button value=Eliminar
+				onclick="JavaScript:ejecutarOpcion('baja')">
+		</form>
+	</center>
 </body>
 </html>
