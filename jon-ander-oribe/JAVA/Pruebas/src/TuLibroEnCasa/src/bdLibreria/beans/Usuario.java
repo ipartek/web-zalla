@@ -7,13 +7,13 @@ public class Usuario implements Serializable{
 	private static final long serialVersioUID =1L;
 	
 	private String nombre="";
-	private String primerApellido="";
-	private String segundoApellido="";
+	private String apellido1="";
+	private String apellido2="";
 	private String dni="";
 	private String direccion="";
-	private String fechaDeNacimiento="";
-	private String mail="";
-	private String nombreUsuario="";
+	private String fecha_nacimiento="";
+	private String email="";
+	private String usuario="";
 	private String password="";
 	private String confirmPassword="";
 	
@@ -33,13 +33,13 @@ public class Usuario implements Serializable{
 	public Usuario(String nombre,String primerApellido,String segundoApellido,String dni,String direccion,String fechaDeNacimiento,String mail,String nombreUsuario,String password,String confirmPassword) {
 		
 		this.nombre=nombre;
-		this.primerApellido=primerApellido;
-		this.segundoApellido=segundoApellido;
+		this.apellido1=primerApellido;
+		this.apellido2=segundoApellido;
 		this.dni=dni;
 		this.direccion=direccion;
-		this.fechaDeNacimiento=fechaDeNacimiento;
-		this.mail=mail;
-		this.nombreUsuario=nombreUsuario;
+		this.fecha_nacimiento=fechaDeNacimiento;
+		this.email=mail;
+		this.usuario=nombreUsuario;
 		this.password=password;
 		this.confirmPassword=confirmPassword;
 		
@@ -48,16 +48,16 @@ public class Usuario implements Serializable{
 		super();
 	}
 	public String getPrimerApellido() {
-		return primerApellido;
+		return apellido1;
 	}
 	public void setPrimerApellido(String primerApellido) {
-		this.primerApellido = primerApellido;
+		this.apellido1 = primerApellido;
 	}
 	public String getSegundoApellido() {
-		return segundoApellido;
+		return apellido2;
 	}
 	public void setSegundoApellido(String segundoApellido) {
-		this.segundoApellido = segundoApellido;
+		this.apellido2 = segundoApellido;
 	}
 	public String getDni() {
 		return dni;
@@ -72,22 +72,22 @@ public class Usuario implements Serializable{
 		this.direccion = direccion;
 	}
 	public String getFechaDeNacimiento() {
-		return fechaDeNacimiento;
+		return fecha_nacimiento;
 	}
 	public void setFechaDeNacimiento(String fechaDeNacimiento) {
-		this.fechaDeNacimiento = fechaDeNacimiento;
+		this.fecha_nacimiento = fechaDeNacimiento;
 	}
 	public String getMail() {
-		return mail;
+		return email;
 	}
 	public void setMail(String mail) {
-		this.mail = mail;
+		this.email = mail;
 	}
 	public String getNombreUsuario() {
-		return nombreUsuario;
+		return usuario;
 	}
 	public void setNombreUsuario(String nombreUsuario) {
-		this.nombreUsuario = nombreUsuario;
+		this.usuario = nombreUsuario;
 	}
 	public String getConfirmPassword() {
 		return confirmPassword;

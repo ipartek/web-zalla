@@ -7,6 +7,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Tabla Libros</title>
+<script language=JavaScript>
+<!--
+	function ejecutarOpcion(opcion) {
+		if (opcion == 'comprar') {
+			alert('Realizando compra');
+			document.formStock.modo_entrada.value = 'modo_comprar';
+			document.formStock.action = 'SrvCarrito';
+			document.formStock.submit();
+		} 
+	}
+	-->
+</script>
 </head>
 <body>
 	<%
@@ -16,17 +28,17 @@
 	<h3>
 		USUARIO:<%=user%></h3>
 	<center>
-		<form name=form2 method="post">
+		<form name=formStock method=post>
 			<h1>Tabla de stock</h1>
 
 			<table>
 				<tr>
 					<th>Opción</th>
+					<th>Comprar</th>
 					<th>idLibro</th>
 					<th>Nombre</th>
 					<th>Cantidad</th>
 					<th>Edición</th>
-					<th>Lanzamiento</th>
 					<th>Precio</th>
 					<th>Genero</th>
 					<th>Autor</th>
@@ -41,11 +53,11 @@
 				<tr>
 					<td><input type="radio" name="RbidLibro"
 						value="<%=libro.getIdLibro()%>"></td>
+					<td><input type="text" name="cantidadStock" value=""></td>
 					<td><%=libro.getIdLibro()%></td>
 					<td><%=libro.getTitulo()%></td>
 					<td><%=libro.getCantidad()%></td>
-					<td><%=libro.getEdicion()%></td>
-					<td><%=libro.getLanzamiento()%></td>
+					<td><%=libro.getEditorial()%></td>
 					<td><%=libro.getPrecio()%></td>
 					<td><%=libro.getIdGenero()%></td>
 					<td><%=libro.getIdAutor()%></td>
@@ -53,7 +65,10 @@
 				<%
 					}
 				%>
+
+
 			</table>
+			<input type=hidden name=modo_comprar><input type=button value=Comprar onclick="JavaScript:ejecutarOpcion('comprar')">
 		</form>
 	</center>
 </body>

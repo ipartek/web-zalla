@@ -16,7 +16,7 @@ public class BdOperaciones extends BdBase {
 	public boolean validarUsuario(String user, String password) {
 		boolean correcto = true;
 		try {
-			String sentenciaSql = "select nombreUsuario,password from usuario where nombreUsuario='" + user
+			String sentenciaSql = "select usuario,password from cliente where usuario='" + user
 					+ "' and password='" + password + "'";
 			System.out.println(sentenciaSql);
 			Statement stmt = conexion.createStatement();
@@ -102,16 +102,16 @@ public class BdOperaciones extends BdBase {
 			Libro libro = null;
 			while(hayMas) {
 				libro = new Libro();
-				libro.setIdLibro(rs.getInt(1));
+				libro.setIdLibro(rs.getString(1));
 				libro.setTitulo(rs.getString(2));
 				libro.setCantidad(rs.getInt(3));
-				libro.setEdicion(rs.getString(4));
-				libro.setLanzamiento(rs.getString(5));
-				libro.setPrecio(rs.getDouble(6));
-				libro.setIdGenero(rs.getString(7));
-				libro.setIdAutor(rs.getString(8));
+				libro.setEditorial(rs.getString(4));
+				libro.setPrecio(rs.getDouble(5));
+				libro.setIdGenero(rs.getString(6));
+				libro.setIdAutor(rs.getString(7));
 				libros.add(libro);
 				hayMas = rs.next();
+				
 			}
 			rs.close();
 			stmt.close();
@@ -190,5 +190,37 @@ public class BdOperaciones extends BdBase {
 			System.out.println("Consulta de clientes no efectuada correctamente");
 		}
 		return usuario;
+	}
+	
+	public Libro getLibro(String idLibro) {
+		List<Libro> libros = new ArrayList<Libro>();
+		Libro libro = null;
+		try {
+			String sentenciaSql = "select * from libro "
+					+ "where idLibro='" + idLibro + "'";
+			System.out.println(sentenciaSql);
+			Statement stmt = conexion.createStatement();
+			ResultSet rs = stmt.executeQuery(sentenciaSql);
+			boolean hayMas = rs.next();
+			if (hayMas) {
+
+				libro = new Libro();
+				libro.setIdLibro(rs.getString(1));
+				libro.setTitulo(rs.getString(2));
+				libro.setCantidad(rs.getInt(3));
+				libro.setEditorial(rs.getString(4));
+				libro.setPrecio(rs.getDouble(5));
+				libro.setIdGenero(rs.getString(6));
+				libro.setIdAutor(rs.getString(7));
+				libros.add(libro);
+				hayMas = rs.next();
+			}
+			rs.close();
+			stmt.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Consulta de libros no efectuada correctamente");
+		}
+		return libro;
 	}
 }
