@@ -2,4 +2,4 @@
 
 -- select nombre,password FROM usuario where nombre='Montse' and password='0000';
 
-select * from usuario;
+select * from libro;
