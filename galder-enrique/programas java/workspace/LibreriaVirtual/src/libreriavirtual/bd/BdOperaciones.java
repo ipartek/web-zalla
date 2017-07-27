@@ -89,9 +89,9 @@ public class BdOperaciones extends BdBase {
 		List<Libro> listaLibros = new ArrayList<Libro>();
 		try {
 			sentenciaSql = "select l.isbn,l.titulo,a.nom_autor,c.nom_categoria, e.nom_editorial,l.precio,l.stock "
-					+ "from autor a"
-					+ "join libro l on a.cod_autor=l.cod_autor"
-					+ "join categoria c on c.cod_categoria = l.cod_categoria"
+					+ "from autor a "
+					+ "join libro l on a.cod_autor=l.cod_autor "
+					+ "join categoria c on c.cod_categoria = l.cod_categoria "
 					+ "join editorial e on e.cod_editorial = l.cod_editorial";
 			System.out.println(sentenciaSql);
 			
