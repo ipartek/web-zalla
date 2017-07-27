@@ -1,0 +1,15 @@
+/*
+ * Created on 25-abr-2006
+ *
+ * TODO To change the template for this generated file go to
+ * Window - Preferences - Java - Code Style - Code Templates
+ */
+package libreriavirtual.beans;
+
+
+public class Libro {
+	private String dni;
+	private int numPedido;
+	private String detallePedido;
+	
+}

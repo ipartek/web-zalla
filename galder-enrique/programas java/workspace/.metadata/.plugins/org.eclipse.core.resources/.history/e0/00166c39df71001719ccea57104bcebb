@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<display-name>LibreriaVirtual</display-name>
+	<welcome-file-list>
+		<welcome-file>login.html</welcome-file>
+	</welcome-file-list>
+	
+	<servlet>
+		<description></description>
+		<display-name>SrvRegistro</display-name>
+		<servlet-name>SrvRegistro</servlet-name>
+		<servlet-class>libreriavirtual.servlets.SrvRegistro</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SrvRegistro</servlet-name>
+		<url-pattern>/SrvRegistro</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>SrvValidarEntrada</display-name>
+		<servlet-name>SrvValidarEntrada</servlet-name>
+		<servlet-class>libreriavirtual.servlets.SrvValidarEntrada</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SrvValidarEntrada</servlet-name>
+		<url-pattern>/SrvValidarEntrada</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>SrvInsertarRegistro</display-name>
+		<servlet-name>SrvInsertarRegistro</servlet-name>
+		<servlet-class>libreriavirtual.servlets.SrvInsertarRegistro</servlet-class>
+		<init-param>
+			<param-name>fichero_propiedades</param-name>
+			<param-value>C:\\Eclipse_JavaEE\\eclipse\\workspace\\LibreriaVirtual\\WebContent\\WEB-INF\\libreriavirtual.properties</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SrvInsertarRegistro</servlet-name>
+		<url-pattern>/SrvInsertarRegistro</url-pattern>
+	</servlet-mapping>
+</web-app>

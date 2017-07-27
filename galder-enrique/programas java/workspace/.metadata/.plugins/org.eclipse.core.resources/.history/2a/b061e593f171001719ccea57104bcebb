@@ -1,0 +1,24 @@
+/*
+ * Created on 25-abr-2006
+ *
+ * TODO To change the template for this generated file go to
+ * Window - Preferences - Java - Code Style - Code Templates
+ */
+package libreriavirtual.beans;
+
+
+public class Libro {
+	private String isbn;
+	private String titulo;
+	private String cod_autor;
+	private String cod_categoria;
+	private String cod_editorial;
+	private double precio;
+	private int stock;
+
+
+
+
+	
+	
+}

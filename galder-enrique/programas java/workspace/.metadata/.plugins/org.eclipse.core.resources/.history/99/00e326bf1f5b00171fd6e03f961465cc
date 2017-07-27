@@ -1,0 +1,105 @@
+package com.ipartek.webapp.controller;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.time.LocalTime;
+import java.util.Date;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class HomeController
+ */
+@WebServlet(description = "Servlet de inicio", urlPatterns = { "/" })
+public class HomeController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	public static final int JUBILACION = 68;
+
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public HomeController() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+		PrintWriter out = response.getWriter();
+		
+		//recibir parametros por GET si es que se envia
+		//http://127.0.0.1:8080/NombreAppWeb/URL_del_Servlet?parametro1=valor1&parametro2=valor2&parametroN=valorN
+		//parametros: edad y nombre
+		String nombre = request.getParameter("nombre");
+		String edad = request.getParameter("edad");
+		
+		int resto=0;
+		if(edad!=null){
+			try{
+			int edadInt = Integer.parseInt(edad);
+			resto = JUBILACION-edadInt;
+			if (edadInt < 0){
+				edadInt=0;
+			}
+			}catch(Exception e){
+				out.append("<p> La edad enviada no es correcta. Escribe una edad correcta</p>" )
+			}
+			}
+		
+		
+		
+		if(nombre ==null){
+			out.append("<h1>ONGI ETORRI : </h1> ");
+			
+		}else {
+			
+			out.append("<h1>ONGI ETORRI  </h1> "+nombre );
+			
+		}
+		
+		if(edad!=null){
+			out.append("Tienes " + edad + " años y te faltan " + resto + " de años para la jubilación");
+
+			
+		}else{
+			out.append("<p>Eres inmortal, sólo puedes quedar TÚ</p>");
+
+		}
+		
+		
+
+		
+		out.append(request.getContextPath());
+		
+
+		// fecha y hora
+		Date fecha = new Date();
+		out.append("<p>Fecha <b>" + fecha + "</b></p>");
+		// Version del navegador y cliente
+		String userAgent = request.getHeader("User-Agent");
+		out.append("<p>Navegador <b>" + userAgent + "</b></p>");
+
+		out.flush();
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

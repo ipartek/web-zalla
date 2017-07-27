@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Calculadora</title>
+</head>
+<body>
+	<form action="/calcular"method"post">
+		<label for="numero1">Primer Número</label>
+		<input type="number" required="required" name="numero1">
+		<label for="numero2">SegundoNúmero</label>
+		<input type="number" required="required" name="numero2">
+		<input type="submit" value="Calcular">
+
+
+
+	</form>
+
+</body>
+</html>

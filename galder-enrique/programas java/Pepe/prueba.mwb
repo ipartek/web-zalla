@@ -1,0 +1,76 @@
+use pelis;
+
+SET foreign_key_checks = 0;
+
+drop table if exists soporte;
+create table soporte(
+idSoporte int not null auto_increment,
+nombre varchar(3),
+descripcion varchar(32),
+primary key(idSoporte)
+)engine = innoDB;
+
+drop table if exists genero;
+create table genero(
+idGenero int not null auto_increment,
+nombre varchar(10),
+descripcion varchar(32),
+primary key(idGenero)
+)engine = innoDB;
+
+drop table if exists director;
+create table director(
+idDirector int not null auto_increment,
+nombre varchar(64) not null,
+apellidos varchar(64) not null,
+imdb varchar(32) not null default '',
+primary key(idDirector)
+) engine = innoDB;
+
+drop table if exists actor;
+create table actor(
+idActor int not null auto_increment,
+nombre varchar(64) not null,
+apellidos varchar(64) not null,
+imdb varchar(32) not null default '',
+primary key(idActor)
+) engine = innoDB;
+
+drop table if exists pelicula;
+create table pelicula(
+idPelicula int not null auto_increment,
+titulo varchar(64) not null,
+idSoporte int not null,
+idGenero int not null,
+primary key(idPelicula),
+foreign key (idSoporte) references soporte(idSoporte),
+foreign key (idGenero) references genero(idGenero)
+) engine = innoDB;
+
+drop table if exists directores_en_peliculas;
+create table directores_en_peliculas(
+idPelicula int not null,
+idDirector int not null,
+primary key(idPelicula, idDirector),
+index directores_en_pelicula_fkey1(idPelicula),
+index directores_en_pelicula_fkey2(idDirector),
+foreign key (idPelicula) references pelicula(idPelicula),
+foreign key (idDirector) references director(idDirector)
+)engine = innoDB;
+
+drop table if exists actores_en_peliculas;
+create table actores_en_peliculas(
+idPelicula int not null,
+idActor int not null,
+primary key(idPelicula, idActor),
+index actores_en_pelicula_fkey1(idPelicula),
+index actores_en_pelicula_fkey2(idActor),
+foreign key (idPelicula) references pelicula(idPelicula),
+foreign key (idActor) references actor(idActor)
+)engine = innoDB;
+
+
+
+SET foreign_key_checks = 1;
+
+

@@ -1,0 +1,11 @@
+1500278906387	Move 'login.html' to 'WebContent'
+1500287018919	Delete element
+1500287104473	Delete element
+1500288612685	Rename type 'Cliente'
+1500288875660	Rename local variable 'cliente'
+1500362800087	Copy file
+1500369165319	Rename resource 'artupa.properties'
+1500369457827	Rename package 'bd'
+1500369463977	Rename package 'configuracion'
+1500369480980	Rename package 'beans'
+1500369490802	Rename package 'servlets'

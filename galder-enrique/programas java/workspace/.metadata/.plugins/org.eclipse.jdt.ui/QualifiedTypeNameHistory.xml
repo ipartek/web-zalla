@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="javax.servlet.http.Cookie"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+<fullyQualifiedTypeName name="java.net.ConnectException"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="java.sql.DriverManager"/>
+<fullyQualifiedTypeName name="java.beans.Statement"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+<fullyQualifiedTypeName name="artupa.beans.Pedido"/>
+<fullyQualifiedTypeName name="artupa.beans.Cliente"/>
+<fullyQualifiedTypeName name="beans.Pedido"/>
+<fullyQualifiedTypeName name="beans.Cliente"/>
+<fullyQualifiedTypeName name="beans.Usuario"/>
+<fullyQualifiedTypeName name="java.sql.Date"/>
+<fullyQualifiedTypeName name="bd.BdOperaciones"/>
+<fullyQualifiedTypeName name="configuracion.GestorConfiguracion"/>
+<fullyQualifiedTypeName name="configuracion.Configuracion"/>
+<fullyQualifiedTypeName name="bd.BdBase"/>
+<fullyQualifiedTypeName name="libreriavirtual.beans.Libro"/>
+</qualifiedTypeNameHistroy>
