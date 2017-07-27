@@ -38,21 +38,21 @@ public class SrvRegistro extends HttpServlet {
     				//String modo_entrada = request.getParameter("modo_entrada");
     				
     				String nombre = request.getParameter("nombre");
-    				String primerApellido = request.getParameter("primerApellido");
-    				String segundoApellido = request.getParameter("segundoApellido");
+    				String apellido1 = request.getParameter("primerApellido");
+    				String apellido2 = request.getParameter("segundoApellido");
     				String dni = request.getParameter("dni");
     				String direccion = request.getParameter("direccion");
     				String fechaDeNacimiento = request.getParameter("fechaDeNacimiento");
-    				String mail = request.getParameter("mail");
-    				String nombreUsuario = request.getParameter("nombreUsuario");
+    				String email = request.getParameter("mail");
+    				String usuario = request.getParameter("nombreUsuario");
     				String password= request.getParameter("password");
     				String confirmPassword= request.getParameter("confirmPassword");
-    				Usuario usuario = new Usuario(nombre,primerApellido,segundoApellido,dni,direccion,fechaDeNacimiento,mail,nombreUsuario,password,confirmPassword);
+    				Usuario cliente = new Usuario(nombre,apellido1,apellido2,dni,direccion,fechaDeNacimiento,email,usuario,password,confirmPassword);
     				
     				BdOperaciones bdOperaciones = new BdOperaciones();
     				bdOperaciones.abrirConexion();
     				
-    				bdOperaciones.insertarUsuario(usuario);
+    				bdOperaciones.insertarUsuario(cliente);
     				
     				bdOperaciones.cerrarConexion();
     				ServletContext ct = getServletContext();

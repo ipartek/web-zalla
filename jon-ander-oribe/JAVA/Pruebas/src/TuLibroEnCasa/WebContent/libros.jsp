@@ -28,7 +28,7 @@
 	<h3>
 		USUARIO:<%=user%></h3>
 	<center>
-		<form name=formStock method=post>
+		<form name=formStock method=post action=SrvCarrito>
 			<h1>Tabla de stock</h1>
 
 			<table>
@@ -68,6 +68,7 @@
 
 
 			</table>
+			<input type=submit name=compra_prueba value=Testeame>
 			<input type=hidden name=modo_comprar><input type=button value=Comprar onclick="JavaScript:ejecutarOpcion('comprar')">
 		</form>
 	</center>

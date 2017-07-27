@@ -34,16 +34,16 @@ public class SrvCarrito extends HttpServlet {
     			HttpSession sesion = request.getSession(false);	
     			if (sesion!=null)
     			{			
-    				String modo_entrada = request.getParameter("modo_comprar");
-    				if (modo_entrada.equals("modo_comprar"))
-    				{
+    				//String modo_entrada = request.getParameter("modo_comprar");
+    				//if (modo_entrada.equals("modo_comprar"))
+    				//{
     					String idLibro = request.getParameter("idLibro");
     					BdOperaciones bdOperaciones = new BdOperaciones();
     					bdOperaciones.abrirConexion();
     					Libro libro = bdOperaciones.getLibro(idLibro);
     					bdOperaciones.cerrarConexion();
     					request.setAttribute("libro",libro);
-    				}
+    				//}
     				
     				ServletContext ct = getServletContext();
     				RequestDispatcher rd = ct.getRequestDispatcher("/carrito.jsp");

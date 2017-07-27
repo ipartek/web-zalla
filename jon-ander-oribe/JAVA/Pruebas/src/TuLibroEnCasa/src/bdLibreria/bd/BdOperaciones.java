@@ -16,8 +16,8 @@ public class BdOperaciones extends BdBase {
 	public boolean validarUsuario(String user, String password) {
 		boolean correcto = true;
 		try {
-			String sentenciaSql = "select usuario,password from cliente where usuario='" + user
-					+ "' and password='" + password + "'";
+			String sentenciaSql = "select usuario,password from cliente where usuario='" + user + "' and password='"
+					+ password + "'";
 			System.out.println(sentenciaSql);
 			Statement stmt = conexion.createStatement();
 			ResultSet rs = stmt.executeQuery(sentenciaSql);
@@ -41,11 +41,10 @@ public class BdOperaciones extends BdBase {
 	public boolean insertarUsuario(Usuario usuario) {
 		boolean correcto = true;
 		try {
-			String sentenciaSql = "insert into usuario values ('" + usuario.getNombre() + "','"
-					+ usuario.getPrimerApellido() + "','" + usuario.getSegundoApellido() + "','" + usuario.getDni()
-					+ "','" + usuario.getDireccion() + "','" + usuario.getFechaDeNacimiento() + "','"
-					+ usuario.getMail() + "','" + usuario.getNombreUsuario() + "','" + usuario.getPassword() + "','"
-					+ usuario.getConfirmPassword() + "')";
+			String sentenciaSql = "insert into cliente values ('" + usuario.getDni() + "','" + usuario.getNombre()
+					+ "','" + usuario.getPrimerApellido() + "','" + usuario.getSegundoApellido() + "','"
+					+ usuario.getDireccion() + "','" + usuario.getFechaDeNacimiento() + "','" + usuario.getMail()
+					+ "','" + usuario.getNombreUsuario() + "','" + usuario.getPassword() + "')";
 			System.out.println(sentenciaSql);
 			Statement stmt = conexion.createStatement();
 			stmt.execute(sentenciaSql);
@@ -61,7 +60,7 @@ public class BdOperaciones extends BdBase {
 	public List<Usuario> getUsuarios() {
 		List<Usuario> usuarios = new ArrayList<Usuario>();
 		try {
-			String sentenciaSql = "select * from usuario";
+			String sentenciaSql = "select * from cliente";
 			System.out.println(sentenciaSql);
 			Statement stmt = conexion.createStatement();
 			ResultSet rs = stmt.executeQuery(sentenciaSql);
@@ -69,16 +68,15 @@ public class BdOperaciones extends BdBase {
 			Usuario usuario = null;
 			while (hayMas) {
 				usuario = new Usuario();
-				usuario.setNombre(rs.getString(1));
-				usuario.setPrimerApellido(rs.getString(2));
-				usuario.setSegundoApellido(rs.getString(3));
-				usuario.setDni(rs.getString(4));
+				usuario.setDni(rs.getString(1));
+				usuario.setNombre(rs.getString(2));
+				usuario.setPrimerApellido(rs.getString(3));
+				usuario.setSegundoApellido(rs.getString(4));		
 				usuario.setDireccion(rs.getString(5));
 				usuario.setFechaDeNacimiento(rs.getString(6));
 				usuario.setMail(rs.getString(7));
-				usuario.setNombre(rs.getString(8));
+				usuario.setNombreUsuario(rs.getString(8));
 				usuario.setPassword(rs.getString(9));
-				usuario.setConfirmPassword(rs.getString(10));
 				usuarios.add(usuario);
 				hayMas = rs.next();
 			}
@@ -90,8 +88,8 @@ public class BdOperaciones extends BdBase {
 		}
 		return usuarios;
 	}
-	
-	public List<Libro> getLibros() { //ADAPTAR A LIBRO
+
+	public List<Libro> getLibros() { // ADAPTAR A LIBRO
 		List<Libro> libros = new ArrayList<Libro>();
 		try {
 			String sentenciaSql = "select * from libro";
@@ -100,7 +98,7 @@ public class BdOperaciones extends BdBase {
 			ResultSet rs = stmt.executeQuery(sentenciaSql);
 			boolean hayMas = rs.next();
 			Libro libro = null;
-			while(hayMas) {
+			while (hayMas) {
 				libro = new Libro();
 				libro.setIdLibro(rs.getString(1));
 				libro.setTitulo(rs.getString(2));
@@ -111,7 +109,7 @@ public class BdOperaciones extends BdBase {
 				libro.setIdAutor(rs.getString(7));
 				libros.add(libro);
 				hayMas = rs.next();
-				
+
 			}
 			rs.close();
 			stmt.close();
@@ -125,10 +123,10 @@ public class BdOperaciones extends BdBase {
 	public boolean eliminarUsuario(String dni) {
 		boolean correcto = true;
 		try {
-			
-			String sentenciaSql="DELETE FROM usuario WHERE dni='"+dni+"'";
+
+			String sentenciaSql = "DELETE FROM cliente WHERE dni='" + dni + "'";
 			System.out.println(sentenciaSql);
-			Statement stmt=conexion.createStatement();
+			Statement stmt = conexion.createStatement();
 			stmt.execute(sentenciaSql);
 			stmt.close();
 
@@ -139,15 +137,16 @@ public class BdOperaciones extends BdBase {
 		}
 		return correcto;
 	}
-	
+
 	public boolean modificarUsuario(Usuario usuario) {
 		boolean correcto = true;
 		try {
-			String sentenciaSql = "update usuario set " + "nombre='" + usuario.getNombre() + "', " + "primerApellido='"
-					+ usuario.getPrimerApellido() + "', " + "segundoApellido=" + usuario.getSegundoApellido() + ", " + "dni='"
-					+ usuario.getDni() + "', " + "direccion=" + usuario.getDireccion() + ", " + "fechaDeNacimiento='"
-					+ usuario.getFechaDeNacimiento() + "', " + "e-mail=" + usuario.getMail() + "nombreUsuario="+usuario.getNombreUsuario()+"password="+usuario.getPassword()+"passwordConfirmado="+usuario.getConfirmPassword()+ " where dni = '"
-					+ usuario.getDni() + "'";
+			String sentenciaSql = "update cliente set " + "nombre='" + usuario.getNombre() + "', " + "primerApellido='"
+					+ usuario.getPrimerApellido() + "', " + "segundoApellido=" + usuario.getSegundoApellido() + ", "
+					+ "dni='" + usuario.getDni() + "', " + "direccion=" + usuario.getDireccion() + ", "
+					+ "fechaDeNacimiento='" + usuario.getFechaDeNacimiento() + "', " + "e-mail=" + usuario.getMail()
+					+ "nombreUsuario=" + usuario.getNombreUsuario() + "password=" + usuario.getPassword()
+					+ "passwordConfirmado=" + usuario.getConfirmPassword() + " where dni = '" + usuario.getDni() + "'";
 			System.out.println(sentenciaSql);
 			Statement stmt = conexion.createStatement();
 			stmt.execute(sentenciaSql);
@@ -159,12 +158,11 @@ public class BdOperaciones extends BdBase {
 		}
 		return correcto;
 	}
-	
+
 	public Usuario getUsuario(String dni) {
 		Usuario usuario = null;
 		try {
-			String sentenciaSql = "select * from usuario "
-					+ "where dni='" + dni + "'";
+			String sentenciaSql = "select * from cliente " + "where dni='" + dni + "'";
 			System.out.println(sentenciaSql);
 			Statement stmt = conexion.createStatement();
 			ResultSet rs = stmt.executeQuery(sentenciaSql);
@@ -191,13 +189,12 @@ public class BdOperaciones extends BdBase {
 		}
 		return usuario;
 	}
-	
+
 	public Libro getLibro(String idLibro) {
 		List<Libro> libros = new ArrayList<Libro>();
 		Libro libro = null;
 		try {
-			String sentenciaSql = "select * from libro "
-					+ "where idLibro='" + idLibro + "'";
+			String sentenciaSql = "select * from libro " + "where idLibro='" + idLibro + "'";
 			System.out.println(sentenciaSql);
 			Statement stmt = conexion.createStatement();
 			ResultSet rs = stmt.executeQuery(sentenciaSql);
@@ -220,6 +217,41 @@ public class BdOperaciones extends BdBase {
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("Consulta de libros no efectuada correctamente");
+		}
+		return libro;
+	}
+	
+	public Libro getLibrosFiltrados(String titulo,String autor) {
+		List<Libro> libros=new ArrayList<Libro>();
+		Libro libro=null;
+		try {
+			PreparedStatement sentenciaSql=conexion.prepareStatement("SELECT * FROM tulibroencasa.libro AS l INNER JOIN tulibroencasa.autor AS a ON l.cod_autor =a.cod_autor WHERE l.titulo=? AND a.nom_autor=?;"); 
+			//SELECT * FROM tulibroencasa.libro AS l INNER JOIN tulibroencasa.autor AS a ON l.cod_autor =a.cod_autor WHERE l.titulo='Fundacion y Tierra' AND a.nom_autor='Isaac Asimov';
+			sentenciaSql.setString(1,titulo);
+			sentenciaSql.setString(2,autor);
+			sentenciaSql.addBatch();
+			System.out.println(sentenciaSql);
+			ResultSet rs = sentenciaSql.executeQuery();
+			boolean hayMas = rs.next();
+			if (hayMas) {
+
+				libro = new Libro();
+				libro.setIdLibro(rs.getString(1));
+				libro.setTitulo(rs.getString(2));
+				libro.setCantidad(rs.getInt(3));
+				libro.setEditorial(rs.getString(4));
+				libro.setPrecio(rs.getDouble(5));
+				libro.setIdGenero(rs.getString(6));
+				libro.setIdAutor(rs.getString(7));
+				libros.add(libro);
+				hayMas = rs.next();
+			}
+			rs.close();
+			stmt.close();
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Consulta de filtro no efectuada correctamente");
 		}
 		return libro;
 	}

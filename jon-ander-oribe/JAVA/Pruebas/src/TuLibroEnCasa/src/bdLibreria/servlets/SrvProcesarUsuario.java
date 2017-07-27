@@ -27,15 +27,18 @@ public class SrvProcesarUsuario extends HttpServlet {
 		HttpSession sesion = request.getSession(false);	
 		if (sesion!=null)
 		{			
+			System.out.println("TRACEANDO UNO!!");
 			String modo_entrada = request.getParameter("modo_entrada");
 			if (modo_entrada.equals("modo_modificacion"))
 			{
+				
 				String dni = request.getParameter("dni");
 				BdOperaciones bdOperaciones = new BdOperaciones();
 				bdOperaciones.abrirConexion();
 				Usuario usuario = bdOperaciones.getUsuario(dni);
 				bdOperaciones.cerrarConexion();
 				request.setAttribute("usuario",usuario);
+				System.out.println("TRACEANDO!!");
 			}
 			
 			ServletContext ct = getServletContext();

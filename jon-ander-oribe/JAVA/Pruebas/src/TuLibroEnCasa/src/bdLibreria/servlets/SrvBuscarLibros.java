@@ -37,9 +37,11 @@ public class SrvBuscarLibros extends HttpServlet {
     			HttpSession sesion = request.getSession(false);	
     			if (sesion!=null)
     			{			
+    				String titulo=request.getParameter("titulo");
+    				String autor=request.getParameter("autor");
     				BdOperaciones bdOperaciones = new BdOperaciones();
     				bdOperaciones.abrirConexion();
-    				List<Libro> libros = bdOperaciones.getLibros();
+    				List<Libro> libros = bdOperaciones.getLibrosFiltrados(titulo,autor);//getLibros();
     				bdOperaciones.cerrarConexion();
     				request.setAttribute("libros",libros);
     				ServletContext ct = getServletContext();
