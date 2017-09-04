@@ -1,9 +1,9 @@
-<%@page import="artupa.beans.Cliente"%>
+<%@page import="artupa.beans.Usuario"%>
 <%
 	String user = (String)session.getAttribute("user");
 	String modo_entrada = request.getParameter("modo_entrada");	
 	String opcion = null;	
-	Cliente cliente = null;
+	Usuario cliente = null;
 	if (modo_entrada.equals("modo_alta"))
 	{
 		opcion="alta";
@@ -11,7 +11,7 @@
 	else
 	{
 		opcion="modificacion";
-		cliente = (Cliente)request.getAttribute("cliente");
+		cliente = (Usuario)request.getAttribute("cliente");
 	}
 	
 %>

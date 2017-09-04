@@ -1,6 +1,7 @@
 
 
 <%@page import="artupa.beans.Pedido"%>
+<%@page import="artupa.beans.Usuario"%>
 <%
 	String user = (String)session.getAttribute("user");
 	String modo_entrada = request.getParameter("modo_entrada");	

@@ -1,8 +1,8 @@
 <%@page import="java.util.List"%>
-<%@page import="artupa.beans.Cliente"%>
+<%@page import="artupa.beans.Usuario"%>
 <%
 	String user = (String) session.getAttribute("user");
-	List<Cliente> clientes = (List<Cliente>) request.getAttribute("clientes");
+	List<Usuario> clientes = (List<Usuario>) request.getAttribute("clientes");
 %>
 <html>
 <head>
@@ -45,7 +45,7 @@
 				<th>EDAD</th>
 			</tr>
 			<%
-				Cliente cliente = null;
+				Usuario cliente = null;
 				for (int i = 0; i < clientes.size(); i++) {
 					cliente = clientes.get(i);
 			%>
