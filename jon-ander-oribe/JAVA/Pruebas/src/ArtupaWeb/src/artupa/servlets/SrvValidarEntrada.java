@@ -55,9 +55,11 @@ public class SrvValidarEntrada extends HttpServlet {
 		bdOperaciones.cerrarConexion();
 		if (correcto) {
 			HttpSession sesion = request.getSession(true);
+			sesion.setAttribute("password",password);
 			sesion.setAttribute("user", user);
+			
 			ServletContext ct = getServletContext();
-			RequestDispatcher rd = ct.getRequestDispatcher("/menu.jsp");
+			RequestDispatcher rd = ct.getRequestDispatcher("/menu_new.jsp");
 			rd.forward(request, response);
 		} else {
 			response.sendRedirect("login.html");
