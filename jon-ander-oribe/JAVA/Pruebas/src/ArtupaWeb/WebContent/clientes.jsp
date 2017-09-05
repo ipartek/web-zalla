@@ -1,3 +1,9 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/xml" prefix="x" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+
 <%@page import="java.util.List"%>
 <%@page import="artupa.beans.Usuario"%>
 <%
@@ -68,5 +74,6 @@
 			type=button value=Eliminar
 			onclick="JavaScript:ejecutarOpcion('baja')">
 	</form>
+	<c:out value="Hello world! - From JSTL"/>
 </body>
 </html>

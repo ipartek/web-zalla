@@ -8,7 +8,6 @@
 	</classpathentry>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry exported="true" kind="lib" path="C:/Conector/mysql-connector-java-5.1.42/mysql-connector-java-5.1.42-bin.jar"/>
 	<classpathentry exported="true" kind="lib" path="C:/Tomcat/apache-tomcat-8.5.15/lib/jsp-api.jar"/>
 	<classpathentry exported="true" kind="lib" path="C:/Tomcat/apache-tomcat-8.5.15/lib/servlet-api.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
