@@ -1,0 +1,2 @@
+1>Modificar el server.xml para añadir el RESOURCE con la pool
+2>Añadir el JAR de la base de datos a la carpeta /lib del Tomcat
