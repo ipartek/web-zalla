@@ -51,7 +51,7 @@
 
 
 		<c:choose>
-			<c:when test="${modo_entrada.equals("modo_entrada"))}">
+			<c:when test="${modo_entrada.equals("modo_entrada")}">
 DNI: <input type=text name=dni>
 				<br>
 NOMBRE: <input type=text name=nombre size=30>
@@ -70,7 +70,7 @@ TELÉFONO: <input type=text name=telefono size=30>
 			</c:when>
 			<c:otherwise>
 
-DNI: <input type=text name=dni value="<c:out value="cliente.dni"/>"> style="color:red" readonly>
+DNI: <input type=text name=dni value="<c:out value="cliente.dni"/>"style="color:red" readonly>
 <br>
 NOMBRE: <input type=text name=nombre size=30
 					value="<c:out value="cliente.nombre"/>">

@@ -1,6 +1,6 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/xml" prefix="x" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/xml" prefix="x"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
 <%@page import="java.util.List"%>
 <%@page import="artupa.beans.Usuario"%>
@@ -41,7 +41,7 @@
 </head>
 <body>
 	USUARIO:
-	<b><%=user%></b>
+	<b><c:out value="${sessionScope.nombre}" /></b>
 	<form name=form1 method=post>
 		<table>
 			<tr>
@@ -75,6 +75,6 @@
 			type=button value=Eliminar
 			onclick="JavaScript:ejecutarOpcion('baja')">
 	</form>
-	<c:out value="Hello world! - From JSTL"/>
+	<c:out value="Hello world! - From JSTL" />
 </body>
 </html>
