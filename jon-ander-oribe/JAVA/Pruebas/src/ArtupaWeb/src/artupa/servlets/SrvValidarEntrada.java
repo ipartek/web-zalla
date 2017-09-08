@@ -10,6 +10,8 @@ import java.io.IOException;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
+import org.apache.log4j.Logger;
+
 import artupa.bd.BdBase;
 import artupa.bd.BdOperaciones;
 import artupa.config.Configuracion;
@@ -28,6 +30,8 @@ public class SrvValidarEntrada extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
+	private final static Logger log=Logger.getLogger(SrvValidarEntrada.class);
 
 	public void init(ServletConfig config) throws ServletException {
 		super.init(config);
@@ -47,6 +51,7 @@ public class SrvValidarEntrada extends HttpServlet {
 
 	public void service(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
+		log.debug("Estoy en el service");
 		String user = request.getParameter("user");
 		String password = request.getParameter("password");
 		BdOperaciones bdOperaciones = new BdOperaciones();
