@@ -9,6 +9,8 @@ package artupa.bd;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Logger;
 
 import artupa.beans.*;
 
@@ -31,6 +33,10 @@ public class BdOperaciones extends BdBase {
 	public boolean validarUsuario(String user, String password) {
 		boolean correcto = true;
 		try {
+			BasicConfigurator.configure();
+			Logger log= Logger.getLogger("Logger de operaciones");
+			log.warn("Warning");
+			log.error("Error!");
 			String sentenciaSql = "select user,password from usuarios where" + " user='" + user
 					+ "' and password='" + password + "'";
 			System.out.println(sentenciaSql);
