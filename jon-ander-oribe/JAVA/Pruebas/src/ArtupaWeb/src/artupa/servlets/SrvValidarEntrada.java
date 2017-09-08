@@ -7,9 +7,11 @@
 package artupa.servlets;
 
 import java.io.IOException;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 
+import org.apache.log4j.PropertyConfigurator;
 import org.apache.log4j.Logger;
 
 import artupa.bd.BdBase;
@@ -51,6 +53,7 @@ public class SrvValidarEntrada extends HttpServlet {
 
 	public void service(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
+		PropertyConfigurator.configure("log4j.properties");
 		log.debug("Estoy en el service");
 		String user = request.getParameter("user");
 		String password = request.getParameter("password");
