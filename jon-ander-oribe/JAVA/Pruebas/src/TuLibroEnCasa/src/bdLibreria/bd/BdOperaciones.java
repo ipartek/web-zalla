@@ -231,6 +231,7 @@ public class BdOperaciones extends BdBase {
 			sentenciaSql.setString(2,autor);
 			sentenciaSql.addBatch();
 			System.out.println(sentenciaSql);
+			Statement stmt = conexion.createStatement();
 			ResultSet rs = sentenciaSql.executeQuery();
 			boolean hayMas = rs.next();
 			if (hayMas) {
