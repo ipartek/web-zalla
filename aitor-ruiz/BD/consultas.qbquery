@@ -1,0 +1,5 @@
+﻿USE videoteca;
+SELECT * FROM `videoteca`.`pelicula`;
+SELECT * FROM pelicula WHERE titulo='Invicto';
+DELETE FROM pelicula WHERE titulo='Harry Potter';
+ALTER TABLE pelicula add edad2 int(2) NOT NULL default 15;
