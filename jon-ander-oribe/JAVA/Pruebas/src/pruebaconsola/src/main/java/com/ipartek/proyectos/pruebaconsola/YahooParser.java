@@ -24,7 +24,7 @@ public class YahooParser {
     weather.setCity(
       doc.valueOf("/query/results/channel/yweather:location/@city") );
     weather.setRegion(
-      doc.valueOf("/query/results/channel/yweather:location/@region") );
+      doc.valueOf("/query/results/channel/yweather:location/@region").trim() );
     weather.setCountry(
       doc.valueOf("/query/results/channel/yweather:location/@country") );
     weather.setCondition(
