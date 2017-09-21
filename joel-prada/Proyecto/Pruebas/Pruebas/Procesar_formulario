@@ -1,0 +1,20 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<%
+String nombre = request.getParameter("usuario");
+boolean correcto = true;
+
+%>
+ 
+   
+    
+</body>
+</html>
