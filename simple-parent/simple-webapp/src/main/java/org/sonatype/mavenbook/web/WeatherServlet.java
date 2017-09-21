@@ -12,12 +12,16 @@ public class WeatherServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request,
                       HttpServletResponse response)
         throws ServletException, IOException {
+		
+		response.setContentType("text/plain");
+		
         String zip = request.getParameter("zip" );
         WeatherService weatherService = new WeatherService();
         PrintWriter out = response.getWriter();
         try {
             out.println( weatherService.retrieveForecast( zip ) );
         } catch( Exception e ) {
+        	e.printStackTrace(out);
             out.println( "Error Retrieving Forecast: " + e.getMessage() );
         }
         out.flush();
