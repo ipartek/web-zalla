@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+body {
+	background-color: rgb(255, 200, 133);
+}
+
+h1 {
+	background-color: rgb(255, 200, 133);
+}
+
+.logo {
+	width: 5%;
+	heigth: 5%;
+}
+
+.labelRegistro {
+	width: 800px;
+	margin: auto;
+}
+
+.diapositiva {
+	width: 300px;
+	heigth: 300px;
+}
+
+.carousel-inner img {
+	width: 50vw;
+	max-height: 50vh;
+}
+
+.carousel-inner {
+	width: 100%;
+	height: 100%;
+}
+
+.carousel {
+	width: 50%;
+	height: 50%;
+}
+
+#carouselExampleControls {
+	margin: 15px;
+}
+
+.formularioRegistro {
+	width: 50vw;
+	heigth: 50vh;
+	margin: 5px;
+	padding: 5px;
+	border: 1px solid black;
+}
+
+.botones{
+	margin:5px;
+}
+
+.centrado{
+	text-align:center;
+}
+
+.right-place{
+    margin-left: 200 vw;
+}
+
+.rotulo{
+	display: inline-block;
+	padding-right: 200 vw;
+}
