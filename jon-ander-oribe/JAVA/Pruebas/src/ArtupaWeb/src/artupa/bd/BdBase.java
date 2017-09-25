@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import artupa.config.Configuracion;
 
 public class BdBase {
+	private static final String UNIT_JPA = null;
 	private static String DRIVER;
 	private static String URL;
 	private static String USER;
@@ -44,6 +45,24 @@ public class BdBase {
 			correcto = false;
 		}
 		return correcto;
+	}
+	
+	public boolean cerrarConexionNew() {
+		if(UNIT_JPA != null) {
+			return cerrarConexionJPA();
+		}else {
+			return cerrarConexionOLD();
+		}
+	}
+
+	private boolean cerrarConexionOLD() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	private boolean cerrarConexionJPA() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 	public boolean abrirTransaccion() {

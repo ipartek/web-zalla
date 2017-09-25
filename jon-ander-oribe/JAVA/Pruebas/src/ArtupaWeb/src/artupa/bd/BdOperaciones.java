@@ -9,6 +9,9 @@ package artupa.bd;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.management.Query;
+
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
@@ -40,8 +43,11 @@ public class BdOperaciones extends BdBase {
 			String sentenciaSql = "select user,password from usuarios where" + " user='" + user
 					+ "' and password='" + password + "'";
 			System.out.println(sentenciaSql);
+			Query query=EntityManager.createNativeQuery(sentenciaSql);
 			Statement stmt = conexion.createStatement();
 			ResultSet rs = stmt.executeQuery(sentenciaSql);
+			List<Object[]> listUsuarios=((Object) query).getResultList();
+			correcto=(listUsuarios.size()>0);
 			correcto = rs.next();
 			rs.close();
 			stmt.close();
@@ -82,7 +88,8 @@ public class BdOperaciones extends BdBase {
 
 	public Usuario getCliente(String dni) {
 		Usuario cliente = null;
-		try {
+		try {			
+			//cliente=entityManager.find(Usuario.class,dni);
 			String sentenciaSql = "select dni,nombre,apellido,edad,direccion,codPostal,localidad,telefono from clientes "
 					+ "where dni='" + dni + "'";
 			System.out.println(sentenciaSql);

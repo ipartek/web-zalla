@@ -14,6 +14,9 @@ import java.io.Serializable;
  * TODO To change the template for this generated type comment go to
  * Window - Preferences - Java - Code Style - Code Templates
  */
+
+@Entity
+@Table(name="clientes")
 public class Usuario implements Serializable{
 	/**
 	 * 
@@ -22,6 +25,15 @@ public class Usuario implements Serializable{
 	/**
 	 * @return Returns the apellido.
 	 */
+	@Id
+	private String dni;
+	private String nombre;
+	private String apellido;
+	private int edad;
+	private String direccion;
+	private int codPostal;
+	private String localidad;
+	private int telefono;
 	public String getApellido() {
 		return apellido;
 	}
@@ -67,9 +79,7 @@ public class Usuario implements Serializable{
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	private String dni;
-	private String nombre;
-	private String apellido;
+
 	/**
 	 * @return Returns the codPostal.
 	 */
@@ -118,11 +128,7 @@ public class Usuario implements Serializable{
 	public void setTelefono(int telefono) {
 		this.telefono = telefono;
 	}
-	private int edad;
-	private String direccion;
-	private int codPostal;
-	private String localidad;
-	private int telefono;
+
 	public Usuario()
 	{
 		super();
